@@ -1,0 +1,28 @@
+{
+  "common": {
+    "welcome": "Maligayang Pagdating",
+    "home": "Tahanan",
+    "about": "Tungkol",
+    "contact": "Makipag-ugnayan",
+    "services": "Mga Serbisyo",
+    "language": "Wika"
+  },
+  "navigation": {
+    "home": "Tahanan",
+    "about": "Tungkol",
+    "services": "Mga Serbisyo",
+    "contact": "Makipag-ugnayan",
+    "login": "Mag-login",
+    "register": "Magparehistro"
+  },
+  "hero": {
+    "title": "Mas Mabuting Pamahalaang Lokal",
+    "subtitle": "Binabago ang mga komunidad sa pamamagitan ng digital na inobasyon",
+    "cta": "Magsimula"
+  },
+  "footer": {
+    "copyright": "© 2024 Mas Mabuting Pamahalaang Lokal. Lahat ng karapatan ay nakalaan.",
+    "privacy": "Patakaran sa Privacy",
+    "terms": "Mga Tuntunin ng Serbisyo"
+  }
+}

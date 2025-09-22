@@ -1,0 +1,190 @@
+# Government Services Data
+# This file contains all the service categories and subcategories for the government portal
+# Non-technical users can easily edit this file to add, remove, or modify services
+
+categories:
+  # Business and Trade Services
+  - category: "Business and Trade"
+    slug: "business-trade"
+    description: "Start, register, and grow your business with government support, licensing, and compliance services."
+    subcategories:
+      - name: "Business Copyright, Trademark and Patent"
+        slug: "business-copyright-trademark-patent"
+      - name: "Business Registration, Certificates and Compliance"
+        slug: "business-registration"
+      - name: "Complaints"
+        slug: "complaints"
+      - name: "Import and Export"
+        slug: "import-export"
+      - name: "Price Control Monitoring"
+        slug: "price-control"
+      - name: "Financial Assistance"
+        slug: "financial-assistance"
+
+  # Certificates and IDs
+  - category: "Certificates and IDs"
+    slug: "certificates-ids"
+    description: "Get official documents, clearances, and identification cards for personal and professional needs."
+    subcategories:
+      - name: "Certificates"
+        slug: "certificates"
+      - name: "Clearances"
+        slug: "clearances"
+      - name: "ID"
+        slug: "id"
+      - name: "Voters"
+        slug: "voters"
+
+  # Contributions
+  - category: "Contributions"
+    slug: "contributions"
+    description: "Manage your social security contributions, benefits registration, and salary loan applications."
+    subcategories:
+      - name: "Benefits Registration"
+        slug: "benefits-registration"
+      - name: "Salary Loans"
+        slug: "salary-loans"
+
+  # Disaster and Weather
+  - category: "Disaster and Weather"
+    slug: "disaster-weather"
+    description: "Stay informed about weather conditions, disaster preparedness, and emergency response services."
+    subcategories:
+      - name: "Disaster-prone Areas"
+        slug: "disaster-prone-areas"
+      - name: "Weather"
+        slug: "weather"
+
+  # Education
+  - category: "Education"
+    slug: "education"
+    description: "Access scholarships, grants, training programs, and educational support services for students and professionals."
+    subcategories:
+      - name: "Financial Assistance"
+        slug: "financial-assistance"
+      - name: "Professionals"
+        slug: "professionals"
+      - name: "Research and Proposal"
+        slug: "research-proposal"
+      - name: "Scholarships and Grants"
+        slug: "scholarships-grants"
+      - name: "Training"
+        slug: "training"
+      - name: "Online Certificate Courses"
+        slug: "online-courses"
+
+  # Employment
+  - category: "Employment"
+    slug: "employment"
+    description: "Find job opportunities, professional development, and employment-related services and support."
+    subcategories:
+      - name: "Professionals"
+        slug: "professionals"
+      - name: "Salary Loans"
+        slug: "salary-loans"
+      - name: "Union Association"
+        slug: "union-association"
+      - name: "Overseas Jobs"
+        slug: "overseas-jobs"
+
+  # Health
+  - category: "Health"
+    slug: "health"
+    description: "Access healthcare programs, medical assistance, and health-related services for you and your family."
+    subcategories:
+      - name: "Financial Assistance"
+        slug: "financial-assistance"
+      - name: "Health Programs"
+        slug: "health-programs"
+      - name: "Health Researches"
+        slug: "health-research"
+
+  # Housing
+  - category: "Housing"
+    slug: "housing"
+    description: "Get housing loans, land titles, and property-related services to secure your home and property."
+    subcategories:
+      - name: "Housing Loans"
+        slug: "housing-loans"
+      - name: "Land Titles"
+        slug: "land-titles"
+
+  # Passport and Travel
+  - category: "Passport and Travel"
+    slug: "passport-travel"
+    description: "Apply for passports, visas, and travel documents to explore the world and visit other countries."
+    subcategories:
+      - name: "Travel"
+        slug: "travel"
+      - name: "Visa and Citizenship"
+        slug: "visa-citizenship"
+
+  # Social Services
+  - category: "Social Services"
+    slug: "social-services"
+    description: "Access social welfare programs, benefits, and support services for individuals and families in need."
+    subcategories:
+      - name: "Benefits Registration"
+        slug: "benefits-registration"
+      - name: "File Complaints"
+        slug: "file-complaints"
+      - name: "Salary Loans"
+        slug: "salary-loans"
+      - name: "Financial Assistance"
+        slug: "financial-assistance"
+      - name: "Register"
+        slug: "register"
+      - name: "Contributions"
+        slug: "contributions"
+
+  # Tax
+  - category: "Tax"
+    slug: "tax"
+    description: "File taxes, get tax certificates, and manage your tax obligations with government assistance."
+    subcategories:
+      - name: "Certificates"
+        slug: "certificates"
+      - name: "Register"
+        slug: "register"
+      - name: "File Taxes"
+        slug: "file-taxes"
+      - name: "Complaints"
+        slug: "complaints"
+
+  # Transport and Driving
+  - category: "Transport and Driving"
+    slug: "transport-driving"
+    description: "Get driver's licenses, vehicle registration, and transportation-related services for safe travel."
+    subcategories:
+      - name: "Financial Assistance"
+        slug: "financial-assistance"
+      - name: "License"
+        slug: "license"
+      - name: "Transport Complains"
+        slug: "transport-complaints"
+
+  # Environment and Waste Management
+  - category: "Environment and Waste Management"
+    slug: "environment-waste"
+    description: "Manage waste disposal, recycling programs, and environmental services for a cleaner community."
+    subcategories:
+      - name: "Waste Collection"
+        slug: "waste-collection"
+      - name: "Recycling Programs"
+        slug: "recycling-programs"
+      - name: "Garbage Disposal"
+        slug: "garbage-disposal"
+      - name: "Environmental Compliance"
+        slug: "environmental-compliance"
+      - name: "Waste Reduction"
+        slug: "waste-reduction"
+      - name: "Composting Services"
+        slug: "composting-services"
+
+  # Uncategorized
+  - category: "Uncategorized"
+    slug: "uncategorized"
+    description: "Other government services and resources that don't fit into specific categories."
+    subcategories:
+      - name: "Uncategorized"
+        slug: "uncategorized"

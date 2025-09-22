@@ -11,7 +11,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "convert-yaml": "node scripts/yaml-to-json.js",
+    "dev:yaml": "npm run convert-yaml && npm run dev"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -23,13 +25,22 @@
     ]
   },
   "dependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "clsx": "^2.1.1",
+    "i18next": "^25.5.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-http-backend": "^3.0.2",
+    "js-yaml": "^4.1.0",
+    "lucide-react": "^0.544.0",
+    "nuqs": "^2.6.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.1"
+    "react-i18next": "^15.7.3",
+    "react-router-dom": "^7.9.1",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
-    "@tailwindcss/postcss": "^4.1.13",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.2",
@@ -42,7 +53,7 @@
     "lint-staged": "^16.1.6",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
-    "tailwindcss": "^4.1.13",
+    "tailwindcss": "^3.4.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.43.0",
     "vite": "^7.1.6"
