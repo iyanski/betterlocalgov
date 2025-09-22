@@ -63,7 +63,7 @@ export default function ServicesSection() {
             className="border-t-4 border-primary-500"
           >
             <Link
-              to={`/services?category=${category.slug}`}
+              to={`/services/${category.slug}`}
               className="mt-auto text-primary-600 hover:text-primary-700 font-medium transition-colors inline-flex items-center"
             >
               <CardContent className="flex flex-col h-full p-6">

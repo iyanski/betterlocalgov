@@ -3,197 +3,135 @@
 # Non-technical users can easily edit this file to add, remove, or modify services
 
 categories:
-  # Social Services
-  - category: 'Social Services'
+  # Health Services
+  - category: 'Health Services'
     slug: 'social-services'
-    description: 'Access comprehensive social welfare programs, financial assistance, benefits registration, salary loans, and support services designed to help individuals and families in need with essential resources and community support.'
+    description: 'Where to go for free check-ups, vaccines, and medicines, which hospitals are available, and details on health programs in your area.'
     subcategories:
-      - name: 'Benefits Registration'
-        slug: 'benefits-registration'
-      - name: 'File Complaints'
-        slug: 'file-complaints'
-      - name: 'Salary Loans'
-        slug: 'salary-loans'
-      - name: 'Financial Assistance'
-        slug: 'financial-assistance'
-      - name: 'Register'
-        slug: 'register'
-      - name: 'Contributions'
-        slug: 'contributions'
-  # Business and Trade Services
-  - category: 'Business and Trade'
-    slug: 'business-trade'
-    description: 'Start, register, and grow your business with government support, licensing, and compliance services.'
-    subcategories:
-      - name: 'Business Copyright, Trademark and Patent'
-        slug: 'business-copyright-trademark-patent'
-      - name: 'Business Registration, Certificates and Compliance'
-        slug: 'business-registration'
-      - name: 'Complaints'
-        slug: 'complaints'
-      - name: 'Import and Export'
-        slug: 'import-export'
-      - name: 'Price Control Monitoring'
-        slug: 'price-control'
-      - name: 'Financial Assistance'
-        slug: 'financial-assistance'
-  
-  # Childcare and Parenting
-  - category: 'Childcare & Parenting'
-    slug: 'childcare-and-parenting'
-    description: 'Get childcare services, parenting support, and family-related services for your children and family.'
-    subcategories:
-      - name: 'Childcare'
-        slug: 'childcare'
-      - name: 'Parenting'
-        slug: 'parenting'
-      - name: 'Family'
-        slug: 'family'
-      - name: 'Childcare and Parenting'
-        slug: 'childcare-parenting'
-      - name: 'Family'
-        slug: 'family'
-      - name: 'Childcare and Parenting'
-        slug: 'childcare-parenting'
+      - name: 'Get free check-ups, basic medicines, and vaccines'
+        slug: 'get-free-check-ups-basic-medicines-and-vaccines'
+      - name: 'Access maternal care and child immunization.'
+        slug: 'access-maternal-care-and-child-immunization'
+      - name: 'Go to the local hospital for treatment or confinement.'
+        slug: 'go-to-the-local-hospital-for-treatment-or-confinement'
+      - name: 'Join health programs (nutrition, dengue control, TB treatment).'
+        slug: 'join-health-programs-nutrition-dengue-control-tb-treatment'
 
-  # Certificates and IDs
-  - category: 'Certificates and IDs'
-    slug: 'certificates-ids'
-    description: 'Get official documents, clearances, and identification cards for personal and professional needs.'
-    subcategories:
-      - name: 'Certificates'
-        slug: 'certificates'
-      - name: 'Clearances'
-        slug: 'clearances'
-      - name: 'ID'
-        slug: 'id'
-      - name: 'Voters'
-        slug: 'voters'
-
-  # Contributions
-  - category: 'Contributions'
-    slug: 'contributions'
-    description: 'Manage your social security contributions, benefits registration, and salary loan applications.'
-    subcategories:
-      - name: 'Benefits Registration'
-        slug: 'benefits-registration'
-      - name: 'Salary Loans'
-        slug: 'salary-loans'
-
-  # Disaster and Weather
-  - category: 'Disaster and Weather'
-    slug: 'disaster-weather'
-    description: 'Stay informed about weather conditions, disaster preparedness, and emergency response services.'
-    subcategories:
-      - name: 'Disaster-prone Areas'
-        slug: 'disaster-prone-areas'
-      - name: 'Weather'
-        slug: 'weather'
-
-  # Education
+  # Education Services
   - category: 'Education'
     slug: 'education'
-    description: 'Access scholarships, grants, training programs, and educational support services for students and professionals.'
+    description: 'Where to enroll kids in daycare or preschool, how to apply for scholarships, and what education support your LGU offers.'
     subcategories:
-      - name: 'Financial Assistance'
-        slug: 'financial-assistance'
-      - name: 'Professionals'
-        slug: 'professionals'
-      - name: 'Research and Proposal'
-        slug: 'research-proposal'
-      - name: 'Scholarships and Grants'
-        slug: 'scholarships-grants'
-      - name: 'Training'
-        slug: 'training'
-      - name: 'Online Certificate Courses'
-        slug: 'online-courses'
+      - name: 'Enroll children in LGU daycare or preschool programs.'
+        slug: 'enroll-children-in-lgu-daycare-or-preschool-programs'
+      - name: 'Apply for local scholarships.'
+        slug: 'apply-for-local-scholarships'
+      - name: 'Access educational support programs from the LGU.'
+        slug: 'access-educational-support-programs-from-the-lgu'
+      - name: 'Learn about supplementary activities for schools in your area.'
+        slug: 'learn-about-supplementary-activities-for-schools-in-your-area'
 
-  # Employment
-  - category: 'Employment'
-    slug: 'employment'
-    description: 'Find job opportunities, professional development, and employment-related services and support.'
+  # Business & Livelihood Services
+  - category: 'Business & Livelihood'
+    slug: 'business-livelihood'
+    description: 'What permits and clearances you need, where to pay taxes or renew permits, and what livelihood or trade opportunities are offered.'
     subcategories:
-      - name: 'Professionals'
-        slug: 'professionals'
-      - name: 'Salary Loans'
-        slug: 'salary-loans'
-      - name: 'Union Association'
-        slug: 'union-association'
-      - name: 'Overseas Jobs'
-        slug: 'overseas-jobs'
+      - name: "Apply for barangay clearance and mayor's business permits."
+        slug: 'apply-for-barangay-clearance-and-mayors-business-permits'
+      - name: 'Renew permits and pay local business taxes.'
+        slug: 'renew-permits-and-pay-local-business-taxes'
+      - name: 'Rent stalls in LGU public markets.'
+        slug: 'rent-stalls-in-lgu-public-markets'
+      - name: 'Join trade fairs, business expos, or tourism promotions.'
+        slug: 'join-trade-fairs-business-expos-or-tourism-promotions'
 
-  # Health
-  - category: 'Health'
-    slug: 'health'
-    description: 'Access healthcare programs, medical assistance, and health-related services for you and your family.'
+  # Social Welfare Services
+  - category: 'Social Welfare'
+    slug: 'social-welfare'
+    description: 'What assistance is available for seniors, PWDs, solo parents, and indigent families, plus details on relief goods, and livelihood aid.'
     subcategories:
-      - name: 'Financial Assistance'
-        slug: 'financial-assistance'
-      - name: 'Health Programs'
-        slug: 'health-programs'
-      - name: 'Health Researches'
-        slug: 'health-research'
-
-  # Housing
-  - category: 'Housing'
-    slug: 'housing'
-    description: 'Get housing loans, land titles, and property-related services to secure your home and property.'
+      - name: 'Apply for senior citizen, solo parent, or PWD assistance.'
+        slug: 'apply-for-senior-citizen-solo-parent-or-pwd-assistance'
+      - name: 'Receive relief goods or cash aid during disasters.'
+        slug: 'receive-relief-goods-or-cash-aid-during-disasters'
+      - name: 'Join livelihood or skills training programs.'
+        slug: 'join-livelihood-or-skills-training-programs'
+      - name: 'Get family and community welfare support.'
+        slug: 'get-family-and-community-welfare-support'
+  
+  # Agriculture & Fisheries Services
+  - category: 'Agriculture & Fisheries'
+    slug: 'agriculture-fisheries'
+    description: 'What farm or fishing support is available, including seeds, fertilizers, veterinary care, and where to join training or borrow equipment.'
     subcategories:
-      - name: 'Housing Loans'
-        slug: 'housing-loans'
-      - name: 'Land Titles'
-        slug: 'land-titles'
-
-  # Passport and Travel
-  - category: 'Passport and Travel'
-    slug: 'passport-travel'
-    description: 'Apply for passports, visas, and travel documents to explore the world and visit other countries.'
+      - name: 'Ask for free seeds, seedlings, fertilizers, or fingerlings.'
+        slug: 'ask-for-free-seeds-seedlings-fertilizers-or-fingerlings'
+      - name: 'Get veterinary services for livestock.'
+        slug: 'get-veterinary-services-for-livestock'
+      - name: 'Attend farming or fishing training.'
+        slug: 'attend-farming-or-fishing-training'
+      - name: 'Borrow farm tools or equipment from the LGU.'
+        slug: 'borrow-farm-tools-or-equipment-from-the-lgu'
+  
+  # Infrastructure & Public Works Services
+  - category: 'Infrastructure & Public Works'
+    slug: 'infrastructure-public-works'
+    description: 'How to report damaged roads or drainage, where to request water supply, and how to access public facilities and markets.'
     subcategories:
-      - name: 'Travel'
-        slug: 'travel'
-      - name: 'Visa and Citizenship'
-        slug: 'visa-citizenship'
-
-  # Tax
-  - category: 'Tax'
-    slug: 'tax'
-    description: 'File taxes, get tax certificates, and manage your tax obligations with government assistance.'
+      - name: 'Report damaged roads, bridges, or drainage.'
+        slug: 'report-damaged-roads-bridges-or-drainage'
+      - name: 'Request access to barangay water supply systems.'
+        slug: 'request-access-to-barangay-water-supply-systems'
+      - name: 'Use public facilities like gyms, barangay halls, or multipurpose centers.'
+        slug: 'use-public-facilities-like-gyms-barangay-halls-or-multipurpose-centers'
+      - name: 'Rent stalls in public markets or use LGU-managed cemeteries.'
+        slug: 'rent-stalls-in-public-markets-or-use-lgu-managed-cemeteries'
+  
+  # Garbage and Waste Disposal Services
+  - category: 'Garbage and Waste Disposal'
+    slug: 'garbage-waste-disposal'
+    description: 'Garbage collection schedules, waste disposal guidelines, and how to properly dispose of different types of waste.'
     subcategories:
-      - name: 'Certificates'
-        slug: 'certificates'
-      - name: 'Register'
-        slug: 'register'
-      - name: 'File Taxes'
-        slug: 'file-taxes'
-      - name: 'Complaints'
-        slug: 'complaints'
-
-  # Transport and Driving
-  - category: 'Transport and Driving'
-    slug: 'transport-driving'
-    description: "Get driver's licenses, vehicle registration, and transportation-related services for safe travel."
+      - name: 'Check garbage collection schedules and request pickup.'
+        slug: 'check-garbage-collection-schedules-and-request-pickup'
+      - name: 'Learn proper waste segregation and disposal methods.'
+        slug: 'learn-proper-waste-segregation-and-disposal-methods'
+      - name: 'Request special waste collection (hazardous materials, electronics).'
+        slug: 'request-special-waste-collection-hazardous-materials-electronics'
+      - name: 'Report illegal dumping or waste management violations.'
+        slug: 'report-illegal-dumping-or-waste-management-violations'
+  
+  # Environment Services
+  - category: 'Environment'
+    slug: 'environment'
+    description: 'Clean-up or tree planting activities, environmental protection rules, and conservation programs.'
     subcategories:
-      - name: 'Financial Assistance'
-        slug: 'financial-assistance'
-      - name: 'License'
-        slug: 'license'
-      - name: 'Transport Complains'
-        slug: 'transport-complaints'
-
-  # Environment and Waste Management
-  - category: 'Environment and Waste Management'
-    slug: 'environment-waste'
-    description: 'Manage waste disposal, recycling programs, and environmental services for a cleaner community.'
+      - name: 'Join clean-up drives and tree planting activities.'
+        slug: 'join-clean-up-drives-and-tree-planting-activities'
+      - name: 'Report illegal logging, quarrying, or fishing.'
+        slug: 'report-illegal-logging-quarrying-or-fishing'
+  
+  # Disaster Preparedness Services
+  - category: 'Disaster Preparedness'
+    slug: 'disaster-preparedness'
+    description: 'Disaster preparedness plans, emergency response information, and evacuation procedures.'
     subcategories:
-      - name: 'Waste Collection'
-        slug: 'waste-collection'
-      - name: 'Recycling Programs'
-        slug: 'recycling-programs'
-      - name: 'Garbage Disposal'
-        slug: 'garbage-disposal'
-      - name: 'Environmental Compliance'
-        slug: 'environmental-compliance'
-      - name: 'Waste Reduction'
-        slug: 'waste-reduction'
-      - name: 'Composting Services'
-        slug: 'composting-services'
+      - name: 'Join disaster drills and evacuation planning.'
+        slug: 'join-disaster-drills-and-evacuation-planning'
+      - name: 'Learn about emergency response procedures and evacuation routes.'
+        slug: 'learn-about-emergency-response-procedures-and-evacuation-routes'
+      - name: 'Access disaster preparedness information and early warning systems.'
+        slug: 'access-disaster-preparedness-information-and-early-warning-systems'
+  
+  # Housing & Land Use Services
+  - category: 'Housing & Land Use'
+    slug: 'housing-land-use'
+    description: 'How to apply for housing projects, what zoning and building permits are needed, and where relocation sites are available.'
+    subcategories:
+      - name: 'Apply for socialized housing or relocation projects.'
+        slug: 'apply-for-socialized-housing-or-relocation-projects'
+      - name: 'Request zoning, land use, or building permits.'
+        slug: 'request-zoning-land-use-or-building-permits'
+      - name: 'Ask about available relocation sites in case of demolition.'
+        slug: 'ask-about-available-relocation-sites-in-case-of-demolition'
+  

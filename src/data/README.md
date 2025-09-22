@@ -1,13 +1,25 @@
-# Services Data Management
+# Government Services Data Management
 
-This directory contains the services data for the government portal. The data is now managed in YAML format for easier editing by non-technical users.
+This directory contains the services data for the government portal. The data is managed in YAML format for easier editing by non-technical users.
 
 ## Files
 
 - `services.yaml` - The main data file in YAML format (human-readable, easy to edit)
-- `servicesLoader.ts` - Loads and parses the YAML file for the application
-- `services.json` - Auto-generated JSON file (backup/fallback)
+- `yamlLoader.ts` - Loads and parses the YAML file for the application
+- `government.yaml` - Government activities and information data
+- `navigation.ts` - Navigation structure for the application
 - `README.md` - This documentation file
+
+## Content Design Principle
+
+The services are designed with a user-centric approach that focuses on **what information they can get from the LGU for each service**. This way, it's framed as: **"If you ask, this is the info your LGU can give you."**
+
+This principle ensures that:
+
+- Services are described from the citizen's perspective
+- Information is presented as accessible and available upon request
+- The language is clear and actionable
+- Users understand they can actively seek information from their local government
 
 ## How to Edit Services Data
 
@@ -37,11 +49,27 @@ This directory contains the services data for the government portal. The data is
 ```yaml
 - category: 'New Category'
   slug: 'new-category'
+  description: 'Brief description of what this category covers and what services are available.'
   subcategories:
     - name: 'New Service'
       slug: 'new-service'
     - name: 'Another Service'
       slug: 'another-service'
+```
+
+### Example: Adding a New Subcategory
+
+To add a new service to an existing category, simply add it to the subcategories list:
+
+```yaml
+- category: 'Health Services'
+  slug: 'social-services'
+  description: 'Where to go for free check-ups, vaccines, and medicines...'
+  subcategories:
+    - name: 'Get free check-ups, basic medicines, and vaccines'
+      slug: 'get-free-check-ups-basic-medicines-and-vaccines'
+    - name: 'New Health Service' # Add this new service
+      slug: 'new-health-service' # Add this new slug
 ```
 
 ## Development Workflow
