@@ -26,7 +26,7 @@ export default function ServicesSection() {
   const getIcon = (category: string) => {
     const iconMap: { [key: string]: keyof typeof LucideIcons } = {
       'business-trade': 'Building2',
-      'Certificates and IDs': 'FileCheck',
+      'certificates-ids': 'FileCheck',
       contributions: 'Wallet',
       'disaster-weather': 'Cloud',
       education: 'GraduationCap',
@@ -36,6 +36,7 @@ export default function ServicesSection() {
       housing: 'Home',
       'passport-travel': 'Plane',
       'social-services': 'Users',
+      'special-populations': 'Users2',
       tax: 'Receipt',
       'transport-driving': 'Car',
     };
