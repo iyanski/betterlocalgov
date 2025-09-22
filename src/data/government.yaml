@@ -1,0 +1,51 @@
+# Local Government Activity Data
+# This file contains all the local government activity data for the local government portal
+# Non-technical users can easily edit this file to add, remove, or modify local government activity
+
+categories:
+  - category: 'Departments'
+    slug: 'departments'
+    description: 'Explore local government departments, agencies, and offices with their mandates, services, and contact details.'
+    subcategories:
+      - name: 'Department of Education'
+        slug: 'department-of-education'
+      - name: 'Department of Health'
+        slug: 'department-of-health'
+      - name: 'Department of Transportation'
+        slug: 'department-of-transportation'
+  - category: 'News'
+    slug: 'news'
+    description: 'Stay informed with the latest local government news, announcements, and policy updates.'
+    subcategories:
+      - name: 'News'
+        slug: 'news'
+      - name: 'Announcements'
+        slug: 'announcements'
+  - category: 'Guides and Regulations'
+    slug: 'guides-and-regulations'
+    description: 'Access guidelines, rules, regulations, and step-by-step instructions for local government processes.'
+    subcategories:
+      - name: 'Guides'
+        slug: 'guides'
+      - name: 'Regulations'
+        slug: 'regulations'
+  - category: 'Reports and Statistics'
+    slug: 'reports-and-statistics'
+    description: 'Access local government reports, statistical data, and performance metrics.'
+    subcategories:
+      - name: 'Reports'
+        slug: 'reports'
+      - name: 'Statistics'
+        slug: 'statistics'
+  - category: 'Public Consultations'
+    slug: 'public-consultations'
+    description: 'Participate in public consultations and provide feedback on local government decisions.'
+    subcategories:
+      - name: 'Public Consultations'
+        slug: 'public-consultations'
+  - category: 'Transparency Documents'
+    slug: 'transparency-documents'
+    description: 'Access Freedom of Information releases and transparency documents for local government accountability.'
+    subcategories:
+      - name: 'Transparency Documents'
+        slug: 'transparency-documents'

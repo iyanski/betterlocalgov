@@ -6,7 +6,7 @@ import { useTranslation } from '../../hooks/useTranslation';
 import { Card, CardContent } from '../ui/Card';
 import { Link } from 'react-router-dom';
 
-import { serviceCategories } from '../../data/yamlLoader';
+import { governmentActivitCategories } from '../../data/yamlLoader';
 
 interface Subcategory {
   name: string;
@@ -20,7 +20,7 @@ interface Category {
   description: string;
 }
 
-export default function ServicesSection() {
+export default function GovernmentActivitySection() {
   const { t } = useTranslation();
 
   const getIcon = (category: string) => {
@@ -48,12 +48,15 @@ export default function ServicesSection() {
     return IconComponent ? <IconComponent className="h-6 w-6" /> : null;
   };
 
-  const displayedCategories = serviceCategories.categories as Category[];
+  const displayedCategories =
+    governmentActivitCategories.categories as Category[];
 
   return (
     <Section>
-      <Heading level={2}>{t('services.title')}</Heading>
-      <Text className="text-gray-600 mb-6">{t('services.description')}</Text>
+      <Heading level={2}>{t('governmentActivity.title')}</Heading>
+      <Text className="text-gray-600 mb-6">
+        {t('governmentActivity.description')}
+      </Text>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {displayedCategories.map(category => (

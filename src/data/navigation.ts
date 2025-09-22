@@ -1,5 +1,5 @@
 import type { NavigationItem } from '../types';
-import { serviceCategories as servicesData } from './servicesLoader';
+import { serviceCategories as servicesData } from './yamlLoader';
 
 interface Subcategory {
   name: string;
@@ -14,26 +14,23 @@ interface Category {
 
 export const mainNavigation: NavigationItem[] = [
   {
-    label: 'Government',
-    href: '/about',
-    children: [
-      { label: 'About', href: '/about/government' },
-      { label: 'History', href: '/about/history' },
-      // { label: 'Culture', href: '/about/culture' },
-      { label: 'Regions', href: '/about/regions' },
-      { label: 'Map', href: '/philippines/map' },
-      // { label: 'Tourism', href: '/philippines/tourism' },
-      { label: 'Hotlines', href: '/about/hotlines' },
-      { label: 'Holidays', href: '/philippines/holidays' },
-    ],
-  },
-  {
     label: 'Services',
     href: '/services',
     children: (servicesData.categories as Category[]).map(category => ({
       label: category.category,
       href: `/services?category=${category.slug}`,
     })),
+  },
+  {
+    label: 'Government',
+    href: '/about',
+    children: [
+      { label: 'About', href: '/about/government' },
+      { label: 'History', href: '/about/history' },
+      { label: 'Map', href: '/philippines/map' },
+      { label: 'Hotlines', href: '/about/hotlines' },
+      { label: 'Holidays', href: '/philippines/holidays' },
+    ],
   },
 ];
 
@@ -54,13 +51,14 @@ export const footerNavigation = {
       title: 'Services',
       links: [
         { label: 'All Services', href: '/services' },
-        { label: 'Service Directory', href: '/services' },
-        { label: 'Websites', href: '/services/websites' },
-        { label: 'Forex', href: '/data/forex' },
-        { label: 'Weather', href: '/data/weather' },
+        ...(servicesData.categories as Category[])
+          .slice(0, 6)
+          .map(category => ({
+            label: category.category,
+            href: `/services?category=${category.slug}`,
+          })),
         { label: 'Hotlines', href: '/philippines/hotlines' },
         { label: 'Holidays', href: '/philippines/holidays' },
-        { label: 'Flood Control Projects', href: '/flood-control-projects' },
       ],
     },
     {

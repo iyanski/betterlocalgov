@@ -3,6 +3,23 @@
 # Non-technical users can easily edit this file to add, remove, or modify services
 
 categories:
+  # Social Services
+  - category: 'Social Services'
+    slug: 'social-services'
+    description: 'Access comprehensive social welfare programs, financial assistance, benefits registration, salary loans, and support services designed to help individuals and families in need with essential resources and community support.'
+    subcategories:
+      - name: 'Benefits Registration'
+        slug: 'benefits-registration'
+      - name: 'File Complaints'
+        slug: 'file-complaints'
+      - name: 'Salary Loans'
+        slug: 'salary-loans'
+      - name: 'Financial Assistance'
+        slug: 'financial-assistance'
+      - name: 'Register'
+        slug: 'register'
+      - name: 'Contributions'
+        slug: 'contributions'
   # Business and Trade Services
   - category: 'Business and Trade'
     slug: 'business-trade'
@@ -20,6 +37,24 @@ categories:
         slug: 'price-control'
       - name: 'Financial Assistance'
         slug: 'financial-assistance'
+  
+  # Childcare and Parenting
+  - category: 'Childcare & Parenting'
+    slug: 'childcare-and-parenting'
+    description: 'Get childcare services, parenting support, and family-related services for your children and family.'
+    subcategories:
+      - name: 'Childcare'
+        slug: 'childcare'
+      - name: 'Parenting'
+        slug: 'parenting'
+      - name: 'Family'
+        slug: 'family'
+      - name: 'Childcare and Parenting'
+        slug: 'childcare-parenting'
+      - name: 'Family'
+        slug: 'family'
+      - name: 'Childcare and Parenting'
+        slug: 'childcare-parenting'
 
   # Certificates and IDs
   - category: 'Certificates and IDs'
@@ -118,24 +153,6 @@ categories:
         slug: 'travel'
       - name: 'Visa and Citizenship'
         slug: 'visa-citizenship'
-
-  # Social Services
-  - category: 'Social Services'
-    slug: 'social-services'
-    description: 'Access social welfare programs, benefits, and support services for individuals and families in need.'
-    subcategories:
-      - name: 'Benefits Registration'
-        slug: 'benefits-registration'
-      - name: 'File Complaints'
-        slug: 'file-complaints'
-      - name: 'Salary Loans'
-        slug: 'salary-loans'
-      - name: 'Financial Assistance'
-        slug: 'financial-assistance'
-      - name: 'Register'
-        slug: 'register'
-      - name: 'Contributions'
-        slug: 'contributions'
 
   # Tax
   - category: 'Tax'

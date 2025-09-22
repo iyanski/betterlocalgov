@@ -11,7 +11,7 @@ export default function Hero() {
           {/* Left section with title and search */}
           <div className="animate-fade-in">
             <Text transform="uppercase">Welcome to</Text>
-            <Heading>{t('agency.name')}</Heading>
+            <Heading>{import.meta.env.VITE_GOVERNMENT_NAME}</Heading>
             <Text>{t('hero.subtitle')}</Text>
           </div>
         </div>
