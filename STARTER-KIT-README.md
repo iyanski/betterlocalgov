@@ -92,6 +92,8 @@ colors: {
 - Replace `public/logo.svg` with your government logo
 - Update `public/favicon.ico` with your government's favicon
 - Add your government's images to `public/images/`
+- Create a custom Open Graph image (`public/og-image.jpg`) for social media sharing
+- Use `public/og-image-template.html` as a starting point for your OG image
 
 ### 2. Content Configuration
 

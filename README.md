@@ -10,7 +10,7 @@ A modern, multilingual, and accessible website template designed specifically fo
 - **📝 Content Management**: YAML-based content system for easy updates
 - **🎨 Customizable**: Easy theming and branding customization
 - **⚡ Fast Performance**: Built with Vite for optimal loading speeds
-- **🔍 SEO Optimized**: Built-in SEO best practices
+- **🔍 SEO Optimized**: Built-in SEO with react-helmet, meta tags, and Open Graph support
 
 ## 🚀 Quick Start
 

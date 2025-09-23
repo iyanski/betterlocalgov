@@ -143,6 +143,8 @@ VITE_YOUTUBE_URL="https://youtube.com/your-government"
 # SEO
 VITE_SITE_DESCRIPTION="Official website of ${governmentName}"
 VITE_SITE_KEYWORDS="government, local government, services, ${governmentName.toLowerCase()}"
+VITE_OG_IMAGE_URL="${websiteUrl}/og-image.jpg"
+VITE_TWITTER_HANDLE="@your-government"
 
 # Analytics (Optional)
 VITE_GOOGLE_ANALYTICS_ID=""

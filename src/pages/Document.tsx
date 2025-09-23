@@ -17,6 +17,7 @@ import {
   serviceCategories,
   getCategorySubcategories,
 } from '../data/yamlLoader';
+import SEO from '../components/SEO';
 
 interface DocumentProps {
   theme?: string; // Typography theme name
@@ -127,21 +128,31 @@ export default function Document({
   }
 
   return (
-    <Section className="p-3 mb-12">
-      <Breadcrumbs className="mb-8" items={breadcrumbs} />
-      <Card className="mb-8 markdown-content">
-        <CardHeader>
-          {markdownContent.description && (
-            <CardContent>{markdownContent.description}</CardContent>
-          )}
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={markdownComponents}
-          >
-            {markdownContent.content}
-          </ReactMarkdown>
-        </CardHeader>
-      </Card>
-    </Section>
+    <>
+      <SEO
+        title={markdownContent.title || documentSlug}
+        description={
+          markdownContent.description ||
+          `Government service information for ${documentSlug}`
+        }
+        keywords={`${documentSlug}, government services, public services, local government`}
+      />
+      <Section className="p-3 mb-12">
+        <Breadcrumbs className="mb-8" items={breadcrumbs} />
+        <Card className="mb-8 markdown-content">
+          <CardHeader>
+            {markdownContent.description && (
+              <CardContent>{markdownContent.description}</CardContent>
+            )}
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={markdownComponents}
+            >
+              {markdownContent.content}
+            </ReactMarkdown>
+          </CardHeader>
+        </Card>
+      </Section>
+    </>
   );
 }
