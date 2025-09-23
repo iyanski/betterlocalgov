@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "prepare": "husky",
     "convert-yaml": "node scripts/yaml-to-json.js",
-    "dev:yaml": "npm run convert-yaml && npm run dev"
+    "dev:yaml": "npm run convert-yaml && npm run dev",
+    "setup": "node scripts/setup-starter-kit.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
