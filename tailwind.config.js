@@ -1,10 +1,22 @@
+import typography from '@tailwindcss/typography';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Figtree', 'sans-serif'],
+        sans: [
+          'Inter',
+          'Figtree',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'sans-serif',
+        ],
+        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
       },
       colors: {
         primary: {
@@ -118,5 +130,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };

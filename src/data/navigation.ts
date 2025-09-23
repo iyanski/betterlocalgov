@@ -18,7 +18,7 @@ export const mainNavigation: NavigationItem[] = [
     href: '/services',
     children: (servicesData.categories as Category[]).map(category => ({
       label: category.category,
-      href: `/services?category=${category.slug}`,
+      href: `/services/${category.slug}`,
     })),
   },
   {
@@ -55,7 +55,7 @@ export const footerNavigation = {
           .slice(0, 6)
           .map(category => ({
             label: category.category,
-            href: `/services?category=${category.slug}`,
+            href: `/services/${category.slug}`,
           })),
         { label: 'Hotlines', href: '/philippines/hotlines' },
         { label: 'Holidays', href: '/philippines/holidays' },

@@ -1,0 +1,11 @@
+# Environment Category Pages
+# This file contains all the pages/services available under the Environment category
+
+pages:
+  - name: 'Join clean-up drives and tree planting activities'
+    slug: 'join-clean-up-drives-and-tree-planting-activities'
+    description: 'Information about participating in community clean-up drives and tree planting activities.'
+    
+  - name: 'Report illegal logging, quarrying, or fishing'
+    slug: 'report-illegal-logging-quarrying-or-fishing'
+    description: 'How to report illegal environmental activities like logging, quarrying, or illegal fishing.'

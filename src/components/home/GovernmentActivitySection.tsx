@@ -18,32 +18,15 @@ interface Category {
   slug: string;
   subcategories: Subcategory[];
   description: string;
+  icon: string;
 }
 
 export default function GovernmentActivitySection() {
   const { t } = useTranslation();
 
   const getIcon = (category: string) => {
-    const iconMap: { [key: string]: keyof typeof LucideIcons } = {
-      'business-trade': 'Building2',
-      'childcare-and-parenting': 'Baby',
-      'certificates-ids': 'FileCheck',
-      contributions: 'Wallet',
-      'disaster-weather': 'Cloud',
-      education: 'GraduationCap',
-      employment: 'Briefcase',
-      'environment-waste': 'Recycle',
-      health: 'Heart',
-      housing: 'Home',
-      'passport-travel': 'Plane',
-      'social-services': 'Users',
-      'special-populations': 'Users2',
-      tax: 'Receipt',
-      'transport-driving': 'Car',
-    };
-
     const IconComponent = LucideIcons[
-      iconMap[category] || 'FileText'
+      category as keyof typeof LucideIcons
     ] as React.ComponentType<{ className?: string }>;
     return IconComponent ? <IconComponent className="h-6 w-6" /> : null;
   };
@@ -66,13 +49,13 @@ export default function GovernmentActivitySection() {
             className="border-t-4 border-primary-500"
           >
             <Link
-              to={`/services?category=${category.slug}`}
+              to={`/services/${category.slug}`}
               className="mt-auto text-primary-600 hover:text-primary-700 font-medium transition-colors inline-flex items-center"
             >
               <CardContent className="flex flex-col h-full p-6">
                 <div className="flex gap-2">
                   <div className="bg-primary-100 text-primary-600 p-3 rounded-md mb-4 self-start">
-                    {getIcon(category.slug)}
+                    {getIcon(category.icon)}
                   </div>
 
                   <h3 className="text-lg font-semibold mb-4 text-gray-900 self-center">

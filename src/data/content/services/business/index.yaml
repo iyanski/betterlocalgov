@@ -1,0 +1,19 @@
+# Business & Livelihood Category Pages
+# This file contains all the pages/services available under the Business & Livelihood category
+
+pages:
+  - name: "Apply for barangay clearance and mayor's business permits"
+    slug: 'apply-for-barangay-clearance-and-mayors-business-permits'
+    description: "Step-by-step guide to applying for barangay clearance and mayor's business permits for your business."
+    
+  - name: 'Renew permits and pay local business taxes'
+    slug: 'renew-permits-and-pay-local-business-taxes'
+    description: 'Information about renewing business permits and paying local business taxes to your local government.'
+    
+  - name: 'Rent stalls in public markets'
+    slug: 'rent-stalls-in-public-markets'
+    description: 'How to rent stalls in local government public markets for your business.'
+    
+  - name: 'Join trade fairs, business expos, or tourism promotions'
+    slug: 'join-trade-fairs-business-expos-or-tourism-promotions'
+    description: 'Participate in local trade fairs, business expos, and tourism promotion activities.'

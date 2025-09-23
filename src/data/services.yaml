@@ -1,137 +1,66 @@
 # Government Services Data
-# This file contains all the service categories and subcategories for the government portal
-# Non-technical users can easily edit this file to add, remove, or modify services
+# This file contains all the service categories for the government portal
+# Each category's index.yaml file is automatically located at content/services/{slug}/index.yaml
+# Non-technical users can easily edit this file to add, remove, or modify service categories
 
 categories:
   # Health Services
   - category: 'Health Services'
-    slug: 'social-services'
+    slug: 'health-services'
     description: 'Where to go for free check-ups, vaccines, and medicines, which hospitals are available, and details on health programs in your area.'
-    subcategories:
-      - name: 'Get free check-ups, basic medicines, and vaccines'
-        slug: 'get-free-check-ups-basic-medicines-and-vaccines'
-      - name: 'Access maternal care and child immunization.'
-        slug: 'access-maternal-care-and-child-immunization'
-      - name: 'Go to the local hospital for treatment or confinement.'
-        slug: 'go-to-the-local-hospital-for-treatment-or-confinement'
-      - name: 'Join health programs (nutrition, dengue control, TB treatment).'
-        slug: 'join-health-programs-nutrition-dengue-control-tb-treatment'
+    icon: 'Heart'
 
   # Education Services
   - category: 'Education'
     slug: 'education'
     description: 'Where to enroll kids in daycare or preschool, how to apply for scholarships, and what education support your LGU offers.'
-    subcategories:
-      - name: 'Enroll children in LGU daycare or preschool programs.'
-        slug: 'enroll-children-in-lgu-daycare-or-preschool-programs'
-      - name: 'Apply for local scholarships.'
-        slug: 'apply-for-local-scholarships'
-      - name: 'Access educational support programs from the LGU.'
-        slug: 'access-educational-support-programs-from-the-lgu'
-      - name: 'Learn about supplementary activities for schools in your area.'
-        slug: 'learn-about-supplementary-activities-for-schools-in-your-area'
+    icon: 'GraduationCap'
 
   # Business & Livelihood Services
-  - category: 'Business & Livelihood'
-    slug: 'business-livelihood'
+  - category: 'Business and Livelihood'
+    slug: 'business'
     description: 'What permits and clearances you need, where to pay taxes or renew permits, and what livelihood or trade opportunities are offered.'
-    subcategories:
-      - name: "Apply for barangay clearance and mayor's business permits."
-        slug: 'apply-for-barangay-clearance-and-mayors-business-permits'
-      - name: 'Renew permits and pay local business taxes.'
-        slug: 'renew-permits-and-pay-local-business-taxes'
-      - name: 'Rent stalls in LGU public markets.'
-        slug: 'rent-stalls-in-lgu-public-markets'
-      - name: 'Join trade fairs, business expos, or tourism promotions.'
-        slug: 'join-trade-fairs-business-expos-or-tourism-promotions'
+    icon: 'Building2'
 
   # Social Welfare Services
   - category: 'Social Welfare'
     slug: 'social-welfare'
     description: 'What assistance is available for seniors, PWDs, solo parents, and indigent families, plus details on relief goods, and livelihood aid.'
-    subcategories:
-      - name: 'Apply for senior citizen, solo parent, or PWD assistance.'
-        slug: 'apply-for-senior-citizen-solo-parent-or-pwd-assistance'
-      - name: 'Receive relief goods or cash aid during disasters.'
-        slug: 'receive-relief-goods-or-cash-aid-during-disasters'
-      - name: 'Join livelihood or skills training programs.'
-        slug: 'join-livelihood-or-skills-training-programs'
-      - name: 'Get family and community welfare support.'
-        slug: 'get-family-and-community-welfare-support'
+    icon: 'Users'
   
   # Agriculture & Fisheries Services
   - category: 'Agriculture & Fisheries'
     slug: 'agriculture-fisheries'
     description: 'What farm or fishing support is available, including seeds, fertilizers, veterinary care, and where to join training or borrow equipment.'
-    subcategories:
-      - name: 'Ask for free seeds, seedlings, fertilizers, or fingerlings.'
-        slug: 'ask-for-free-seeds-seedlings-fertilizers-or-fingerlings'
-      - name: 'Get veterinary services for livestock.'
-        slug: 'get-veterinary-services-for-livestock'
-      - name: 'Attend farming or fishing training.'
-        slug: 'attend-farming-or-fishing-training'
-      - name: 'Borrow farm tools or equipment from the LGU.'
-        slug: 'borrow-farm-tools-or-equipment-from-the-lgu'
+    icon: 'Wheat'
   
   # Infrastructure & Public Works Services
   - category: 'Infrastructure & Public Works'
     slug: 'infrastructure-public-works'
     description: 'How to report damaged roads or drainage, where to request water supply, and how to access public facilities and markets.'
-    subcategories:
-      - name: 'Report damaged roads, bridges, or drainage.'
-        slug: 'report-damaged-roads-bridges-or-drainage'
-      - name: 'Request access to barangay water supply systems.'
-        slug: 'request-access-to-barangay-water-supply-systems'
-      - name: 'Use public facilities like gyms, barangay halls, or multipurpose centers.'
-        slug: 'use-public-facilities-like-gyms-barangay-halls-or-multipurpose-centers'
-      - name: 'Rent stalls in public markets or use LGU-managed cemeteries.'
-        slug: 'rent-stalls-in-public-markets-or-use-lgu-managed-cemeteries'
+    icon: 'Wrench'
   
   # Garbage and Waste Disposal Services
   - category: 'Garbage and Waste Disposal'
     slug: 'garbage-waste-disposal'
     description: 'Garbage collection schedules, waste disposal guidelines, and how to properly dispose of different types of waste.'
-    subcategories:
-      - name: 'Check garbage collection schedules and request pickup.'
-        slug: 'check-garbage-collection-schedules-and-request-pickup'
-      - name: 'Learn proper waste segregation and disposal methods.'
-        slug: 'learn-proper-waste-segregation-and-disposal-methods'
-      - name: 'Request special waste collection (hazardous materials, electronics).'
-        slug: 'request-special-waste-collection-hazardous-materials-electronics'
-      - name: 'Report illegal dumping or waste management violations.'
-        slug: 'report-illegal-dumping-or-waste-management-violations'
+    icon: 'Trash2'
   
   # Environment Services
   - category: 'Environment'
     slug: 'environment'
     description: 'Clean-up or tree planting activities, environmental protection rules, and conservation programs.'
-    subcategories:
-      - name: 'Join clean-up drives and tree planting activities.'
-        slug: 'join-clean-up-drives-and-tree-planting-activities'
-      - name: 'Report illegal logging, quarrying, or fishing.'
-        slug: 'report-illegal-logging-quarrying-or-fishing'
+    icon: 'TreePine'
   
   # Disaster Preparedness Services
   - category: 'Disaster Preparedness'
     slug: 'disaster-preparedness'
     description: 'Disaster preparedness plans, emergency response information, and evacuation procedures.'
-    subcategories:
-      - name: 'Join disaster drills and evacuation planning.'
-        slug: 'join-disaster-drills-and-evacuation-planning'
-      - name: 'Learn about emergency response procedures and evacuation routes.'
-        slug: 'learn-about-emergency-response-procedures-and-evacuation-routes'
-      - name: 'Access disaster preparedness information and early warning systems.'
-        slug: 'access-disaster-preparedness-information-and-early-warning-systems'
+    icon: 'Shield'
   
   # Housing & Land Use Services
   - category: 'Housing & Land Use'
     slug: 'housing-land-use'
     description: 'How to apply for housing projects, what zoning and building permits are needed, and where relocation sites are available.'
-    subcategories:
-      - name: 'Apply for socialized housing or relocation projects.'
-        slug: 'apply-for-socialized-housing-or-relocation-projects'
-      - name: 'Request zoning, land use, or building permits.'
-        slug: 'request-zoning-land-use-or-building-permits'
-      - name: 'Ask about available relocation sites in case of demolition.'
-        slug: 'ask-about-available-relocation-sites-in-case-of-demolition'
+    icon: 'Home'
   

@@ -1,0 +1,15 @@
+# Disaster Preparedness Category Pages
+# This file contains all the pages/services available under the Disaster Preparedness category
+
+pages:
+  - name: 'Join disaster drills and evacuation planning'
+    slug: 'join-disaster-drills-and-evacuation-planning'
+    description: 'Information about participating in disaster drills and evacuation planning activities.'
+    
+  - name: 'Learn about emergency response procedures and evacuation routes'
+    slug: 'learn-about-emergency-response-procedures-and-evacuation-routes'
+    description: 'Details about emergency response procedures and evacuation routes in your area.'
+    
+  - name: 'Access disaster preparedness information and early warning systems'
+    slug: 'access-disaster-preparedness-information-and-early-warning-systems'
+    description: 'How to access disaster preparedness information and early warning systems.'

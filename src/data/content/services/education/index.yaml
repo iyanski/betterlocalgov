@@ -1,0 +1,19 @@
+# Education Category Pages
+# This file contains all the pages/services available under the Education category
+
+pages:
+  - name: 'Enroll children in LGU daycare or preschool programs'
+    slug: 'enroll-children-in-lgu-daycare-or-preschool-programs'
+    description: 'Information about enrolling your children in local government daycare and preschool programs.'
+    
+  - name: 'Apply for local scholarships'
+    slug: 'apply-for-local-scholarships'
+    description: 'How to apply for scholarships and educational financial assistance from your local government.'
+    
+  - name: 'Access educational support programs from the LGU'
+    slug: 'access-educational-support-programs-from-the-lgu'
+    description: 'Various educational support programs and resources provided by your local government unit.'
+    
+  - name: 'Learn about supplementary activities for schools in your area'
+    slug: 'learn-about-supplementary-activities-for-schools-in-your-area'
+    description: 'Information about supplementary educational activities and programs available for schools in your area.'

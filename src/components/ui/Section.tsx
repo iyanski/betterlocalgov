@@ -1,7 +1,14 @@
-export default function Section({ children }: { children: React.ReactNode }) {
+import { cn } from '../../lib/utils';
+export default function Section({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">{children}</div>
+    <section className={cn('py-12 bg-white', className)}>
+      <div className={cn('container mx-auto px-4', className)}>{children}</div>
     </section>
   );
 }

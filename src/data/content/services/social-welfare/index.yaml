@@ -1,0 +1,19 @@
+# Social Welfare Category Pages
+# This file contains all the pages/services available under the Social Welfare category
+
+pages:
+  - name: 'Apply for senior citizen, solo parent, or PWD assistance'
+    slug: 'apply-for-senior-citizen-solo-parent-or-pwd-assistance'
+    description: 'Information about applying for assistance programs for senior citizens, solo parents, and persons with disabilities.'
+    
+  - name: 'Receive relief goods or cash aid during disasters'
+    slug: 'receive-relief-goods-or-cash-aid-during-disasters'
+    description: 'How to access relief goods and cash assistance during natural disasters and emergencies.'
+    
+  - name: 'Join livelihood or skills training programs'
+    slug: 'join-livelihood-or-skills-training-programs'
+    description: 'Participate in livelihood and skills training programs offered by your local government.'
+    
+  - name: 'Get family and community welfare support'
+    slug: 'get-family-and-community-welfare-support'
+    description: 'Access family and community welfare support services from your local government.'
