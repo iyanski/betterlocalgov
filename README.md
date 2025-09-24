@@ -60,6 +60,7 @@ A modern, multilingual, and accessible website template designed specifically fo
 
 - **[STARTER-KIT-README.md](STARTER-KIT-README.md)** - Complete setup and customization guide
 - **[CONTENT-GUIDE.md](CONTENT-GUIDE.md)** - Content writing and contribution guidelines
+- **[CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md)** - Guide for non-technical users to edit and manage website content
 - **[DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)** - Deployment instructions for Vercel and other platforms
 - **[STARTER-KIT-SUMMARY.md](STARTER-KIT-SUMMARY.md)** - Audit results and implementation summary
 
@@ -156,7 +157,54 @@ src/
 
 ## 🤝 Contributing
 
-### For Content Contributors
+We welcome contributions from everyone! Whether you're a developer, government official, or community member, there are many ways to help improve this project.
+
+### 🌟 For Non-Technical Contributors
+
+**No coding experience required!** You can contribute valuable content and improvements using GitHub's web interface.
+
+#### Quick Start for Non-Technical Users
+
+1. **Create a GitHub account** (free at github.com)
+2. **Navigate to the repository** in your web browser
+3. **Use our detailed guide**: [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md) - Complete step-by-step instructions for editing content without any technical knowledge
+
+#### What You Can Contribute
+
+- **📝 Content Updates**: Fix outdated information, add new services, improve descriptions
+- **🌐 Translations**: Help translate content to Filipino, Cebuano, or other local languages
+- **📋 Service Information**: Add details about government services, requirements, and processes
+- **🔍 Content Review**: Check for accuracy, clarity, and completeness
+- **💡 Suggestions**: Propose new features or improvements
+
+#### How to Contribute (No Git Required)
+
+1. **Find content to edit**:
+   - Go to `src/data/content/services/` in the repository
+   - Choose a category (health, education, business, etc.)
+   - Click on any `.md` file to edit
+
+2. **Make your changes**:
+   - Click the pencil icon (✏️) to edit
+   - Update the content using simple text formatting
+   - Add new information, fix errors, or improve clarity
+
+3. **Save your changes**:
+   - Write a brief description of what you changed
+   - Click "Commit changes"
+   - Your changes will be reviewed and merged
+
+#### Content Types You Can Edit
+
+- **Service Descriptions**: How to apply for permits, scholarships, health services
+- **Requirements**: Documents needed, eligibility criteria, deadlines
+- **Contact Information**: Office locations, phone numbers, hours
+- **Process Steps**: Step-by-step instructions for government services
+- **Translations**: Help make content available in local languages
+
+### 👨‍💻 For Technical Contributors
+
+#### Content Contributors (Basic Technical)
 
 1. **Fork the repository**
 2. **Create a content branch**: `git checkout -b content/update-health-services`
@@ -164,13 +212,49 @@ src/
 4. **Test your changes**: `npm run dev`
 5. **Submit a pull request**
 
-### For Developers
+#### Developers
 
 1. **Fork the repository**
 2. **Create a feature branch**: `git checkout -b feature/new-component`
 3. **Make your changes**
 4. **Run tests**: `npm run lint && npm run build`
 5. **Submit a pull request**
+
+### 📋 Contribution Guidelines
+
+#### Content Guidelines
+
+- **Accuracy First**: Ensure all information is current and correct
+- **Clear Language**: Write for the general public, avoid jargon
+- **Complete Information**: Include all necessary details (requirements, steps, contacts)
+- **Local Context**: Consider the specific needs of your community
+- **Accessibility**: Use clear headings, simple language, and logical structure
+
+#### Technical Guidelines
+
+- Follow existing code style and patterns
+- Test your changes thoroughly
+- Update documentation when needed
+- Ensure mobile responsiveness
+- Maintain accessibility standards
+
+### 🎯 Priority Areas for Contribution
+
+1. **Content Accuracy**: Update outdated information, fix errors
+2. **Localization**: Translate content to Filipino, Cebuano, and other Philippine languages
+3. **Service Coverage**: Add missing government services and programs
+4. **User Experience**: Improve clarity and ease of use
+5. **Accessibility**: Ensure content is accessible to all citizens
+
+### 🆘 Need Help?
+
+- **For Content Questions**: Check [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md)
+- **For Technical Issues**: Open an issue on GitHub
+- **For General Questions**: Contact the project maintainers
+
+### 🏆 Recognition
+
+All contributors are recognized in our project documentation. Your contributions help make government services more accessible to all citizens!
 
 ## 📄 License
 
