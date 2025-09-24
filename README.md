@@ -56,23 +56,6 @@ A modern, multilingual, and accessible website template designed specifically fo
 5. **Open your browser**
    Navigate to `http://localhost:5173`
 
-## 🚀 One-Click Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-org/local-government-starter-kit&env=VITE_GOVERNMENT_NAME,VITE_GOVERNMENT_TYPE,VITE_REGION,VITE_PROVINCE,VITE_WEBSITE_URL,VITE_CONTACT_EMAIL,VITE_CONTACT_PHONE&envDescription=Configure%20your%20government%20information&envLink=https://github.com/your-org/local-government-starter-kit/blob/main/.env.example)
-
-**What happens when you click the button:**
-
-1. **Fork the repository** to your GitHub account
-2. **Deploy to Vercel** with pre-configured settings
-3. **Set up environment variables** for your government
-4. **Your website goes live** in minutes!
-
-**After deployment:**
-
-- Customize your government information in the Vercel dashboard
-- Edit content using our [Content Management Guide](CONTENT-MANAGEMENT.md)
-- Your site will automatically update when you push changes to GitHub
-
 ## 📚 Documentation
 
 - **[STARTER-KIT-README.md](STARTER-KIT-README.md)** - Complete setup and customization guide
