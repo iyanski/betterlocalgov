@@ -21,7 +21,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     h1: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
       <h1 className={theme.components.h1} {...props}>
         {children}
       </h1>
@@ -29,7 +29,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     h2: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
       <h2 className={theme.components.h2} {...props}>
         {children}
       </h2>
@@ -37,7 +37,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     h3: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
       <h3 className={theme.components.h3} {...props}>
         {children}
       </h3>
@@ -45,7 +45,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     h4: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
       <h4 className={theme.components.h4} {...props}>
         {children}
       </h4>
@@ -53,7 +53,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     h5: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
       <h5 className={theme.components.h5} {...props}>
         {children}
       </h5>
@@ -61,7 +61,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     h6: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
       <h6 className={theme.components.h6} {...props}>
         {children}
       </h6>
@@ -69,7 +69,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     p: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLParagraphElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLParagraphElement>) => (
       <p className={theme.components.p} {...props}>
         {children}
       </p>
@@ -77,7 +77,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     small: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLElement>) => (
       <small className={theme.components.small} {...props}>
         {children}
       </small>
@@ -85,7 +85,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     ul: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLUListElement>) => {
+    }: { children?: ReactNode } & HTMLAttributes<HTMLUListElement>) => {
       // Debug: Log what we're getting
       console.log('UL Component - Props:', props);
       console.log('UL Component - Children:', children);
@@ -116,7 +116,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     ol: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLOListElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLOListElement>) => (
       <ol
         className={`${theme.components.ol} [counter-reset:list-item]`}
         {...props}
@@ -127,7 +127,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     li: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLLIElement>) => {
+    }: { children?: ReactNode } & HTMLAttributes<HTMLLIElement>) => {
       // Check if this is a nested list item
       const isNested = props.className?.includes('nested') || false;
 
@@ -194,7 +194,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     blockquote: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLQuoteElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLQuoteElement>) => (
       <blockquote className={theme.components.blockquote} {...props}>
         {children}
       </blockquote>
@@ -204,7 +204,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       className,
       ...props
     }: {
-      children: ReactNode;
+      children?: ReactNode;
       className?: string;
     } & HTMLAttributes<HTMLElement>) => {
       // Check if it's inline code or code block
@@ -222,7 +222,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     pre: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLPreElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLPreElement>) => (
       <pre className={theme.components.pre} {...props}>
         {children}
       </pre>
@@ -232,7 +232,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       href,
       ...props
     }: {
-      children: ReactNode;
+      children?: ReactNode;
       href?: string;
     } & HTMLAttributes<HTMLAnchorElement>) => {
       // Check if it's an external link
@@ -254,7 +254,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     strong: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLElement>) => (
       <strong className={theme.components.strong} {...props}>
         {children}
       </strong>
@@ -262,7 +262,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     em: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLElement>) => (
       <em className={theme.components.em} {...props}>
         {children}
       </em>
@@ -273,7 +273,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     table: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLTableElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLTableElement>) => (
       <table className={theme.components.table} {...props}>
         {children}
       </table>
@@ -281,7 +281,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     thead: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLTableSectionElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLTableSectionElement>) => (
       <thead className={theme.components.thead} {...props}>
         {children}
       </thead>
@@ -289,7 +289,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     tbody: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLTableSectionElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLTableSectionElement>) => (
       <tbody className={theme.components.tbody} {...props}>
         {children}
       </tbody>
@@ -297,7 +297,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     tr: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLTableRowElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLTableRowElement>) => (
       <tr className={theme.components.tr} {...props}>
         {children}
       </tr>
@@ -306,7 +306,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       children,
       ...props
     }: {
-      children: ReactNode;
+      children?: ReactNode;
     } & HTMLAttributes<HTMLTableHeaderCellElement>) => (
       <th className={theme.components.th} {...props}>
         {children}
@@ -315,7 +315,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     td: ({
       children,
       ...props
-    }: { children: ReactNode } & HTMLAttributes<HTMLTableDataCellElement>) => (
+    }: { children?: ReactNode } & HTMLAttributes<HTMLTableDataCellElement>) => (
       <td className={theme.components.td} {...props}>
         {children}
       </td>
