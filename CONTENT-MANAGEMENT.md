@@ -33,7 +33,7 @@ This guide will help you edit and manage content for the Better Local Government
 
 ## Understanding the Content Structure
 
-The website content is organized in folders by service categories. Here's how it works:
+The website content is organized in folders by service categories. The `content` folder is located at the root level of the repository (not inside the `src` folder). Here's how it works:
 
 ```
 content/services/
@@ -61,12 +61,10 @@ content/services/
 ### Step 1: Navigate to the File
 
 1. Go to the GitHub repository in your web browser
-2. Click on the `src` folder
-3. Click on `data` folder
-4. Click on `content` folder
-5. Click on `services` folder
-6. Choose the category folder (e.g., `education`)
-7. Click on the file you want to edit (e.g., `apply-for-local-scholarships.md`)
+2. Click on the `content` folder (at the root level)
+3. Click on `services` folder
+4. Choose the category folder (e.g., `education`)
+5. Click on the file you want to edit (e.g., `apply-for-local-scholarships.md`)
 
 ### Step 2: Edit the File
 
@@ -228,6 +226,46 @@ _Italic text_
    - Fees (if any)
    - Contact details
 
+### Service Title and Description Pattern
+
+When creating services, use this pattern for titles and descriptions to make them more citizen-friendly:
+
+#### ✨ Pattern Formula
+
+**[Action verb] + [service/benefit] + [who/where/why if needed]**
+
+#### Guidelines
+
+- **Start with an action verb**: Get, Access, Go, Join, Apply, Secure, Take, Receive
+- **Keep it short and simple**: usually 5–10 words
+- **Citizen-focused**: written in "you" language, no jargon
+- **Outcome-based**: highlights the benefit or purpose of the service
+
+#### Good Examples
+
+- Apply for a Health Card for work or study
+- Secure a Sanitary Permit for your business
+- Take a free rabies vaccination after an animal bite
+- Get free family planning counseling and services
+- Receive free TB testing and medicines
+- Access educational support programs from the LGU
+- Join health programs for nutrition and dengue control
+- Go to the local hospital for treatment or confinement
+
+#### What to Avoid
+
+❌ "Health Card Application Process" (too technical)
+
+❌ "Sanitary Permit Requirements" (not action-oriented)
+
+❌ "LGU Educational Support Services" (jargon-heavy)
+
+✅ "Apply for a Health Card for work or study"
+
+✅ "Secure a Sanitary Permit for your business"
+
+✅ "Access educational support programs from the LGU"
+
 ### File Organization
 
 1. **Use Descriptive File Names**
@@ -299,6 +337,7 @@ Key information about the service.
 
 - Make sure you're in the right folder path: `content/services/[category]/`
 - Check if the file exists by looking at the folder contents
+- Remember: the `content` folder is at the root level of the repository, not inside `src`
 
 #### "My changes aren't showing up"
 
@@ -370,6 +409,8 @@ If you're still having trouble:
 - Education services: `content/services/education/`
 - Health services: `content/services/health-services/`
 - Business services: `content/services/business/`
+
+**Note:** The `content` folder is located at the root level of the repository, not inside the `src` folder.
 
 ---
 
