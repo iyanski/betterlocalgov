@@ -274,9 +274,11 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       children,
       ...props
     }: { children?: ReactNode } & HTMLAttributes<HTMLTableElement>) => (
-      <table className={theme.components.table} {...props}>
-        {children}
-      </table>
+      <div className="overflow-x-auto -mx-4 sm:mx-0 mb-6">
+        <table className={theme.components.table} {...props}>
+          {children}
+        </table>
+      </div>
     ),
     thead: ({
       children,
