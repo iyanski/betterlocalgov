@@ -90,7 +90,7 @@ A modern, multilingual, and accessible website template designed specifically fo
    ```
 
 3. **Customize Content** (2-4 hours)
-   - Edit service information in `src/data/content/`
+   - Edit service information in `content/`
    - Add your government's services and programs
    - Update contact information and branding
 
@@ -180,7 +180,7 @@ We welcome contributions from everyone! Whether you're a developer, government o
 #### How to Contribute (No Git Required)
 
 1. **Find content to edit**:
-   - Go to `src/data/content/services/` in the repository
+   - Go to `content/services/` in the repository
    - Choose a category (health, education, business, etc.)
    - Click on any `.md` file to edit
 
@@ -208,7 +208,7 @@ We welcome contributions from everyone! Whether you're a developer, government o
 
 1. **Fork the repository**
 2. **Create a content branch**: `git checkout -b content/update-health-services`
-3. **Edit content files** in `src/data/content/`
+3. **Edit content files** in `content/`
 4. **Test your changes**: `npm run dev`
 5. **Submit a pull request**
 

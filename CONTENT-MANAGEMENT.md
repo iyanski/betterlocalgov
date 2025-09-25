@@ -36,7 +36,7 @@ This guide will help you edit and manage content for the Better Local Government
 The website content is organized in folders by service categories. Here's how it works:
 
 ```
-src/data/content/services/
+content/services/
 ├── agriculture-fisheries/
 ├── business/
 ├── disaster-preparedness/
@@ -122,7 +122,7 @@ pages:
 
 #### Step 1: Create the Category Folder
 
-1. Go to `src/data/content/services/`
+1. Go to `content/services/`
 2. Click **"Add file"** → **"Create new file"**
 3. Name it: `your-category-name/index.yaml`
 4. Add the basic structure:
@@ -297,7 +297,7 @@ Key information about the service.
 
 #### "I can't find the file I want to edit"
 
-- Make sure you're in the right folder path: `src/data/content/services/[category]/`
+- Make sure you're in the right folder path: `content/services/[category]/`
 - Check if the file exists by looking at the folder contents
 
 #### "My changes aren't showing up"
@@ -367,9 +367,9 @@ If you're still having trouble:
 
 ### Common File Paths
 
-- Education services: `src/data/content/services/education/`
-- Health services: `src/data/content/services/health-services/`
-- Business services: `src/data/content/services/business/`
+- Education services: `content/services/education/`
+- Health services: `content/services/health-services/`
+- Business services: `content/services/business/`
 
 ---
 

@@ -29,16 +29,16 @@ import servicesYamlContent from './services.yaml?raw';
 import governmentActivitiesYamlContent from './government.yaml?raw';
 
 // Import all category index files statically
-import healthServicesIndex from './content/services/health-services/index.yaml?raw';
-import educationIndex from './content/services/education/index.yaml?raw';
-import businessIndex from './content/services/business/index.yaml?raw';
-import socialWelfareIndex from './content/services/social-welfare/index.yaml?raw';
-import agricultureFisheriesIndex from './content/services/agriculture-fisheries/index.yaml?raw';
-import infrastructurePublicWorksIndex from './content/services/infrastructure-public-works/index.yaml?raw';
-import garbageWasteDisposalIndex from './content/services/garbage-waste-disposal/index.yaml?raw';
-import environmentIndex from './content/services/environment/index.yaml?raw';
-import disasterPreparednessIndex from './content/services/disaster-preparedness/index.yaml?raw';
-import housingLandUseIndex from './content/services/housing-land-use/index.yaml?raw';
+import healthServicesIndex from '../../content/services/health-services/index.yaml?raw';
+import educationIndex from '../../content/services/education/index.yaml?raw';
+import businessIndex from '../../content/services/business/index.yaml?raw';
+import socialWelfareIndex from '../../content/services/social-welfare/index.yaml?raw';
+import agricultureFisheriesIndex from '../../content/services/agriculture-fisheries/index.yaml?raw';
+import infrastructurePublicWorksIndex from '../../content/services/infrastructure-public-works/index.yaml?raw';
+import garbageWasteDisposalIndex from '../../content/services/garbage-waste-disposal/index.yaml?raw';
+import environmentIndex from '../../content/services/environment/index.yaml?raw';
+import disasterPreparednessIndex from '../../content/services/disaster-preparedness/index.yaml?raw';
+import housingLandUseIndex from '../../content/services/housing-land-use/index.yaml?raw';
 
 // Create a mapping of category slugs to their YAML content
 const categoryIndexMap: { [key: string]: string } = {

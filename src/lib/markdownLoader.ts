@@ -69,7 +69,7 @@ export async function loadMarkdownContent(
     // Import the markdown file dynamically from the services directory
     // Construct the path using the category slug and document slug
     const module = await import(
-      `../data/content/services/${categorySlug}/${documentSlug}.md?raw`
+      `../../content/services/${categorySlug}/${documentSlug}.md?raw`
     );
     const content = module.default;
 

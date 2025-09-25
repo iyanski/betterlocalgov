@@ -129,7 +129,7 @@ categories:
 
 #### Adding New Services
 
-1. Create a new folder in `src/data/content/services/`
+1. Create a new folder in `content/services/`
 2. Add an `index.yaml` file with service pages
 3. Create markdown files for each service
 4. Update `src/data/services.yaml` to include the new category
@@ -296,7 +296,7 @@ src/
 
 1. **Fork the repository**
 2. **Create a content branch**: `git checkout -b content/update-health-services`
-3. **Edit content files** in `src/data/content/`
+3. **Edit content files** in `content/`
 4. **Test your changes**: `npm run dev`
 5. **Submit a pull request**
 

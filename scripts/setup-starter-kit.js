@@ -159,7 +159,7 @@ VITE_FACEBOOK_PIXEL_ID=""
 
   const contentTemplates = [
     {
-      path: 'src/data/content/services/health-services/index.yaml',
+      path: 'content/services/health-services/index.yaml',
       content: `# Health Services Category Pages
 # This file contains all the pages/services available under the Health Services category
 
@@ -202,9 +202,7 @@ pages:
   console.log(
     '1. Review and update the .env.local file with your specific information'
   );
-  console.log(
-    '2. Customize the content in src/data/content/ with your local services'
-  );
+  console.log('2. Customize the content in content/ with your local services');
   console.log('3. Update images and branding in public/ folder');
   console.log('4. Run "npm run dev" to start development server');
   console.log('5. Follow the DEPLOYMENT-GUIDE.md to deploy your website');
