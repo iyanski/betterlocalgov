@@ -4,6 +4,7 @@
 
 import { type TypographyTheme } from './typographyThemes';
 import { type ReactNode, type HTMLAttributes } from 'react';
+import { TableWithToggle } from './TableWithToggle';
 
 // Extended theme type to include dynamic component keys
 type ExtendedTheme = TypographyTheme & {
@@ -274,11 +275,9 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       children,
       ...props
     }: { children?: ReactNode } & HTMLAttributes<HTMLTableElement>) => (
-      <div className="overflow-x-auto -mx-4 sm:mx-0 mb-6">
-        <table className={theme.components.table} {...props}>
-          {children}
-        </table>
-      </div>
+      <TableWithToggle theme={theme} {...props}>
+        {children}
+      </TableWithToggle>
     ),
     thead: ({
       children,

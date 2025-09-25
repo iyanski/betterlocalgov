@@ -7,3 +7,27 @@
 .task-list-item {
   @apply text-base text-gray-700 leading-relaxed relative flex items-start gap-3 font-sans rounded-md mb-5 transition-all duration-200 border border-transparent cursor-pointer items-center;
 }
+
+/* Sticky table styling */
+.sticky-table {
+  min-width: max-content;
+}
+
+.sticky-table th:first-child,
+.sticky-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  width: var(--first-col-width, 12rem);
+  min-width: var(--first-col-width, 12rem);
+  background-color: white;
+  border-right: 2px solid #9ca3af;
+}
+
+.sticky-table thead th:first-child {
+  background-color: #f9fafb;
+}
+
+.sticky-table tbody tr:hover td:first-child {
+  background-color: #f3f4f6;
+}
