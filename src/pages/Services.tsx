@@ -1,5 +1,5 @@
 import Section from '../components/ui/Section';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Heading } from '../components/ui/Heading';
 import { Text } from '../components/ui/Text';
 import {
@@ -8,11 +8,10 @@ import {
   type Subcategory,
 } from '../data/yamlLoader';
 import * as LucideIcons from 'lucide-react';
-import { CardContent } from '../components/ui/Card';
-import { Card } from '../components/ui/Card';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import ServicesSection from '../components/home/ServicesSection';
 import SEO from '../components/SEO';
+import ListItem from '../components/ui/ListItem';
 import { useState, useEffect } from 'react';
 
 const Services: React.FC = () => {
@@ -86,27 +85,15 @@ const Services: React.FC = () => {
             <Text>Loading services...</Text>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          <div className="space-y-4">
             {subcategories.map(subcategory => (
-              <Card
+              <ListItem
                 key={subcategory.slug}
-                hoverable
-                className="border-t-4 border-primary-500"
-              >
-                <Link
-                  to={`/${subcategory.slug}`}
-                  className="mt-auto text-primary-600 hover:text-primary-700 font-medium transition-colors inline-flex items-center"
-                >
-                  <CardContent className="flex flex-col h-full p-6">
-                    <Heading
-                      level={6}
-                      className="text-lg font-semibold mb-0 text-gray-900 self-center"
-                    >
-                      {subcategory.name}
-                    </Heading>
-                  </CardContent>
-                </Link>
-              </Card>
+                title={subcategory.name}
+                category={categoryData.category || category}
+                description={subcategory.description || ''}
+                href={`/${subcategory.slug}`}
+              />
             ))}
           </div>
         )}
