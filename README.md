@@ -25,8 +25,8 @@ A modern, multilingual, and accessible website template designed specifically fo
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-org/local-government-starter-kit.git
-   cd local-government-starter-kit
+   git clone https://github.com/iyanski/betterlocalgov.git
+   cd betterlocalgov
    ```
 
 2. **Install dependencies**
