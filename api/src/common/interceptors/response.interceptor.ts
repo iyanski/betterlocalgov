@@ -8,6 +8,21 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiResponseDto } from '../dto/api-response.dto';
 
+interface PaginatedResponse {
+  data: unknown[];
+  pagination: {
+    total: number;
+    page: number;
+    limit: number;
+  };
+}
+
+interface EntityWithTimestamps {
+  id?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
 @Injectable()
 export class ResponseInterceptor<T> implements NestInterceptor<T, unknown> {
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
@@ -39,15 +54,39 @@ export class ResponseInterceptor<T> implements NestInterceptor<T, unknown> {
     return skipPatterns.some((pattern) => url.includes(pattern));
   }
 
+  private isPaginatedResponse(data: unknown): data is PaginatedResponse {
+    if (data === null || typeof data !== 'object') {
+      return false;
+    }
+
+    const obj = data as Record<string, unknown>;
+
+    return (
+      'data' in obj &&
+      'pagination' in obj &&
+      Array.isArray(obj.data) &&
+      typeof obj.pagination === 'object' &&
+      obj.pagination !== null &&
+      'total' in obj.pagination &&
+      'page' in obj.pagination &&
+      'limit' in obj.pagination &&
+      typeof (obj.pagination as Record<string, unknown>).total === 'number' &&
+      typeof (obj.pagination as Record<string, unknown>).page === 'number' &&
+      typeof (obj.pagination as Record<string, unknown>).limit === 'number'
+    );
+  }
+
+  private isEntityWithTimestamps(data: unknown): data is EntityWithTimestamps {
+    return (
+      data !== null &&
+      typeof data === 'object' &&
+      ('id' in data || 'createdAt' in data || 'updatedAt' in data)
+    );
+  }
+
   private transformResponse(data: unknown): ApiResponseDto {
     // Determine if this is a paginated response
-    const isPaginated =
-      data &&
-      typeof data === 'object' &&
-      Array.isArray(data.data) &&
-      data.pagination;
-
-    if (isPaginated) {
+    if (this.isPaginatedResponse(data)) {
       return {
         data: data.data,
         meta: {
@@ -84,7 +123,7 @@ export class ResponseInterceptor<T> implements NestInterceptor<T, unknown> {
       return `Retrieved ${data.length} items successfully`;
     }
 
-    if (data && typeof data === 'object') {
+    if (this.isEntityWithTimestamps(data)) {
       if (data.id) {
         return 'Resource retrieved successfully';
       }

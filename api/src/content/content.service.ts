@@ -6,7 +6,7 @@ import {
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateContentDto } from './dto/create-content.dto';
 import { UpdateContentDto } from './dto/update-content.dto';
-import { ContentStatus } from '@prisma/client';
+import { ContentStatus, Prisma } from '@prisma/client';
 import { QueryOptimizationService } from '../common/services/query-optimization.service';
 import { QueryCacheService } from '../common/services/query-cache.service';
 
@@ -22,7 +22,7 @@ interface ContentQuery {
 interface ContentCreateData {
   title: string;
   slug: string;
-  content: Record<string, unknown>;
+  content: Prisma.InputJsonValue;
   contentTypeId: string;
   organizationId: string;
   createdBy: string;
@@ -54,7 +54,7 @@ interface ContentWhereClause {
 interface ContentUpdateData {
   title?: string;
   slug?: string;
-  content?: Record<string, unknown>;
+  content?: Prisma.InputJsonValue;
   status?: ContentStatus;
   updatedBy: string;
   categories?: {

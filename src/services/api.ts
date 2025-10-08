@@ -163,7 +163,10 @@ class ApiService {
       ),
     });
 
-    return this.request<ApiResponse<Content[]>>(`/public/content?${params}`);
+    const response = await this.request<{ data: ApiResponse<Content[]> }>(
+      `/public/content?${params}`
+    );
+    return response.data;
   }
 
   async getContentById(id: string): Promise<Content> {
@@ -171,7 +174,10 @@ class ApiService {
       organizationSlug: this.organizationSlug,
     });
 
-    return this.request<Content>(`/public/content/${id}?${params}`);
+    const response = await this.request<{ data: Content }>(
+      `/public/content/${id}?${params}`
+    );
+    return response.data;
   }
 
   async getContentBySlug(slug: string): Promise<Content> {
@@ -179,7 +185,10 @@ class ApiService {
       organizationSlug: this.organizationSlug,
     });
 
-    return this.request<Content>(`/public/content/slug/${slug}?${params}`);
+    const response = await this.request<{ data: Content }>(
+      `/public/content/slug/${slug}?${params}`
+    );
+    return response.data;
   }
 
   // Categories endpoints
@@ -188,7 +197,10 @@ class ApiService {
       organizationSlug: this.organizationSlug,
     });
 
-    return this.request<Category[]>(`/public/categories?${params}`);
+    const response = await this.request<{ data: Category[] }>(
+      `/public/categories?${params}`
+    );
+    return response.data;
   }
 
   async createCategory(
@@ -240,7 +252,10 @@ class ApiService {
       organizationSlug: this.organizationSlug,
     });
 
-    return this.request<Tag[]>(`/public/tags?${params}`);
+    const response = await this.request<{ data: Tag[] }>(
+      `/public/tags?${params}`
+    );
+    return response.data;
   }
 
   // Content types endpoint
@@ -249,7 +264,10 @@ class ApiService {
       organizationSlug: this.organizationSlug,
     });
 
-    return this.request<ContentType[]>(`/public/content-types?${params}`);
+    const response = await this.request<{ data: ContentType[] }>(
+      `/public/content-types?${params}`
+    );
+    return response.data;
   }
 
   // Helper method to get content by category slug

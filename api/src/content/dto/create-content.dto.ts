@@ -6,6 +6,7 @@ import {
   IsObject,
   IsArray,
 } from 'class-validator';
+import { Prisma } from '@prisma/client';
 
 export class CreateContentDto {
   @ApiProperty({
@@ -34,7 +35,7 @@ export class CreateContentDto {
     description: 'The content data as a JSON object',
   })
   @IsObject()
-  content: Record<string, unknown>;
+  content: Prisma.InputJsonValue;
 
   @ApiProperty({
     example: 'clx1234567890abcdef',

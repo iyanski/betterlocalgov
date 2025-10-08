@@ -1,4 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { Prisma } from '@prisma/client';
 
 export class ContentResponseDto {
   @ApiProperty({
@@ -23,7 +24,7 @@ export class ContentResponseDto {
     example: { title: 'My Post', body: 'Content here...' },
     description: 'The content data as a JSON object',
   })
-  content: Record<string, unknown>;
+  content: Prisma.JsonValue;
 
   @ApiProperty({
     example: 'clx1234567890abcdef',

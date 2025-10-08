@@ -1,5 +1,6 @@
 import { PartialType, ApiPropertyOptional } from '@nestjs/swagger';
 import { CreateContentDto } from './create-content.dto';
+import { Prisma } from '@prisma/client';
 
 export class UpdateContentDto extends PartialType(CreateContentDto) {
   @ApiPropertyOptional({
@@ -23,7 +24,7 @@ export class UpdateContentDto extends PartialType(CreateContentDto) {
     example: { title: 'Updated Post', body: 'Updated content here...' },
     description: 'Updated content data as a JSON object',
   })
-  content?: Record<string, unknown>;
+  content?: Prisma.InputJsonValue;
 
   @ApiPropertyOptional({
     example: 'clx1234567890abcdef',

@@ -1,7 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Plus, Edit2, Trash2 } from 'lucide-react';
-import { Heading } from '../../components/ui/Heading';
-import { Text } from '../../components/ui/Text';
 import { LoadingState, ErrorState } from '../../components/ui/LoadingSpinner';
 import {
   Card,
@@ -11,316 +9,11 @@ import {
 } from '../../components/ui/Card';
 import Stack from '../../components/ui/Stack';
 import Button from '../../components/ui/Button';
+import { CategoryEditModal, CategoryDeleteModal } from '../../components/admin';
 import { useApiCategories, useCategoryCrud } from '../../hooks/useApiData';
 import { useAuth } from '../../hooks/useAuth';
 import { Category } from '../../services/api';
-
-interface CategoryFormData {
-  name: string;
-  slug: string;
-  description: string;
-  color: string;
-}
-
-interface EditModalProps {
-  category: Category | null;
-  isOpen: boolean;
-  onClose: () => void;
-  onSave: (data: CategoryFormData) => Promise<void>;
-  loading: boolean;
-}
-
-function EditModal({
-  category,
-  isOpen,
-  onClose,
-  onSave,
-  loading,
-}: EditModalProps) {
-  const [formData, setFormData] = useState<CategoryFormData>({
-    name: category?.name || '',
-    slug: category?.slug || '',
-    description: category?.description || '',
-    color: category?.color || '#3B82F6',
-  });
-
-  const [errors, setErrors] = useState<Partial<CategoryFormData>>({});
-
-  // Update form data when category changes
-  React.useEffect(() => {
-    if (category) {
-      setFormData({
-        name: category.name,
-        slug: category.slug,
-        description: category.description || '',
-        color: category.color || '#3B82F6',
-      });
-    } else {
-      setFormData({
-        name: '',
-        slug: '',
-        description: '',
-        color: '#3B82F6',
-      });
-    }
-    setErrors({});
-  }, [category]);
-
-  const validateForm = (): boolean => {
-    const newErrors: Partial<CategoryFormData> = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
-    if (!formData.slug.trim()) {
-      newErrors.slug = 'Slug is required';
-    } else if (!/^[a-z0-9-]+$/.test(formData.slug)) {
-      newErrors.slug =
-        'Slug must contain only lowercase letters, numbers, and hyphens';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (validateForm()) {
-      try {
-        await onSave(formData);
-        onClose();
-      } catch {
-        // Error handling is done in parent component
-      }
-    }
-  };
-
-  const generateSlug = (name: string) => {
-    return name
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim();
-  };
-
-  const handleNameChange = (name: string) => {
-    setFormData(prev => ({
-      ...prev,
-      name,
-      slug: prev.slug || generateSlug(name),
-    }));
-  };
-
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      <div className="flex min-h-screen items-center justify-center p-4">
-        <div
-          className="fixed inset-0 bg-gray-500 bg-opacity-75"
-          onClick={onClose}
-        />
-        <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <Heading level={2} className="text-lg font-semibold">
-              {category ? 'Edit Category' : 'Create Category'}
-            </Heading>
-          </div>
-
-          <form onSubmit={handleSubmit} className="px-6 py-4 space-y-4">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={e => handleNameChange(e.target.value)}
-                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="Category name"
-              />
-              {errors.name && (
-                <Text className="text-red-500 text-sm mt-1">{errors.name}</Text>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="slug"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Slug *
-              </label>
-              <input
-                type="text"
-                id="slug"
-                value={formData.slug}
-                onChange={e =>
-                  setFormData(prev => ({ ...prev, slug: e.target.value }))
-                }
-                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors.slug ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="category-slug"
-              />
-              {errors.slug && (
-                <Text className="text-red-500 text-sm mt-1">{errors.slug}</Text>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Description
-              </label>
-              <textarea
-                id="description"
-                value={formData.description}
-                onChange={e =>
-                  setFormData(prev => ({
-                    ...prev,
-                    description: e.target.value,
-                  }))
-                }
-                rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Category description"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="color"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Color
-              </label>
-              <div className="flex items-center space-x-2">
-                <input
-                  type="color"
-                  id="color"
-                  value={formData.color}
-                  onChange={e =>
-                    setFormData(prev => ({ ...prev, color: e.target.value }))
-                  }
-                  className="w-12 h-10 border border-gray-300 rounded cursor-pointer"
-                />
-                <input
-                  type="text"
-                  value={formData.color}
-                  onChange={e =>
-                    setFormData(prev => ({ ...prev, color: e.target.value }))
-                  }
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="#3B82F6"
-                />
-              </div>
-            </div>
-
-            <div className="flex justify-end space-x-3 pt-4">
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                disabled={loading}
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
-              >
-                {loading ? 'Saving...' : category ? 'Update' : 'Create'}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface DeleteConfirmModalProps {
-  category: Category | null;
-  isOpen: boolean;
-  onClose: () => void;
-  onConfirm: () => Promise<void>;
-  loading: boolean;
-}
-
-function DeleteConfirmModal({
-  category,
-  isOpen,
-  onClose,
-  onConfirm,
-  loading,
-}: DeleteConfirmModalProps) {
-  if (!isOpen || !category) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      <div className="flex min-h-screen items-center justify-center p-4">
-        <div
-          className="fixed inset-0 bg-gray-500 bg-opacity-75"
-          onClick={onClose}
-        />
-        <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <Heading level={2} className="text-lg font-semibold text-red-600">
-              Delete Category
-            </Heading>
-          </div>
-
-          <div className="px-6 py-4">
-            <Text className="text-gray-700 mb-4">
-              Are you sure you want to delete the category{' '}
-              <strong>"{category.name}"</strong>? This action cannot be undone.
-            </Text>
-
-            {category._count?.content && category._count.content > 0 && (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-md p-3 mb-4">
-                <Text className="text-yellow-800 text-sm">
-                  ⚠️ This category has {category._count.content} content
-                  item(s). Deleting it may affect your content organization.
-                </Text>
-              </div>
-            )}
-          </div>
-
-          <div className="flex justify-end space-x-3 px-6 py-4 border-t border-gray-200">
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              disabled={loading}
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={onConfirm}
-              disabled={loading}
-              className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-50"
-            >
-              {loading ? 'Deleting...' : 'Delete'}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { CategoryFormData } from '../../types';
 
 export default function Categories() {
   const { data: categories, loading, error, refetch } = useApiCategories();
@@ -331,8 +24,6 @@ export default function Categories() {
     deleteCategory,
     loading: crudLoading,
   } = useCategoryCrud(token || undefined);
-  // Debug logging
-
   const [searchTerm] = useState('');
   const [editModal, setEditModal] = useState<{
     isOpen: boolean;
@@ -348,16 +39,13 @@ export default function Categories() {
     isOpen: false,
     category: null,
   });
-  console.log('categories', categories);
 
   // Filter categories based on search term
   const filteredCategories = useMemo(() => {
-    console.log('Filtered categories:', categories);
     // Ensure categories is an array
     if (!categories || !Array.isArray(categories)) return [];
     if (!searchTerm.trim()) return categories;
 
-    console.log('Categories:', categories);
     const term = searchTerm.toLowerCase();
     return categories.filter(
       category =>
@@ -560,7 +248,7 @@ export default function Categories() {
       </Card>
 
       {/* Modals */}
-      <EditModal
+      <CategoryEditModal
         category={editModal.category}
         isOpen={editModal.isOpen}
         onClose={() => setEditModal({ isOpen: false, category: null })}
@@ -568,7 +256,7 @@ export default function Categories() {
         loading={crudLoading}
       />
 
-      <DeleteConfirmModal
+      <CategoryDeleteModal
         category={deleteModal.category}
         isOpen={deleteModal.isOpen}
         onClose={() => setDeleteModal({ isOpen: false, category: null })}

@@ -8,6 +8,11 @@ import {
 import { Injectable } from '@nestjs/common';
 import { FileValidationService } from '../services/file-validation.service';
 
+interface ValidationResult {
+  isValid: boolean;
+  errors: string[];
+}
+
 @ValidatorConstraint({ async: true })
 @Injectable()
 export class IsFileValidConstraint implements ValidatorConstraintInterface {
@@ -37,10 +42,25 @@ export class IsFileValidConstraint implements ValidatorConstraintInterface {
     }
   }
 
+  private isValidationResult(obj: unknown): obj is ValidationResult {
+    return (
+      obj !== null &&
+      typeof obj === 'object' &&
+      'isValid' in obj &&
+      'errors' in obj &&
+      typeof (obj as Record<string, unknown>).isValid === 'boolean' &&
+      Array.isArray((obj as Record<string, unknown>).errors)
+    );
+  }
+
   defaultMessage(args: ValidationArguments) {
-    const validationResult = (args.constraints[0] as Record<string, unknown>)
-      .validationResult;
-    if (validationResult && validationResult.errors.length > 0) {
+    const constraint = args.constraints[0] as Record<string, unknown>;
+    const validationResult = constraint.validationResult;
+
+    if (
+      this.isValidationResult(validationResult) &&
+      validationResult.errors.length > 0
+    ) {
       return validationResult.errors.join(', ');
     }
     return 'File validation failed';

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   getServiceCategories,
   getGovernmentActivities,
@@ -19,12 +19,19 @@ export function useApiData<T>(
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const fetchFunctionRef = useRef(fetchFunction);
+  const dependencyString = JSON.stringify(dependencies);
+
+  // Update the ref when dependencies change
+  useEffect(() => {
+    fetchFunctionRef.current = fetchFunction;
+  }, [fetchFunction, dependencyString]);
 
   const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
-      const result = await fetchFunction();
+      const result = await fetchFunctionRef.current();
       setData(result);
     } catch (err) {
       const errorMessage =
@@ -34,12 +41,7 @@ export function useApiData<T>(
     } finally {
       setLoading(false);
     }
-  }, [fetchFunction]);
-
-  const dependencyString = useMemo(
-    () => JSON.stringify(dependencies),
-    [dependencies]
-  );
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -77,7 +79,7 @@ export function useMarkdownContent(documentSlug: string) {
 
 // Hook for API categories (direct from API)
 export function useApiCategories() {
-  return useApiData(() => apiService.getCategories());
+  return useApiData(() => apiService.getCategories(), []);
 }
 
 // Hook for category CRUD operations

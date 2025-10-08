@@ -9,6 +9,7 @@ import {
   Users,
   Menu,
   X,
+  LogOut,
   Globe,
   Search,
   Plus,

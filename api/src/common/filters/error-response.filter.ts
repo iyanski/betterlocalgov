@@ -7,8 +7,31 @@ import {
 } from '@nestjs/common';
 import { Response, Request } from 'express';
 
+interface ErrorResponseObject {
+  message?: string | string[];
+  errorCode?: string;
+  details?: string[];
+}
+
 @Catch()
 export class ErrorResponseFilter implements ExceptionFilter {
+  private isErrorResponseObject(obj: unknown): obj is ErrorResponseObject {
+    return (
+      obj !== null &&
+      typeof obj === 'object' &&
+      ('message' in obj || 'errorCode' in obj || 'details' in obj)
+    );
+  }
+
+  private getStringValue(value: unknown): string {
+    if (typeof value === 'string') {
+      return value;
+    }
+    if (Array.isArray(value)) {
+      return value.join(', ');
+    }
+    return String(value);
+  }
   catch(exception: unknown, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
@@ -33,11 +56,18 @@ export class ErrorResponseFilter implements ExceptionFilter {
         typeof exceptionResponse === 'object' &&
         exceptionResponse !== null
       ) {
-        const responseObj = exceptionResponse as Record<string, unknown>;
-        message = responseObj.message || exception.message;
-        details = Array.isArray(responseObj.message) ? responseObj.message : [];
-        errorCode =
-          responseObj.errorCode || this.getErrorCodeFromStatus(status);
+        if (this.isErrorResponseObject(exceptionResponse)) {
+          message =
+            this.getStringValue(exceptionResponse.message) || exception.message;
+          details = Array.isArray(exceptionResponse.message)
+            ? exceptionResponse.message
+            : [];
+          errorCode =
+            this.getStringValue(exceptionResponse.errorCode) ||
+            this.getErrorCodeFromStatus(status);
+        } else {
+          message = exception.message;
+        }
       } else {
         message = exception.message;
       }

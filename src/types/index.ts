@@ -17,3 +17,6 @@ export interface NavigationItem {
   href: string;
   children?: NavigationItem[];
 }
+
+// Re-export category types
+export * from './category';
