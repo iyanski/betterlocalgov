@@ -85,6 +85,22 @@ const CardFooter = ({ children, className, ...props }: CardFooterProps) => {
   );
 };
 
+interface CardTitleProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const CardTitle = ({ children, className, ...props }: CardTitleProps) => {
+  return (
+    <div
+      className={cn('text-lg font-semibold text-gray-900', className)}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
 interface CardImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
 }
@@ -101,4 +117,4 @@ const CardImage = ({ className, ...props }: CardImageProps) => {
   );
 };
 
-export { Card, CardHeader, CardContent, CardFooter, CardImage };
+export { Card, CardHeader, CardContent, CardFooter, CardImage, CardTitle };

@@ -3,24 +3,35 @@ import { useParams } from 'react-router-dom';
 import { Heading } from '../components/ui/Heading';
 import { Text } from '../components/ui/Text';
 import {
-  serviceCategories,
-  getCategorySubcategories,
-  type Subcategory,
-} from '../data/yamlLoader';
+  useServiceCategories,
+  useCategorySubcategories,
+} from '../hooks/useApiData';
 import * as LucideIcons from 'lucide-react';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import ServicesSection from '../components/home/ServicesSection';
 import SEO from '../components/SEO';
 import ListItem from '../components/ui/ListItem';
-import { useState, useEffect } from 'react';
+import { LoadingState, ErrorState } from '../components/ui/LoadingSpinner';
 
 const Services: React.FC = () => {
   const { category } = useParams();
-  const [subcategories, setSubcategories] = useState<Subcategory[]>([]);
-  const [loading, setLoading] = useState(false);
+
+  // Use API hooks for data loading
+  const {
+    data: serviceCategoriesData,
+    loading: categoriesLoading,
+    error: categoriesError,
+  } = useServiceCategories();
+  const {
+    data: subcategories,
+    loading: subcategoriesLoading,
+    error: subcategoriesError,
+  } = useCategorySubcategories(category || '');
 
   const getCategory = () => {
-    return serviceCategories.categories.find(c => c.slug === category);
+    return serviceCategoriesData?.categories.find(
+      (c: { slug: string }) => c.slug === category
+    );
   };
 
   const categoryData = getCategory();
@@ -28,15 +39,15 @@ const Services: React.FC = () => {
     categoryData?.icon as keyof typeof LucideIcons
   ] as React.ComponentType<{ className?: string }>;
 
-  useEffect(() => {
-    if (category && categoryData) {
-      setLoading(true);
-      getCategorySubcategories(category)
-        .then(setSubcategories)
-        .catch(console.error)
-        .finally(() => setLoading(false));
-    }
-  }, [category, categoryData]);
+  // Show loading state while categories are loading
+  if (categoriesLoading) {
+    return <LoadingState message="Loading services..." />;
+  }
+
+  // Show error state if categories failed to load
+  if (categoriesError) {
+    return <ErrorState error={categoriesError} />;
+  }
 
   if (!category) {
     return (
@@ -80,21 +91,27 @@ const Services: React.FC = () => {
         <Heading>{categoryData.category || category}</Heading>
         <Text className="text-gray-600 mb-6">{categoryData.description}</Text>
 
-        {loading ? (
-          <div className="flex justify-center items-center p-8">
-            <Text>Loading services...</Text>
-          </div>
+        {subcategoriesLoading ? (
+          <LoadingState message="Loading services..." />
+        ) : subcategoriesError ? (
+          <ErrorState error={subcategoriesError} />
         ) : (
           <div className="space-y-4">
-            {subcategories.map(subcategory => (
-              <ListItem
-                key={subcategory.slug}
-                title={subcategory.name}
-                category={categoryData.category || category}
-                description={subcategory.description || ''}
-                href={`/${subcategory.slug}`}
-              />
-            ))}
+            {subcategories?.map(
+              (subcategory: {
+                slug: string;
+                name: string;
+                description?: string;
+              }) => (
+                <ListItem
+                  key={subcategory.slug}
+                  title={subcategory.name}
+                  category={categoryData.category || category}
+                  description={subcategory.description || ''}
+                  href={`/${subcategory.slug}`}
+                />
+              )
+            )}
           </div>
         )}
       </Section>

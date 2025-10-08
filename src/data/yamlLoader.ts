@@ -1,6 +1,7 @@
 import yaml from 'js-yaml';
+import { apiService, Category as ApiCategory } from '../services/api';
 
-// Type definitions for the services data
+// Type definitions for the services data (keeping for backward compatibility)
 export interface Subcategory {
   name: string;
   slug: string;
@@ -24,77 +25,120 @@ export interface CategoryIndexData {
   pages: Subcategory[];
 }
 
-// Import the YAML file as raw text
+// Fallback: Import the YAML file as raw text for development/fallback
 import servicesYamlContent from './services.yaml?raw';
 import governmentActivitiesYamlContent from './government.yaml?raw';
 
-// Import all category index files statically
-import healthServicesIndex from '../../content/services/health-services/index.yaml?raw';
-import educationIndex from '../../content/services/education/index.yaml?raw';
-import businessIndex from '../../content/services/business/index.yaml?raw';
-import socialWelfareIndex from '../../content/services/social-welfare/index.yaml?raw';
-import agricultureFisheriesIndex from '../../content/services/agriculture-fisheries/index.yaml?raw';
-import infrastructurePublicWorksIndex from '../../content/services/infrastructure-public-works/index.yaml?raw';
-import garbageWasteDisposalIndex from '../../content/services/garbage-waste-disposal/index.yaml?raw';
-import environmentIndex from '../../content/services/environment/index.yaml?raw';
-import disasterPreparednessIndex from '../../content/services/disaster-preparedness/index.yaml?raw';
-import housingLandUseIndex from '../../content/services/housing-land-use/index.yaml?raw';
+// Cache for API data
+// const apiCategoriesCache: ApiCategory[] | null = null;
+let serviceCategoriesCache: CategoryData | null = null;
+let governmentActivitiesCache: CategoryData | null = null;
 
-// Create a mapping of category slugs to their YAML content
-const categoryIndexMap: { [key: string]: string } = {
-  'health-services': healthServicesIndex,
-  education: educationIndex,
-  business: businessIndex,
-  'social-welfare': socialWelfareIndex,
-  'agriculture-fisheries': agricultureFisheriesIndex,
-  'infrastructure-public-works': infrastructurePublicWorksIndex,
-  'garbage-waste-disposal': garbageWasteDisposalIndex,
-  environment: environmentIndex,
-  'disaster-preparedness': disasterPreparednessIndex,
-  'housing-land-use': housingLandUseIndex,
-};
-
-// Parse the YAML content
-export const serviceCategories: CategoryData = yaml.load(
+// Parse the YAML content (fallback)
+const fallbackServiceCategories: CategoryData = yaml.load(
   servicesYamlContent
 ) as CategoryData;
 
-export const governmentActivitCategories: CategoryData = yaml.load(
+const fallbackGovernmentActivities: CategoryData = yaml.load(
   governmentActivitiesYamlContent
 ) as CategoryData;
 
-// Function to load category index data
+// Function to convert API categories to legacy format
+function convertApiCategoriesToLegacy(
+  apiCategories: ApiCategory[]
+): CategoryData {
+  // Map API categories to legacy format
+  const categories: Category[] = apiCategories.map(apiCat => ({
+    category: apiCat.name,
+    slug: apiCat.slug,
+    description: apiCat.description || '',
+    icon: '📋', // Default icon, could be enhanced with API data
+  }));
+
+  return {
+    categories,
+    description: 'Services provided by the local government',
+  };
+}
+
+// Function to get service categories (API-first with fallback)
+export async function getServiceCategories(): Promise<CategoryData> {
+  if (serviceCategoriesCache) {
+    return serviceCategoriesCache;
+  }
+
+  try {
+    const apiCategories = await apiService.getCategories();
+    serviceCategoriesCache = convertApiCategoriesToLegacy(apiCategories);
+    return serviceCategoriesCache;
+  } catch (error) {
+    console.warn('Failed to load categories from API, using fallback:', error);
+    return fallbackServiceCategories;
+  }
+}
+
+// Function to get government activities (API-first with fallback)
+export async function getGovernmentActivities(): Promise<CategoryData> {
+  if (governmentActivitiesCache) {
+    return governmentActivitiesCache;
+  }
+
+  try {
+    // For now, use the same categories as services
+    // This could be enhanced to use a different content type or filter
+    const apiCategories = await apiService.getCategories();
+    governmentActivitiesCache = convertApiCategoriesToLegacy(apiCategories);
+    return governmentActivitiesCache;
+  } catch (error) {
+    console.warn(
+      'Failed to load government activities from API, using fallback:',
+      error
+    );
+    return fallbackGovernmentActivities;
+  }
+}
+
+// Legacy exports for backward compatibility (now async)
+export const serviceCategories = fallbackServiceCategories;
+export const governmentActivitCategories = fallbackGovernmentActivities;
+
+// Function to load category index data (API-first with fallback)
 export async function loadCategoryIndex(
   categorySlug: string
 ): Promise<Subcategory[]> {
   try {
-    // Find the category to verify it exists
-    const category = serviceCategories.categories.find(
-      c => c.slug === categorySlug
-    );
-    if (!category) {
-      console.warn(`Category ${categorySlug} not found`);
-      return [];
-    }
-
-    // Use the statically imported YAML content from the mapping
+    // Try to get content from API first
     try {
-      const yamlContent = categoryIndexMap[categorySlug];
+      const contentResponse = await apiService.getContentByCategory(
+        categorySlug,
+        { limit: 100 }
+      );
+      const subcategories: Subcategory[] = contentResponse.data.map(
+        content => ({
+          name: content.title,
+          slug: content.slug,
+          description:
+            content.content.excerpt || content.content.description || '',
+        })
+      );
+      return subcategories;
+    } catch (apiError) {
+      console.warn(
+        `Failed to load category ${categorySlug} from API, trying fallback:`,
+        apiError
+      );
 
-      if (!yamlContent) {
-        console.warn(`Category ${categorySlug} not found in categoryIndexMap`);
+      // Fallback to static YAML files
+      const category = fallbackServiceCategories.categories.find(
+        c => c.slug === categorySlug
+      );
+      if (!category) {
+        console.warn(`Category ${categorySlug} not found in fallback data`);
         return [];
       }
 
-      const indexData: CategoryIndexData = yaml.load(
-        yamlContent
-      ) as CategoryIndexData;
-      return indexData.pages || [];
-    } catch (parseError) {
-      console.warn(
-        `Failed to parse YAML content for category ${categorySlug}:`,
-        parseError
-      );
+      // For fallback, return empty array since we don't have the static YAML imports anymore
+      // This could be enhanced to load from static files if needed
       return [];
     }
   } catch (error) {

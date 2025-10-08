@@ -7,10 +7,11 @@ A modern, multilingual, and accessible website template designed specifically fo
 - **🌐 Multilingual Support**: English, Filipino, Cebuano, and other Philippine languages
 - **📱 Responsive Design**: Mobile-first approach with modern UI/UX
 - **♿ Accessibility**: WCAG 2.1 compliant design
-- **📝 Content Management**: YAML-based content system for easy updates
+- **📝 Content Management**: YAML-based content system with headless CMS API integration
 - **🎨 Customizable**: Easy theming and branding customization
 - **⚡ Fast Performance**: Built with Vite for optimal loading speeds
 - **🔍 SEO Optimized**: Built-in SEO with react-helmet, meta tags, and Open Graph support
+- **🔌 Headless CMS**: Built-in NestJS API for advanced content management
 
 ## 🚀 Quick Start
 
@@ -45,7 +46,33 @@ A modern, multilingual, and accessible website template designed specifically fo
 
    This will guide you through configuring your government's information.
 
-4. **Start development server**
+4. **Start the headless CMS API (Optional but recommended)**
+
+   ```bash
+   cd api
+   npm install
+   npm run db:setup  # Sets up database and seeds initial data
+   npm run start:dev
+   ```
+
+   The API will be available at `http://localhost:3000/api/v1`
+
+5. **Configure API integration (if using the CMS)**
+
+   Create a `.env.local` file in the project root:
+
+   ```bash
+   cp env.example .env.local
+   ```
+
+   Edit `.env.local` and add:
+
+   ```bash
+   VITE_API_BASE_URL=http://localhost:3000/api/v1
+   VITE_ORGANIZATION_SLUG=betterlocalgov
+   ```
+
+6. **Start development server**
 
    ```bash
    npm run dev
@@ -53,7 +80,15 @@ A modern, multilingual, and accessible website template designed specifically fo
    yarn dev
    ```
 
-5. **Open your browser**
+7. **Test the API integration (if using the CMS)**
+
+   ```bash
+   node scripts/test-api-integration.js
+   ```
+
+   This will test all API endpoints and verify the integration is working correctly.
+
+8. **Open your browser**
    Navigate to `http://localhost:5173`
 
 ## 📚 Documentation
@@ -62,6 +97,7 @@ A modern, multilingual, and accessible website template designed specifically fo
 - **[CONTENT-GUIDE.md](CONTENT-GUIDE.md)** - Content writing and contribution guidelines
 - **[CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md)** - Guide for non-technical users to edit and manage website content
 - **[DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)** - Deployment instructions for Vercel and other platforms
+- **[API-INTEGRATION-GUIDE.md](API-INTEGRATION-GUIDE.md)** - Complete guide for headless CMS API integration
 - **[STARTER-KIT-SUMMARY.md](STARTER-KIT-SUMMARY.md)** - Audit results and implementation summary
 
 ## 🎯 Perfect For
@@ -111,6 +147,8 @@ A modern, multilingual, and accessible website template designed specifically fo
 ### **Non-Technical Friendly**
 
 - **YAML Content Management**: Easy content updates without coding
+- **Headless CMS**: Advanced content management with API backend
+- **Dual Mode**: Works with both static files and API content
 - **Visual Setup**: Interactive configuration process
 - **Clear Documentation**: Step-by-step guides for everything
 - **Template System**: Pre-built content templates
@@ -136,23 +174,46 @@ A modern, multilingual, and accessible website template designed specifically fo
 - `npm run convert-yaml` - Convert YAML to JSON
 - `npm run dev:yaml` - Convert YAML and start dev server
 
+### API Scripts (in `api/` directory)
+
+- `npm run start:dev` - Start API development server
+- `npm run build` - Build API for production
+- `npm run start:prod` - Start production API server
+- `npm run db:setup` - Set up database and seed initial data
+- `npm run db:studio` - Open Prisma Studio (database GUI)
+- `npm run db:migrate` - Run database migrations
+- `npm run db:seed` - Seed database with sample data
+
 ### Project Structure
 
 ```
-src/
-├── components/          # Reusable UI components
-│   ├── home/           # Home page components
-│   ├── layout/         # Layout components (Navbar, Footer)
-│   ├── sections/       # Page sections
-│   └── ui/             # Basic UI components
-├── data/               # Content and configuration
-│   ├── content/        # Markdown content files
-│   └── *.yaml          # Configuration files
-├── hooks/              # Custom React hooks
-├── i18n/               # Internationalization
-├── lib/                # Utility functions
-├── pages/              # Page components
-└── types/              # TypeScript type definitions
+├── src/                    # React frontend
+│   ├── components/         # Reusable UI components
+│   │   ├── home/          # Home page components
+│   │   ├── layout/        # Layout components (Navbar, Footer)
+│   │   ├── sections/      # Page sections
+│   │   └── ui/            # Basic UI components
+│   ├── data/              # Content and configuration
+│   │   ├── content/       # Markdown content files
+│   │   └── *.yaml         # Configuration files
+│   ├── hooks/             # Custom React hooks (including API hooks)
+│   ├── services/          # API service layer
+│   ├── i18n/              # Internationalization
+│   ├── lib/               # Utility functions
+│   ├── pages/             # Page components
+│   └── types/             # TypeScript type definitions
+├── api/                   # NestJS headless CMS backend
+│   ├── src/               # API source code
+│   │   ├── auth/          # Authentication module
+│   │   ├── categories/    # Categories management
+│   │   ├── content/       # Content management
+│   │   ├── media/         # Media management
+│   │   ├── organizations/ # Organization management
+│   │   ├── public/        # Public API endpoints
+│   │   └── users/         # User management
+│   ├── prisma/            # Database schema and migrations
+│   └── test/              # API tests
+└── content/               # Static content files (fallback)
 ```
 
 ## 🤝 Contributing

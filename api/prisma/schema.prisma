@@ -1,0 +1,290 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  domain      String?  // Optional domain for organization
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  createdBy   String?
+  updatedBy   String?
+
+  // Relations
+  creator     User?    @relation("CreatedBy", fields: [createdBy], references: [id])
+  updater     User?    @relation("UpdatedBy", fields: [updatedBy], references: [id])
+  users       User[]
+  contentTypes ContentType[]
+  categories  Category[]
+  tags        Tag[]
+  content     Content[]
+  media       Media[]
+
+  // Performance indexes
+  @@index([slug])
+  @@index([isActive])
+  @@map("organizations")
+}
+
+model User {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  username       String   @unique
+  password       String
+  firstName      String?
+  lastName       String?
+  role           UserRole @default(EDITOR)
+  isActive       Boolean  @default(true)
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  createdContent Content[] @relation("CreatedBy")
+  updatedContent Content[] @relation("UpdatedBy")
+  createdContentTypes ContentType[] @relation("CreatedBy")
+  updatedContentTypes ContentType[] @relation("UpdatedBy")
+  createdMedia   Media[] @relation("CreatedBy")
+  updatedMedia   Media[] @relation("UpdatedBy")
+  createdCategories Category[] @relation("CreatedBy")
+  updatedCategories Category[] @relation("UpdatedBy")
+  createdTags    Tag[] @relation("CreatedBy")
+  updatedTags    Tag[] @relation("UpdatedBy")
+  createdOrganizations Organization[] @relation("CreatedBy")
+  updatedOrganizations Organization[] @relation("UpdatedBy")
+
+  // Performance indexes
+  @@index([email])
+  @@index([organizationId])
+  @@index([isActive])
+  @@index([organizationId, isActive])
+  @@map("users")
+}
+
+model ContentType {
+  id             String   @id @default(cuid())
+  name           String
+  slug           String
+  description    String?
+  fields         Json     // Array of field definitions
+  isActive       Boolean  @default(true)
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  createdBy      String
+  updatedBy      String
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  creator        User         @relation("CreatedBy", fields: [createdBy], references: [id])
+  updater        User         @relation("UpdatedBy", fields: [updatedBy], references: [id])
+  content        Content[]
+
+  // Performance indexes
+  @@index([organizationId])
+  @@index([organizationId, slug])
+  @@unique([organizationId, slug])
+  @@map("content_types")
+}
+
+model Category {
+  id             String   @id @default(cuid())
+  name           String
+  slug           String
+  description    String?
+  color          String?  // Hex color for UI
+  isActive       Boolean  @default(true)
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  createdBy      String
+  updatedBy      String
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  creator        User         @relation("CreatedBy", fields: [createdBy], references: [id])
+  updater        User         @relation("UpdatedBy", fields: [updatedBy], references: [id])
+  content        ContentCategory[]
+
+  // Performance indexes
+  @@index([organizationId])
+  @@index([organizationId, slug])
+  @@index([isActive])
+  @@unique([organizationId, slug])
+  @@map("categories")
+}
+
+model Tag {
+  id             String   @id @default(cuid())
+  name           String
+  slug           String
+  description    String?
+  color          String?  // Hex color for UI
+  isActive       Boolean  @default(true)
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  createdBy      String
+  updatedBy      String
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  creator        User         @relation("CreatedBy", fields: [createdBy], references: [id])
+  updater        User         @relation("UpdatedBy", fields: [updatedBy], references: [id])
+  content        ContentTag[]
+
+  // Performance indexes
+  @@index([organizationId])
+  @@index([organizationId, slug])
+  @@index([isActive])
+  @@unique([organizationId, slug])
+  @@map("tags")
+}
+
+model Content {
+  id             String        @id @default(cuid())
+  title          String
+  slug           String
+  content        Json          // Dynamic content based on content type fields
+  status         ContentStatus @default(DRAFT)
+  publishedAt    DateTime?
+  contentTypeId  String
+  organizationId String
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  createdBy      String
+  updatedBy      String
+
+  // Relations
+  contentType    ContentType   @relation(fields: [contentTypeId], references: [id])
+  organization   Organization  @relation(fields: [organizationId], references: [id])
+  creator        User          @relation("CreatedBy", fields: [createdBy], references: [id])
+  updater        User          @relation("UpdatedBy", fields: [updatedBy], references: [id])
+  media          ContentMedia[]
+  categories     ContentCategory[]
+  tags           ContentTag[]
+
+  // Performance indexes
+  @@index([organizationId])
+  @@index([status])
+  @@index([contentTypeId])
+  @@index([publishedAt])
+  @@index([organizationId, status])
+  @@index([organizationId, status, publishedAt])
+  @@unique([organizationId, slug])
+  @@map("content")
+}
+
+model ContentMedia {
+  id        String   @id @default(cuid())
+  contentId String
+  mediaId   String
+  fieldName String   // Which field in the content this media belongs to
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  // Relations
+  content   Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  media     Media    @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+
+  // Performance indexes
+  @@index([contentId])
+  @@index([mediaId])
+  @@index([fieldName])
+  @@unique([contentId, mediaId, fieldName])
+  @@map("content_media")
+}
+
+model ContentCategory {
+  id         String   @id @default(cuid())
+  contentId  String
+  categoryId String
+  createdAt  DateTime @default(now())
+
+  // Relations
+  content    Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  // Performance indexes
+  @@index([contentId])
+  @@index([categoryId])
+  @@unique([contentId, categoryId])
+  @@map("content_categories")
+}
+
+model ContentTag {
+  id        String   @id @default(cuid())
+  contentId String
+  tagId     String
+  createdAt DateTime @default(now())
+
+  // Relations
+  content   Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  // Performance indexes
+  @@index([contentId])
+  @@index([tagId])
+  @@unique([contentId, tagId])
+  @@map("content_tags")
+}
+
+model Media {
+  id             String   @id @default(cuid())
+  filename       String
+  originalName   String
+  mimeType       String
+  size           Int
+  path           String
+  url            String
+  alt            String?
+  caption        String?
+  width          Int?
+  height         Int?
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  createdBy      String
+  updatedBy      String
+
+  // Relations
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  creator        User         @relation("CreatedBy", fields: [createdBy], references: [id])
+  updater        User         @relation("UpdatedBy", fields: [updatedBy], references: [id])
+  content        ContentMedia[]
+
+  // Performance indexes
+  @@index([organizationId])
+  @@index([mimeType])
+  @@index([createdAt])
+  @@index([organizationId, createdAt])
+  @@map("media")
+}
+
+enum UserRole {
+  OWNER
+  EDITOR
+	VIEWER
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
