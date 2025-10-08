@@ -16,7 +16,7 @@ const Card = ({
   return (
     <div
       className={cn(
-        'bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden',
+        'bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden',
         hoverable &&
           'transition-all duration-300 hover:shadow-md hover:-translate-y-1',
         className
@@ -38,7 +38,10 @@ interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 const CardHeader = ({ children, className, ...props }: CardHeaderProps) => {
   return (
     <div
-      className={cn('p-4 md:p-6 border-b border-gray-200', className)}
+      className={cn(
+        'p-4 md:p-6 border-b border-gray-200 dark:border-gray-700',
+        className
+      )}
       role="heading"
       aria-level={2}
       {...props}
@@ -75,7 +78,7 @@ const CardFooter = ({ children, className, ...props }: CardFooterProps) => {
   return (
     <div
       className={cn(
-        'p-4 md:p-6 border-t border-gray-200 bg-gray-50',
+        'p-4 md:p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800',
         className
       )}
       {...props}
@@ -93,7 +96,10 @@ interface CardTitleProps extends React.HTMLAttributes<HTMLDivElement> {
 const CardTitle = ({ children, className, ...props }: CardTitleProps) => {
   return (
     <div
-      className={cn('text-lg font-semibold text-gray-900', className)}
+      className={cn(
+        'text-lg font-semibold text-gray-900 dark:text-white',
+        className
+      )}
       {...props}
     >
       {children}
