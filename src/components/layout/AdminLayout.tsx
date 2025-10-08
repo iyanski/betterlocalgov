@@ -1,4 +1,4 @@
-import { ReactNode, useState, useEffect, useContext } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Button from '../ui/Button';
 import {
@@ -22,8 +22,8 @@ import { useAuth } from '../../hooks/useAuth';
 import LoadingSpinner from '../ui/LoadingSpinner';
 import Stack from '../ui/Stack.tsx';
 import Icon from '../ui/Icon.tsx';
-import Toggle from '../ui/Toggle.tsx';
-import { ThemeContext } from '../../contexts/ThemeContext.tsx';
+import Toggle from '../ui/Toggle';
+import { useTheme } from '../../hooks/useTheme';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -44,12 +44,15 @@ const navigation = [
 ];
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
-  const { theme: currentTheme, setTheme } = useContext(ThemeContext);
   const { logout, isAuthenticated, isLoading } = useAuth();
+  const { isDark, setTheme } = useTheme();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log('currentTheme', currentTheme);
+
+  const handleThemeToggle = (checked: boolean) => {
+    setTheme(checked ? 'dark' : 'light');
+  };
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -66,14 +69,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     });
   };
 
-  const onChangeTheme = (checked: boolean) => {
-    setTheme(checked ? 'dark' : 'light');
-  };
-
   // Show loading spinner while checking authentication
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <LoadingSpinner size="lg" />
       </div>
     );
@@ -84,7 +83,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     return null;
   }
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Mobile sidebar */}
       <div
         className={`fixed inset-0 z-50 lg:hidden ${sidebarOpen ? 'block' : 'hidden'}`}
@@ -93,14 +92,17 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           className="fixed inset-0 bg-gray-600 bg-opacity-75"
           onClick={() => setSidebarOpen(false)}
         />
-        <div className="fixed inset-y-0 left-0 flex w-64 flex-col bg-white shadow-xl">
+        <div className="fixed inset-y-0 left-0 flex w-64 flex-col bg-white dark:bg-gray-800 shadow-xl">
           <div className="flex h-16 items-center justify-between px-4">
-            <Heading level={3} className="text-sm font-bold text-gray-900 mb-0">
+            <Heading
+              level={3}
+              className="text-sm font-bold text-gray-900 dark:text-white mb-0"
+            >
               BetterLocalGov
             </Heading>
             <button
               onClick={() => setSidebarOpen(false)}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100"
             >
               <X className="h-6 w-6" />
             </button>
@@ -117,8 +119,8 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   to={item.href!}
                   className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
                   }`}
                   onClick={() => setSidebarOpen(false)}
                 >
@@ -131,18 +133,20 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               );
             })}
           </nav>
-          <div className="border-t border-none p-4">
+          <div className="border-t border-gray-200 dark:border-gray-700 p-4">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <div className="h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center">
-                  <Users className="h-4 w-4 text-gray-600" />
+                <div className="h-8 w-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                  <Users className="h-4 w-4 text-gray-600 dark:text-gray-300" />
                 </div>
               </div>
               <div className="ml-3">
-                <Text className="text-sm font-medium text-gray-700">
+                <Text className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Admin User
                 </Text>
-                <Text className="text-xs text-gray-500">admin@example.com</Text>
+                <Text className="text-xs text-gray-500 dark:text-gray-400">
+                  admin@example.com
+                </Text>
               </div>
             </div>
             <Button onClick={handleLogout}>
@@ -161,18 +165,20 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
       {/* Desktop sidebar */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
-        <div className="flex flex-col flex-grow bg-white border-r border-none">
-          <div className="flex h-16 items-center px-4 border-b border-none">
-            <span className="text-md font-bold text-gray-900">
+        <div className="flex flex-col flex-grow bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
+          <div className="flex h-16 items-center px-4 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-md font-bold text-gray-900 dark:text-white">
               BetterLocalGov
             </span>
-            <Search className="h-4 w-4 ml-auto" />
+            <Search className="h-4 w-4 ml-auto text-gray-600 dark:text-gray-300" />
           </div>
           <nav className="flex-1 px-4 py-4 space-y-2">
             {navigation.map(item => {
               const isActive = location.pathname === item.href;
               if (item.separator) {
-                return <div className="bg-gray-200 my-4 mx-10" />;
+                return (
+                  <div className="bg-gray-200 dark:bg-gray-600 my-4 mx-10" />
+                );
               }
               return (
                 <Link
@@ -180,8 +186,8 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   to={item.href!}
                   className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
                   }`}
                 >
                   {item.icon && <item.icon className="mr-3 h-5 w-5" />}
@@ -202,18 +208,20 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               );
             })}
           </nav>
-          <div className="border-t border-none p-4">
-            <div className="flex items-center">
+          <div className="border-t border-gray-200 dark:border-gray-700 p-4">
+            <div className="flex items-center mb-4">
               <div className="flex-shrink-0">
-                <div className="h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center">
-                  <Users className="h-4 w-4 text-gray-600" />
+                <div className="h-8 w-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                  <Users className="h-4 w-4 text-gray-600 dark:text-gray-300" />
                 </div>
               </div>
               <div className="ml-3">
-                <Text className="text-sm font-medium text-gray-700">
+                <Text className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Admin User
                 </Text>
-                <Text className="text-xs text-gray-500">admin@example.com</Text>
+                <Text className="text-xs text-gray-500 dark:text-gray-400">
+                  admin@example.com
+                </Text>
               </div>
             </div>
             <Stack
@@ -232,14 +240,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                 <Globe className="mr-2 h-4 w-4" />
                 View Site
               </Button>
-              {/* <Button appearance="subtle" onClick={handleLogout}>
-                <LogOut className="mr-2 h-4 w-4" />
-                Sign out
-              </Button> */}
               <Toggle
-                checked={currentTheme === 'dark'}
-                onChange={onChangeTheme}
-                icon={currentTheme === 'dark' ? Moon : Sun}
+                checked={isDark}
+                onChange={handleThemeToggle}
+                icon={isDark ? Moon : Sun}
               />
             </Stack>
           </div>
@@ -249,10 +253,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       {/* Main content */}
       <div className="lg:pl-64">
         {/* Top bar */}
-        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-none bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 lg:hidden">
+        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 lg:hidden">
           <button
             type="button"
-            className="-m-2.5 p-2.5 text-gray-700 "
+            className="-m-2.5 p-2.5 text-gray-700 dark:text-gray-300"
             onClick={() => setSidebarOpen(true)}
           >
             <Menu className="h-6 w-6" />
@@ -260,7 +264,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </div>
 
         {/* Page content */}
-        <main className="p-6">{children}</main>
+        <main className="p-6 bg-white dark:bg-gray-900 min-h-screen">
+          {children}
+        </main>
       </div>
     </div>
   );

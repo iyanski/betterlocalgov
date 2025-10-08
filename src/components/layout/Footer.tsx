@@ -5,13 +5,24 @@ import {
   Instagram,
   Youtube,
   CheckCircle2,
+  Moon,
+  Sun,
 } from 'lucide-react';
 import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Toggle from '../ui/Toggle';
+import { useTheme } from '../../hooks/useTheme';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation('common');
+  const { isDark, setTheme } = useTheme();
+
+  const handleThemeToggle = (checked: boolean) => {
+    setTheme(checked ? 'dark' : 'light');
+  };
+
+  console.log('isDark', isDark);
 
   const getSocialIcon = (label: string) => {
     switch (label) {
@@ -120,6 +131,13 @@ const Footer: React.FC = () => {
               >
                 Accessibility
               </a>
+              <div className="flex items-center">
+                <Toggle
+                  checked={isDark}
+                  onChange={handleThemeToggle}
+                  icon={isDark ? Moon : Sun}
+                />
+              </div>
             </div>
           </div>
         </div>

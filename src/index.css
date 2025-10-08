@@ -31,3 +31,18 @@
 .sticky-table tbody tr:hover td:first-child {
   background-color: #f3f4f6;
 }
+
+/* Dark mode sticky table styling */
+.dark .sticky-table th:first-child,
+.dark .sticky-table td:first-child {
+  background-color: #1f2937;
+  border-right: 2px solid #4b5563;
+}
+
+.dark .sticky-table thead th:first-child {
+  background-color: #111827;
+}
+
+.dark .sticky-table tbody tr:hover td:first-child {
+  background-color: #374151;
+}

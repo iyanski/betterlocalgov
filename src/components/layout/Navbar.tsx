@@ -39,26 +39,26 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
       {/* Top bar with language switcher and additional links */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 flex justify-end items-center h-10">
           <div className="flex items-center space-x-4">
             <Link
               to="/join-us"
-              className="text-xs text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+              className="text-xs text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition-colors"
             >
               🚀 Join Us
             </Link>
             <Link
               to="/ideas"
-              className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
+              className="text-xs text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               Project Ideas
             </Link>
             <a
               href="https://www.gov.ph"
-              className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
+              className="text-xs text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               target="_blank"
               rel="noreferrer"
             >
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
 
             <Link
               to="/philippines/hotlines"
-              className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
+              className="text-xs text-gray-800 hover:text-primary-600 transition-colors dark:text-gray-300 dark:hover:text-primary-400"
             >
               Hotlines
             </Link>
@@ -93,17 +93,17 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <CheckCircle2 className="h-12 w-12 mr-3" />
+              <CheckCircle2 className="h-12 w-12 mr-3 text-black dark:text-white" />
               {/* <img
                 src="/ph-logo.webp"
                 alt="Philippines Coat of Arms"
                 className="h-12 w-12 mr-3"
               /> */}
               <div>
-                <div className="text-black font-bold">
+                <div className="text-black dark:text-white font-bold">
                   {import.meta.env.VITE_GOVERNMENT_NAME}
                 </div>
-                <div className="text-xs text-gray-800">
+                <div className="text-xs text-gray-800 dark:text-gray-300">
                   {t('site_description')}
                 </div>
               </div>
@@ -116,15 +116,15 @@ const Navbar: React.FC = () => {
               <div key={item.label} className="relative group">
                 <Link
                   to={item.href}
-                  className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                  className="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
                 >
                   {t(`navbar.${item.label.replace(' ', '').toLowerCase()}`)}
                   {item.children && (
-                    <ChevronDown className="ml-1 h-4 w-4 text-gray-800 group-hover:text-primary-600 transition-colors" />
+                    <ChevronDown className="ml-1 h-4 w-4 text-gray-800 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
                   )}
                 </Link>
                 {item.children && (
-                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black dark:ring-gray-600 ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <div
                       className="py-1"
                       role="menu"
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
                         <Link
                           key={child.label}
                           to={child.href}
-                          className="text-left block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                          className="text-left block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400"
                           role="menuitem"
                         >
                           {child.label}
@@ -149,13 +149,13 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               to="/about"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-primary-400"
             >
               About
             </Link>
             <Link
               to="/search"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-primary-400"
             >
               <Search className="h-4 w-4 mr-1" />
               Search

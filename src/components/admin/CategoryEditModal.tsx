@@ -92,12 +92,15 @@ export function CategoryEditModal({
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="fixed inset-0 bg-gray-500 bg-opacity-75"
+          className="fixed inset-0 bg-gray-500 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75"
           onClick={onClose}
         />
-        <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <Heading level={2} className="text-lg font-semibold">
+        <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+            <Heading
+              level={2}
+              className="text-lg font-semibold text-gray-900 dark:text-white"
+            >
               {category ? 'Edit Category' : 'Create Category'}
             </Heading>
           </div>
@@ -106,7 +109,7 @@ export function CategoryEditModal({
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
                 Name *
               </label>
@@ -115,8 +118,10 @@ export function CategoryEditModal({
                 id="name"
                 value={formData.name}
                 onChange={e => handleNameChange(e.target.value)}
-                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${
+                  errors.name
+                    ? 'border-red-500'
+                    : 'border-gray-300 dark:border-gray-600'
                 }`}
                 placeholder="Category name"
               />
@@ -128,7 +133,7 @@ export function CategoryEditModal({
             <div>
               <label
                 htmlFor="slug"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
                 Slug *
               </label>
@@ -139,8 +144,10 @@ export function CategoryEditModal({
                 onChange={e =>
                   setFormData(prev => ({ ...prev, slug: e.target.value }))
                 }
-                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors.slug ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${
+                  errors.slug
+                    ? 'border-red-500'
+                    : 'border-gray-300 dark:border-gray-600'
                 }`}
                 placeholder="category-slug"
               />
@@ -152,7 +159,7 @@ export function CategoryEditModal({
             <div>
               <label
                 htmlFor="description"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
                 Description
               </label>
@@ -166,7 +173,7 @@ export function CategoryEditModal({
                   }))
                 }
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                 placeholder="Category description"
               />
             </div>
@@ -174,7 +181,7 @@ export function CategoryEditModal({
             <div>
               <label
                 htmlFor="color"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
                 Color
               </label>
@@ -186,7 +193,7 @@ export function CategoryEditModal({
                   onChange={e =>
                     setFormData(prev => ({ ...prev, color: e.target.value }))
                   }
-                  className="w-12 h-10 border border-gray-300 rounded cursor-pointer"
+                  className="w-12 h-10 border border-gray-300 dark:border-gray-600 rounded cursor-pointer"
                 />
                 <input
                   type="text"
@@ -194,7 +201,7 @@ export function CategoryEditModal({
                   onChange={e =>
                     setFormData(prev => ({ ...prev, color: e.target.value }))
                   }
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   placeholder="#3B82F6"
                 />
               </div>
@@ -204,7 +211,7 @@ export function CategoryEditModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 disabled={loading}
               >
                 Cancel

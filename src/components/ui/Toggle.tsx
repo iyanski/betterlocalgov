@@ -51,7 +51,9 @@ export default function Toggle({
   return (
     <div className={cn('flex items-center space-x-3', className)}>
       {label && (
-        <label className="text-sm font-medium text-gray-700">{label}</label>
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          {label}
+        </label>
       )}
       <button
         type="button"
@@ -60,9 +62,11 @@ export default function Toggle({
         disabled={disabled}
         onClick={handleToggle}
         className={cn(
-          'relative inline-flex flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+          'relative inline-flex flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800',
           currentSize.container,
-          checked ? 'bg-blue-600' : 'bg-gray-200',
+          checked
+            ? 'bg-black-600 dark:bg-black-500'
+            : 'bg-gray-200 dark:bg-gray-600',
           disabled && 'opacity-50 cursor-not-allowed'
         )}
       >
@@ -75,15 +79,15 @@ export default function Toggle({
                   ? 'left-0.5 text-white'
                   : 'right-0.5 text-white'
                 : iconPosition === 'left'
-                  ? 'right-0.5 text-gray-500'
-                  : 'left-0.5 text-gray-500',
+                  ? 'right-0.5 text-gray-500 dark:text-gray-400'
+                  : 'left-0.5 text-gray-500 dark:text-gray-400',
               disabled && 'opacity-50'
             )}
           />
         )}
         <span
           className={cn(
-            'pointer-events-none inline-block rounded-full bg-white shadow transform ring-0 transition duration-200 ease-in-out',
+            'pointer-events-none inline-block rounded-full bg-white dark:bg-gray-200 shadow transform ring-0 transition duration-200 ease-in-out',
             currentSize.thumb,
             currentSize.translate
           )}

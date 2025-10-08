@@ -133,31 +133,31 @@ export default function Categories() {
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-50">
+              <thead className="bg-gray-50 dark:bg-gray-800">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                     Category
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                     Slug
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                     Content Count
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                     Created
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
                 {filteredCategories.length === 0 ? (
                   <tr>
                     <td
                       colSpan={5}
-                      className="px-6 py-12 text-center text-sm text-gray-500"
+                      className="px-6 py-12 text-center text-sm text-gray-500 dark:text-gray-400"
                     >
                       {searchTerm
                         ? 'No categories found matching your search.'
@@ -166,7 +166,10 @@ export default function Categories() {
                   </tr>
                 ) : (
                   filteredCategories.map(category => (
-                    <tr key={category.id} className="hover:bg-gray-50">
+                    <tr
+                      key={category.id}
+                      className="hover:bg-gray-50 dark:hover:bg-gray-800"
+                    >
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div
@@ -176,11 +179,11 @@ export default function Categories() {
                             }}
                           />
                           <div>
-                            <div className="text-sm font-medium text-gray-900">
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {category.name}
                             </div>
                             {category.description && (
-                              <div className="text-sm text-gray-500">
+                              <div className="text-sm text-gray-500 dark:text-gray-400">
                                 {category.description}
                               </div>
                             )}
@@ -188,17 +191,17 @@ export default function Categories() {
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           {category.slug}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           {category._count?.content || 0}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           {new Date(category.createdAt).toLocaleDateString()}
                         </div>
                       </td>
@@ -209,8 +212,8 @@ export default function Categories() {
                             disabled={!isAuthenticated}
                             className={`p-1 ${
                               isAuthenticated
-                                ? 'text-blue-600 hover:text-blue-900'
-                                : 'text-gray-400 cursor-not-allowed'
+                                ? 'text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300'
+                                : 'text-gray-400 dark:text-gray-500 cursor-not-allowed'
                             }`}
                             title={
                               isAuthenticated
@@ -225,8 +228,8 @@ export default function Categories() {
                             disabled={!isAuthenticated}
                             className={`p-1 ${
                               isAuthenticated
-                                ? 'text-red-600 hover:text-red-900'
-                                : 'text-gray-400 cursor-not-allowed'
+                                ? 'text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300'
+                                : 'text-gray-400 dark:text-gray-500 cursor-not-allowed'
                             }`}
                             title={
                               isAuthenticated
