@@ -5,6 +5,7 @@ import Services from './pages/Services';
 import Document from './pages/Document';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminLayout from './components/layout/AdminLayout';
+import AdminFullLayout from './components/layout/AdminFullLayout';
 import Layout from './components/layout/Layout';
 import AuthLayout from './components/layout/AuthLayout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -73,6 +74,14 @@ function App() {
                 }
               />
               <Route
+                path="/admin/documents/new"
+                element={
+                  <AdminFullLayout>
+                    <NewDocument />
+                  </AdminFullLayout>
+                }
+              />
+              <Route
                 path="/admin/*"
                 element={
                   <AdminLayout>
@@ -81,7 +90,6 @@ function App() {
                       <Route path="/dashboard" element={<AdminDashboard />} />
                       <Route path="/categories" element={<Categories />} />
                       <Route path="/documents" element={<Documents />} />
-                      <Route path="/documents/new" element={<NewDocument />} />
                       {/* Additional admin routes will be added here */}
                     </Routes>
                   </AdminLayout>
