@@ -46,3 +46,15 @@
 .dark .sticky-table tbody tr:hover td:first-child {
   background-color: #374151;
 }
+
+h1 {
+  @apply text-2xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
+}
+
+h3 {
+  @apply text-lg font-bold;
+}

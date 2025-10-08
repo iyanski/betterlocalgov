@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { useEffect } from 'react';
 
 interface SEOProps {
   title?: string;
@@ -35,71 +35,137 @@ export default function SEO({
     image || import.meta.env.VITE_OG_IMAGE_URL || `${fullUrl}/og-image.jpg`;
   const twitterHandle = import.meta.env.VITE_TWITTER_HANDLE || '';
 
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={fullDescription} />
-      <meta name="keywords" content={fullKeywords} />
-      <meta name="author" content={siteName} />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
+  useEffect(() => {
+    // Update document title
+    document.title = fullTitle;
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={fullDescription} />
-      <meta property="og:image" content={fullImage} />
-      <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_US" />
+    // Helper function to update or create meta tags
+    const updateMetaTag = (
+      selector: string,
+      content: string,
+      attribute: string = 'content'
+    ) => {
+      let element = document.querySelector(selector) as HTMLMetaElement;
+      if (!element) {
+        element = document.createElement('meta');
+        if (selector.includes('name=')) {
+          element.setAttribute(
+            'name',
+            selector.match(/name="([^"]+)"/)?.[1] || ''
+          );
+        } else if (selector.includes('property=')) {
+          element.setAttribute(
+            'property',
+            selector.match(/property="([^"]+)"/)?.[1] || ''
+          );
+        } else if (selector.includes('http-equiv=')) {
+          element.setAttribute(
+            'http-equiv',
+            selector.match(/http-equiv="([^"]+)"/)?.[1] || ''
+          );
+        }
+        document.head.appendChild(element);
+      }
+      element.setAttribute(attribute, content);
+    };
 
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={fullUrl} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={fullDescription} />
-      <meta property="twitter:image" content={fullImage} />
-      {twitterHandle && (
-        <meta property="twitter:site" content={twitterHandle} />
-      )}
+    // Helper function to update or create link tags
+    const updateLinkTag = (selector: string, href: string, rel: string) => {
+      let element = document.querySelector(selector) as HTMLLinkElement;
+      if (!element) {
+        element = document.createElement('link');
+        element.setAttribute('rel', rel);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('href', href);
+    };
 
-      {/* Additional Meta Tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="theme-color" content="#0066eb" />
+    // Basic Meta Tags
+    updateMetaTag('meta[name="description"]', fullDescription);
+    updateMetaTag('meta[name="keywords"]', fullKeywords);
+    updateMetaTag('meta[name="author"]', siteName);
+    updateMetaTag('meta[name="robots"]', 'index, follow');
+    updateMetaTag('meta[name="language"]', 'English');
+    updateMetaTag('meta[name="revisit-after"]', '7 days');
 
-      {/* Canonical URL */}
-      <link rel="canonical" href={fullUrl} />
+    // Open Graph / Facebook
+    updateMetaTag('meta[property="og:type"]', type);
+    updateMetaTag('meta[property="og:url"]', fullUrl);
+    updateMetaTag('meta[property="og:title"]', fullTitle);
+    updateMetaTag('meta[property="og:description"]', fullDescription);
+    updateMetaTag('meta[property="og:image"]', fullImage);
+    updateMetaTag('meta[property="og:site_name"]', siteName);
+    updateMetaTag('meta[property="og:locale"]', 'en_US');
 
-      {/* Favicon */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
+    // Twitter
+    updateMetaTag('meta[property="twitter:card"]', 'summary_large_image');
+    updateMetaTag('meta[property="twitter:url"]', fullUrl);
+    updateMetaTag('meta[property="twitter:title"]', fullTitle);
+    updateMetaTag('meta[property="twitter:description"]', fullDescription);
+    updateMetaTag('meta[property="twitter:image"]', fullImage);
 
-      {/* Preconnect to external domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="anonymous"
-      />
-    </Helmet>
-  );
+    if (twitterHandle) {
+      updateMetaTag('meta[property="twitter:site"]', twitterHandle);
+    }
+
+    // Additional Meta Tags
+    updateMetaTag(
+      'meta[name="viewport"]',
+      'width=device-width, initial-scale=1.0'
+    );
+    updateMetaTag(
+      'meta[http-equiv="Content-Type"]',
+      'text/html; charset=utf-8'
+    );
+    updateMetaTag('meta[name="theme-color"]', '#0066eb');
+
+    // Canonical URL
+    updateLinkTag('link[rel="canonical"]', fullUrl, 'canonical');
+
+    // Favicon
+    updateLinkTag(
+      'link[rel="icon"][type="image/x-icon"]',
+      '/favicon.ico',
+      'icon'
+    );
+    updateLinkTag(
+      'link[rel="apple-touch-icon"][sizes="180x180"]',
+      '/apple-touch-icon.png',
+      'apple-touch-icon'
+    );
+    updateLinkTag(
+      'link[rel="icon"][type="image/png"][sizes="32x32"]',
+      '/favicon-32x32.png',
+      'icon'
+    );
+    updateLinkTag(
+      'link[rel="icon"][type="image/png"][sizes="16x16"]',
+      '/favicon-16x16.png',
+      'icon'
+    );
+
+    // Preconnect to external domains
+    updateLinkTag(
+      'link[rel="preconnect"][href="https://fonts.googleapis.com"]',
+      'https://fonts.googleapis.com',
+      'preconnect'
+    );
+    updateLinkTag(
+      'link[rel="preconnect"][href="https://fonts.gstatic.com"]',
+      'https://fonts.gstatic.com',
+      'preconnect'
+    );
+  }, [
+    fullTitle,
+    fullDescription,
+    fullKeywords,
+    fullUrl,
+    fullImage,
+    twitterHandle,
+    type,
+    siteName,
+  ]);
+
+  // This component doesn't render anything visible
+  return null;
 }

@@ -56,32 +56,32 @@ export default function Login() {
   // Show loading spinner while checking authentication
   if (authLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <LoadingSpinner size="lg" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         {/* Header */}
         <div className="text-center">
-          <Heading level={2} className="text-gray-900">
+          <Heading level={2} className="text-gray-900 dark:text-gray-100">
             Admin Login
           </Heading>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Sign in to access the admin dashboard
           </p>
         </div>
 
         {/* Login Form */}
-        <Card className="shadow-lg">
+        <Card className="shadow-lg dark:shadow-gray-800/50">
           <CardHeader>
             <div className="text-center">
-              <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-blue-100">
+              <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
                 <svg
-                  className="h-6 w-6 text-blue-600"
+                  className="h-6 w-6 text-blue-600 dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -102,11 +102,11 @@ export default function Login() {
             <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Error Message */}
               {error && (
-                <div className="rounded-md bg-red-50 p-4">
+                <div className="rounded-md bg-red-50 dark:bg-red-900/20 p-4">
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <svg
-                        className="h-5 w-5 text-red-400"
+                        className="h-5 w-5 text-red-400 dark:text-red-500"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                         aria-hidden="true"
@@ -119,10 +119,10 @@ export default function Login() {
                       </svg>
                     </div>
                     <div className="ml-3">
-                      <h3 className="text-sm font-medium text-red-800">
+                      <h3 className="text-sm font-medium text-red-800 dark:text-red-200">
                         Login Error
                       </h3>
-                      <div className="mt-2 text-sm text-red-700">
+                      <div className="mt-2 text-sm text-red-700 dark:text-red-300">
                         <p>{error}</p>
                       </div>
                     </div>
@@ -134,7 +134,7 @@ export default function Login() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                 >
                   Email address
                 </label>
@@ -148,9 +148,9 @@ export default function Login() {
                     value={email}
                     onChange={handleEmailChange}
                     className={cn(
-                      'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm',
+                      'appearance-none block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100',
                       error &&
-                        'border-red-300 focus:ring-red-500 focus:border-red-500'
+                        'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500'
                     )}
                     placeholder="Enter your email"
                     disabled={isLoading}
@@ -162,7 +162,7 @@ export default function Login() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                 >
                   Password
                 </label>
@@ -176,9 +176,9 @@ export default function Login() {
                     value={password}
                     onChange={handlePasswordChange}
                     className={cn(
-                      'appearance-none block w-full px-3 py-2 pr-10 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm',
+                      'appearance-none block w-full px-3 py-2 pr-10 border border-gray-300 dark:border-gray-600 rounded-md placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100',
                       error &&
-                        'border-red-300 focus:ring-red-500 focus:border-red-500'
+                        'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500'
                     )}
                     placeholder="Enter your password"
                     disabled={isLoading}
@@ -191,7 +191,7 @@ export default function Login() {
                   >
                     {showPassword ? (
                       <svg
-                        className="h-5 w-5 text-gray-400 hover:text-gray-600"
+                        className="h-5 w-5 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -205,7 +205,7 @@ export default function Login() {
                       </svg>
                     ) : (
                       <svg
-                        className="h-5 w-5 text-gray-400 hover:text-gray-600"
+                        className="h-5 w-5 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -234,10 +234,10 @@ export default function Login() {
                   type="submit"
                   disabled={isLoading || !email || !password}
                   className={cn(
-                    'group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors',
+                    'group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 transition-colors',
                     isLoading || !email || !password
-                      ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500'
+                      ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
+                      : 'bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-blue-500'
                   )}
                 >
                   {isLoading ? (
@@ -249,7 +249,7 @@ export default function Login() {
                     <>
                       <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                         <svg
-                          className="h-5 w-5 text-blue-500 group-hover:text-blue-400"
+                          className="h-5 w-5 text-blue-500 dark:text-blue-400 group-hover:text-blue-400 dark:group-hover:text-blue-300"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           aria-hidden="true"
@@ -268,11 +268,11 @@ export default function Login() {
               </div>
 
               {/* Demo Credentials Info */}
-              <div className="mt-6 p-4 bg-blue-50 rounded-md">
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-md">
                 <div className="flex">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-5 w-5 text-blue-400"
+                      className="h-5 w-5 text-blue-400 dark:text-blue-500"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       aria-hidden="true"
@@ -285,10 +285,10 @@ export default function Login() {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-blue-800">
+                    <h3 className="text-sm font-medium text-blue-800 dark:text-blue-200">
                       Demo Credentials
                     </h3>
-                    <div className="mt-2 text-sm text-blue-700">
+                    <div className="mt-2 text-sm text-blue-700 dark:text-blue-300">
                       <p>For testing purposes, you can use:</p>
                       <p className="mt-1 font-mono">
                         Email: admin@example.com
@@ -305,7 +305,7 @@ export default function Login() {
 
         {/* Footer */}
         <div className="text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
             Better Local Government Admin Portal
           </p>
         </div>

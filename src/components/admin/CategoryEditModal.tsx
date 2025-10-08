@@ -82,7 +82,7 @@ export function CategoryEditModal({
     setFormData(prev => ({
       ...prev,
       name,
-      slug: prev.slug || generateSlug(name),
+      slug: generateSlug(name),
     }));
   };
 
@@ -98,7 +98,7 @@ export function CategoryEditModal({
         <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full">
           <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
             <Heading
-              level={2}
+              level={3}
               className="text-lg font-semibold text-gray-900 dark:text-white"
             >
               {category ? 'Edit Category' : 'Create Category'}
@@ -132,6 +132,28 @@ export function CategoryEditModal({
 
             <div>
               <label
+                htmlFor="description"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              >
+                Description
+              </label>
+              <textarea
+                id="description"
+                value={formData.description}
+                onChange={e =>
+                  setFormData(prev => ({
+                    ...prev,
+                    description: e.target.value,
+                  }))
+                }
+                rows={3}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                placeholder="Category description"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="slug"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
@@ -154,28 +176,6 @@ export function CategoryEditModal({
               {errors.slug && (
                 <Text className="text-red-500 text-sm mt-1">{errors.slug}</Text>
               )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-              >
-                Description
-              </label>
-              <textarea
-                id="description"
-                value={formData.description}
-                onChange={e =>
-                  setFormData(prev => ({
-                    ...prev,
-                    description: e.target.value,
-                  }))
-                }
-                rows={3}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                placeholder="Category description"
-              />
             </div>
 
             <div>

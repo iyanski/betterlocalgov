@@ -7,7 +7,7 @@ import {
 import { Edit3, Eye, Plus } from 'lucide-react';
 import Stack from '../../../components/ui/Stack';
 import Button from '../../../components/ui/Button';
-
+import { Link } from 'react-router-dom';
 export default function Documents() {
   const recentDocuments = [
     {
@@ -44,10 +44,12 @@ export default function Documents() {
       <CardHeader>
         <Stack direction="horizontal" justify="between" align="center">
           <CardTitle>Documents</CardTitle>
-          <Button href="/admin/documents/new">
-            <Plus className="h-4 w-4 mr-2" />
-            New Document
-          </Button>
+          <Link to="/admin/documents/new">
+            <Button>
+              <Plus className="h-4 w-4 mr-2" />
+              New Document
+            </Button>
+          </Link>
         </Stack>
       </CardHeader>
       <CardContent className="p-0">

@@ -183,7 +183,7 @@ export default function Categories() {
                               {category.name}
                             </div>
                             {category.description && (
-                              <div className="text-sm text-gray-500 dark:text-gray-400">
+                              <div className="text-sm text-gray-500 dark:text-gray-400 truncate w-[50ch]">
                                 {category.description}
                               </div>
                             )}

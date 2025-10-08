@@ -1,0 +1,100 @@
+:root {
+  --block-width: 780px;
+  /* Change this value to set your desired block width */
+}
+
+/* Apply the block width to EditorJS elements */
+.ce-block__content,
+/* Content inside each block */
+.ce-block,
+/* The block wrapper */
+.codex-editor__redactor,
+/* Main editing area */
+.ce-toolbar__content {
+  /* Toolbar content for editing */
+  max-width: var(--block-width);
+  /* Use the block width set in :root */
+  width: var(--block-width);
+  /* Apply the block width */
+  margin: 0 auto;
+  padding: 0;
+  /* Center the blocks */
+}
+
+/* Adjust the toolbar position in narrow mode (optional) */
+.codex-editor--narrow .ce-toolbar__actions {
+  right: -40px;
+  /* Adjust toolbar position as needed */
+}
+
+/* TitleInput placeholder styling */
+[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+[contenteditable]:empty.dark:before {
+  color: #6b7280;
+}
+
+/* EditorJS dark mode styling */
+.dark .ce-block__content,
+.dark .ce-paragraph,
+.dark .ce-header,
+.dark .ce-list,
+.dark .ce-code,
+.dark .ce-table,
+.dark .ce-inline-toolbar,
+.dark .ce-toolbar,
+.dark .ce-popover,
+.dark .ce-conversion-toolbar {
+  color: white !important;
+}
+
+.dark .ce-toolbar__plus,
+.dark .ce-toolbar__settings,
+.dark .ce-toolbar__plus svg,
+.dark .ce-toolbar__settings-btn svg {
+  color: white !important;
+}
+
+.dark .ce-toolbar__plus:hover,
+.dark .ce-toolbar__settings:hover,
+.dark .ce-toolbar__plus:hover,
+.dark .ce-toolbar__settings-btn:hover {
+  background-color: #374151 !important;
+}
+
+.dark .ce-block__content p,
+.dark .ce-block__content h1,
+.dark .ce-block__content h2,
+.dark .ce-block__content h3,
+.dark .ce-block__content h4,
+.dark .ce-block__content h5,
+.dark .ce-block__content h6,
+.dark .ce-block__content li,
+.dark .ce-block__content td,
+.dark .ce-block__content th {
+  color: white !important;
+}
+
+/* Dark mode text selection styling */
+.dark ::selection {
+  background-color: #374151 !important;
+  /* Darker gray for selection */
+  color: white !important;
+}
+
+.dark ::-moz-selection {
+  background-color: #374151 !important;
+  /* Firefox support */
+  color: white !important;
+}
+
+.dark ::selection,
+.dark .ce-block--selected .ce-block__content {
+  background-color: #374151 !important;
+  /* Firefox support */
+  color: white !important;
+}

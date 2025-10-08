@@ -35,8 +35,8 @@ export default function FeatureImageUpload({
       {!uploadedImage ? (
         <label className="flex items-center justify-start cursor-pointer">
           <div className="flex items-center">
-            <Plus className="h-6 w-6 text-gray-400 dark:text-gray-500 mr-2" />
-            <span className="text-gray-500 dark:text-gray-400 text-sm">
+            <Plus className="h-4 w-4 text-gray-400 dark:text-gray-500 mr-2" />
+            <span className="text-gray-500 dark:text-gray-400 text-xs hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
               Add feature image
             </span>
             <Image className="h-4 w-4 text-gray-400 dark:text-gray-500 ml-2" />
