@@ -1,12 +1,8 @@
-@import 'react-datepicker/dist/react-datepicker.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* @tailwind typography; */
-
-/* React DatePicker styles */
-
 /* Custom DatePicker dark mode styles */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
 .dark .react-datepicker {
   background-color: #1f2937 !important;
   border-color: #4b5563 !important;
@@ -51,8 +47,16 @@
   color: #6b7280 !important;
 }
 
+.dark .react-datepicker-time__header {
+  color: #ffffff !important;
+}
+
 .dark .react-datepicker__day--disabled {
   color: #6b7280 !important;
+}
+
+.react-datepicker__current-month {
+  align-items: center;
 }
 
 .dark .react-datepicker__navigation {
@@ -87,60 +91,4 @@
 .dark .react-datepicker__time-list-item--selected {
   background-color: #10b981 !important;
   color: #ffffff !important;
-}
-
-/* Checklist styling */
-.task-list-item {
-  @apply text-base text-gray-700 leading-relaxed relative flex items-start gap-3 font-sans rounded-md mb-5 transition-all duration-200 border border-transparent cursor-pointer items-center;
-}
-
-/* Sticky table styling */
-.sticky-table {
-  min-width: max-content;
-}
-
-.sticky-table th:first-child,
-.sticky-table td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 10;
-  width: var(--first-col-width, 12rem);
-  min-width: var(--first-col-width, 12rem);
-  background-color: white;
-  border-right: 2px solid #9ca3af;
-}
-
-.sticky-table thead th:first-child {
-  background-color: #f9fafb;
-}
-
-.sticky-table tbody tr:hover td:first-child {
-  background-color: #f3f4f6;
-}
-
-/* Dark mode sticky table styling */
-.dark .sticky-table th:first-child,
-.dark .sticky-table td:first-child {
-  background-color: #1f2937;
-  border-right: 2px solid #4b5563;
-}
-
-.dark .sticky-table thead th:first-child {
-  background-color: #111827;
-}
-
-.dark .sticky-table tbody tr:hover td:first-child {
-  background-color: #374151;
-}
-
-h1 {
-  @apply text-2xl font-bold;
-}
-
-h2 {
-  @apply text-xl font-bold;
-}
-
-h3 {
-  @apply text-lg font-bold;
 }

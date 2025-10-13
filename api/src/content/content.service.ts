@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  NotFoundException,
-  ConflictException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateContentDto } from './dto/create-content.dto';
 import { UpdateContentDto } from './dto/update-content.dto';
@@ -22,7 +18,7 @@ interface ContentQuery {
 interface ContentCreateData {
   title: string;
   slug: string;
-  content: Prisma.InputJsonValue;
+  content?: Prisma.InputJsonValue;
   contentTypeId: string;
   organizationId: string;
   createdBy: string;
@@ -52,8 +48,8 @@ interface ContentWhereClause {
 }
 
 interface ContentUpdateData {
-  title?: string;
-  slug?: string;
+  title: string;
+  slug: string;
   content?: Prisma.InputJsonValue;
   status?: ContentStatus;
   updatedBy: string;
@@ -73,7 +69,56 @@ export class ContentService {
     private queryCache: QueryCacheService,
   ) {}
 
-  async create(createContentDto: CreateContentDto, userId: string) {
+  /**
+   * Generates a unique slug by appending a number suffix when the base slug already exists
+   */
+  private async generateUniqueSlug(baseSlug: string): Promise<string> {
+    let counter = 1;
+    let slug = `${baseSlug}-${counter}`;
+    let isUnique = false;
+
+    while (!isUnique) {
+      const existingContent = await this.prisma.content.findFirst({
+        where: {
+          slug,
+        },
+      });
+
+      if (!existingContent) {
+        isUnique = true;
+        return slug;
+      }
+
+      counter++;
+      slug = `${baseSlug}-${counter}`;
+    }
+
+    // This should never be reached, but TypeScript requires a return statement
+    return slug;
+  }
+
+  async create(
+    createContentDto: CreateContentDto,
+    userId: string,
+    organizationId: string,
+  ) {
+    createContentDto.organizationId = organizationId;
+
+    if (!createContentDto.organizationId) {
+      const organization = await this.prisma.organization.findFirst({
+        where: {
+          users: {
+            some: { id: userId },
+          },
+        },
+      });
+      if (!organization) {
+        throw new NotFoundException('Organization not found');
+      }
+      createContentDto.organizationId = organization.id;
+    }
+
+    // Check if the provided slug already exists
     const existingContent = await this.prisma.content.findFirst({
       where: {
         organizationId: createContentDto.organizationId,
@@ -81,12 +126,17 @@ export class ContentService {
       },
     });
 
+    // Only generate a unique slug if there's a conflict
     if (existingContent) {
-      throw new ConflictException('Content with this slug already exists');
+      const uniqueSlug = await this.generateUniqueSlug(createContentDto.slug);
+      createContentDto.slug = uniqueSlug;
     }
 
-    const contentType = await this.prisma.contentType.findUnique({
-      where: { id: createContentDto.contentTypeId },
+    const contentType = await this.prisma.contentType.findFirst({
+      where: {
+        slug: 'document',
+        organizationId: createContentDto.organizationId,
+      },
     });
 
     if (!contentType) {
@@ -97,12 +147,14 @@ export class ContentService {
     const contentData: ContentCreateData = {
       title: createContentDto.title,
       slug: createContentDto.slug,
-      content: createContentDto.content,
-      contentTypeId: createContentDto.contentTypeId,
+      content: createContentDto.content ?? undefined,
+      contentTypeId: contentType.id,
       organizationId: createContentDto.organizationId,
       createdBy: userId,
       updatedBy: userId,
     };
+
+    console.log(contentData);
 
     // Add categories if provided
     if (
@@ -463,14 +515,15 @@ export class ContentService {
     ) {
       const slugConflict = await this.prisma.content.findFirst({
         where: {
-          organizationId,
           slug: updateContentDto.slug,
           id: { not: id },
         },
       });
 
+      // Only generate a unique slug if there's a conflict
       if (slugConflict) {
-        throw new ConflictException('Content with this slug already exists');
+        const uniqueSlug = await this.generateUniqueSlug(updateContentDto.slug);
+        updateContentDto.slug = uniqueSlug;
       }
     }
 
@@ -484,14 +537,15 @@ export class ContentService {
     });
 
     // Prepare update data
-    const { categoryIds, tagIds, ...updateContentDtoWithoutIds } =
-      updateContentDto;
-    void categoryIds;
-    void tagIds;
     const updateData: ContentUpdateData = {
-      ...updateContentDtoWithoutIds,
+      title: updateContentDto.title || existingContent.title,
+      slug: updateContentDto.slug || existingContent.slug,
+      content: updateContentDto.content,
+      status: updateContentDto.status,
       updatedBy: userId,
     };
+
+    // Note: excerpt field is not available in the current schema
 
     // Add categories if provided
     if (

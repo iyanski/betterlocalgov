@@ -143,6 +143,7 @@ describe('ContentController', () => {
       expect(contentService.create).toHaveBeenCalledWith(
         createContentDto,
         mockUser.id,
+        mockUser.organizationId,
       );
       expect(result).toEqual(mockContent);
     });
@@ -163,21 +164,21 @@ describe('ContentController', () => {
       expect(contentService.create).toHaveBeenCalledWith(
         createDtoWithoutRelations,
         mockUser.id,
+        mockUser.organizationId,
       );
       expect(result).toEqual(mockContent);
     });
 
-    it('should throw ConflictException if content with same slug exists', async () => {
-      mockContentService.create.mockRejectedValue(
-        new ConflictException('Content with slug already exists'),
-      );
+    it('should create content with unique slug if slug already exists', async () => {
+      mockContentService.create.mockResolvedValue(mockContent);
 
-      await expect(
-        controller.create(createContentDto, mockRequest),
-      ).rejects.toThrow(ConflictException);
+      const result = await controller.create(createContentDto, mockRequest);
+
+      expect(result).toEqual(mockContent);
       expect(contentService.create).toHaveBeenCalledWith(
         createContentDto,
         mockUser.id,
+        mockUser.organizationId,
       );
     });
 
@@ -192,6 +193,7 @@ describe('ContentController', () => {
       expect(contentService.create).toHaveBeenCalledWith(
         createContentDto,
         ownerRequest.user.id,
+        ownerRequest.user.organizationId,
       );
       expect(result).toEqual(mockContent);
     });
@@ -434,14 +436,16 @@ describe('ContentController', () => {
       );
     });
 
-    it('should throw ConflictException if slug already exists', async () => {
-      mockContentService.update.mockRejectedValue(
-        new ConflictException('Content with slug already exists'),
+    it('should update content with unique slug if slug already exists', async () => {
+      mockContentService.update.mockResolvedValue(mockContent);
+
+      const result = await controller.update(
+        'content-1',
+        updateContentDto,
+        mockRequest,
       );
 
-      await expect(
-        controller.update('content-1', updateContentDto, mockRequest),
-      ).rejects.toThrow(ConflictException);
+      expect(result).toEqual(mockContent);
       expect(contentService.update).toHaveBeenCalledWith(
         'content-1',
         updateContentDto,
@@ -754,6 +758,8 @@ describe('ContentController', () => {
           content: {},
           contentTypeId: 'type-1',
           organizationId: 'org-1',
+          categoryIds: [],
+          tagIds: [],
         },
         differentUserRequest,
       );
@@ -761,6 +767,7 @@ describe('ContentController', () => {
       expect(contentService.create).toHaveBeenCalledWith(
         expect.any(Object),
         'different-user',
+        'org-1',
       );
     });
   });
@@ -787,6 +794,8 @@ describe('ContentController', () => {
             content: {},
             contentTypeId: 'type-1',
             organizationId: 'org-1',
+            categoryIds: [],
+            tagIds: [],
           },
           mockRequest,
         ),

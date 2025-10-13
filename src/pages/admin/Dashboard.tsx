@@ -57,7 +57,7 @@ export default function AdminDashboard() {
       title: 'Create New Document',
       description: 'Add a new service document',
       icon: Plus,
-      href: '/admin/documents/new',
+      href: '/admin/documents/new#editor/document',
       color: 'bg-blue-500 hover:bg-blue-600',
     },
     {

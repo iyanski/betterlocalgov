@@ -5,11 +5,14 @@ import {
   getCategorySubcategories,
 } from '../data/yamlLoader';
 import { loadMarkdownContent } from '../lib/markdownLoader';
+import { apiService } from '../services/api';
 import {
-  apiService,
+  adminApiService,
+  CreateContentDto,
   CreateCategoryDto,
   UpdateCategoryDto,
-} from '../services/api';
+  UpdateContentDto,
+} from '../services/admin.api';
 
 // Generic hook for API data loading with loading states and error handling
 export function useApiData<T>(
@@ -78,8 +81,20 @@ export function useMarkdownContent(documentSlug: string) {
 }
 
 // Hook for API categories (direct from API)
-export function useApiCategories() {
-  return useApiData(() => apiService.getCategories(), []);
+export function useApiCategories({
+  isAdmin,
+  authToken,
+}: {
+  isAdmin: boolean;
+  authToken?: string;
+}) {
+  return useApiData(
+    () =>
+      isAdmin
+        ? adminApiService.getCategories(authToken || '')
+        : apiService.getCategories(),
+    []
+  );
 }
 
 // Hook for category CRUD operations
@@ -88,10 +103,16 @@ export function useCategoryCrud(authToken?: string) {
   const [error, setError] = useState<string | null>(null);
 
   const createCategory = async (categoryData: CreateCategoryDto) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
     try {
       setLoading(true);
       setError(null);
-      const result = await apiService.createCategory(categoryData, authToken);
+      const result = await adminApiService.createCategory(
+        categoryData,
+        authToken
+      );
       return result;
     } catch (err) {
       const errorMessage =
@@ -107,10 +128,13 @@ export function useCategoryCrud(authToken?: string) {
     id: string,
     categoryData: UpdateCategoryDto
   ) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
     try {
       setLoading(true);
       setError(null);
-      const result = await apiService.updateCategory(
+      const result = await adminApiService.updateCategory(
         id,
         categoryData,
         authToken
@@ -127,10 +151,13 @@ export function useCategoryCrud(authToken?: string) {
   };
 
   const deleteCategory = async (id: string) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
     try {
       setLoading(true);
       setError(null);
-      await apiService.deleteCategory(id, authToken);
+      await adminApiService.deleteCategory(id, authToken);
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : 'Failed to delete category';
@@ -150,6 +177,21 @@ export function useCategoryCrud(authToken?: string) {
   };
 }
 
+// Hook for API tags
+export function useApiTags({
+  isAdmin,
+  authToken,
+}: {
+  isAdmin: boolean;
+  authToken?: string;
+}) {
+  return useApiData(
+    () =>
+      isAdmin ? adminApiService.getTags(authToken || '') : apiService.getTags(),
+    []
+  );
+}
+
 // Hook for API content by category
 export function useApiContentByCategory(
   categorySlug: string,
@@ -164,4 +206,117 @@ export function useApiContentByCategory(
 // Hook for API content by slug
 export function useApiContentBySlug(slug: string) {
   return useApiData(() => apiService.getContentBySlug(slug), [slug]);
+}
+
+// Hook for API content types
+export function useApiContentTypes({
+  isAdmin,
+  authToken,
+}: {
+  isAdmin: boolean;
+  authToken?: string;
+}) {
+  return useApiData(
+    () =>
+      isAdmin
+        ? adminApiService.getContentTypes(authToken || '')
+        : apiService.getContentTypes(),
+    []
+  );
+}
+
+export function useContentCrud(authToken?: string) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const getContent = async (id: string) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await apiService.getContentById(id);
+      return result;
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to get content';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const createContent = async (contentData: CreateContentDto) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await adminApiService.createContent(
+        contentData,
+        authToken
+      );
+      return result;
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to create content';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const updateContent = async (id: string, contentData: UpdateContentDto) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await adminApiService.updateContent(
+        id,
+        contentData,
+        authToken
+      );
+      return result;
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to update content';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteContent = async (id: string) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      await adminApiService.deleteContent(id, authToken);
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to delete content';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return {
+    getContent,
+    createContent,
+    updateContent,
+    deleteContent,
+    loading,
+    error,
+  };
 }

@@ -6,7 +6,7 @@ import { QueryCacheService } from '../common/services/query-cache.service';
 import { CreateContentDto } from './dto/create-content.dto';
 import { UpdateContentDto } from './dto/update-content.dto';
 import { ContentStatus } from '@prisma/client';
-import { NotFoundException, ConflictException } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 
 describe('ContentService', () => {
   let service: ContentService;
@@ -152,7 +152,7 @@ describe('ContentService', () => {
       });
       mockPrismaService.content.create.mockResolvedValue(mockContent);
 
-      const result = await service.create(createDto, 'user-1');
+      const result = await service.create(createDto, 'user-1', 'org-1');
 
       expect(mockPrismaService.content.findFirst).toHaveBeenCalledWith({
         where: {
@@ -239,21 +239,12 @@ describe('ContentService', () => {
       expect(result).toEqual(mockContent);
     });
 
-    it('should throw ConflictException if content with same slug exists in organization', async () => {
-      mockPrismaService.content.findFirst.mockResolvedValue(mockContent);
+    it('should use original slug if no conflict exists', async () => {
+      // Reset mocks to ensure clean state
+      jest.clearAllMocks();
+      jest.resetAllMocks();
 
-      await expect(service.create(createDto, 'user-1')).rejects.toThrow(
-        ConflictException,
-      );
-      expect(mockPrismaService.content.create).not.toHaveBeenCalled();
-    });
-
-    it('should create content without categories and tags when not provided', async () => {
-      const createDtoWithoutRelations = {
-        ...createDto,
-        categoryIds: undefined,
-        tagIds: undefined,
-      };
+      // No existing content found, so no conflict
       mockPrismaService.content.findFirst.mockResolvedValue(null);
       mockPrismaService.contentType.findUnique.mockResolvedValue({
         id: 'content-type-1',
@@ -262,23 +253,100 @@ describe('ContentService', () => {
       });
       mockPrismaService.content.create.mockResolvedValue(mockContent);
 
-      await service.create(createDtoWithoutRelations, 'user-1');
+      const result = await service.create(createDto, 'user-1', 'org-1');
 
-      expect(mockPrismaService.content.create).toHaveBeenCalledWith({
-        data: {
-          title: 'New Content',
-          slug: 'new-content',
-          content: {
-            title: 'New Content',
-            content: 'This is new content',
-          },
-          contentTypeId: 'content-type-1',
-          organizationId: 'org-1',
-          createdBy: 'user-1',
-          updatedBy: 'user-1',
-        },
-        include: expect.any(Object),
+      expect(result).toEqual(mockContent);
+      expect(mockPrismaService.content.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            slug: 'new-content', // Should use original slug since no conflict
+          }),
+        }),
+      );
+    });
+
+    it('should generate unique slug if content with same slug exists in organization', async () => {
+      // Reset mocks to ensure clean state
+      jest.clearAllMocks();
+      jest.resetAllMocks();
+
+      // First call returns existing content (conflict found), second call returns null (unique slug found)
+      mockPrismaService.content.findFirst
+        .mockResolvedValueOnce(mockContent) // First check finds existing content
+        .mockResolvedValueOnce(null); // Second check finds no content with slug-1
+      mockPrismaService.contentType.findUnique.mockResolvedValue({
+        id: 'content-type-1',
+        name: 'Blog Post',
+        slug: 'blog-post',
       });
+      mockPrismaService.content.create.mockResolvedValue(mockContent);
+
+      const result = await service.create(createDto, 'user-1', 'org-1');
+
+      expect(result).toEqual(mockContent);
+      expect(mockPrismaService.content.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            slug: 'new-content-1', // Should append -1 to make it unique
+          }),
+        }),
+      );
+    });
+
+    it('should create content without categories and tags when not provided', async () => {
+      // Reset mocks to ensure clean state
+      jest.clearAllMocks();
+      jest.resetAllMocks();
+
+      // Create a fresh DTO to avoid mutation issues
+      const createDtoWithoutRelations: CreateContentDto = {
+        title: 'New Content',
+        slug: 'new-content',
+        content: {
+          title: 'New Content',
+          content: 'This is new content',
+        },
+        contentTypeId: 'content-type-1',
+        organizationId: 'org-1',
+        categoryIds: [],
+        tagIds: [],
+      };
+
+      // Mock the conflict check to return null (no conflict)
+      mockPrismaService.content.findFirst.mockResolvedValue(null);
+      mockPrismaService.contentType.findUnique.mockResolvedValue({
+        id: 'content-type-1',
+        name: 'Blog Post',
+        slug: 'blog-post',
+      });
+      mockPrismaService.content.create.mockResolvedValue(mockContent);
+
+      await service.create(createDtoWithoutRelations, 'user-1', 'org-1');
+
+      // Verify that findFirst was called to check for conflicts
+      expect(mockPrismaService.content.findFirst).toHaveBeenCalledWith({
+        where: {
+          organizationId: 'org-1',
+          slug: 'new-content',
+        },
+      });
+
+      expect(mockPrismaService.content.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            title: 'New Content',
+            slug: 'new-content',
+            content: {
+              title: 'New Content',
+              content: 'This is new content',
+            },
+            contentTypeId: 'content-type-1',
+            organizationId: 'org-1',
+            createdBy: 'user-1',
+            updatedBy: 'user-1',
+          }),
+        }),
+      );
     });
   });
 
@@ -666,82 +734,28 @@ describe('ContentService', () => {
       expect(mockPrismaService.contentTag.deleteMany).toHaveBeenCalledWith({
         where: { contentId: 'content-1' },
       });
-      expect(mockPrismaService.content.update).toHaveBeenCalledWith({
-        where: {
-          id: 'content-1',
-          organizationId: 'org-1',
-        },
-        data: {
-          title: 'Updated Content',
-          content: {
+      expect(mockPrismaService.content.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({
+            id: 'content-1',
+            organizationId: 'org-1',
+          }),
+          data: expect.objectContaining({
             title: 'Updated Content',
-            content: 'This is updated content',
-          },
-          updatedBy: 'user-1',
-          categories: {
-            create: [{ categoryId: 'category-2' }],
-          },
-          tags: {
-            create: [{ tagId: 'tag-2' }],
-          },
-        },
-        include: {
-          categories: {
-            include: {
-              category: {
-                select: {
-                  color: true,
-                  id: true,
-                  name: true,
-                  slug: true,
-                },
-              },
+            content: {
+              title: 'Updated Content',
+              content: 'This is updated content',
             },
-          },
-          contentType: {
-            select: {
-              id: true,
-              name: true,
-              slug: true,
+            updatedBy: 'user-1',
+            categories: {
+              create: [{ categoryId: 'category-2' }],
             },
-          },
-          creator: {
-            select: {
-              firstName: true,
-              id: true,
-              lastName: true,
-              username: true,
+            tags: {
+              create: [{ tagId: 'tag-2' }],
             },
-          },
-          organization: {
-            select: {
-              id: true,
-              name: true,
-              slug: true,
-            },
-          },
-          tags: {
-            include: {
-              tag: {
-                select: {
-                  color: true,
-                  id: true,
-                  name: true,
-                  slug: true,
-                },
-              },
-            },
-          },
-          updater: {
-            select: {
-              firstName: true,
-              id: true,
-              lastName: true,
-              username: true,
-            },
-          },
-        },
-      });
+          }),
+        }),
+      );
       expect(result).toEqual({ ...mockContent, ...updateDto });
     });
 
@@ -753,17 +767,96 @@ describe('ContentService', () => {
       ).rejects.toThrow(NotFoundException);
     });
 
-    it('should throw ConflictException if slug already exists in organization', async () => {
+    it('should use original slug if no conflict exists during update', async () => {
+      // Reset mocks to ensure clean state
+      jest.clearAllMocks();
+      jest.resetAllMocks();
+
+      const updateDtoWithSlug = {
+        ...updateDto,
+        slug: 'new-slug',
+      };
+      mockPrismaService.content.findUnique.mockResolvedValue(mockContent);
+      // No conflict found
+      mockPrismaService.content.findFirst.mockResolvedValue(null);
+      mockPrismaService.contentCategory.deleteMany.mockResolvedValue({
+        count: 0,
+      });
+      mockPrismaService.contentTag.deleteMany.mockResolvedValue({
+        count: 0,
+      });
+      mockPrismaService.content.update.mockResolvedValue({
+        ...mockContent,
+        ...updateDtoWithSlug,
+      });
+
+      const result = await service.update(
+        'content-1',
+        updateDtoWithSlug,
+        'user-1',
+        'org-1',
+      );
+
+      expect(result).toEqual({
+        ...mockContent,
+        ...updateDtoWithSlug,
+      });
+      expect(mockPrismaService.content.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({ id: 'content-1' }),
+          data: expect.objectContaining({
+            slug: 'new-slug', // Should use original slug since no conflict
+          }),
+        }),
+      );
+    });
+
+    it('should generate unique slug if slug already exists in organization', async () => {
+      // Reset mocks to ensure clean state
+      jest.clearAllMocks();
+      jest.resetAllMocks();
+
       const updateDtoWithSlug = {
         ...updateDto,
         slug: 'existing-slug',
       };
       mockPrismaService.content.findUnique.mockResolvedValue(mockContent);
-      mockPrismaService.content.findFirst.mockResolvedValue(mockContent);
+      // First call returns existing content (conflict found), second call returns null (unique slug found)
+      mockPrismaService.content.findFirst
+        .mockResolvedValueOnce(mockContent) // First check finds existing content
+        .mockResolvedValueOnce(null); // Second check finds no content with existing-slug-1
+      mockPrismaService.contentCategory.deleteMany.mockResolvedValue({
+        count: 0,
+      });
+      mockPrismaService.contentTag.deleteMany.mockResolvedValue({
+        count: 0,
+      });
+      mockPrismaService.content.update.mockResolvedValue({
+        ...mockContent,
+        ...updateDtoWithSlug,
+        slug: 'existing-slug-1', // Should append -1 to make it unique
+      });
 
-      await expect(
-        service.update('content-1', updateDtoWithSlug, 'user-1', 'org-1'),
-      ).rejects.toThrow(ConflictException);
+      const result = await service.update(
+        'content-1',
+        updateDtoWithSlug,
+        'user-1',
+        'org-1',
+      );
+
+      expect(result).toEqual({
+        ...mockContent,
+        ...updateDtoWithSlug,
+        slug: 'existing-slug-1',
+      });
+      expect(mockPrismaService.content.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({ id: 'content-1' }),
+          data: expect.objectContaining({
+            slug: 'existing-slug-1', // Should append -1 to make it unique
+          }),
+        }),
+      );
     });
 
     it('should update content without categories and tags when not provided', async () => {
@@ -786,21 +879,22 @@ describe('ContentService', () => {
         'org-1',
       );
 
-      expect(mockPrismaService.content.update).toHaveBeenCalledWith({
-        where: {
-          id: 'content-1',
-          organizationId: 'org-1',
-        },
-        data: {
-          title: 'Updated Content',
-          content: {
+      expect(mockPrismaService.content.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({
+            id: 'content-1',
+            organizationId: 'org-1',
+          }),
+          data: expect.objectContaining({
             title: 'Updated Content',
-            content: 'This is updated content',
-          },
-          updatedBy: 'user-1',
-        },
-        include: expect.any(Object),
-      });
+            content: {
+              title: 'Updated Content',
+              content: 'This is updated content',
+            },
+            updatedBy: 'user-1',
+          }),
+        }),
+      );
     });
   });
 

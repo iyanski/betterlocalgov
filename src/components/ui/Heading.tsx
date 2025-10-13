@@ -8,12 +8,12 @@ interface HeadingProps {
 }
 
 const headingStyles = {
-  1: 'text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-relaxed',
-  2: 'text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-relaxed',
-  3: 'text-xl md:text-2xl lg:text-3xl font-bold mb-4 leading-relaxed',
-  4: 'text-lg md:text-xl lg:text-2xl font-bold mb-4 leading-relaxed',
-  5: 'text-base md:text-lg lg:text-xl font-bold mb-4 leading-relaxed',
-  6: 'text-sm md:text-base lg:text-lg font-bold mb-4 leading-relaxed',
+  1: 'text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-relaxed text-gray-900 dark:text-white',
+  2: 'text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-relaxed text-gray-900 dark:text-white',
+  3: 'text-xl md:text-2xl lg:text-3xl font-bold mb-4 leading-relaxed text-gray-900 dark:text-white',
+  4: 'text-lg md:text-xl lg:text-2xl font-bold mb-4 leading-relaxed text-gray-900 dark:text-white',
+  5: 'text-base md:text-lg lg:text-xl font-bold mb-4 leading-relaxed text-gray-900 dark:text-white',
+  6: 'text-sm md:text-base lg:text-lg font-bold mb-4 leading-relaxed text-gray-900 dark:text-white',
 };
 
 export function Heading({ level = 1, children, className }: HeadingProps) {

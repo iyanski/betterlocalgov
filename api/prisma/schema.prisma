@@ -161,7 +161,7 @@ model Content {
   id             String        @id @default(cuid())
   title          String
   slug           String
-  content        Json          // Dynamic content based on content type fields
+  content        Json?          // Dynamic content based on content type fields
   status         ContentStatus @default(DRAFT)
   publishedAt    DateTime?
   contentTypeId  String

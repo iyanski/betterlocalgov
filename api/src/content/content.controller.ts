@@ -30,7 +30,11 @@ export class ContentController {
     @Body() createContentDto: CreateContentDto,
     @Request() req: RequestWithUser,
   ) {
-    return this.contentService.create(createContentDto, req.user.id);
+    return this.contentService.create(
+      createContentDto,
+      req.user.id,
+      req.user.organizationId,
+    );
   }
 
   @Get()

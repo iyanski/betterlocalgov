@@ -53,5 +53,15 @@ export default function ContentEditor({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div id="editorjs" className="w-full" data-gramm="false" />;
+  return (
+    <div
+      id="editorjs"
+      className="w-full min-h-[400px] transition-all duration-500 ease-out"
+      data-gramm="false"
+      style={{
+        contain: 'layout style',
+        willChange: 'auto',
+      }}
+    />
+  );
 }

@@ -12,12 +12,21 @@ import Button from '../../components/ui/Button';
 import { CategoryEditModal, CategoryDeleteModal } from '../../components/admin';
 import { useApiCategories, useCategoryCrud } from '../../hooks/useApiData';
 import { useAuth } from '../../hooks/useAuth';
-import { Category } from '../../services/api';
+import { ApiResponse, Category } from '../../services/api';
 import { CategoryFormData } from '../../types';
 
 export default function Categories() {
-  const { data: categories, loading, error, refetch } = useApiCategories();
-  const { isAuthenticated, token } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const token = localStorage.getItem('auth_token');
+  const {
+    data: categories,
+    loading,
+    error,
+    refetch,
+  } = useApiCategories({
+    isAdmin: true,
+    authToken: token || undefined,
+  });
   const {
     createCategory,
     updateCategory,
@@ -42,12 +51,14 @@ export default function Categories() {
 
   // Filter categories based on search term
   const filteredCategories = useMemo(() => {
-    // Ensure categories is an array
-    if (!categories || !Array.isArray(categories)) return [];
-    if (!searchTerm.trim()) return categories;
+    const apiResponse: ApiResponse<Category[]> =
+      categories as unknown as ApiResponse<Category[]>;
+    const localCategories = apiResponse?.data || [];
+    if (!apiResponse || !Array.isArray(localCategories)) return [];
+    if (!searchTerm.trim()) return localCategories;
 
     const term = searchTerm.toLowerCase();
-    return categories.filter(
+    return localCategories.filter(
       category =>
         category.name.toLowerCase().includes(term) ||
         category.slug.toLowerCase().includes(term) ||

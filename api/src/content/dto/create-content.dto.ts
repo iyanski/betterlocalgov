@@ -35,7 +35,8 @@ export class CreateContentDto {
     description: 'The content data as a JSON object',
   })
   @IsObject()
-  content: Prisma.InputJsonValue;
+  @IsOptional()
+  content?: Prisma.InputJsonValue;
 
   @ApiProperty({
     example: 'clx1234567890abcdef',
@@ -44,6 +45,7 @@ export class CreateContentDto {
   })
   @IsString()
   @IsNotEmpty()
+  @IsOptional()
   contentTypeId: string;
 
   @ApiProperty({
@@ -53,6 +55,7 @@ export class CreateContentDto {
   })
   @IsString()
   @IsNotEmpty()
+  @IsOptional()
   organizationId: string;
 
   @ApiProperty({
@@ -64,7 +67,8 @@ export class CreateContentDto {
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
-  categoryIds?: string[];
+  @IsOptional()
+  categoryIds: string[];
 
   @ApiProperty({
     example: ['clx1234567890abcdef'],
@@ -75,5 +79,28 @@ export class CreateContentDto {
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
-  tagIds?: string[];
+  @IsOptional()
+  tagIds: string[];
+
+  @ApiProperty({
+    example: 'clx1234567890abcdef',
+    description:
+      'ID of the user who created this content (automatically set from authenticated user)',
+    minLength: 1,
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  createdBy?: string;
+
+  @ApiProperty({
+    example: 'clx1234567890abcdef',
+    description:
+      'ID of the user who last updated this content (automatically set from authenticated user)',
+    minLength: 1,
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  updatedBy?: string;
 }

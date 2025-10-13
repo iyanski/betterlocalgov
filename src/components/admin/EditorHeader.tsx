@@ -1,4 +1,4 @@
-import { ArrowLeft, Square } from 'lucide-react';
+import { ArrowLeft, PanelRightOpen } from 'lucide-react';
 
 interface EditorHeaderProps {
   onBack: () => void;
@@ -8,6 +8,7 @@ interface EditorHeaderProps {
   onPreview?: () => void;
   onPublish?: () => void;
   onSettings?: () => void;
+  isPublishing?: boolean;
 }
 
 export default function EditorHeader({
@@ -18,6 +19,7 @@ export default function EditorHeader({
   onPreview,
   onPublish,
   onSettings,
+  isPublishing = false,
 }: EditorHeaderProps) {
   return (
     <div>
@@ -50,9 +52,10 @@ export default function EditorHeader({
           {onPublish && (
             <button
               onClick={onPublish}
-              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-md transition-colors"
+              disabled={isPublishing}
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 disabled:cursor-not-allowed text-white text-sm font-medium rounded-md transition-colors"
             >
-              Publish
+              {isPublishing ? 'Publishing...' : 'Publish'}
             </button>
           )}
           {onSettings && (
@@ -60,7 +63,7 @@ export default function EditorHeader({
               onClick={onSettings}
               className="p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
-              <Square className="h-4 w-4" />
+              <PanelRightOpen className="h-4 w-4" />
             </button>
           )}
         </div>

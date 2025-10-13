@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
 import { CategoryFormData, EditModalProps } from '../../types';
@@ -18,6 +18,23 @@ export function CategoryEditModal({
   });
 
   const [errors, setErrors] = useState<Partial<CategoryFormData>>({});
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onClose]);
 
   // Update form data when category changes
   React.useEffect(() => {

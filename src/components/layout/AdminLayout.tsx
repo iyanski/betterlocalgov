@@ -56,7 +56,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   // Redirect to login if not authenticated
   useEffect(() => {
-    console.log('isAuthenticated', isAuthenticated);
     if (!isLoading && !isAuthenticated) {
       navigate('/admin/login');
     }
@@ -108,14 +107,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             </button>
           </div>
           <nav className="flex-1 px-4 py-4 space-y-2">
-            {navigation.map(item => {
+            {navigation.map((item, index) => {
               const isActive = location.pathname === item.href;
               // if (item.separator === true) {
               //   return <br className="my-4" key={item.name} />;
               // }
               return (
                 <Link
-                  key={item.name}
+                  key={index}
                   to={item.href!}
                   className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
@@ -173,16 +172,19 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <Search className="h-4 w-4 ml-auto text-gray-600 dark:text-gray-300" />
           </div>
           <nav className="flex-1 px-4 py-4 space-y-2">
-            {navigation.map(item => {
+            {navigation.map((item, index) => {
               const isActive = location.pathname === item.href;
               if (item.separator) {
                 return (
-                  <div className="bg-gray-200 dark:bg-gray-600 my-4 mx-10" />
+                  <div
+                    key={index}
+                    className="bg-gray-200 dark:bg-gray-600 my-4 mx-10"
+                  />
                 );
               }
               return (
                 <Link
-                  key={item.name}
+                  key={index}
                   to={item.href!}
                   className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
@@ -200,7 +202,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                       className="ml-auto self-end"
                       onClick={e => {
                         e.preventDefault();
-                        navigate(`${item.href}/new`);
+                        navigate(`${item.href}/new#editor/document`);
                       }}
                     />
                   )}

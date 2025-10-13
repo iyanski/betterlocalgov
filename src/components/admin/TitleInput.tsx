@@ -5,6 +5,7 @@ interface TitleInputProps {
   onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
+  onBlur?: (value: string) => void;
 }
 
 const INPUT_STYLES =
@@ -13,6 +14,7 @@ const INPUT_STYLES =
 export default function TitleInput({
   value,
   onChange,
+  onBlur,
   placeholder = 'Post title',
   className = '',
 }: TitleInputProps) {
@@ -38,12 +40,13 @@ export default function TitleInput({
   }, [value]);
 
   return (
-    <div className={`mb-8 ${className}`}>
+    <div className={`mb-8 transition-all duration-500 ease-out ${className}`}>
       <textarea
         autoFocus
         ref={textareaRef}
         value={value}
         onChange={e => onChange(e.target.value)}
+        onBlur={e => onBlur?.(e.target.value)}
         placeholder={placeholder}
         className={INPUT_STYLES}
         style={{
@@ -52,6 +55,8 @@ export default function TitleInput({
           minHeight: 'auto',
           height: 'auto',
           overflow: 'hidden',
+          contain: 'layout style',
+          willChange: 'auto',
         }}
         onKeyDown={e => {
           if (e.key === 'Enter') {

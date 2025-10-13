@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
 import { DeleteConfirmModalProps } from '../../types';
@@ -9,6 +10,23 @@ export function CategoryDeleteModal({
   onConfirm,
   loading,
 }: DeleteConfirmModalProps) {
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !category) return null;
 
   return (
