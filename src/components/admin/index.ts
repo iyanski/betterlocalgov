@@ -6,3 +6,5 @@ export { default as BlockMenu, type BlockType } from './BlockMenu';
 export { default as WordCount } from './WordCount';
 export { CategoryEditModal } from './CategoryEditModal';
 export { CategoryDeleteModal } from './CategoryDeleteModal';
+export { DocumentDeleteModal } from './DocumentDeleteModal';
+export { DocumentTypeDeleteModal } from './DocumentTypeDeleteModal';

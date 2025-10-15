@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Barangay Clearance for Good Moral",
+  "properties": {
+    "purpose": {
+      "type": "array",
+      "title": "Purpose",
+      "enum": [
+        "EMPLOYMENT - LOCAL EMPLOYMENT - ABROAD",
+        "IDENTIFICATION DATA",
+        "LIVE BIRTH",
+        "LOAN APPLICATION",
+        "BOARD EXAM",
+        "BAIL BOND",
+        "POSTAL ID",
+        "POLICE CLEARANCE",
+        "TESDA REQUIREMENTS",
+        "WORK IMMERSION (OTHERS)"
+      ]
+    },
+    "first_name": {
+      "type": "string",
+      "title": "First Name"
+    },
+    "middle_name": {
+      "type": "string",
+      "title": "Middle Name"
+    },
+    "last_name": {
+      "type": "string",
+      "title": "Last Name"
+    },
+    "suffix": {
+      "type": "string",
+      "title": "Suffix"
+    },
+    "birthdate": {
+      "type": "string",
+      "title": "Date of Birth"
+    },
+    "birthplace": {
+      "type": "string",
+      "title": "Place of Birth"
+    },
+    "civil_status": {
+      "type": "array",
+      "title": "Civil Status",
+      "enum": ["SINGLE", "MARRIED", "WIDOWED", "SEPARATED"]
+    },
+    "gender": {
+      "type": "string",
+      "title": "Gender",
+      "enum": ["MALE", "FEMALE"]
+    },
+    "mobile_number": {
+      "type": "string",
+      "title": "Mobile Number"
+    },
+    "purok": {
+      "type": "string",
+      "title": "Purok",
+      "enum": [
+        "KAWAYAN",
+        "KAMANSI",
+        "BALANGHOY",
+        "KAMONGGAY",
+        "UBI",
+        "GABI",
+        "KANGKONG",
+        "KAIMITO",
+        "SAGING",
+        "KAPAYAS",
+        "TUGAS",
+        "SACRED HEART",
+        "LEMONSITO",
+        "AMPALAYA",
+        "TAMBIS",
+        "NANGKA",
+        "KALABASA",
+        "NANGKA-LUMOY",
+        "MANGGA"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "city": {
+      "type": "string",
+      "title": "City"
+    },
+    "province": {
+      "type": "string",
+      "title": "Province"
+    },
+    "residency_start_month": {
+      "type": "integer",
+      "title": "Started living here (month)"
+    },
+    "residency_start_year": {
+      "type": "integer",
+      "title": "Started living here (month)"
+    },
+    "religion": {
+      "type": "string",
+      "title": "Religion",
+      "enum": [
+        "Roman Catholic Christian",
+        "Christian",
+        "Islam",
+        "I prefer not to say"
+      ]
+    },
+    "character_reference_1": {
+      "type": "string",
+      "title": "First Character Reference",
+      "description": "This can be a friend, colleague, religious leader, lawyer, etc"
+    },
+    "character_reference_2": {
+      "type": "string",
+      "title": "Second Character Reference",
+      "description": "This can be a friend, colleague, religious leader, lawyer, etc"
+    },
+    "confirmation": {
+      "type": "boolean",
+      "title": "Confirmation",
+      "description": "I confirm that I have carefully reviewed all the details I provided and verified that they are accurate, complete, and free from errors or misspellings. (Gikumpirma nako nga akong gipangreview pag-ayo ang tanang impormasyon nga akong i-submit ug nasiguro nga kini sakto, kompleto, ug walay sayop o mga sayup sa spelling.)"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "birthdate",
+    "civil_status",
+    "gender",
+    "mobile_number",
+    "purok",
+    "address",
+    "city",
+    "province",
+    "residency_start_month",
+    "religion",
+    "character_reference_1",
+    "confirmation"
+  ]
+}

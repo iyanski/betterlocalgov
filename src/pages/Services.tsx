@@ -60,6 +60,9 @@ const Services: React.FC = () => {
         <ServicesSection
           title={`All local government services`}
           description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
+          serviceCategories={[]}
+          loading={categoriesLoading}
+          error={categoriesError}
         />
       </>
     );
@@ -87,8 +90,8 @@ const Services: React.FC = () => {
       />
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" />
-        <Icon className="h-8 w-8 mb-4 text-primary-600 rounded-md" />
-        <Heading>{categoryData.category || category}</Heading>
+        {Icon && <Icon className="h-8 w-8 mb-4 text-primary-600 rounded-md" />}
+        <Heading>{categoryData.category}</Heading>
         <Text className="text-gray-600 mb-6">{categoryData.description}</Text>
 
         {subcategoriesLoading ? (

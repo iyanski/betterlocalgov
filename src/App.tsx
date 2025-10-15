@@ -14,6 +14,8 @@ import Documents from './pages/admin/Documents';
 import Login from './pages/admin/Login';
 import NewDocument from './pages/admin/Documents/NewDocument';
 import { ThemeProvider } from './contexts/ThemeProvider.tsx';
+import DocumentTypes from './pages/admin/DocumentTypes/index.tsx';
+import NewDocumentType from './pages/admin/DocumentTypes/NewDocumentType.tsx';
 
 function App() {
   return (
@@ -82,6 +84,14 @@ function App() {
                 }
               />
               <Route
+                path="/admin/document-types/new"
+                element={
+                  <AdminFullLayout>
+                    <NewDocumentType />
+                  </AdminFullLayout>
+                }
+              />
+              <Route
                 path="/admin/*"
                 element={
                   <AdminLayout>
@@ -90,6 +100,10 @@ function App() {
                       <Route path="/dashboard" element={<AdminDashboard />} />
                       <Route path="/categories" element={<Categories />} />
                       <Route path="/documents" element={<Documents />} />
+                      <Route
+                        path="/document-types"
+                        element={<DocumentTypes />}
+                      />
                       {/* Additional admin routes will be added here */}
                     </Routes>
                   </AdminLayout>

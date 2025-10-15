@@ -176,8 +176,8 @@ export type {
   Tag,
   Media,
   ContentMedia,
-  ContentCategory,
   ContentTag,
   Content,
   ContentQuery,
+  DocumentType,
 } from './types';

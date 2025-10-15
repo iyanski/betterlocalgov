@@ -15,6 +15,7 @@ import type {
   UpdateContentDto,
   ContentQuery,
   ContentType,
+  DocumentType,
 } from './types';
 
 // API Configuration
@@ -238,6 +239,17 @@ class AdminApiService {
   async getContentTypes(authToken: string): Promise<ContentType[]> {
     return this.request<ContentType[]>('/content-types', {}, authToken);
   }
+
+  async getAdminDocumentTypes(
+    authToken: string
+  ): Promise<ApiResponse<DocumentType[]>> {
+    const response = await this.request<{ data: DocumentType[] }>(
+      '/document-types',
+      {},
+      authToken
+    );
+    return response.data;
+  }
 }
 
 // Export singleton instance
@@ -257,4 +269,5 @@ export type {
   UpdateContentDto,
   ContentQuery,
   ContentType,
+  DocumentType,
 } from './types';

@@ -10,16 +10,15 @@ import Stack from '../../../components/ui/Stack';
 import Button from '../../../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { adminApiService } from '../../../services/admin.api';
-import { Content } from '../../../services/api';
-import { DocumentDeleteModal } from '../../../components/admin';
+import { DocumentType } from '../../../services/api';
+import { DocumentTypeDeleteModal } from '../../../components/admin';
 import { useContentCrud } from '../../../hooks/useApiData';
 import { useAuth } from '../../../hooks/useAuth';
-import { ContentCategory } from '../../../types/document';
 
-export default function Documents() {
+export default function DocumentTypes() {
   const { isAuthenticated } = useAuth();
   const token = localStorage.getItem('auth_token');
-  const [documents, setDocuments] = useState<Content[]>([]);
+  const [documentTypes, setDocumentTypes] = useState<DocumentType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -29,60 +28,54 @@ export default function Documents() {
 
   useEffect(() => {
     if (token) {
-      loadDocuments();
+      loadDocumentTypes();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   const [deleteModal, setDeleteModal] = useState<{
     isOpen: boolean;
-    content: Content | null;
+    documentType: DocumentType | null;
   }>({
     isOpen: false,
-    content: null,
+    documentType: null,
   });
 
-  const loadDocuments = async () => {
+  const loadDocumentTypes = async () => {
     if (!token) return;
 
     try {
       setIsLoading(true);
-      const response = await adminApiService.getAdminContent({}, token);
-      setDocuments(response.data);
+      const response = await adminApiService.getAdminDocumentTypes(token);
+      setDocumentTypes(response.data);
     } catch (err) {
-      console.error('Error loading documents:', err);
+      console.error('Error loading document types:', err);
       setError(err instanceof Error ? err.message : 'Failed to load documents');
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleDelete = (content: Content) => {
+  const handleDelete = (documentType: DocumentType) => {
     if (!isAuthenticated) {
       alert(
         'Authentication required to delete categories. Please log in to the admin panel.'
       );
       return;
     }
-    setDeleteModal({ isOpen: true, content });
+    setDeleteModal({ isOpen: true, documentType });
   };
 
   const handleConfirmDelete = async () => {
-    if (!deleteModal.content) return;
+    if (!deleteModal.documentType) return;
 
     try {
-      await deleteContent(deleteModal.content.id || '');
-      loadDocuments();
-      setDeleteModal({ isOpen: false, content: null });
+      await deleteContent(deleteModal.documentType.id || '');
+      loadDocumentTypes();
+      setDeleteModal({ isOpen: false, documentType: null });
     } catch {
       // Error is handled by the hook
     }
-  };
-
-  const getCategoryNames = (doc: Content) => {
-    return (doc.categories as unknown as ContentCategory[])
-      .map((cat: ContentCategory) => cat.category.name)
-      .join(', ');
   };
 
   if (isLoading) {
@@ -90,7 +83,7 @@ export default function Documents() {
       <Card>
         <CardContent className="p-6">
           <div className="text-center text-gray-900 dark:text-gray-100">
-            Loading documents...
+            Loading document types...
           </div>
         </CardContent>
       </Card>
@@ -101,11 +94,11 @@ export default function Documents() {
     <Card>
       <CardHeader>
         <Stack direction="horizontal" justify="between" align="center">
-          <CardTitle>Documents</CardTitle>
-          <Link to="/admin/documents/new#editor/document">
+          <CardTitle>Document Types</CardTitle>
+          <Link to="/admin/document-types/new#editor/document-type">
             <Button>
               <Plus className="h-4 w-4 mr-2" />
-              New Document
+              New Document Type
             </Button>
           </Link>
         </Stack>
@@ -121,13 +114,7 @@ export default function Documents() {
             <thead className="bg-gray-50 dark:bg-gray-800">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  Document
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  Category
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  Status
+                  Document Type
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Created
@@ -138,18 +125,18 @@ export default function Documents() {
               </tr>
             </thead>
             <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-              {documents.length === 0 ? (
+              {documentTypes.length === 0 ? (
                 <tr>
                   <td
                     colSpan={5}
                     className="px-6 py-8 text-center text-gray-500 dark:text-gray-400"
                   >
-                    No documents found. Create your first document to get
-                    started.
+                    No document types found. Create your first document type to
+                    get started.
                   </td>
                 </tr>
               ) : (
-                documents.map(doc => (
+                documentTypes.map(doc => (
                   <tr
                     key={doc.id}
                     className="hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -161,30 +148,6 @@ export default function Documents() {
                       <div className="text-xs text-gray-500 dark:text-gray-400">
                         {doc.slug}
                       </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {doc.categories.length > 0 ? (
-                        <div className="text-sm text-gray-900 dark:text-gray-300">
-                          {getCategoryNames(doc)}
-                        </div>
-                      ) : (
-                        <div className="text-sm text-gray-600 dark:text-gray-300 opacity-50">
-                          No category
-                        </div>
-                      )}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span
-                        className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                          doc.status === 'PUBLISHED'
-                            ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
-                            : doc.status === 'DRAFT'
-                              ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300'
-                              : 'bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-300'
-                        }`}
-                      >
-                        {doc.status}
-                      </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300">
                       {new Date(doc.createdAt).toLocaleDateString()}
@@ -223,10 +186,10 @@ export default function Documents() {
         </div>
       </CardContent>
 
-      <DocumentDeleteModal
-        content={deleteModal.content}
+      <DocumentTypeDeleteModal
+        documentType={deleteModal.documentType}
         isOpen={deleteModal.isOpen}
-        onClose={() => setDeleteModal({ isOpen: false, content: null })}
+        onClose={() => setDeleteModal({ isOpen: false, documentType: null })}
         onConfirm={handleConfirmDelete}
         loading={crudLoading}
       />

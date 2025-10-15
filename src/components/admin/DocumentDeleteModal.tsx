@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
-import { DeleteConfirmModalProps } from '../../types';
+import { DocumentDeleteModalProps } from '../../types/document';
 
-export function CategoryDeleteModal({
-  category,
+export function DocumentDeleteModal({
+  content,
   isOpen,
   onClose,
   onConfirm,
   loading,
-}: DeleteConfirmModalProps) {
+}: DocumentDeleteModalProps) {
   // Handle Escape key to close modal
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -27,7 +27,7 @@ export function CategoryDeleteModal({
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen || !category) return null;
+  if (!isOpen || !content) return null;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
@@ -42,24 +42,15 @@ export function CategoryDeleteModal({
               level={5}
               className="text-lg font-semibold text-red-600 dark:text-red-400"
             >
-              Delete Category
+              Delete Document
             </Heading>
           </div>
 
           <div className="px-6 py-4">
             <Text className="text-gray-700 dark:text-gray-300 mb-4">
-              Are you sure you want to delete the category{' '}
-              <strong>"{category.name}"</strong>? This action cannot be undone.
+              Are you sure you want to delete the document{' '}
+              <strong>"{content.title}"</strong>? This action cannot be undone.
             </Text>
-
-            {category._count?.content && category._count.content > 0 ? (
-              <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-md p-3 mb-4">
-                <Text className="text-yellow-800 dark:text-yellow-200 text-sm">
-                  ⚠️ This category has {category._count?.content} content
-                  item(s). Deleting it may affect your content organization.
-                </Text>
-              </div>
-            ) : null}
           </div>
 
           <div className="flex justify-end space-x-3 px-6 py-4 border-t border-gray-200 dark:border-gray-700">

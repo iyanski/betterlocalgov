@@ -5,6 +5,10 @@
 /* @tailwind typography; */
 
 /* React DatePicker styles */
+.dark html,
+.dark body {
+  @apply bg-gray-900;
+}
 
 /* Custom DatePicker dark mode styles */
 .dark .react-datepicker {

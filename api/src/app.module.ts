@@ -25,7 +25,7 @@ import { ErrorResponseFilter } from './common/filters/error-response.filter';
       {
         name: 'short',
         ttl: 1000, // 1 second
-        limit: 3, // 3 requests per second
+        limit: 20, // 3 requests per second
       },
       {
         name: 'medium',

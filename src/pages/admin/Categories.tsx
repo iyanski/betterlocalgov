@@ -223,7 +223,7 @@ export default function Categories() {
                             disabled={!isAuthenticated}
                             className={`p-1 ${
                               isAuthenticated
-                                ? 'text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300'
+                                ? 'text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer'
                                 : 'text-gray-400 dark:text-gray-500 cursor-not-allowed'
                             }`}
                             title={
@@ -239,7 +239,7 @@ export default function Categories() {
                             disabled={!isAuthenticated}
                             className={`p-1 ${
                               isAuthenticated
-                                ? 'text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300'
+                                ? 'text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300 cursor-pointer'
                                 : 'text-gray-400 dark:text-gray-500 cursor-not-allowed'
                             }`}
                             title={

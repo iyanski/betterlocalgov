@@ -141,3 +141,24 @@ export interface ContentQuery {
   limit?: number;
   offset?: number;
 }
+
+export interface DocumentType {
+  id: string;
+  title: string;
+  slug: string;
+  description?: string;
+  createdBy?: string;
+  updatedBy?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreateDocumentTypeDto {
+  title: string;
+  slug: string;
+}
+
+export interface UpdateDocumentTypeDto {
+  title?: string;
+  slug?: string;
+}

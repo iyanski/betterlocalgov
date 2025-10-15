@@ -12,7 +12,7 @@ import {
   LogOut,
   Globe,
   Search,
-  Plus,
+  // Plus,
   Moon,
   Sun,
 } from 'lucide-react';
@@ -31,14 +31,17 @@ interface AdminLayoutProps {
 
 const navigation = [
   { name: 'Analytics', href: '/admin', icon: BarChart3 },
+  { name: 'Document Requests', href: '/admin/requests', icon: FileText },
+  // {
+  //   name: 'Documents',
+  //   href: '/admin/documents',
+  //   icon: FileText,
+  //   rightIcon: Plus,
+  // },
   { separator: true },
-  {
-    name: 'Documents',
-    href: '/admin/documents',
-    icon: FileText,
-    rightIcon: Plus,
-  },
+  { name: 'Document Types', href: '/admin/document-types', icon: FileText },
   { name: 'Categories', href: '/admin/categories', icon: FolderOpen },
+  { separator: true },
   { name: 'Users', href: '/admin/users', icon: Users },
   { name: 'Settings', href: '/admin/settings', icon: Settings },
 ];
@@ -109,9 +112,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <nav className="flex-1 px-4 py-4 space-y-2">
             {navigation.map((item, index) => {
               const isActive = location.pathname === item.href;
-              // if (item.separator === true) {
-              //   return <br className="my-4" key={item.name} />;
-              // }
+              if (item.separator === true) {
+                return (
+                  <hr
+                    className="my-4 border-gray-200 dark:border-gray-700"
+                    key={index}
+                  />
+                );
+              }
               return (
                 <Link
                   key={index}
@@ -176,9 +184,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               const isActive = location.pathname === item.href;
               if (item.separator) {
                 return (
-                  <div
+                  <hr
+                    className="my-4 border-gray-200 dark:border-gray-700"
                     key={index}
-                    className="bg-gray-200 dark:bg-gray-600 my-4 mx-10"
                   />
                 );
               }
@@ -234,7 +242,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               wrap="noWrap"
             >
               <Button
-                appearance="subtle"
+                // appearance="subtle"
                 href="/"
                 target="_blank"
                 rel="noopener noreferrer"
