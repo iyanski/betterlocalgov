@@ -59,13 +59,14 @@ export default function Toggle({
         type="button"
         role="switch"
         aria-checked={checked}
+        aria-labelledby={label ? undefined : 'toggle-label'}
         disabled={disabled}
         onClick={handleToggle}
         className={cn(
-          'relative inline-flex flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800',
+          'relative inline-flex flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800',
           currentSize.container,
           checked
-            ? 'bg-black-600 dark:bg-black-500'
+            ? 'bg-primary-600 dark:bg-primary-500'
             : 'bg-gray-200 dark:bg-gray-600',
           disabled && 'opacity-50 cursor-not-allowed'
         )}

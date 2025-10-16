@@ -39,7 +39,11 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
+    <nav
+      id="main-navigation"
+      className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50"
+      aria-label="Main navigation"
+    >
       {/* Top bar with language switcher and additional links */}
       <div className="border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 flex justify-end items-center h-10">
@@ -154,6 +158,7 @@ const Navbar: React.FC = () => {
               About
             </Link>
             <Link
+              id="search"
               to="/search"
               className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-primary-400"
             >
@@ -173,8 +178,13 @@ const Navbar: React.FC = () => {
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={isOpen ? 'Close main menu' : 'Open main menu'}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">
+                {isOpen ? 'Close main menu' : 'Open main menu'}
+              </span>
               {isOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -186,7 +196,11 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
+      <div
+        id="mobile-menu"
+        className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}
+        aria-hidden={!isOpen}
+      >
         <div className="container mx-auto px-2 pt-2 pb-4 space-y-1 border-t border-gray-200 bg-white">
           {mainNavigation.map(item => (
             <div key={item.label}>

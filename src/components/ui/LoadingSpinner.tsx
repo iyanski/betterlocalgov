@@ -17,16 +17,24 @@ export default function LoadingSpinner({
     <div className={`flex justify-center items-center ${className}`}>
       <div
         className={`${sizeClasses[size]} border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin`}
+        role="status"
+        aria-label="Loading"
       />
+      <span className="sr-only">Loading...</span>
     </div>
   );
 }
 
 export function LoadingState({ message = 'Loading...' }: { message?: string }) {
   return (
-    <div className="flex flex-col items-center justify-center py-8">
+    <div
+      className="flex flex-col items-center justify-center py-8"
+      role="status"
+      aria-live="polite"
+      aria-label={message}
+    >
       <LoadingSpinner size="lg" />
-      <p className="mt-4 text-gray-600">{message}</p>
+      <p className="mt-4 text-gray-600 dark:text-gray-400">{message}</p>
     </div>
   );
 }
@@ -39,13 +47,18 @@ export function ErrorState({
   onRetry?: () => void;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center py-8">
+    <div
+      className="flex flex-col items-center justify-center py-8"
+      role="alert"
+      aria-live="assertive"
+    >
       <div className="text-red-500 text-center">
         <svg
           className="w-12 h-12 mx-auto mb-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -55,11 +68,11 @@ export function ErrorState({
           />
         </svg>
         <p className="text-lg font-medium mb-2">Error loading content</p>
-        <p className="text-sm text-gray-600 mb-4">{error}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{error}</p>
         {onRetry && (
           <button
             onClick={onRetry}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
           >
             Try Again
           </button>

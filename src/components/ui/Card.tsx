@@ -114,13 +114,14 @@ interface CardImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
 }
 
-const CardImage = ({ className, ...props }: CardImageProps) => {
+const CardImage = ({ className, alt, ...props }: CardImageProps) => {
   return (
     <div className="relative w-full h-48 overflow-hidden">
       <img
         className={cn('w-full h-full object-cover', className)}
         {...props}
-        alt={props.alt || 'Card image'}
+        alt={alt || 'Service or content image'}
+        loading="lazy"
       />
     </div>
   );

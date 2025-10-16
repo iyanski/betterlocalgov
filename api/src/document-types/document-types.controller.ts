@@ -162,8 +162,8 @@ export class DocumentTypesController {
     status: 400,
     description: 'Cannot delete document type with associated documents',
   })
-  deactivate(@Param('id') id: string, @Request() req: RequestWithUser) {
-    return this.documentTypesService.deactivate(id, req.user.organizationId);
+  remove(@Param('id') id: string, @Request() req: RequestWithUser) {
+    return this.documentTypesService.remove(id, req.user.organizationId);
   }
 
   @Patch(':id/toggle-active')
