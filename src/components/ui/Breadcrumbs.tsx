@@ -44,22 +44,27 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
 
   return (
     <nav
-      className={`flex items-center space-x-1 text-sm text-gray-600 ${className}`}
+      className={`flex items-center space-x-1 text-sm text-gray-600 dark:text-gray-400 ${className}`}
       aria-label="Breadcrumb"
     >
       {breadcrumbItems.map((item, index) => (
         <React.Fragment key={index}>
           {index === 0 && <Home className="h-4 w-4" />}
-          {index > 0 && <ChevronRight className="h-4 w-4 text-gray-400" />}
+          {index > 0 && (
+            <ChevronRight className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+          )}
           {item.href ? (
             <Link
               to={item.href}
-              className="hover:text-primary-600 transition-colors duration-200"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
             >
               {item.label}
             </Link>
           ) : (
-            <span className="text-gray-900 font-medium" aria-current="page">
+            <span
+              className="text-gray-900 dark:text-white font-medium"
+              aria-current="page"
+            >
               {item.label}
             </span>
           )}

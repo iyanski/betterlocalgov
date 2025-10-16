@@ -52,7 +52,7 @@ const renderActionButton = (
 
 // Constants for styling
 const BUTTON_STYLES =
-  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500 text-sm px-3 py-1.5 h-8 shadow-xs';
+  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 bg-transparent text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-gray-500 text-sm px-3 py-1.5 h-8 shadow-xs';
 
 // External Link Icon Component
 const ExternalLinkIcon: React.FC = () => (
@@ -83,12 +83,16 @@ const ListItem: React.FC<ListItemProps> = ({
   href,
 }) => {
   return (
-    <div className="p-4 bg-white border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
+    <div className="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary-500 transition-colors">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h4 className="text-lg font-medium text-gray-900">{title}</h4>
-          <p className="mt-2 text-sm text-gray-600">{description}</p>
-          <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
+          <h4 className="text-lg font-medium text-gray-900 dark:text-white">
+            {title}
+          </h4>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            {description}
+          </p>
+          <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
             {category}
           </span>
         </div>

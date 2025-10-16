@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { EditorHeader, TitleInput } from '../../../components/admin';
+import {
+  EditorHeader,
+  TitleInput,
+  FormBuilder,
+} from '../../../components/admin';
 import { useAuth } from '../../../hooks/useAuth';
 import { DocumentType } from '../../../services/admin.api';
 import { generateSlugFromTitle } from '../../../lib/slug';
@@ -10,7 +14,7 @@ import SlidePanel from '../../../components/ui/SlidePanel.tsx';
 import DocumentTypeSettings from '../../../components/admin/DocumentTypeSettings.tsx';
 import Button from '../../../components/ui/Button.tsx';
 import { Trash } from 'lucide-react';
-import { useContentCrud } from '../../../hooks/useApiData';
+import { useDocumentTypeCrud } from '../../../hooks/useApiData';
 import {
   ApiResponse,
   CreateDocumentTypeDto,
@@ -33,23 +37,26 @@ export default function NewDocument() {
     id: '',
     title: '',
     slug: '',
+    fields: [],
     description: '',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   });
 
   const {
-    createContent,
-    updateContent,
-    getContent,
+    createDocumentType,
+    updateDocumentType,
+    getDocumentType,
+    deleteDocumentType,
     loading: crudLoading,
-  } = useContentCrud(token || undefined);
+  } = useDocumentTypeCrud(token || undefined);
 
   const loadDocumentType = async () => {
-    const documentType = (await getContent(
+    const documentType = (await getDocumentType(
       documentId
-    )) as unknown as DocumentType;
-    setDocumentType(documentType);
+    )) as unknown as ApiResponse<DocumentType>;
+    setDocumentType(documentType.data);
+    setTitle(documentType.data.title);
   };
 
   useEffect(() => {
@@ -68,40 +75,58 @@ export default function NewDocument() {
     setError('');
     // Handle draft logic here
 
-    if (!documentType.title?.trim()?.length) {
+    if (!title.trim()?.length) {
       setError('Please enter a title for your document type');
       return;
     }
 
-    const slug = generateSlugFromTitle(documentType.title);
+    const slug = generateSlugFromTitle(title);
 
     setStatus('Draft - Saving...');
-    console.log('Draft clicked', documentType);
     setDocumentType(documentType);
     try {
       if (!documentId) {
-        const createContentDto: CreateDocumentTypeDto = {
-          title: documentType.title.trim(),
+        const createDocumentTypeDto: CreateDocumentTypeDto = {
+          title: title.trim(),
           slug,
+          fields: documentType.fields,
+          description: documentType.description,
+          categoryId: documentType.categoryId,
         };
 
-        const createdDocument = (await createContent(
-          createContentDto
+        const createdDocumentType = (await createDocumentType(
+          createDocumentTypeDto
         )) as unknown as ApiResponse<DocumentType>;
 
-        if (createdDocument?.data?.id) {
-          window.location.hash = `#editor/document/${createdDocument.data.id}`;
+        if (createdDocumentType?.data?.id) {
+          window.location.hash = `#editor/document-type/${createdDocumentType.data.id}`;
         }
       } else {
         const updateContentDto: UpdateDocumentTypeDto = {
           title: documentType.title,
           slug,
+          fields: documentType.fields,
+          description: documentType.description,
+          categoryId: documentType.categoryId,
         };
-        await updateContent(documentId, updateContentDto);
+        await updateDocumentType(documentId, updateContentDto);
       }
-    } catch (err) {
+    } catch (err: unknown) {
       console.error('Error creating document:', err);
-      // setError(err instanceof Error ? err.message : 'Failed to create document');
+      if (
+        err &&
+        typeof err === 'object' &&
+        'status' in err &&
+        err.status === 409
+      ) {
+        setError(
+          'A document type with this title already exists. Please choose a different title.'
+        );
+      } else {
+        setError(
+          err instanceof Error ? err.message : 'Failed to create document type'
+        );
+      }
     } finally {
       setStatus('Draft - Saved');
       setIsPublishing(false);
@@ -109,7 +134,7 @@ export default function NewDocument() {
   };
 
   const handlePublish = async () => {
-    if (!documentType.title.trim()) {
+    if (!title.trim()) {
       setError('Please enter a title for your document');
       return;
     }
@@ -122,29 +147,35 @@ export default function NewDocument() {
     setIsPublishing(true);
     setError('');
 
-    try {
-      const slug = generateSlugFromTitle(documentType.title);
-      const createContentDto: CreateDocumentTypeDto = {
-        title: documentType.title.trim(),
-        slug,
-      };
-      await createContent(createContentDto);
-      // Navigate to the documents list or the created document
-      navigate('/admin/document-types');
-    } catch (err) {
-      console.error('Error creating document:', err);
-      setError(
-        err instanceof Error ? err.message : 'Failed to create document'
-      );
-    } finally {
-      setIsPublishing(false);
-    }
+    await handleSave(documentType);
+    setIsPublishing(false);
   };
 
   const handleOpenSettings = () => {
     // Handle settings logic here
     setSlidePanelOpen(true);
-    console.log('Settings clicked');
+  };
+
+  const handleDelete = async () => {
+    if (!documentId) {
+      setError('Cannot delete a document type that has not been saved yet');
+      return;
+    }
+
+    if (
+      window.confirm(
+        'Are you sure you want to delete this document type? This action cannot be undone.'
+      )
+    ) {
+      try {
+        await deleteDocumentType(documentId);
+        setSlidePanelOpen(false);
+        navigate('/admin/document-types');
+      } catch (err) {
+        console.error('Error deleting document type:', err);
+        setError('Failed to delete document type');
+      }
+    }
   };
 
   return (
@@ -164,6 +195,7 @@ export default function NewDocument() {
           onSettings={handleOpenSettings}
           isPublishing={isPublishing}
           status={crudLoading ? 'Saving...' : status}
+          isSaving={crudLoading}
         />
       </div>
 
@@ -179,9 +211,17 @@ export default function NewDocument() {
           </div>
         )}
         <TitleInput
+          placeholder="Untitled Form"
           value={title}
           onChange={setTitle}
           onBlur={value => handleSave({ ...documentType, title: value })}
+        />
+        <FormBuilder
+          initialSchema={{ fields: documentType.fields || [] }}
+          onChange={schema => {
+            // Store the form schema in the document type
+            setDocumentType({ ...documentType, fields: schema.fields });
+          }}
         />
       </div>
       <SlidePanel
@@ -194,7 +234,7 @@ export default function NewDocument() {
             appearance="ghost"
             color="red"
             icon={<Trash className="h-4 w-4 mr-2" />}
-            onClick={() => setSlidePanelOpen(false)}
+            onClick={handleDelete}
           >
             Delete
           </Button>

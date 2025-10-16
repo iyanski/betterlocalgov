@@ -90,9 +90,13 @@ const Services: React.FC = () => {
       />
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" />
-        {Icon && <Icon className="h-8 w-8 mb-4 text-primary-600 rounded-md" />}
+        {Icon && (
+          <Icon className="h-8 w-8 mb-4 text-primary-600 dark:text-primary-400 rounded-md" />
+        )}
         <Heading>{categoryData.category}</Heading>
-        <Text className="text-gray-600 mb-6">{categoryData.description}</Text>
+        <Text className="text-gray-600 dark:text-gray-400 mb-6">
+          {categoryData.description}
+        </Text>
 
         {subcategoriesLoading ? (
           <LoadingState message="Loading services..." />

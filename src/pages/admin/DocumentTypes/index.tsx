@@ -8,21 +8,22 @@ import {
 import { Edit3, Plus, Trash2 } from 'lucide-react';
 import Stack from '../../../components/ui/Stack';
 import Button from '../../../components/ui/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { adminApiService } from '../../../services/admin.api';
 import { DocumentType } from '../../../services/api';
 import { DocumentTypeDeleteModal } from '../../../components/admin';
-import { useContentCrud } from '../../../hooks/useApiData';
+import { useDocumentTypeCrud } from '../../../hooks/useApiData';
 import { useAuth } from '../../../hooks/useAuth';
 
 export default function DocumentTypes() {
   const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const token = localStorage.getItem('auth_token');
   const [documentTypes, setDocumentTypes] = useState<DocumentType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const { deleteContent, loading: crudLoading } = useContentCrud(
+  const { deleteDocumentType, loading: crudLoading } = useDocumentTypeCrud(
     token || undefined
   );
 
@@ -67,15 +68,26 @@ export default function DocumentTypes() {
   };
 
   const handleConfirmDelete = async () => {
+    console.log('deleteModal', deleteModal.documentType);
     if (!deleteModal.documentType) return;
 
     try {
-      await deleteContent(deleteModal.documentType.id || '');
+      await deleteDocumentType(deleteModal.documentType.id || '');
       loadDocumentTypes();
       setDeleteModal({ isOpen: false, documentType: null });
-    } catch {
+    } catch (err) {
+      console.error('Error deleting document type:', err);
+      setError(
+        err instanceof Error ? err.message : 'Failed to delete document type'
+      );
       // Error is handled by the hook
     }
+  };
+
+  const handleEdit = (documentType: DocumentType) => {
+    navigate(
+      `/admin/document-types/new#editor/document-type/${documentType.id}`
+    );
   };
 
   if (isLoading) {
@@ -157,6 +169,7 @@ export default function DocumentTypes() {
                         <button
                           className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 cursor-pointer"
                           title="Edit document"
+                          onClick={() => handleEdit(doc)}
                         >
                           <Edit3 className="h-4 w-4" />
                         </button>

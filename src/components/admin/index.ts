@@ -8,3 +8,5 @@ export { CategoryEditModal } from './CategoryEditModal';
 export { CategoryDeleteModal } from './CategoryDeleteModal';
 export { DocumentDeleteModal } from './DocumentDeleteModal';
 export { DocumentTypeDeleteModal } from './DocumentTypeDeleteModal';
+export { DocumentRequestConfirmationModal } from './DocumentRequestConfirmationModal';
+export { default as FormBuilder } from './FormBuilder';

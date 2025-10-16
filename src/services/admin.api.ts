@@ -16,6 +16,9 @@ import type {
   ContentQuery,
   ContentType,
   DocumentType,
+  DocumentRequest,
+  CreateDocumentTypeDto,
+  UpdateDocumentTypeDto,
 } from './types';
 
 // API Configuration
@@ -51,6 +54,14 @@ class AdminApiService {
       throw new Error(
         `API request failed: ${response.status} ${response.statusText}`
       );
+    }
+
+    // Handle empty responses (like 204 No Content)
+    if (
+      response.status === 204 ||
+      response.headers.get('content-length') === '0'
+    ) {
+      return undefined as T;
     }
 
     return response.json();
@@ -243,12 +254,67 @@ class AdminApiService {
   async getAdminDocumentTypes(
     authToken: string
   ): Promise<ApiResponse<DocumentType[]>> {
-    const response = await this.request<{ data: DocumentType[] }>(
+    const response = await this.request<{ data: ApiResponse<DocumentType[]> }>(
       '/document-types',
       {},
       authToken
     );
     return response.data;
+  }
+
+  async getAdminDocumentRequests(
+    authToken: string
+  ): Promise<ApiResponse<DocumentRequest[]>> {
+    const response = await this.request<{
+      data: ApiResponse<DocumentRequest[]>;
+    }>('/document-requests', {}, authToken);
+    return response.data;
+  }
+
+  async createDocumentType(
+    documentTypeData: CreateDocumentTypeDto,
+    authToken: string
+  ): Promise<DocumentType> {
+    return this.request<DocumentType>(
+      '/document-types',
+      {
+        method: 'POST',
+        body: JSON.stringify(documentTypeData),
+      },
+      authToken
+    );
+  }
+
+  async updateDocumentType(
+    id: string,
+    documentTypeData: UpdateDocumentTypeDto,
+    authToken: string
+  ): Promise<DocumentType> {
+    return this.request<DocumentType>(
+      `/document-types/${id}`,
+      {
+        method: 'PATCH',
+        body: JSON.stringify(documentTypeData),
+      },
+      authToken
+    );
+  }
+
+  async getDocumentTypeById(
+    id: string,
+    authToken: string
+  ): Promise<DocumentType> {
+    return this.request<DocumentType>(`/document-types/${id}`, {}, authToken);
+  }
+
+  async deleteDocumentType(id: string, authToken: string): Promise<void> {
+    return this.request<void>(
+      `/document-types/${id}`,
+      {
+        method: 'DELETE',
+      },
+      authToken
+    );
   }
 }
 
@@ -270,4 +336,7 @@ export type {
   ContentQuery,
   ContentType,
   DocumentType,
+  DocumentRequest,
+  CreateDocumentTypeDto,
+  UpdateDocumentTypeDto,
 } from './types';

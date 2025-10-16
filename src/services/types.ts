@@ -2,6 +2,8 @@
  * Type definitions for the API service
  */
 
+import { FormField } from '../types/form-field';
+
 // API Configuration types
 export interface ApiResponse<T> {
   data: T;
@@ -11,6 +13,17 @@ export interface ApiResponse<T> {
     offset: number;
     hasMore: boolean;
   };
+}
+
+export interface User {
+  id: string;
+  username: string;
+  firstName?: string;
+  lastName?: string;
+  role: string;
+  organizationId: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface ContentType {
@@ -142,11 +155,20 @@ export interface ContentQuery {
   offset?: number;
 }
 
+export interface DocumentTypeQuery {
+  page?: number;
+  limit?: number;
+  search?: string;
+  isActive?: boolean;
+}
+
 export interface DocumentType {
   id: string;
   title: string;
   slug: string;
   description?: string;
+  fields?: FormField[];
+  categoryId?: string;
   createdBy?: string;
   updatedBy?: string;
   createdAt: string;
@@ -156,9 +178,31 @@ export interface DocumentType {
 export interface CreateDocumentTypeDto {
   title: string;
   slug: string;
+  fields?: FormField[];
+  description?: string;
+  categoryId?: string;
 }
 
 export interface UpdateDocumentTypeDto {
   title?: string;
   slug?: string;
+  fields?: FormField[];
+  description?: string;
+  categoryId?: string;
+}
+
+export interface DocumentRequest {
+  id: string;
+  document_number: string;
+  name: string;
+  status: 'DRAFT' | 'PENDING' | 'APPROVED' | 'REJECTED';
+  requestedBy: User;
+  paidAt?: string;
+  rejectedAt?: string;
+  approvedAt?: string;
+  rejectedReason?: string;
+  approvedReason?: string;
+  documentType?: DocumentType;
+  createdAt: string;
+  updatedAt: string;
 }

@@ -13,6 +13,10 @@ import {
   UpdateCategoryDto,
   UpdateContentDto,
 } from '../services/admin.api';
+import {
+  CreateDocumentTypeDto,
+  UpdateDocumentTypeDto,
+} from '../services/types';
 
 // Generic hook for API data loading with loading states and error handling
 export function useApiData<T>(
@@ -316,6 +320,106 @@ export function useContentCrud(authToken?: string) {
     createContent,
     updateContent,
     deleteContent,
+    loading,
+    error,
+  };
+}
+
+export function useDocumentTypeCrud(authToken?: string) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const createDocumentType = async (
+    documentTypeData: CreateDocumentTypeDto
+  ) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await adminApiService.createDocumentType(
+        documentTypeData,
+        authToken
+      );
+      return result;
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to create document type';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const updateDocumentType = async (
+    id: string,
+    documentTypeData: UpdateDocumentTypeDto
+  ) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await adminApiService.updateDocumentType(
+        id,
+        documentTypeData,
+        authToken
+      );
+      return result;
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to create document type';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getDocumentType = async (id: string) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await adminApiService.getDocumentTypeById(id, authToken);
+      return result;
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to get document type';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteDocumentType = async (id: string) => {
+    if (!authToken) {
+      throw new Error('Authentication token is required');
+    }
+    try {
+      setLoading(true);
+      setError(null);
+      await adminApiService.deleteDocumentType(id, authToken);
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : 'Failed to delete document type';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+  return {
+    createDocumentType,
+    updateDocumentType,
+    getDocumentType,
+    deleteDocumentType,
     loading,
     error,
   };

@@ -15,6 +15,7 @@ import { OrganizationsModule } from './organizations/organizations.module';
 import { PublicModule } from './public/public.module';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { ErrorResponseFilter } from './common/filters/error-response.filter';
+import { DocumentTypesModule } from './document-types/document-types.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { ErrorResponseFilter } from './common/filters/error-response.filter';
     TagsModule,
     OrganizationsModule,
     PublicModule,
+    DocumentTypesModule,
   ],
   providers: [
     {

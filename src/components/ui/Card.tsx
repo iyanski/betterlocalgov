@@ -5,18 +5,21 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   hoverable?: boolean;
+  allowOverflow?: boolean;
 }
 
 const Card = ({
   children,
   className,
   hoverable = false,
+  allowOverflow = false,
   ...props
 }: CardProps) => {
   return (
     <div
       className={cn(
-        'bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden',
+        'bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm',
+        allowOverflow ? 'overflow-visible' : 'overflow-hidden',
         hoverable &&
           'transition-all duration-300 hover:shadow-md hover:-translate-y-1',
         className

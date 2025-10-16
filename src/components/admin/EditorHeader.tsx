@@ -7,8 +7,10 @@ interface EditorHeaderProps {
   status?: string;
   onPreview?: () => void;
   onPublish?: () => void;
+  onSave?: () => void;
   onSettings?: () => void;
   isPublishing?: boolean;
+  isSaving?: boolean;
 }
 
 export default function EditorHeader({
@@ -18,8 +20,10 @@ export default function EditorHeader({
   status = 'Draft - Saved',
   onPreview,
   onPublish,
+  onSave,
   onSettings,
   isPublishing = false,
+  isSaving = false,
 }: EditorHeaderProps) {
   return (
     <div>
@@ -56,6 +60,15 @@ export default function EditorHeader({
               className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 disabled:cursor-not-allowed text-white text-sm font-medium rounded-md transition-colors"
             >
               {isPublishing ? 'Publishing...' : 'Publish'}
+            </button>
+          )}
+          {onSave && (
+            <button
+              onClick={onSave}
+              disabled={isSaving}
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 disabled:cursor-not-allowed text-white text-sm font-medium rounded-md transition-colors"
+            >
+              {isSaving ? 'Saving...' : 'Save'}
             </button>
           )}
           {onSettings && (

@@ -173,15 +173,13 @@ const SelectPicker = ({
   };
 
   return (
-    <div className={`space-y-2 ${className}`}>
-      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-        {label}
-      </label>
-      <div
-        className={cn('relative w-full', className)}
-        ref={dropdownRef}
-        {...props}
-      >
+    <div className={`w-full space-y-2 ${className}`}>
+      {label && (
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+          {label}
+        </label>
+      )}
+      <div className="relative w-full" ref={dropdownRef} {...props}>
         {/* Trigger Button */}
         <button
           ref={triggerRef}
@@ -245,7 +243,7 @@ const SelectPicker = ({
         {isOpen && (
           <div
             className={cn(
-              'absolute z-50 w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-hidden',
+              'absolute z-[9999] w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-hidden',
               'dark:bg-gray-800 dark:border-gray-600',
               dropdownPosition === 'top' ? 'bottom-full mb-1' : 'top-full mt-1'
             )}

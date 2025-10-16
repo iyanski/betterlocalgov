@@ -107,7 +107,9 @@ export default function Document({
     return (
       <Section className="p-3 mb-12">
         <div className="flex items-center justify-center py-12">
-          <div className="text-gray-600">Loading document...</div>
+          <div className="text-gray-600 dark:text-gray-400">
+            Loading document...
+          </div>
         </div>
       </Section>
     );
@@ -118,7 +120,7 @@ export default function Document({
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" items={breadcrumbs} />
         <Heading>Document Not Found</Heading>
-        <Text className="text-red-600 mb-6">{error}</Text>
+        <Text className="text-red-600 dark:text-red-400 mb-6">{error}</Text>
       </Section>
     );
   }
@@ -142,7 +144,9 @@ export default function Document({
         <Card className="mb-8 markdown-content">
           <CardHeader>
             {markdownContent.description && (
-              <CardContent>{markdownContent.description}</CardContent>
+              <CardContent className="text-gray-600 dark:text-gray-400">
+                {markdownContent.description}
+              </CardContent>
             )}
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}

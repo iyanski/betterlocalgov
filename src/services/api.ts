@@ -180,4 +180,5 @@ export type {
   Content,
   ContentQuery,
   DocumentType,
+  DocumentRequest,
 } from './types';
