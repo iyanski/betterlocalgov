@@ -63,6 +63,7 @@ A modern, multilingual, and accessible website template designed specifically fo
 - **[CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md)** - Guide for non-technical users to edit and manage website content
 - **[DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)** - Deployment instructions for Vercel and other platforms
 - **[STARTER-KIT-SUMMARY.md](STARTER-KIT-SUMMARY.md)** - Audit results and implementation summary
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and release notes
 
 ## 🎯 Perfect For
 
@@ -270,7 +271,8 @@ This project is licensed under the Creative Commons Zero (CC0) License - see the
 ## 🙏 Acknowledgments
 
 - Built with [React](https://reactjs.org/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Styled with [Tailwind CSS v4](https://tailwindcss.com/)
+- UI components by [@bettergov/kapwa](https://github.com/bettergov/kapwa)
 - Icons by [Lucide React](https://lucide.dev/)
 - Content management with [YAML](https://yaml.org/)
 - Internationalization with [i18next](https://www.i18next.com/)

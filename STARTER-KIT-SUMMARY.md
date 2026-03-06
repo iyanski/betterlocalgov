@@ -200,7 +200,7 @@ local-government-starter-kit/
 ### **Built With:**
 
 - **Frontend**: React 19 + TypeScript
-- **Styling**: Tailwind CSS + Custom Design System
+- **Styling**: Tailwind CSS v4 + @bettergov/kapwa
 - **Build Tool**: Vite
 - **Content**: YAML + Markdown
 - **Internationalization**: i18next
