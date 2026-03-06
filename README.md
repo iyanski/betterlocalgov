@@ -156,6 +156,11 @@ src/
 └── types/              # TypeScript type definitions
 ```
 
+## 👥 Contributors
+
+- **[iyanski](https://github.com/iyanski)** — Project creator and maintainer
+- **[Nicu Listana](https://github.com/niculistana)** — Contributor
+
 ## 🤝 Contributing
 
 We welcome contributions from everyone! Whether you're a developer, government official, or community member, there are many ways to help improve this project.
