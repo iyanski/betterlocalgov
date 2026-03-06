@@ -1,5 +1,5 @@
 import Section from '../components/ui/Section';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Heading } from '../components/ui/Heading';
 import { Text } from '../components/ui/Text';
 import {
@@ -11,7 +11,8 @@ import * as LucideIcons from 'lucide-react';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import ServicesSection from '../components/home/ServicesSection';
 import SEO from '../components/SEO';
-import ListItem from '../components/ui/ListItem';
+import { Card, CardContent } from '@bettergov/kapwa/card';
+import { Banner } from '@bettergov/kapwa/banner';
 import { useState, useEffect } from 'react';
 
 const Services: React.FC = () => {
@@ -57,12 +58,12 @@ const Services: React.FC = () => {
     return (
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" />
-        <div className="flex flex-col items-center justify-center h-full p-6">
-          <Heading level={2}>Category not found</Heading>
-          <Text className="text-gray-600 mb-6">
-            The category you are looking for does not exist.
-          </Text>
-        </div>
+        <Banner
+          type="error"
+          title="Category not found"
+          description="The category you are looking for does not exist."
+          icon
+        />
       </Section>
     );
   }
@@ -87,13 +88,23 @@ const Services: React.FC = () => {
         ) : (
           <div className="space-y-4">
             {subcategories.map(subcategory => (
-              <ListItem
-                key={subcategory.slug}
-                title={subcategory.name}
-                category={categoryData.category || category}
-                description={subcategory.description || ''}
-                href={`/${subcategory.slug}`}
-              />
+              <Link key={subcategory.slug} to={`/${subcategory.slug}`}>
+                <Card hoverable>
+                  <CardContent>
+                    <h4 className="text-lg font-medium text-gray-900">
+                      {subcategory.name}
+                    </h4>
+                    {subcategory.description && (
+                      <p className="mt-2 text-sm text-gray-600">
+                        {subcategory.description}
+                      </p>
+                    )}
+                    <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
+                      {categoryData.category || category}
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         )}

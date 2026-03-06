@@ -1,7 +1,6 @@
-import { Heading } from '../components/ui/Heading';
 import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
-import { Text } from '../components/ui/Text';
+import { Banner } from '@bettergov/kapwa/banner';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -106,9 +105,7 @@ export default function Document({
   if (loading) {
     return (
       <Section className="p-3 mb-12">
-        <div className="flex items-center justify-center py-12">
-          <div className="text-gray-600">Loading document...</div>
-        </div>
+        <Banner type="info" description="Loading document..." />
       </Section>
     );
   }
@@ -117,8 +114,12 @@ export default function Document({
     return (
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" items={breadcrumbs} />
-        <Heading>Document Not Found</Heading>
-        <Text className="text-red-600 mb-6">{error}</Text>
+        <Banner
+          type="error"
+          title="Document Not Found"
+          description={error}
+          icon
+        />
       </Section>
     );
   }
