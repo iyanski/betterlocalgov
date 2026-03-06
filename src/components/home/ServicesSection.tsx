@@ -3,7 +3,7 @@ import * as LucideIcons from 'lucide-react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
 import { useTranslation } from '../../hooks/useTranslation';
-import { Card, CardContent } from '../ui/Card';
+import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Link } from 'react-router-dom';
 
 import { serviceCategories } from '../../data/yamlLoader';

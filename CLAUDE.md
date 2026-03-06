@@ -1,0 +1,66 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Commands
+
+```bash
+npm run dev          # Start development server (localhost:5173)
+npm run build        # TypeScript check + Vite production build
+npm run lint         # Run ESLint
+npm run lint:fix     # Auto-fix ESLint issues
+npm run format       # Format with Prettier
+npm run dev:yaml     # Convert YAML to JSON, then start dev server
+npm run setup        # Interactive setup script for new installations
+```
+
+Pre-commit hook runs `lint-staged` automatically (ESLint + Prettier on staged files).
+
+## Architecture
+
+This is a React 19 + TypeScript + Vite app for Philippine Local Government Units (LGUs). It uses React Router, Tailwind CSS, i18next for multilingual support, and a YAML-based content system.
+
+### Routing
+
+`src/App.tsx` defines four routes:
+
+- `/` — Home page
+- `/services` / `/services/:category` — Services listing
+- `/:documentSlug` / `/:lang/:documentSlug` — Document viewer (markdown content)
+
+### Content System
+
+Content is stored as YAML and Markdown files under `content/services/`. The system works in two layers:
+
+1. **`src/data/services.yaml`** — Top-level service categories (name, slug, icon, description). The `icon` field must be a valid Lucide React icon name.
+2. **`content/services/{category-slug}/index.yaml`** — Lists pages under each category (`pages:` array with `name`, `slug`, `description`).
+3. **`content/services/{category-slug}/{page-slug}.md`** — Actual markdown content for each service page.
+
+`src/data/yamlLoader.ts` imports YAML files statically using Vite's `?raw` import. When adding a new service category, you must:
+
+- Add an entry to `src/data/services.yaml`
+- Create `content/services/{slug}/index.yaml`
+- Add the static import and mapping entry to `src/data/yamlLoader.ts` (`categoryIndexMap`)
+
+Markdown files are loaded dynamically via `import()` in `src/lib/markdownLoader.ts`. The title is extracted from the first `# Heading` and the description from the first paragraph.
+
+### Internationalization
+
+- i18next with `HttpBackend` loads translation files from `public/locales/{lang}/common.json`
+- Language detection order: `localStorage` → `navigator` → `htmlTag`
+- Fallback language: `en`
+- Supported languages are defined in `src/types/index.ts` (`LanguageType`)
+- Currently only `public/locales/en/common.json` exists
+
+### Environment Variables
+
+The app uses `VITE_GOVERNMENT_NAME` (referenced in `Services.tsx`) for branding. Additional env vars are configured via the setup script.
+
+### UI Components
+
+Reusable primitives live in `src/components/ui/`: `Section`, `Heading`, `Text`, `Card`, `ListItem`, `Breadcrumbs`, `ScrollToTop`. Use these instead of raw HTML elements for consistency.
+
+### Code Style
+
+- Single quotes, 2-space indentation, trailing commas (ES5), semicolons, 80-char line width (enforced by Prettier)
+- Arrow functions omit parens for single arguments
