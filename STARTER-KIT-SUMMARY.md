@@ -57,7 +57,7 @@
 ## 📁 **File Structure for Starter Kit**
 
 ```
-local-government-starter-kit/
+betterlocalgov/
 ├── README.md                          # Main project README
 ├── STARTER-KIT-README.md              # Comprehensive setup guide
 ├── CONTENT-GUIDE.md                   # Content writing guidelines

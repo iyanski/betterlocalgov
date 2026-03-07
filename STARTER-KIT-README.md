@@ -22,14 +22,27 @@ A modern, multilingual, and accessible website template designed specifically fo
 
 ### Installation
 
-1. **Clone the repository**
+1. **Fork the repository**
+   - Visit https://github.com/iyanski/betterlocalgov
+   - Click the "Fork" button in the top right
+   - This creates your own copy of the repository
+
+2. **Clone your forked repository**
 
    ```bash
-   git clone https://github.com/your-org/local-government-starter-kit.git
-   cd local-government-starter-kit
+   git clone https://github.com/YOUR-USERNAME/betterlocalgov.git
+   cd betterlocalgov
    ```
 
-2. **Install dependencies**
+   Replace `YOUR-USERNAME` with your GitHub username.
+
+3. **Add upstream remote** (to get updates from the original repo)
+
+   ```bash
+   git remote add upstream https://github.com/iyanski/betterlocalgov.git
+   ```
+
+4. **Install dependencies**
 
    ```bash
    npm install
@@ -37,7 +50,7 @@ A modern, multilingual, and accessible website template designed specifically fo
    yarn install
    ```
 
-3. **Set up environment variables**
+5. **Set up environment variables**
 
    ```bash
    cp .env.example .env.local
@@ -55,7 +68,7 @@ A modern, multilingual, and accessible website template designed specifically fo
    VITE_CONTACT_PHONE="(032) 123-4567"
    ```
 
-4. **Start development server**
+6. **Start development server**
 
    ```bash
    npm run dev
@@ -63,7 +76,7 @@ A modern, multilingual, and accessible website template designed specifically fo
    yarn dev
    ```
 
-5. **Open your browser**
+7. **Open your browser**
    Navigate to `http://localhost:5173`
 
 ## 🛠️ Customization Guide
@@ -294,19 +307,43 @@ src/
 
 ### For Content Contributors
 
-1. **Fork the repository**
-2. **Create a content branch**: `git checkout -b content/update-health-services`
-3. **Edit content files** in `content/`
-4. **Test your changes**: `npm run dev`
-5. **Submit a pull request**
+1. **Fork the repository** on GitHub (click "Fork" at https://github.com/iyanski/betterlocalgov)
+2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/betterlocalgov.git`
+3. **Add upstream remote**: `git remote add upstream https://github.com/iyanski/betterlocalgov.git`
+4. **Create a content branch**: `git checkout -b content/update-health-services`
+5. **Edit content files** in `content/`
+6. **Test your changes**: `npm run dev`
+7. **Submit a pull request**
 
 ### For Developers
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/new-component`
-3. **Make your changes**
-4. **Run tests**: `npm run lint && npm run build`
-5. **Submit a pull request**
+1. **Fork the repository** on GitHub (click "Fork" at https://github.com/iyanski/betterlocalgov)
+2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/betterlocalgov.git`
+3. **Add upstream remote**: `git remote add upstream https://github.com/iyanski/betterlocalgov.git`
+4. **Create a feature branch**: `git checkout -b feature/new-component`
+5. **Make your changes**
+6. **Run tests**: `npm run lint && npm run build`
+7. **Submit a pull request**
+
+### Keeping Your Fork Updated
+
+To get the latest changes from the original repository:
+
+```bash
+# Fetch the latest changes from upstream
+git fetch upstream
+
+# Switch to your main branch
+git checkout main
+
+# Merge upstream changes into your main branch
+git merge upstream/main
+
+# Push updates to your fork on GitHub
+git push origin main
+```
+
+**Best Practice**: Always sync your fork before creating a new branch for contributions.
 
 ## 📋 Content Checklist
 
