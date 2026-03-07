@@ -21,7 +21,15 @@ interface Category {
   icon: string;
 }
 
-export default function GovernmentActivitySection() {
+interface GovernmentActivitySectionProps {
+  title?: string;
+  description?: string;
+}
+
+export default function GovernmentActivitySection({
+  title,
+  description,
+}: GovernmentActivitySectionProps = {}) {
   const { t } = useTranslation();
 
   const getIcon = (category: string) => {
@@ -35,9 +43,9 @@ export default function GovernmentActivitySection() {
 
   return (
     <Section id="#government">
-      <Heading level={2}>{t('governmentActivity.title')}</Heading>
+      <Heading level={2}>{title || t('governmentActivity.title')}</Heading>
       <Text className="text-gray-600 mb-6">
-        {t('governmentActivity.description')}
+        {description || t('governmentActivity.description')}
       </Text>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
