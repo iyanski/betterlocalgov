@@ -8,6 +8,10 @@ categories:
     description: 'Explore local government departments, agencies, and offices with their mandates, services, and contact details.'
     icon: 'Building2'
     subcategories:
+      - name: 'Executive Department'
+        slug: 'executive'
+      - name: 'Legislative Department'
+        slug: 'legislative'
       - name: 'Department of Education'
         slug: 'department-of-education'
       - name: 'Department of Health'

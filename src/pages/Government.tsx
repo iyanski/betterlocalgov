@@ -3,20 +3,20 @@ import { useParams, Link } from 'react-router-dom';
 import { Heading } from '../components/ui/Heading';
 import { Text } from '../components/ui/Text';
 import {
-  serviceCategories,
+  governmentCategories,
   getCategorySubcategories,
   type Subcategory,
   type CategoryIndex,
 } from '../data/yamlLoader';
 import * as LucideIcons from 'lucide-react';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
-import ServicesSection from '../components/home/ServicesSection';
+import GovernmentActivitySection from '../components/home/GovernmentActivitySection';
 import SEO from '../components/SEO';
 import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Banner } from '@bettergov/kapwa/banner';
 import { useState, useEffect } from 'react';
 
-const Services: React.FC = () => {
+const Government: React.FC = () => {
   const { category } = useParams();
   const [categoryIndex, setCategoryIndex] = useState<CategoryIndex>({
     layout: 'list',
@@ -26,7 +26,7 @@ const Services: React.FC = () => {
   const subcategories: Subcategory[] = categoryIndex.pages;
 
   const getCategory = () => {
-    return serviceCategories.categories.find(c => c.slug === category);
+    return governmentCategories.categories.find(c => c.slug === category);
   };
 
   const categoryData = getCategory();
@@ -52,7 +52,7 @@ const Services: React.FC = () => {
           description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
           keywords="government services, public services, local government, civic services"
         />
-        <ServicesSection
+        <GovernmentActivitySection
           title={`All local government services`}
           description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
         />
@@ -105,7 +105,7 @@ const Services: React.FC = () => {
                 {subcategories.map(subcategory => (
                   <Link
                     key={subcategory.slug}
-                    to={`/services/${category}/${subcategory.slug}`}
+                    to={`/government/${category}/${subcategory.slug}`}
                   >
                     <Card
                       hoverable
@@ -133,7 +133,7 @@ const Services: React.FC = () => {
                 {subcategories.map(subcategory => (
                   <Link
                     key={subcategory.slug}
-                    to={`/services/${category}/${subcategory.slug}`}
+                    to={`/government/${category}/${subcategory.slug}`}
                   >
                     <Card hoverable className="mb-4">
                       <CardContent>
@@ -161,4 +161,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services;
+export default Government;

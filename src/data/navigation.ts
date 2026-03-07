@@ -23,14 +23,7 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     label: 'Government',
-    href: '/about',
-    children: [
-      { label: 'About', href: '/about/government' },
-      { label: 'History', href: '/about/history' },
-      { label: 'Map', href: '/philippines/map' },
-      { label: 'Hotlines', href: '/about/hotlines' },
-      { label: 'Holidays', href: '/philippines/holidays' },
-    ],
+    href: '/government/departments',
   },
 ];
 

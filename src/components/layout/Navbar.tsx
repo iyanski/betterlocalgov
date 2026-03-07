@@ -44,33 +44,36 @@ const Navbar: React.FC = () => {
       <div className="border-b border-gray-200">
         <div className="container mx-auto px-4 flex justify-end items-center h-10">
           <div className="flex items-center space-x-4">
-            <Link
-              to="/join-us"
+            <a
+              href="https://bettergov.ph/join-us"
               className="text-xs text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+              target="_blank"
             >
               🚀 Join Us
-            </Link>
-            <Link
-              to="/ideas"
+            </a>
+            <a
+              href="https://bettergov.ph/about"
               className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
+              target="_blank"
             >
-              Project Ideas
-            </Link>
+              About BetterGov
+            </a>
             <a
               href="https://www.gov.ph"
               className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
               target="_blank"
-              rel="noreferrer"
             >
               Official Gov.ph
             </a>
 
-            <Link
-              to="/philippines/hotlines"
+            <a
+              href="https://bettergov.ph/philippines/hotlines"
               className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
+              target="_blank"
+              rel="noreferrer"
             >
               Hotlines
-            </Link>
+            </a>
             <div className="hidden md:block">
               <select
                 value={i18n.language}
@@ -114,15 +117,15 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-8 pr-24">
             {mainNavigation.map(item => (
               <div key={item.label} className="relative group">
-                <Link
-                  to={item.href}
+                <a
+                  href={item.href}
                   className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
                 >
                   {t(`navbar.${item.label.replace(' ', '').toLowerCase()}`)}
                   {item.children && (
                     <ChevronDown className="ml-1 h-4 w-4 text-gray-800 group-hover:text-primary-600 transition-colors" />
                   )}
-                </Link>
+                </a>
                 {item.children && (
                   <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <div

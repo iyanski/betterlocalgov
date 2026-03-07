@@ -56,11 +56,11 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
               to={item.href}
               className="hover:text-primary-600 transition-colors duration-200"
             >
-              {item.label}
+              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
             </Link>
           ) : (
             <span className="text-gray-900 font-medium" aria-current="page">
-              {item.label}
+              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
             </span>
           )}
         </React.Fragment>

@@ -2,92 +2,68 @@
  * Utility to load markdown content dynamically based on slug
  */
 
-import {
-  serviceCategories,
-  getCategorySubcategories,
-} from '../data/yamlLoader';
+/**
+ * Replaces {PLACEHOLDER} tokens using JSON data first, then VITE_ env vars.
+ */
+function interpolate(
+  content: string,
+  data: Record<string, unknown> = {}
+): string {
+  return content.replace(/\{([A-Z0-9_]+)\}/g, (match, key) => {
+    if (key in data) return String(data[key]);
+    const value = import.meta.env[`VITE_${key}`];
+    return value !== undefined ? String(value) : match;
+  });
+}
 
 export interface MarkdownContent {
   content: string;
   title?: string;
   description?: string;
+  data?: Record<string, unknown>;
 }
 
 /**
- * Finds the category slug for a given document slug by searching through the services YAML
- * @param documentSlug - The document slug to find
- * @returns The category slug or null if not found
- */
-async function findCategorySlug(documentSlug: string): Promise<string | null> {
-  // Search through all categories to find which one contains this document
-  for (const category of serviceCategories.categories) {
-    // Check if category has subcategories (backward compatibility)
-    if (category.subcategories) {
-      for (const subcategory of category.subcategories) {
-        if (subcategory.slug === documentSlug) {
-          return category.slug;
-        }
-      }
-    } else {
-      // Use the new async loading approach
-      try {
-        const subcategories = await getCategorySubcategories(category.slug);
-        const found = subcategories.find(sub => sub.slug === documentSlug);
-        if (found) {
-          return category.slug;
-        }
-      } catch (error) {
-        console.warn(
-          `Error loading subcategories for category ${category.slug}:`,
-          error
-        );
-      }
-    }
-  }
-  return null;
-}
-
-/**
- * Loads markdown content from the content/category directory
+ * Loads markdown content from the appropriate content directory.
+ * Also attempts to load a companion JSON file (same slug) for template
+ * variable substitution and structured data.
  * @param documentSlug - The document slug (filename without .md extension)
- * @returns Promise with markdown content
+ * @param categorySlug - The category slug (parent directory)
+ * @param categoryType - Whether this is a 'service' or 'government' document
  */
 export async function loadMarkdownContent(
-  documentSlug: string
+  documentSlug: string,
+  categorySlug: string,
+  categoryType: 'service' | 'government'
 ): Promise<MarkdownContent> {
   try {
-    console.log(`Loading markdown content for document: ${documentSlug}`);
+    const dir = categoryType === 'government' ? 'government' : 'services';
 
-    // Find the category slug from the YAML data
-    const categorySlug = await findCategorySlug(documentSlug);
-    console.log(`Found category slug: ${categorySlug}`);
-
-    if (!categorySlug) {
-      throw new Error(`Category not found for document slug: ${documentSlug}`);
+    // Try to load companion JSON for template data
+    let data: Record<string, unknown> = {};
+    try {
+      const jsonModule = await import(
+        `../../content/${dir}/${categorySlug}/${documentSlug}.json`
+      );
+      data = jsonModule.default;
+    } catch {
+      // No companion JSON — that's fine
     }
 
-    // Import the markdown file dynamically from the services directory
-    // Construct the path using the category slug and document slug
     const module = await import(
-      `../../content/services/${categorySlug}/${documentSlug}.md?raw`
+      `../../content/${dir}/${categorySlug}/${documentSlug}.md?raw`
     );
-    const content = module.default;
+    const content = interpolate(module.default, data);
 
-    // Extract title from the first heading (# Title)
     const titleMatch = content.match(/^#\s+(.+)$/m);
     const title = titleMatch ? titleMatch[1] : undefined;
 
-    // Extract description from the first paragraph after the title
     const descriptionMatch = content.match(/^#\s+.+$\n\n(.+?)(?:\n\n|$)/s);
     const description = descriptionMatch
       ? descriptionMatch[1].replace(/^>\s*/, '').trim()
       : undefined;
 
-    return {
-      content,
-      title,
-      description,
-    };
+    return { content, title, description, data };
   } catch (error) {
     console.error(
       `Failed to load markdown content for document: ${documentSlug}`,
