@@ -173,6 +173,170 @@ npm run build
 - **Custom domain** capability
 - **CDN** (recommended for performance)
 
+### Option 4: AWS S3 with Terraform
+
+Deploy to AWS S3 using Infrastructure as Code (Terraform) for full control and scalability.
+
+#### Prerequisites
+
+```bash
+# Install AWS CLI
+brew install awscli  # macOS
+# or download from https://aws.amazon.com/cli/
+
+# Configure AWS credentials
+aws configure
+
+# Install Terraform
+brew install terraform  # macOS
+# or download from https://www.terraform.io/downloads
+```
+
+#### Setup and Deploy
+
+```bash
+# 1. Build your application
+npm run build
+
+# 2. Navigate to terraform directory
+cd terraform
+
+# 3. Copy example configuration
+cp terraform.tfvars.example terraform.tfvars
+
+# 4. Edit terraform.tfvars with your settings
+# Required: Set a globally unique bucket_name
+vi terraform.tfvars
+
+# 5. Initialize Terraform
+terraform init
+
+# 6. Preview changes
+terraform plan
+
+# 7. Deploy to AWS
+terraform apply
+```
+
+#### Configuration (terraform.tfvars)
+
+```hcl
+# AWS region for your S3 bucket
+aws_region = "ap-southeast-1"
+
+# Globally unique bucket name (lowercase, no spaces)
+bucket_name = "your-city-gov-website"
+
+# Path to built files (relative to terraform directory)
+dist_folder_path = "../dist"
+
+# Optional: Custom tags
+tags = {
+  Project     = "BetterLocalGov"
+  Environment = "production"
+  LGU         = "Your City Name"
+  ManagedBy   = "Terraform"
+}
+```
+
+#### Updating Your Site
+
+After making changes:
+
+```bash
+# 1. Rebuild the application
+npm run build
+
+# 2. Apply Terraform changes (from terraform directory)
+cd terraform
+terraform apply
+```
+
+Terraform will automatically detect changed files and update only what's necessary.
+
+#### What Gets Created
+
+- **S3 Bucket**: Public bucket configured for static website hosting
+- **Website Configuration**: Index and error documents configured
+- **Public Access Policy**: Allows public read access to website files
+- **File Upload**: All dist/ contents uploaded with correct MIME types
+
+#### Terraform Outputs
+
+After deployment, you'll receive:
+
+- **website_url**: Your public S3 website URL
+- **bucket_name**: S3 bucket identifier
+- **bucket_arn**: AWS bucket ARN
+- **files_uploaded**: Number of files deployed
+
+#### Cost Considerations
+
+- **S3 Storage**: ~$0.023 per GB/month
+- **Data Transfer**: First 100 GB/month free (AWS Free Tier)
+- **Requests**: Minimal cost for typical traffic
+- **Total**: Usually < $5/month for small sites
+
+#### Adding CloudFront CDN (Optional)
+
+For HTTPS and better performance, add CloudFront to your Terraform configuration:
+
+```hcl
+# Add to main.tf
+resource "aws_cloudfront_distribution" "website" {
+  origin {
+    domain_name = aws_s3_bucket_website_configuration.website.website_endpoint
+    origin_id   = "S3-Website"
+
+    custom_origin_config {
+      http_port              = 80
+      https_port             = 443
+      origin_protocol_policy = "http-only"
+      origin_ssl_protocols   = ["TLSv1.2"]
+    }
+  }
+
+  enabled             = true
+  default_root_object = "index.html"
+
+  default_cache_behavior {
+    target_origin_id       = "S3-Website"
+    viewer_protocol_policy = "redirect-to-https"
+
+    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    cached_methods  = ["GET", "HEAD"]
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
+  viewer_certificate {
+    cloudfront_default_certificate = true
+  }
+}
+```
+
+#### Cleaning Up Resources
+
+To remove all AWS resources:
+
+```bash
+cd terraform
+terraform destroy
+```
+
+**Note**: See [terraform/README.md](terraform/README.md) for detailed documentation.
+
 ## 🔧 Environment-Specific Configurations
 
 ### Development Environment
