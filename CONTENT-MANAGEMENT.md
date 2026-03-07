@@ -8,9 +8,10 @@ This guide will help you edit and manage content for the Better Local Government
 2. [Understanding the Content Structure](#understanding-the-content-structure)
 3. [Editing Content Files](#editing-content-files)
 4. [Adding New Services](#adding-new-services)
-5. [Markdown Formatting Guide](#markdown-formatting-guide)
-6. [Best Practices](#best-practices)
-7. [Troubleshooting](#troubleshooting)
+5. [Adding Government Department Pages](#adding-government-department-pages)
+6. [Markdown Formatting Guide](#markdown-formatting-guide)
+7. [Best Practices](#best-practices)
+8. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -33,26 +34,30 @@ This guide will help you edit and manage content for the Better Local Government
 
 ## Understanding the Content Structure
 
-The website content is organized in folders by service categories. The `content` folder is located at the root level of the repository (not inside the `src` folder). Here's how it works:
+The website content is organized in two main sections under the `content` folder at the root level of the repository (not inside the `src` folder):
 
 ```
-content/services/
-├── agriculture-fisheries/
-├── business/
-├── disaster-preparedness/
-├── education/
-├── environment/
-├── garbage-waste-disposal/
-├── health-services/
-├── housing-land-use/
-├── infrastructure-public-works/
-└── social-welfare/
+content/
+├── government/
+│   └── departments/         # Executive, legislative, and other department pages
+└── services/
+    ├── agriculture-fisheries/
+    ├── business/
+    ├── disaster-preparedness/
+    ├── education/
+    ├── environment/
+    ├── garbage-waste-disposal/
+    ├── health-services/
+    ├── housing-land-use/
+    ├── infrastructure-public-works/
+    └── social-welfare/
 ```
 
-### Two Types of Files
+### Three Types of Files
 
-1. **Index Files** (`index.yaml`) - These list all the services in a category
-2. **Content Files** (`.md` files) - These contain the actual service information
+1. **Index Files** (`index.yaml`) — List all the pages in a category
+2. **Content Files** (`.md` files) — The actual page content written in Markdown
+3. **Data Files** (`.json` files) — Optional companion files that supply dynamic values (names, titles, dates) into the matching `.md` file using `{PLACEHOLDER}` tokens
 
 ---
 
@@ -62,9 +67,9 @@ content/services/
 
 1. Go to the GitHub repository in your web browser
 2. Click on the `content` folder (at the root level)
-3. Click on `services` folder
-4. Choose the category folder (e.g., `education`)
-5. Click on the file you want to edit (e.g., `apply-for-local-scholarships.md`)
+3. Click on `services` for service pages, or `government` for department/office pages
+4. Choose the category folder (e.g., `education` or `departments`)
+5. Click on the file you want to edit (e.g., `apply-for-local-scholarships.md` or `executive.md`)
 
 ### Step 2: Edit the File
 
@@ -138,6 +143,64 @@ pages:
 #### Step 2: Create Service Content Files
 
 Follow the same process as Method 1 to add individual service files.
+
+---
+
+## Adding Government Department Pages
+
+Government department pages live under `content/government/` and follow the same two-file pattern as services.
+
+### Editing an Existing Department Page
+
+1. Navigate to `content/government/departments/`
+2. Click on the department file you want to edit (e.g., `executive.md`)
+3. Click the pencil icon, make your changes, and commit
+
+### Adding a New Department Page
+
+#### Step 1: Create the Content File
+
+1. Navigate to `content/government/departments/`
+2. Click **"Add file"** → **"Create new file"**
+3. Name the file: `your-department-name.md`
+4. Add your content following the department page template (see Content Guide)
+5. Click **"Commit new file"**
+
+#### Step 2: Update the Index File
+
+1. Go back to `content/government/departments/`
+2. Click on `index.yaml`
+3. Click the pencil icon to edit
+4. Add your new department to the list:
+
+```yaml
+pages:
+  - name: 'Your Department Name'
+    slug: 'your-department-name'
+    description: 'Brief description of the department.'
+```
+
+5. Save the changes
+
+### Using Dynamic Data in Department Pages
+
+Department pages support `{PLACEHOLDER}` tokens that are automatically replaced with values from a companion JSON file of the same name. For example, `executive.md` can reference `{MAYOR}` and `{GOVERNMENT_NAME}`, which are defined in `executive.json`:
+
+```json
+{
+  "GOVERNMENT_NAME": "Lapu Lapu City",
+  "MAYOR": "Ma. Cynthia K. Chan",
+  "MAYOR_HE_SHE": "she",
+  "HONORIFIC_TITLE": "Honorable",
+  "VICE_MAYOR": "Celedonio B. Sitoy",
+  "VICE_MAYOR_HE_SHE": "he",
+  "YEAR_ELECTED": "2022"
+}
+```
+
+To update official names or titles, **edit only the JSON file** — the markdown content updates automatically. If no JSON file exists, placeholders fall back to environment variables (`VITE_MAYOR`, etc.) or are left as-is.
+
+> **Note:** Adding a brand-new government _category_ (e.g., a section alongside `departments`) requires a developer to register it in `src/data/government.yaml` and `src/data/yamlLoader.ts`.
 
 ---
 
@@ -335,7 +398,8 @@ Key information about the service.
 
 #### "I can't find the file I want to edit"
 
-- Make sure you're in the right folder path: `content/services/[category]/`
+- For service pages: `content/services/[category]/`
+- For government/department pages: `content/government/[category]/`
 - Check if the file exists by looking at the folder contents
 - Remember: the `content` folder is at the root level of the repository, not inside `src`
 
@@ -409,6 +473,7 @@ If you're still having trouble:
 - Education services: `content/services/education/`
 - Health services: `content/services/health-services/`
 - Business services: `content/services/business/`
+- Government departments: `content/government/departments/`
 
 **Note:** The `content` folder is located at the root level of the repository, not inside the `src` folder.
 

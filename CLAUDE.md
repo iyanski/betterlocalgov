@@ -22,27 +22,48 @@ This is a React 19 + TypeScript + Vite app for Philippine Local Government Units
 
 ### Routing
 
-`src/App.tsx` defines four routes:
+`src/App.tsx` defines six routes:
 
 - `/` — Home page
 - `/services` / `/services/:category` — Services listing
-- `/:documentSlug` / `/:lang/:documentSlug` — Document viewer (markdown content)
+- `/government` / `/government/:category` — Government section listing
+- `/:documentSlug` / `/:lang/:documentSlug` — Document viewer (markdown content, used by both services and government)
 
 ### Content System
 
-Content is stored as YAML and Markdown files under `content/services/`. The system works in two layers:
+Content is stored as YAML and Markdown files under `content/`. Two parallel content trees exist:
+
+#### Services (`content/services/`)
 
 1. **`src/data/services.yaml`** — Top-level service categories (name, slug, icon, description). The `icon` field must be a valid Lucide React icon name.
 2. **`content/services/{category-slug}/index.yaml`** — Lists pages under each category (`pages:` array with `name`, `slug`, `description`).
 3. **`content/services/{category-slug}/{page-slug}.md`** — Actual markdown content for each service page.
 
-`src/data/yamlLoader.ts` imports YAML files statically using Vite's `?raw` import. When adding a new service category, you must:
+When adding a new service category, you must:
 
 - Add an entry to `src/data/services.yaml`
 - Create `content/services/{slug}/index.yaml`
 - Add the static import and mapping entry to `src/data/yamlLoader.ts` (`categoryIndexMap`)
 
+#### Government (`content/government/`)
+
+1. **`src/data/government.yaml`** — Top-level government categories (name, slug, icon, description).
+2. **`content/government/{category-slug}/index.yaml`** — Lists pages under each category.
+3. **`content/government/{category-slug}/{page-slug}.md`** — Markdown content for each department/office page.
+
+When adding a new government category, you must:
+
+- Add an entry to `src/data/government.yaml`
+- Create `content/government/{slug}/index.yaml`
+- Add the static import and mapping entry to `src/data/yamlLoader.ts` (`govCategoryIndexMap`)
+
 Markdown files are loaded dynamically via `import()` in `src/lib/markdownLoader.ts`. The title is extracted from the first `# Heading` and the description from the first paragraph.
+
+#### Companion JSON files
+
+A markdown page can have an optional companion JSON file with the same slug (e.g. `executive.md` + `executive.json`). The loader attempts to import the JSON and passes it to `interpolate()`, which replaces `{PLACEHOLDER}` tokens in the markdown. Resolution order: JSON value → `VITE_<KEY>` env var → unchanged token.
+
+Example: `{MAYOR}` in the markdown is replaced with the `MAYOR` value from `executive.json`, or `VITE_MAYOR` if no JSON file exists.
 
 ### Internationalization
 

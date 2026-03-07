@@ -27,6 +27,57 @@ This guide helps content contributors create clear, helpful, and accessible cont
 
 ## 📋 Content Structure
 
+### Department/Office Page Template
+
+```markdown
+# [Department/Office Name] — [Your City Name]
+
+Brief description of the department, its mandate, and who it serves.
+
+---
+
+## About the Office
+
+| Information  | Details             |
+| ------------ | ------------------- |
+| **Head**     | [Name and Position] |
+| **Location** | [Office/Building]   |
+| **Phone**    | [Phone Number]      |
+| **Email**    | [Email Address]     |
+| **Hours**    | [Operating Hours]   |
+
+---
+
+## Mandate and Functions
+
+Brief statement of the legal mandate and primary functions.
+
+- [Core function 1]
+- [Core function 2]
+- [Core function 3]
+
+---
+
+## Key Programs and Services
+
+### [Program or Service Name]
+
+Short description of the program and who benefits from it.
+
+### [Program or Service Name]
+
+Short description of the program and who benefits from it.
+
+---
+
+## Contact Information
+
+- **Address**: [Full Address with Landmarks]
+- **Phone**: [Phone Number]
+- **Email**: [Email Address]
+- **Facebook**: [Facebook Page - if available]
+```
+
 ### Service Page Template
 
 ```markdown
@@ -170,6 +221,13 @@ Use clear, descriptive headings:
 
 ### Content Types
 
+#### 0. Department/Office Pages
+
+- Office mandate and legal basis
+- Key officials and contact info
+- Programs and services offered
+- Links to relevant service pages
+
 #### 1. Service Information
 
 - What the service is
@@ -201,6 +259,47 @@ Use clear, descriptive headings:
 - Eligibility criteria
 - Fees and costs
 - Processing times
+
+## 🔧 Dynamic Content with Placeholders
+
+Markdown pages can use `{PLACEHOLDER}` tokens for values that change between LGUs (official names, dates, etc.). Tokens are replaced at load time using a companion JSON file with the same slug.
+
+### How It Works
+
+| File             | Purpose                                                     |
+| ---------------- | ----------------------------------------------------------- |
+| `executive.md`   | Markdown content with `{MAYOR}`, `{GOVERNMENT_NAME}` tokens |
+| `executive.json` | Key-value pairs that supply the token values                |
+
+Resolution order:
+
+1. Value from the companion `.json` file
+2. `VITE_<KEY>` environment variable
+3. Token left unchanged (e.g. `{MAYOR}`)
+
+### When to Use Placeholders
+
+- Official names (mayor, vice mayor, department heads)
+- LGU name and address
+- Dates and election years
+- Any value that differs per deployment
+
+### When NOT to Use Placeholders
+
+- Narrative paragraphs and descriptions — write these directly
+- Content that changes frequently — update the markdown instead
+- Values that don't vary across deployments
+
+### Keeping JSON Files Updated
+
+When officials change, **only update the JSON file** — no need to touch the markdown:
+
+```json
+{
+  "MAYOR": "New Mayor Name",
+  "YEAR_ELECTED": "2025"
+}
+```
 
 ## 🌐 Multilingual Content
 
