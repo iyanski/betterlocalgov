@@ -1,0 +1,22 @@
+# Example Terraform variables file
+# Copy this file to terraform.tfvars and update with your values
+
+# AWS region where your S3 bucket will be created
+aws_region = "ap-southeast-1"
+
+# Globally unique S3 bucket name
+# Must be lowercase, no spaces, 3-63 characters
+bucket_name = "naga-city-albay-website"
+
+# Path to your built dist folder (relative to terraform directory)
+dist_folder_path = "../dist"
+
+# Optional: Custom tags for your resources
+tags = {
+  Project     = "BetterLocalGov"
+  Environment = "production"
+  ManagedBy   = "Terraform"
+  LGU         = "Naga City"
+  Region      = "Bicol Region"
+  Province    = "Albay"
+}
