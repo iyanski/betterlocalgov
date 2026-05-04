@@ -325,6 +325,12 @@ This project is licensed under the Creative Commons Zero (CC0) License - see the
 - Content management with [YAML](https://yaml.org/)
 - Internationalization with [i18next](https://www.i18next.com/)
 
+## 📁 Directory
+
+| LGU | Region | GitHub | Facebook | Status | Contributor |
+| --- | --- | --- | --- | --- | --- |
+| Piat, Cagayan | 02 | [GitHub](https://github.com/JoScripty/betterpiat.git) | [Facebook](https://facebook.com/joseph11.cajocson.37) | 🔵 Planned | [@JoScripty](https://github.com/JoScripty) |
+
 ---
 
 **Made with ❤️ for Philippine Local Government Units**
