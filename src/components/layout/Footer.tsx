@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Facebook } from 'lucide-react';
 import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -11,12 +11,6 @@ const Footer: React.FC = () => {
     switch (label) {
       case 'Facebook':
         return <Facebook className="h-5 w-5" />;
-      case 'Twitter':
-        return <Twitter className="h-5 w-5" />;
-      case 'Instagram':
-        return <Instagram className="h-5 w-5" />;
-      case 'YouTube':
-        return <Youtube className="h-5 w-5" />;
       default:
         return null;
     }
