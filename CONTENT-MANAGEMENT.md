@@ -188,7 +188,7 @@ Department pages support `{PLACEHOLDER}` tokens that are automatically replaced 
 
 ```json
 {
-  "GOVERNMENT_NAME": "Lapu Lapu City",
+  "GOVERNMENT_NAME": "Kidapawan City",
   "MAYOR": "Ma. Cynthia K. Chan",
   "MAYOR_HE_SHE": "she",
   "HONORIFIC_TITLE": "Honorable",
