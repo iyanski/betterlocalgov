@@ -5,6 +5,7 @@ import { Text } from '../ui/Text';
 import { cn } from '../../lib/utils';
 import {
   loadDisasterRiskReductionData,
+  loadDpwhProjectsData,
   loadIncomeDependencyData,
   loadProcurementData,
   loadStatementReceiptsExpenditureData,
@@ -101,7 +102,9 @@ type ProcurementSortKey =
   | 'budget-desc'
   | 'budget-asc'
   | 'date-desc'
-  | 'date-asc';
+  | 'date-asc'
+  | 'progress-desc'
+  | 'progress-asc';
 
 type ProcurementFilterOption = {
   label: string;
@@ -142,7 +145,8 @@ function formatPhp(value: number) {
 function formatCompactPhp(value: number) {
   return `PHP ${value.toLocaleString('en-PH', {
     notation: 'compact',
-    maximumFractionDigits: 1,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   })}`;
 }
 
@@ -168,6 +172,30 @@ function normalizeSearchValue(value: string) {
 
 function procurementClassification(record: ProcurementRecord) {
   return record.classification || record.category || 'Uncategorized';
+}
+
+function hasProgressValue(record: ProcurementRecord) {
+  return (
+    typeof record.progress === 'number' && Number.isFinite(record.progress)
+  );
+}
+
+function statusPillClass(status: string) {
+  const normalized = normalizeFilterValue(status);
+
+  if (normalized.includes('completed')) {
+    return 'bg-emerald-50 text-emerald-700';
+  }
+
+  if (normalized.includes('on-going') || normalized.includes('ongoing')) {
+    return 'bg-amber-50 text-amber-700';
+  }
+
+  if (normalized.includes('procurement')) {
+    return 'bg-violet-50 text-violet-700';
+  }
+
+  return 'bg-gray-100 text-gray-700';
 }
 
 function formatPercent(value: number) {
@@ -1254,18 +1282,43 @@ export function DisasterRiskReductionDashboard() {
 }
 
 export function ProcurementDashboard() {
+  return (
+    <ProcurementRecordsDashboard
+      loadData={loadProcurementData}
+      loadingLabel="procurement data"
+    />
+  );
+}
+
+export function DpwhProjectsDashboard() {
+  return (
+    <ProcurementRecordsDashboard
+      loadData={loadDpwhProjectsData}
+      loadingLabel="DPWH projects data"
+    />
+  );
+}
+
+function ProcurementRecordsDashboard({
+  loadData,
+  loadingLabel,
+}: {
+  loadData: () => Promise<ProcurementData | null>;
+  loadingLabel: string;
+}) {
   const [data, setData] = useState<ProcurementData | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [classification, setClassification] = useState('all');
+  const [status, setStatus] = useState('all');
   const [sortKey, setSortKey] = useState<ProcurementSortKey>('date-desc');
 
   useEffect(() => {
-    loadProcurementData()
+    loadData()
       .then(setData)
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, []);
+  }, [loadData]);
 
   const classificationOptions = useMemo<ProcurementFilterOption[]>(() => {
     if (!data) {
@@ -1300,7 +1353,13 @@ export function ProcurementDashboard() {
     return data.records
       .filter(record => {
         const searchableText = normalizeSearchValue(
-          [record.title, record.procuringEntity].join(' ')
+          [
+            record.title,
+            record.procuringEntity,
+            record.awardee,
+            record.referenceId,
+            record.contractNo,
+          ].join(' ')
         );
         const matchesQuery = searchTokens.every(token =>
           searchableText.includes(token)
@@ -1309,8 +1368,11 @@ export function ProcurementDashboard() {
           classification === 'all' ||
           normalizeFilterValue(procurementClassification(record)) ===
             classification;
+        const matchesStatus =
+          status === 'all' ||
+          normalizeFilterValue(record.status ?? '') === status;
 
-        return matchesQuery && matchesClassification;
+        return matchesQuery && matchesClassification && matchesStatus;
       })
       .sort((a, b) => {
         if (sortKey === 'budget-desc') {
@@ -1321,15 +1383,23 @@ export function ProcurementDashboard() {
           return a.budget - b.budget;
         }
 
+        if (sortKey === 'progress-desc') {
+          return (b.progress ?? -1) - (a.progress ?? -1);
+        }
+
+        if (sortKey === 'progress-asc') {
+          return (a.progress ?? 101) - (b.progress ?? 101);
+        }
+
         const dateA = a.awardDate ? Date.parse(a.awardDate) : 0;
         const dateB = b.awardDate ? Date.parse(b.awardDate) : 0;
 
         return sortKey === 'date-desc' ? dateB - dateA : dateA - dateB;
       });
-  }, [classification, data, searchQuery, sortKey]);
+  }, [classification, data, searchQuery, sortKey, status]);
 
   if (loading) {
-    return <LoadingState label="procurement data" />;
+    return <LoadingState label={loadingLabel} />;
   }
 
   if (!data) {
@@ -1339,6 +1409,15 @@ export function ProcurementDashboard() {
   const content = data.content;
   const summary = data.summary;
   const dateLabel = content?.dateLabel ?? 'Date';
+  const hasStatuses = data.records.some(record => record.status);
+  const hasProgress = data.records.some(hasProgressValue);
+  const statusOptions = [
+    ...new Set(
+      data.records
+        .map(record => record.status)
+        .filter((item): item is string => Boolean(item))
+    ),
+  ].sort((a, b) => a.localeCompare(b));
 
   return (
     <div className="space-y-10">
@@ -1348,7 +1427,7 @@ export function ProcurementDashboard() {
           title={content?.hero.title ?? 'Procurement'}
           description={
             content?.hero.description ??
-            'Browse procurement records by title, procuring entity, classification, budget, and date.'
+            'Browse records by title, procuring entity, classification, budget, and date.'
           }
         />
 
@@ -1385,28 +1464,13 @@ export function ProcurementDashboard() {
       </section>
 
       <div className="rounded-md bg-primary-50 px-5 py-3 text-sm leading-relaxed text-primary-900">
-        This dataset is based on the{' '}
-        <a
-          className="text-primary-900 underline"
-          href="https://transparency.bettergov.ph/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          BetterGovPH Transparency Dashboard.
-        </a>{' '}
-        Verify procurement details with the{' '}
-        <a
-          className="text-primary-900 underline"
-          href="mailto:aparri.bac@gmail.com"
-        >
-          LGU Aparri - Bids and Awards Committee
-        </a>{' '}
-        before formal use.
+        This dataset is provided for public transparency. Verify details with
+        the procuring entity before formal use.
       </div>
 
       <Card className="border-primary-100">
         <CardHeader className="bg-stone-100">
-          <div className="grid gap-4 lg:grid-cols-[1fr_220px_220px]">
+          <div className="grid gap-4 lg:grid-cols-[1fr_190px_170px_190px]">
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-gray-700">
                 Search
@@ -1419,12 +1483,32 @@ export function ProcurementDashboard() {
                 <input
                   className="w-full rounded-sm border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                   onChange={event => setSearchQuery(event.target.value)}
-                  placeholder="Search title or procuring entity"
+                  placeholder="Search title, entity, contractor, or ID"
                   type="search"
                   value={searchQuery}
                 />
               </div>
             </label>
+
+            {hasStatuses && (
+              <label className="block">
+                <span className="mb-2 block text-sm font-semibold text-gray-700">
+                  Status
+                </span>
+                <select
+                  className="w-full rounded-sm border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                  onChange={event => setStatus(event.target.value)}
+                  value={status}
+                >
+                  <option value="all">All statuses</option>
+                  {statusOptions.map(item => (
+                    <option key={item} value={normalizeFilterValue(item)}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
 
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-gray-700">
@@ -1459,6 +1543,14 @@ export function ProcurementDashboard() {
                 <option value="date-asc">{dateLabel}: oldest first</option>
                 <option value="budget-desc">Budget: highest first</option>
                 <option value="budget-asc">Budget: lowest first</option>
+                {hasProgress && (
+                  <>
+                    <option value="progress-desc">
+                      Progress: highest first
+                    </option>
+                    <option value="progress-asc">Progress: lowest first</option>
+                  </>
+                )}
               </select>
             </label>
           </div>
@@ -1475,9 +1567,9 @@ export function ProcurementDashboard() {
       </Card>
 
       {filteredRecords.length > 0 ? (
-        <div className="grid gap-4">
+        <div className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm">
           {filteredRecords.map((record, index) => (
-            <ProcurementRecordCard
+            <ProcurementRecordRow
               dateLabel={dateLabel}
               key={`${record.id}-${record.title}-${record.awardDate}-${record.budget}-${index}`}
               record={record}
@@ -1501,7 +1593,7 @@ export function ProcurementDashboard() {
   );
 }
 
-function ProcurementRecordCard({
+function ProcurementRecordRow({
   dateLabel,
   record,
 }: {
@@ -1509,104 +1601,111 @@ function ProcurementRecordCard({
   record: ProcurementRecord;
 }) {
   const reference = record.referenceId || record.contractNo || 'Not reported';
+  const progress = hasProgressValue(record)
+    ? Math.min(Math.max(record.progress ?? 0, 0), 100)
+    : null;
+  const contractor = record.awardee || 'Not reported';
 
   return (
-    <article className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition hover:border-primary-200 hover:shadow-md">
-      <div className="grid gap-0 lg:grid-cols-[1fr_260px]">
-        <div className="p-5 md:p-6">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-sm bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700">
-              <i className="ri-price-tag-3-line mr-1.5" aria-hidden="true" />
-              {record.classification}
+    <article className="border-b border-gray-100 transition last:border-b-0 hover:bg-primary-50/40">
+      <div className="grid gap-4 px-4 py-4 md:grid-cols-[minmax(0,1fr)_180px] md:px-5 lg:grid-cols-[minmax(0,1fr)_170px_190px]">
+        <div className="min-w-0">
+          <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
+            <span className="inline-flex max-w-full items-center rounded-sm bg-primary-50 px-2 py-0.5 font-semibold text-primary-700">
+              <i className="ri-price-tag-3-line mr-1" aria-hidden="true" />
+              <span className="truncate">
+                {procurementClassification(record)}
+              </span>
             </span>
             {record.status && (
-              <span className="inline-flex items-center rounded-sm bg-violet-50 px-2.5 py-1 text-xs font-semibold capitalize text-violet-700">
+              <span
+                className={cn(
+                  'inline-flex items-center rounded-sm px-2 py-0.5 font-semibold',
+                  statusPillClass(record.status)
+                )}
+              >
                 <i
-                  className="ri-checkbox-circle-line mr-1.5"
+                  className="ri-checkbox-circle-line mr-1"
                   aria-hidden="true"
                 />
                 {record.status}
               </span>
             )}
-            {record.areaOfDelivery && (
-              <span className="inline-flex items-center rounded-sm bg-gray-100 px-2.5 py-1 text-xs font-semibold text-gray-700">
-                <i className="ri-map-pin-line mr-1.5" aria-hidden="true" />
-                {record.areaOfDelivery}
-              </span>
-            )}
+            <span className="font-mono text-gray-500">{reference}</span>
           </div>
 
-          <h3 className="max-w-4xl break-words text-lg font-semibold leading-snug text-gray-950 md:text-xl">
+          <h3 className="line-clamp-2 break-words text-sm font-semibold leading-snug text-gray-950 md:text-base">
             {record.title}
           </h3>
-          {record.noticeTitle && record.noticeTitle !== record.title && (
-            <p className="mt-2 max-w-4xl text-sm leading-relaxed text-gray-600">
-              {record.noticeTitle}
-            </p>
-          )}
 
-          <dl className="mt-5 grid gap-x-6 gap-y-4 text-sm md:grid-cols-2">
-            <ProcurementMetaItem
-              label="Procuring entity"
-              value={record.procuringEntity}
-            />
-            <ProcurementMetaItem
-              label="Awardee"
-              value={record.awardee || 'Not reported'}
-            />
-            <ProcurementMetaItem
-              label="PHILGEPS Reference Number"
-              value={reference}
-            />
-            <ProcurementMetaItem
-              label="Contract Number"
-              value={record.contractNo || 'Not reported'}
-            />
-          </dl>
+          <p className="mt-2 line-clamp-1 text-sm text-gray-600">
+            {contractor}
+          </p>
+
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+            <span>{record.procuringEntity}</span>
+            {record.areaOfDelivery && <span>{record.areaOfDelivery}</span>}
+            {record.year && <span>Year {record.year}</span>}
+          </div>
         </div>
 
-        <aside className="border-t border-gray-100 bg-gray-50 p-5 md:p-6 lg:border-l lg:border-t-0">
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
-            <div>
-              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-normal text-gray-500">
-                <i className="ri-money-dollar-circle-line" aria-hidden="true" />
-                Amount
-              </p>
-              <p className="mt-2 break-words text-2xl font-bold leading-tight text-gray-950">
-                {formatPhp(record.budget)}
-              </p>
-            </div>
-            <div>
-              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-normal text-gray-500">
-                <i className="ri-calendar-line" aria-hidden="true" />
-                {dateLabel}
-              </p>
-              <p className="mt-2 text-base font-semibold text-gray-900">
-                {formatDate(record.awardDate)}
-              </p>
-            </div>
+        <dl className="grid grid-cols-2 gap-3 text-sm md:block md:space-y-3">
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-normal text-gray-500">
+              Budget
+            </dt>
+            <dd className="mt-1 break-words font-bold text-gray-950">
+              {formatPhp(record.budget)}
+            </dd>
           </div>
-        </aside>
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-normal text-gray-500">
+              {dateLabel}
+            </dt>
+            <dd className="mt-1 font-semibold text-gray-900">
+              {formatDate(record.awardDate)}
+            </dd>
+          </div>
+          {record.completionDate && (
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-normal text-gray-500">
+                Completed
+              </dt>
+              <dd className="mt-1 font-semibold text-gray-900">
+                {formatDate(record.completionDate)}
+              </dd>
+            </div>
+          )}
+        </dl>
+
+        {progress !== null && (
+          <div className="md:col-span-2 lg:col-span-1">
+            <div className="mb-2 flex items-center justify-between gap-3">
+              <span className="text-xs font-semibold uppercase tracking-normal text-gray-500">
+                Progress
+              </span>
+              <span className="text-sm font-bold text-gray-900">
+                {formatPercent(progress)}
+              </span>
+            </div>
+            <div
+              aria-label={`Progress ${formatPercent(progress)}`}
+              className="h-2.5 overflow-hidden rounded-full bg-gray-200"
+              role="img"
+            >
+              <div
+                className="h-full rounded-full bg-primary-700"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            {record.amountPaid !== undefined && record.amountPaid > 0 && (
+              <p className="mt-2 text-xs text-gray-500">
+                Paid: {formatPhp(record.amountPaid)}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </article>
-  );
-}
-
-function ProcurementMetaItem({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <div>
-      <dt className="text-xs font-semibold uppercase tracking-normal text-gray-500">
-        {label}
-      </dt>
-      <dd className="mt-1 break-words text-sm font-medium leading-relaxed text-gray-800">
-        {value}
-      </dd>
-    </div>
   );
 }

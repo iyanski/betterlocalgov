@@ -17,3 +17,6 @@ pages:
   - name: 'Procurement'
     slug: 'procurement'
     description: 'Search procurement records by title or procuring entity, filter by classification, and sort by budget or date.'
+  - name: 'DPWH Projects in Aparri'
+    slug: 'dpwh-projects'
+    description: 'Browse DPWH infrastructure projects located in Aparri by category, budget, status, and implementation date.'

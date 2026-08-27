@@ -66,11 +66,11 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar with emergency contacts and language switcher */}
-      <div className="border-b border-gray-200 bg-stone-800 text-white">
+      <div className="border-b border-red-900 bg-red-950 text-white">
         <div className="container mx-auto px-4 py-1.5">
           <div className="flex flex-col gap-1.5 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-2.5">
-              <div className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-amber-400">
+              <div className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-red-100">
                 <i className="ri-phone-line text-sm" />
                 <span>Emergency Hotlines</span>
               </div>
@@ -79,18 +79,20 @@ const Navbar: React.FC = () => {
                   <a
                     key={item.label}
                     href={`tel:${item.number}`}
-                    className="inline-flex items-center rounded-full border border-white/15 bg-red-50/10 px-2.5 py-1 text-[11px] leading-5 text-white/90 transition-colors hover:bg-white/15 gap-1.5"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-red-300/20 bg-red-800/50 px-2.5 py-1 text-[11px] leading-5 text-red-50 transition-colors hover:bg-red-700/70"
                   >
                     <i className={`${item.icon} text-xs`} />
                     <span className="font-medium text-white">{item.label}</span>
-                    <span className="ml-0.5 text-white/75">{item.number}</span>
+                    <span className="ml-0.5 text-red-100/80">
+                      {item.number}
+                    </span>
                   </a>
                 ))}
                 <div className="relative">
                   <button
                     type="button"
                     onClick={() => setIsHotlinesOpen(!isHotlinesOpen)}
-                    className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[11px] font-medium leading-5 text-white/90 transition-colors hover:bg-white/15"
+                    className="inline-flex items-center gap-1 rounded-full border border-red-300/20 bg-red-900/70 px-2.5 py-1 text-[11px] font-medium leading-5 text-red-50 transition-colors hover:bg-red-800"
                     aria-expanded={isHotlinesOpen}
                     aria-haspopup="menu"
                   >
@@ -101,14 +103,14 @@ const Navbar: React.FC = () => {
                   </button>
                   {isHotlinesOpen && (
                     <div
-                      className="absolute left-0 top-full z-50 mt-2 w-64 rounded-md bg-white p-2 text-gray-900 shadow-lg ring-1 ring-black/10"
+                      className="absolute left-0 top-full z-50 mt-2 w-64 rounded-md bg-white p-2 text-gray-900 shadow-lg ring-1 ring-red-950/10"
                       role="menu"
                     >
                       {secondaryEmergencyHotlines.map(item => (
                         <a
                           key={item.label}
                           href={`tel:${item.number}`}
-                          className="flex items-center gap-2 rounded px-3 py-2 text-sm transition-colors hover:bg-red-50 hover:text-red-800"
+                          className="flex items-center gap-2 rounded px-3 py-2 text-sm transition-colors hover:bg-red-50 hover:text-red-900"
                           role="menuitem"
                         >
                           <i
