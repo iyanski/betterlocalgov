@@ -55,6 +55,7 @@ import transparencyAnnualRegularIncomeIndex from '../../content/transparency/ann
 import transparencyStatementsReceiptsExpenditureIndex from '../../content/transparency/statements-of-receipts-and-expenditure/index.yaml?raw';
 import transparencyDisasterRiskReductionIndex from '../../content/transparency/disaster-risk-reduction-and-management/index.yaml?raw';
 import transparencyProcurementIndex from '../../content/transparency/procurement/index.yaml?raw';
+import transparencyDpwhProjectsIndex from '../../content/transparency/dpwh-projects/index.yaml?raw';
 import statisticsIndex from '../../content/statistics/index.yaml?raw';
 import statisticsDemographicsIndex from '../../content/statistics/demographics/index.yaml?raw';
 import statisticsCompetitivenessIndex from '../../content/statistics/competitiveness/index.yaml?raw';
@@ -87,6 +88,7 @@ const categoryIndexMap: { [key: string]: string } = {
   'disaster-risk-reduction-and-management':
     transparencyDisasterRiskReductionIndex,
   procurement: transparencyProcurementIndex,
+  'dpwh-projects': transparencyDpwhProjectsIndex,
   statistics: statisticsIndex,
   demographics: statisticsDemographicsIndex,
   competitiveness: statisticsCompetitivenessIndex,

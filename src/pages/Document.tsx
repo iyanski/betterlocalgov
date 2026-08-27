@@ -29,6 +29,7 @@ import {
 } from '../components/statistics/StatisticsDashboard';
 import {
   DisasterRiskReductionDashboard,
+  DpwhProjectsDashboard,
   IncomeDependencyDashboard,
   ProcurementDashboard,
   StatementsReceiptsExpenditureDashboard,
@@ -45,6 +46,7 @@ type DashboardDocument =
   | 'annual-regular-income-and-dependencies'
   | 'statements-of-receipts-and-expenditure'
   | 'disaster-risk-reduction-and-management'
+  | 'dpwh-projects'
   | 'procurement';
 
 const dashboardTitles: Record<DashboardDocument, string> = {
@@ -56,6 +58,7 @@ const dashboardTitles: Record<DashboardDocument, string> = {
     'Statements of Receipts and Expenditure',
   'disaster-risk-reduction-and-management':
     'Disaster Risk Reduction and Management',
+  'dpwh-projects': 'DPWH Projects in Aparri',
   procurement: 'Procurement',
 };
 
@@ -112,6 +115,7 @@ function getDashboardDocument(
     (documentSlug === 'annual-regular-income-and-dependencies' ||
       documentSlug === 'statements-of-receipts-and-expenditure' ||
       documentSlug === 'disaster-risk-reduction-and-management' ||
+      documentSlug === 'dpwh-projects' ||
       documentSlug === 'procurement')
   ) {
     return documentSlug;
@@ -132,6 +136,8 @@ function DashboardContent({ dashboard }: { dashboard: DashboardDocument }) {
       return <StatementsReceiptsExpenditureDashboard />;
     case 'disaster-risk-reduction-and-management':
       return <DisasterRiskReductionDashboard />;
+    case 'dpwh-projects':
+      return <DpwhProjectsDashboard />;
     case 'procurement':
       return <ProcurementDashboard />;
     default:
@@ -392,9 +398,7 @@ export default function Document({
           `Government service information for ${documentSlug}`
         }
         keywords={`${documentSlug}, government services, public services, local government`}
-        pageType={
-          categoryType === 'service' ? 'GovernmentService' : 'WebPage'
-        }
+        pageType={categoryType === 'service' ? 'GovernmentService' : 'WebPage'}
         breadcrumbs={breadcrumbs.filter(
           (breadcrumb): breadcrumb is { label: string; href: string } =>
             Boolean(breadcrumb.href)

@@ -72,6 +72,10 @@ export interface ProcurementRecord {
   category: string;
   classification: string;
   areaOfDelivery: string;
+  year?: string;
+  progress?: number;
+  completionDate?: string | null;
+  amountPaid?: number;
 }
 
 export interface HighlightStat {
@@ -221,6 +225,20 @@ export async function loadProcurementData(): Promise<ProcurementData | null> {
     return module.default;
   } catch (error) {
     console.error('Failed to load procurement data:', error);
+    return null;
+  }
+}
+
+/**
+ * Load DPWH projects data from JSON file
+ */
+export async function loadDpwhProjectsData(): Promise<ProcurementData | null> {
+  try {
+    const module =
+      await import('../../content/transparency/dpwh-projects/dpwh-projects.json');
+    return module.default;
+  } catch (error) {
+    console.error('Failed to load DPWH projects data:', error);
     return null;
   }
 }

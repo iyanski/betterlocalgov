@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.7] - 2026-08-27
+
+### Added
+
+- DPWH Projects in Aparri transparency page with normalized project data,
+  summary metrics, filters, sorting, and compact record rows.
+- Navigation and transparency index entry for `/transparency/dpwh-projects`.
+- Status filtering and progress sorting for procurement-style transparency
+  records.
+
+### Changed
+
+- Procurement record cards redesigned into a more compact ledger-style layout.
+- Frontpage weather section simplified with a retained blue current-weather
+  card, compact metric cards, and clearer resident guidance.
+- Weather guidance now uses PAGASA-style 24-hour rainfall thresholds for daily
+  rain guidance.
+- Emergency hotline top bar updated to use red Tailwind color utilities.
+- Compact peso totals now display with two decimal places.
+
 ## [0.2.0] - 2026-03-07
 
 ### Added

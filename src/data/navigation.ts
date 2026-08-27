@@ -63,6 +63,10 @@ export const mainNavigation: NavigationItem[] = [
         label: 'Procurement',
         href: '/transparency/procurement',
       },
+      {
+        label: 'DPWH Projects',
+        href: '/transparency/dpwh-projects',
+      },
     ],
   },
   {
