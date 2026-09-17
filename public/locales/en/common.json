@@ -1,8 +1,8 @@
 {
-  "site_name": "Philippine Sports Commission",
+  "site_name": "Better Philippine Sports",
   "site_description": "A community-built portal for the Philippine Sports Commission",
   "hero": {
-    "title": "Better Philippine Sports Commission",
+    "title": "Better Philippine Sports",
     "subtitle": "Programs, facilities, and support for Filipino athletes — and a clear look at how the agency works.",
     "nationalId": "National ID",
     "birthCertificate": "Birth Certificate",
@@ -37,7 +37,8 @@
     "government": "About the PSC",
     "services": "Programs",
     "hotlines": "Hotlines",
-    "holidays": "Holidays"
+    "holidays": "Holidays",
+    "data": "Data"
   },
   "joinUs": {
     "stripTitle": "🚀 Join the #CivicTech Revolution",

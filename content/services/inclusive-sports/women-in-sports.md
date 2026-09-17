@@ -4,6 +4,39 @@ Women in Sports is a standing Philippine Sports Commission programme with a desi
 
 ---
 
+## What the participation data shows
+
+The PSC publishes no figures on how many women and girls take part in its competitions.
+Registration files released under FOI request #PSC-206383709560 in September 2025 do, and
+they show the gap widening with age:
+
+| Competition               | Female athletes | Share |
+| ------------------------- | --------------- | ----- |
+| Batang Pinoy 2023 (youth) | 6,388           | 42.6% |
+| Philippine National Games | 1,605           | 33.4% |
+
+Girls are close to parity in the children's games and fall to a third of entrants in the
+open-age competition. Across all 26 sports in each event, only two drew more women than
+men — gymnastics and dancesport in Batang Pinoy, gymnastics and beach volleyball in the
+national games. Three sports recorded no female entrants at all: 3x3 basketball and beach
+volleyball in Batang Pinoy, and football in the national games.
+
+The para games file records no gender breakdown, so women's participation there is not
+known.
+
+These are registration counts, not outcomes. They say who entered, not who was supported,
+selected or retained.
+
+> **How these figures were produced.** The numbers on this page were extracted from the
+> PSC's FOI release by an AI assistant, not by the Commission. They are indicative rather
+> than authoritative and may contain transcription errors. Verify against the
+> [source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
+> citing them.
+
+See the full breakdown on the [participation data report](/data/participation).
+
+---
+
 ## The three components
 
 | Component                                                                         | What it is                                                                          | Status                                                           |

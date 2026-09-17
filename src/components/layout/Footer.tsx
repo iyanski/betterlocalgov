@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-4">
               <img
                 src="/betterpsc-logo.svg"
-                alt="Better Philippine Sports Commission"
+                alt="Better Philippine Sports"
                 className="h-12 w-12 mr-3"
                 width={48}
                 height={48}

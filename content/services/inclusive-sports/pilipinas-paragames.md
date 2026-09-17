@@ -1,6 +1,41 @@
 # Pilipinas ParaGames
 
-The Pilipinas Para Games is the Philippine Sports Commission's grassroots sports programme for people with disabilities, run in partnership with the Philippine Paralympic Committee and with local governments. It grew out of the PSC's Differently-Abled Sport For Life programme, launched in 2018.
+The Pilipinas Para Games is the Philippine Sports Commission's grassroots sports programme for people with disabilities, run in partnership with the Philippine Paralympic Committee and with local governments. It grew out of the PSC's Differently-Abled Sport For Life programme, launched in 2018. The 2024 edition drew **860 athletes across nine sports**.
+
+---
+
+## Who competed in 2024: 860 athletes
+
+The PSC publishes no participation figures. This breakdown comes from the participants'
+file released under FOI request #PSC-206383709560 in September 2025.
+
+| Sport                 | Athletes |
+| --------------------- | -------- |
+| Athletics             | 357      |
+| Wheelchair Basketball | 101      |
+| Chess                 | 94       |
+| Table Tennis          | 83       |
+| Swimming              | 70       |
+| Badminton             | 44       |
+| Archery               | 40       |
+| Boccia                | 38       |
+| Powerlifting          | 33       |
+| **Total**             | **860**  |
+
+Athletics alone is 41.5% of the games. Entries come from PDAOs, disability clubs,
+provincial teams and seventeen athletes registered simply as "Individual". The largest
+delegation by far is Pasig with 119 athletes — 13.8% of the whole competition.
+
+The file records **no gender breakdown and no disability classification**, only sport and
+delegation.
+
+> **How these figures were produced.** The numbers on this page were extracted from the
+> PSC's FOI release by an AI assistant, not by the Commission. They are indicative rather
+> than authoritative and may contain transcription errors. Verify against the
+> [source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
+> citing them.
+
+See the full breakdown on the [participation data report](/data/participation).
 
 ---
 

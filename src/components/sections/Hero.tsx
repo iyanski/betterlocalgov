@@ -6,6 +6,17 @@ export default function Hero() {
   const { t } = useTranslation();
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-700 text-white py-12 md:py-24">
+      {/* Decorative only: an athletics track bend running under the whole
+          hero. The SVG masks itself down on the left so the headline keeps
+          its contrast; below lg the hero is a single full-width column, so
+          the linework steps back further to stay out of the copy's way. */}
+      <img
+        src="/hero-track.svg"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50 lg:opacity-100"
+      />
+
       {/* Decorative only: the PSC mark bleeding off the right edge.
           Hidden from assistive tech and below lg, where the hero is
           a single column and the artwork would crowd the copy. */}

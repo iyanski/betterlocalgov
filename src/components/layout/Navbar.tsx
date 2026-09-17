@@ -92,15 +92,13 @@ const Navbar: React.FC = () => {
             <Link to="/" className="flex items-center">
               <img
                 src="/betterpsc-logo.svg"
-                alt="Better Philippine Sports Commission"
+                alt="Better Philippine Sports"
                 className="h-12 w-12 mr-3"
                 width={48}
                 height={48}
               />
               <div>
-                <div className="text-black font-bold">
-                  {import.meta.env.VITE_GOVERNMENT_NAME}
-                </div>
+                <div className="text-black font-bold">{t('site_name')}</div>
                 <div className="text-xs text-gray-800">
                   {t('site_description')}
                 </div>
