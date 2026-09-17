@@ -55,12 +55,6 @@ file with zero athletes registered.
 **E-sports is listed as a contested sport with zero entrants** — male, female and total all
 read 0.
 
-> **How these figures were produced.** The numbers on this page were extracted from the
-> PSC's FOI release by an AI assistant, not by the Commission. They are indicative rather
-> than authoritative and may contain transcription errors. Verify against the
-> [source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
-> citing them.
-
 See the full breakdown, including the age curve and every sport, on the
 [participation data report](/data/participation).
 
@@ -109,6 +103,16 @@ The PSC does not name an office responsible for the Philippine National Games. T
 
 - Address: Rizal Memorial Sports Complex, Pablo Ocampo Sr. St., Malate, Manila 1004
 - Phone: 8525-0808
+
+---
+
+## How these figures were produced
+
+The participation numbers on this page were extracted from the PSC's FOI release by an AI
+assistant, not by the Commission. They are indicative rather than authoritative and may
+contain transcription errors. Verify against the
+[source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
+citing them.
 
 ---
 

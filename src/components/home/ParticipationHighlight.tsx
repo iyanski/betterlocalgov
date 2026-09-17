@@ -27,10 +27,6 @@ export default function ParticipationHighlight() {
               age, gender and home town. The PSC does not publish any of it;
               these figures were obtained under freedom of information.
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-gray-500">
-              Figures were extracted from the released files by an AI assistant
-              and may contain errors. Check against the source before citing.
-            </p>
             <Link
               to="/data/participation"
               className="mt-6 inline-flex items-center gap-2 rounded-sm bg-primary-600 px-5 py-2.5 font-medium text-white transition-colors hover:bg-primary-700"
@@ -38,6 +34,10 @@ export default function ParticipationHighlight() {
               Read the report
               <ArrowRight className="h-4 w-4" />
             </Link>
+            <p className="mt-4 text-sm leading-relaxed text-gray-500">
+              Figures were extracted from the released files by an AI assistant
+              and may contain errors. Check against the source before citing.
+            </p>
           </div>
 
           <dl className="grid shrink-0 grid-cols-3 gap-x-8 gap-y-2 lg:grid-cols-1 lg:gap-y-6">

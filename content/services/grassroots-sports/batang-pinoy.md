@@ -45,12 +45,6 @@ Unlike the open-age games, Batang Pinoy spreads evenly across the country — no
 holds more than a quarter of entrants, and the ten largest delegations account for 23.0%.
 Five LGUs appear in the file with zero athletes registered.
 
-> **How these figures were produced.** The numbers on this page were extracted from the
-> PSC's FOI release by an AI assistant, not by the Commission. They are indicative rather
-> than authoritative and may contain transcription errors. Verify against the
-> [source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
-> citing them.
-
 See the full breakdown on the [participation data report](/data/participation).
 
 ---
@@ -108,6 +102,16 @@ If you are a local government, school or community group that wants to field a d
 - **Facebook**: <https://web.facebook.com/psc.gov.ph>
 
 The PSC does not publish a general public email address. Use the per-office addresses above.
+
+---
+
+## How these figures were produced
+
+The participation numbers on this page were extracted from the PSC's FOI release by an AI
+assistant, not by the Commission. They are indicative rather than authoritative and may
+contain transcription errors. Verify against the
+[source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
+citing them.
 
 ---
 

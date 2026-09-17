@@ -412,33 +412,23 @@ export default function Participation() {
               { label: 'Participation data', href: '/data/participation' },
             ]}
           />
-          <div className="max-w-3xl pb-4">
-            <DataDisclaimer />
-          </div>
         </div>
 
         {/* 01 */}
-        <section className="border-b border-gray-200 py-14 md:py-20">
+        <section className="border-b border-gray-200 bg-gray-50 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <SectionHeading
               index="01"
-              label="Where these numbers come from"
-              title="Nobody published this. Someone asked for it."
+              label="Three games, three populations"
+              title="One is fifteen times the size of another."
             >
-              <p className="mb-4">
-                On {source.filed} an architecture student requested
-                participation data from the PSC for a thesis. Four weeks later
-                the agency released six files: two spreadsheets of registration
-                counts, a roster and a participants' breakdown for the para
-                games, and two sets of facility design guidelines.
-              </p>
               <p>
-                None of it appears on psc.gov.ph. The agency's website carries
-                no participation figures, no entry counts and no results archive
-                for any of these three competitions. Everything below is drawn
-                from that release.
+                Batang Pinoy is the children's games. The Philippine National
+                Games is the open-age competition. The Philippine National Para
+                Games is for athletes with disabilities.
               </p>
             </SectionHeading>
+
             <div className="max-w-3xl">
               <Note>
                 <strong className="font-semibold text-gray-900">
@@ -449,23 +439,6 @@ export default function Participation() {
                 performed.
               </Note>
             </div>
-          </div>
-        </section>
-
-        {/* 02 */}
-        <section className="border-b border-gray-200 bg-gray-50 py-14 md:py-20">
-          <div className="container mx-auto px-4">
-            <SectionHeading
-              index="02"
-              label="Three games, three populations"
-              title="One is fifteen times the size of another."
-            >
-              <p>
-                Batang Pinoy is the children's games. The Philippine National
-                Games is the open-age competition. The Philippine National Para
-                Games is for athletes with disabilities.
-              </p>
-            </SectionHeading>
 
             <div className="mt-10 max-w-4xl">
               {games.map(([name, value, color]) => (
@@ -496,11 +469,11 @@ export default function Participation() {
           </div>
         </section>
 
-        {/* 03 */}
+        {/* 02 */}
         <section className="border-b border-gray-200 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <SectionHeading
-              index="03"
+              index="02"
               label="Who competes"
               title="Girls leave the system as the age rises."
             >
@@ -571,11 +544,11 @@ export default function Participation() {
           </div>
         </section>
 
-        {/* 04 */}
+        {/* 03 */}
         <section className="border-b border-gray-200 bg-gray-50 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <SectionHeading
-              index="04"
+              index="03"
               label="Which sports"
               title="Swimming and taekwondo carry the children's games."
             >
@@ -631,11 +604,11 @@ export default function Participation() {
           </div>
         </section>
 
-        {/* 05 */}
+        {/* 04 */}
         <section className="border-b border-gray-200 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <SectionHeading
-              index="05"
+              index="04"
               label="Where they come from"
               title="Baguio sends more athletes than anywhere else. Twice."
             >
@@ -752,11 +725,11 @@ export default function Participation() {
           </div>
         </section>
 
-        {/* 06 */}
+        {/* 05 */}
         <section className="border-b border-gray-200 bg-gray-50 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <SectionHeading
-              index="06"
+              index="05"
               label="The para games"
               title="860 athletes, and athletics is nearly half of them."
             >
@@ -804,11 +777,11 @@ export default function Participation() {
           </div>
         </section>
 
-        {/* 07 */}
+        {/* 06 */}
         <section className="border-b border-gray-200 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <SectionHeading
-              index="07"
+              index="06"
               label="What the files do not say"
               title="The gaps are part of the finding."
             >
@@ -857,6 +830,10 @@ export default function Participation() {
                 Baguio" across the three files. We have not merged them.
               </li>
             </ul>
+
+            <div className="mt-10 max-w-3xl">
+              <DataDisclaimer />
+            </div>
 
             <div className="mt-10 max-w-3xl rounded-sm border border-gray-200 bg-gray-50 p-6">
               <h3 className="font-semibold text-gray-900">Source</h3>

@@ -29,12 +29,6 @@ delegation by far is Pasig with 119 athletes — 13.8% of the whole competition.
 The file records **no gender breakdown and no disability classification**, only sport and
 delegation.
 
-> **How these figures were produced.** The numbers on this page were extracted from the
-> PSC's FOI release by an AI assistant, not by the Commission. They are indicative rather
-> than authoritative and may contain transcription errors. Verify against the
-> [source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
-> citing them.
-
 See the full breakdown on the [participation data report](/data/participation).
 
 ---
@@ -106,6 +100,16 @@ The PSC has awarded incentives to para athletes after major Games, including the
 - Phone: 8525-0808
 
 The PSC does not publish a general public email address. Use the per-office addresses above.
+
+---
+
+## How these figures were produced
+
+The participation numbers on this page were extracted from the PSC's FOI release by an AI
+assistant, not by the Commission. They are indicative rather than authoritative and may
+contain transcription errors. Verify against the
+[source files on foi.gov.ph](https://www.foi.gov.ph/agencies/psc/sports-data/) before
+citing them.
 
 ---
 
