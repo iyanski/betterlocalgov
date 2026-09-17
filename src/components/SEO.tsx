@@ -17,7 +17,9 @@ export default function SEO({
   image,
   url,
   type = 'website',
-  siteName = import.meta.env.VITE_GOVERNMENT_NAME || 'Local Government Website',
+  siteName = import.meta.env.VITE_SITE_NAME ||
+    import.meta.env.VITE_GOVERNMENT_NAME ||
+    'Local Government Website',
 }: SEOProps) {
   const defaultTitle = `${siteName} - Official Government Website`;
   const defaultDescription =
