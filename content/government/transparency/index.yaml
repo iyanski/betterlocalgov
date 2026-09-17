@@ -1,0 +1,20 @@
+# Transparency Category Pages
+# This file contains all the pages available under the Transparency category
+
+layout: grid
+pages:
+  - name: 'Transparency Seal'
+    slug: 'transparency-seal'
+    description: 'The budget, audit, and accountability documents the PSC is required to publish.'
+
+  - name: 'Freedom of Information'
+    slug: 'freedom-of-information'
+    description: 'How to request information from the Philippine Sports Commission under the FOI program.'
+
+  - name: "Citizen's Charter and quality management"
+    slug: 'citizens-charter-and-qms'
+    description: 'The service standards the PSC commits to, and its quality management system certification.'
+
+  - name: 'Reports and financial documents'
+    slug: 'reports-and-financial-documents'
+    description: 'Annual reports and financial statements the PSC publishes — and what it does not.'

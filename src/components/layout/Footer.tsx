@@ -43,13 +43,12 @@ const Footer: React.FC = () => {
 
               <div>
                 <div className="font-bold">{t('site_name')}</div>
-                <div className="text-xs text-gray-400">BetterGov.ph Portal</div>
+                <div className="text-xs text-gray-400">
+                  {t('footer.tagline')}
+                </div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
-              A community portal providing Philippine citizens, businesses, and
-              visitors with information and services.
-            </p>
+            <p className="text-gray-400 text-sm mb-4">{t('footer.blurb')}</p>
             <div className="flex space-x-4">
               {footerNavigation.socialLinks.map(link => (
                 <Link

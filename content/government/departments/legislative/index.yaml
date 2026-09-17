@@ -1,9 +1,0 @@
-# legislative Department Pages
-# This file contains all the pages/governments/departments/legislative available under the Department
-#
-layout: grid
-title: 'Legislative Department'
-description: 'Page Description'
-pages:
-  - name: 'Councilor A'
-    description: 'Description'

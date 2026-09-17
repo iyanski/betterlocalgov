@@ -23,7 +23,7 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     label: 'Government',
-    href: '/government/departments',
+    href: '/government/about-psc',
   },
 ];
 
