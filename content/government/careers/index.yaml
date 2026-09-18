@@ -1,0 +1,12 @@
+# Careers Category Pages
+# This file contains all the pages available under the Careers category
+
+layout: grid
+pages:
+  - name: 'Careers at the PSC'
+    slug: 'careers-at-the-psc'
+    description: 'What it is like to work at the Philippine Sports Commission and how hiring works.'
+
+  - name: 'Current job vacancies'
+    slug: 'current-job-vacancies'
+    description: 'Where open positions are posted and how to submit an application.'

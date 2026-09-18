@@ -1,0 +1,393 @@
+{
+  "docId": "far5-2025-q4",
+  "generatedAt": "2026-09-18T00:47:15.432Z",
+  "layout": "far5",
+  "pages": [
+    {
+      "page": 1,
+      "period": "Q4",
+      "extraction": "complete",
+      "anchored": 11,
+      "rows": 10
+    },
+    {
+      "page": 2,
+      "period": "Q4",
+      "extraction": "failed",
+      "reason": "no column anchors",
+      "rows": 0
+    }
+  ],
+  "summary": {
+    "rows": 10,
+    "pass": 10,
+    "passRounding": 0,
+    "fail": 0,
+    "notApplicable": 0
+  },
+  "rows": [
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Non-Revenue Collections/Other Receipts",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2004500000,
+      "q1": 869116886.16,
+      "q2": 438468143.23,
+      "q3": 866810431.72,
+      "q4": 564060300.39,
+      "total": 2738455761.5,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 733955761.5,
+      "variancePct": 37,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q1": {
+            "value": 869116886.16,
+            "method": "ocr-repaired",
+            "raw": "869.116.886.16",
+            "repairs": [".->,"]
+          },
+          "total": {
+            "value": 2738455761.5,
+            "method": "ocr-repaired",
+            "raw": "2,738.455,761.50",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [794, 830]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Cash Receipts",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2004500000,
+      "q1": 869116886.16,
+      "q2": 438468143.23,
+      "q3": 866810431.72,
+      "q4": 564060300.39,
+      "total": 2738455761.5,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 733955761.5,
+      "variancePct": 37,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q3": {
+            "value": 866810431.72,
+            "method": "ocr-repaired",
+            "raw": "866,810.431.72",
+            "repairs": [".->,"]
+          },
+          "total": {
+            "value": 2738455761.5,
+            "method": "ocr-repaired",
+            "raw": "2.738.455.761.50",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [829, 864]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Non-Tax",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2004500000,
+      "q1": 869116886.16,
+      "q2": 438468143.23,
+      "q3": 866810431.72,
+      "q4": 564060300.39,
+      "total": 2738455761.5,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 733955761.5,
+      "variancePct": 37,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": 438468143.23,
+            "method": "ocr-repaired",
+            "raw": "438.468.143.23",
+            "repairs": [".->,"]
+          },
+          "q3": {
+            "value": 866810431.72,
+            "method": "ocr-repaired",
+            "raw": "866,810.431.72",
+            "repairs": [".->,"]
+          },
+          "q4": {
+            "value": 564060300.39,
+            "method": "ocr-repaired",
+            "raw": "564.060,300.39",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [861, 899]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Rent/Lease income",
+      "rowKind": "line",
+      "source": "rent",
+      "uacsCode": "4020205000",
+      "target": 37000000,
+      "q1": 12020575.2,
+      "q2": 7253384.7,
+      "q3": 6927045.8,
+      "q4": 2581672.18,
+      "total": 28782677.88,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -8217322.12,
+      "variancePct": -22,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q4": {
+            "value": 2581672.18,
+            "method": "ocr-repaired",
+            "raw": "2.581.672.18",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [897, 932]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Share from PAGCOR/PCSO",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4040102000",
+      "target": 1962500000,
+      "q1": 855896360.55,
+      "q2": 429443195.51,
+      "q3": 852667053.29,
+      "q4": 450653628.47,
+      "total": 2588660237.82,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 626160237.82,
+      "variancePct": 32,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [930, 972]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Income from Grants and Donations in Cash",
+      "rowKind": "line",
+      "source": "grants-donations",
+      "uacsCode": "4040201000",
+      "target": 0,
+      "q1": 0,
+      "q2": 0,
+      "q3": 5000000,
+      "q4": 19627600,
+      "total": 24627600,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 24627600,
+      "variancePct": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [964, 1006]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Gain in Foreign Exchange (FOREX)",
+      "rowKind": "line",
+      "source": "forex",
+      "uacsCode": "4050101000",
+      "target": 0,
+      "q1": null,
+      "q2": 0,
+      "q3": 110,
+      "q4": 0,
+      "total": 110,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 110,
+      "variancePct": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0o"
+          }
+        },
+        "collisions": [1],
+        "bbox": [1000, 1040]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Gain on Sale of Property, Plant and Equipment",
+      "rowKind": "line",
+      "source": "sales",
+      "uacsCode": "4050104000",
+      "target": 0,
+      "q1": 0,
+      "q2": 148900,
+      "q3": 35888,
+      "q4": 720890,
+      "total": 905678,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 905678,
+      "variancePct": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1039, 1074]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "Miscellaneous Income",
+      "rowKind": "line",
+      "source": "other",
+      "uacsCode": "4060999000",
+      "target": 5000000,
+      "q1": 1199950.41,
+      "q2": 1622663.02,
+      "q3": 2180334.63,
+      "q4": 90476509.74,
+      "total": 95479457.8,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 90479457.8,
+      "variancePct": 1810,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": 1622663.02,
+            "method": "ocr-repaired",
+            "raw": "1.622.663.02",
+            "repairs": [".->,"]
+          },
+          "q3": {
+            "value": 2180334.63,
+            "method": "ocr-repaired",
+            "raw": "2.180,334.63",
+            "repairs": [".->,"]
+          },
+          "q4": {
+            "value": 90476509.74,
+            "method": "ocr-repaired",
+            "raw": "90.476,509.74",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1073, 1109]
+      }
+    },
+    {
+      "docId": "far5-2025-q4",
+      "period": "Q4",
+      "fiscalYear": 2025,
+      "page": 1,
+      "particulars": "GRAND TOTAL",
+      "rowKind": "total",
+      "source": null,
+      "uacsCode": null,
+      "target": 2004500000,
+      "q1": 869116886.16,
+      "q2": 438468143.23,
+      "q3": null,
+      "q4": 564060300.39,
+      "total": 2738455761.5,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 733955761.5,
+      "variancePct": 37,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": 438468143.23,
+            "method": "ocr-repaired",
+            "raw": "438.468.143.23",
+            "repairs": [".->,"]
+          },
+          "q3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "866.810431.72"
+          },
+          "q4": {
+            "value": 564060300.39,
+            "method": "ocr-repaired",
+            "raw": "564.060.300.39",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1107, 1143]
+      }
+    }
+  ]
+}

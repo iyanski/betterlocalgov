@@ -60,3 +60,10 @@ terraform.rc
 # Lock file (optional - remove this line if you want to commit the lock file)
 .terraform.lock.hcl
 
+
+# PSC transparency-seal pipeline: raw PDFs and intermediate artifacts.
+# Derived JSON/CSV under data/catalog, data/manifest and data/derived/<series>
+# ARE committed — the pipeline needs macOS Vision + a signed-in browser and
+# can never run in CI.
+data/raw/
+data/derived/_work/

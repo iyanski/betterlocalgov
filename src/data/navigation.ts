@@ -1,5 +1,6 @@
 import type { NavigationItem } from '../types';
 import { serviceCategories as servicesData } from './yamlLoader';
+import { storyNavLinks } from './psc/stories';
 
 interface Subcategory {
   name: string;
@@ -23,7 +24,15 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     label: 'Government',
-    href: '/government/departments',
+    href: '/government/about-psc',
+  },
+  {
+    // Navbar renders `children` as a dropdown already, so listing the stories
+    // here is the whole nav change. The parent points at the /data index rather
+    // than at one story, which is what it used to do.
+    label: 'Data',
+    href: '/data',
+    children: [{ label: 'All data stories', href: '/data' }, ...storyNavLinks],
   },
 ];
 
@@ -53,6 +62,10 @@ export const footerNavigation = {
         { label: 'Hotlines', href: '/philippines/hotlines' },
         { label: 'Holidays', href: '/philippines/holidays' },
       ],
+    },
+    {
+      title: 'Data',
+      links: [{ label: 'All data stories', href: '/data' }, ...storyNavLinks],
     },
     {
       title: 'Government',

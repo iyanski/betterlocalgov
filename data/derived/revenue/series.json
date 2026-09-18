@@ -1,0 +1,2942 @@
+{
+  "generatedAt": "2026-09-18T00:54:16.070Z",
+  "source": "FAR No. 5 (Quarterly Report of Revenue and Other Receipts)",
+  "documents": 10,
+  "years": [
+    {
+      "fiscalYear": 2017,
+      "docId": "far5-2017-q4",
+      "through": "Q4",
+      "statements": 3,
+      "target": {
+        "value": 1235220000,
+        "votes": 3,
+        "of": 3,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 264456504.36,
+          "votes": 1,
+          "of": 1,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 347691516.88,
+          "votes": 1,
+          "of": 1,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 13836144.6,
+          "votes": 0,
+          "of": 0,
+          "basis": "derived"
+        },
+        "q4": {
+          "value": 696066655.1,
+          "votes": 1,
+          "of": 1,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 1322050820.94,
+        "votes": 1,
+        "of": 1,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 1322050820.94,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1210000000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 259040353.37,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 343748247.7,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 10000000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 693227537.15,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1306016138.22,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1306016138.22
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 22175000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 4898740.37,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 2862428.41,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 3699060.58,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 2573817.95,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 14034047.31,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 14034047.31
+        },
+        {
+          "key": "grants-donations",
+          "label": "Grants and donations",
+          "target": {
+            "value": 2400000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 478.48,
+              "votes": 1,
+              "of": 2,
+              "contested": true,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 478483.22,
+              "votes": 1,
+              "of": 2,
+              "contested": true,
+              "basis": "reported"
+            },
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 478483.22,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": null
+        },
+        {
+          "key": "interest",
+          "label": "Interest income",
+          "target": null,
+          "quarters": {
+            "q1": {
+              "value": 109.73,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 4.02,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 109734.02,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": -113.75,
+              "votes": 0,
+              "of": 0,
+              "basis": "derived"
+            }
+          },
+          "total": {
+            "value": 109734.02,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 109734.02
+        },
+        {
+          "key": "affiliation-fees",
+          "label": "Affiliation fees",
+          "target": {
+            "value": 95000,
+            "votes": 2,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 18000,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 12000,
+              "votes": 1,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 8000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 16000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 54000,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 54000
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 550000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 499410.62,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 590357.35,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 19350,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 249300,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1358418.17,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1358417.97
+        }
+      ],
+      "unclassified": ["Afiliation Fees"],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2017",
+        "sourceUrl": "https://psc.gov.ph/Transparency%20Seal/2017/FAR5%20-%20q4.pdf",
+        "pages": 4,
+        "sha256": "8e0ad92b1817ee8053b14d50ecc3672769c630055deb7c61e8661bea5115986e",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2018,
+      "docId": "far5-2018-q4",
+      "through": "Q4",
+      "statements": 4,
+      "target": {
+        "value": 1235220000,
+        "votes": 4,
+        "of": 4,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 236228107.73,
+          "votes": 3,
+          "of": 3,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 264427150.1,
+          "votes": 1,
+          "of": 1,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 692222684.77,
+          "votes": 1,
+          "of": 2,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 408452512.59,
+          "votes": 1,
+          "of": 1,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 1601330455.19,
+        "votes": 1,
+        "of": 1,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 1601330455.19,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1210000000,
+            "votes": 2,
+            "of": 2,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 233338009.43,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 258556940.1,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 688040971.02,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 401136076.53,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1581071997.08,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1581071997.08
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 22175000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 2700498.3,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 4812696.16,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 3810094.05,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 4800721.5,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 16124010.01,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 16124010.01
+        },
+        {
+          "key": "grants-donations",
+          "label": "Grants and donations",
+          "target": {
+            "value": 2400000,
+            "votes": 2,
+            "of": 2,
+            "contested": false
+          },
+          "quarters": {
+            "q1": null,
+            "q2": null,
+            "q3": null,
+            "q4": null
+          },
+          "total": null,
+          "totalFromQuarters": null
+        },
+        {
+          "key": "interest",
+          "label": "Interest income",
+          "target": null,
+          "quarters": {
+            "q1": {
+              "value": 705.41,
+              "votes": 1,
+              "of": 2,
+              "contested": true,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 1.59,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 749.95,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 1270059.68,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1976221.22,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1271516.63
+        },
+        {
+          "key": "affiliation-fees",
+          "label": "Affiliation fees",
+          "target": {
+            "value": 95000,
+            "votes": 2,
+            "of": 2,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 8000,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 24000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 32000,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": null
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 550000,
+            "votes": 2,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 181600,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 328102.25,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 370869.75,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 1245654.88,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 2126226.88,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 2126226.88
+        }
+      ],
+      "unclassified": [],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2018",
+        "sourceUrl": "https://psc.gov.ph/Transparency%20Seal/2018/FAR5_as%20of%204thQ.pdf",
+        "pages": 4,
+        "sha256": "f981cfc12baeb8fac18d5fc4960bdb06ab97d177f720c701bfce1c02ccb9678c",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2019,
+      "docId": "far5-2019-q4",
+      "through": "Q4",
+      "statements": 4,
+      "target": {
+        "value": 2374500000,
+        "votes": 7,
+        "of": 9,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 523087838.11,
+          "votes": 8,
+          "of": 10,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 1127769018.55,
+          "votes": 8,
+          "of": 10,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 743703194.03,
+          "votes": 4,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 734915217.91,
+          "votes": 3,
+          "of": 3,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 3129475268.6,
+        "votes": 3,
+        "of": 3,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 3129475268.6,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 2352500000,
+            "votes": 4,
+            "of": 4,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 519330825.45,
+              "votes": 4,
+              "of": 4,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 1122957233.84,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 739705983.89,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 730945149.92,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 3112939193.1,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 3112939193.1
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 20000000,
+            "votes": 4,
+            "of": 4,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 3255685.8,
+              "votes": 4,
+              "of": 4,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 2723084.71,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 1373610.14,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 889241.99,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 8241622.64,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 8241622.64
+        },
+        {
+          "key": "sales",
+          "label": "Sale of unserviceable property",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 3026276,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 3026276,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 3026276
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 2000000,
+            "votes": 4,
+            "of": 4,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 501326.86,
+              "votes": 4,
+              "of": 4,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 2088700,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 2623600,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 54550,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 5268176.86,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 5268176.86
+        }
+      ],
+      "unclassified": ["Cash Receiots", "Cash Revenue"],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2019",
+        "sourceUrl": "https://psc.gov.ph/Transparency%20Seal/2019/FAR5_4q.pdf",
+        "pages": 4,
+        "sha256": "6993de54a181f84fb8ab9727456818ccc21227265d61af939136b2f30cfbe553",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2020,
+      "docId": "far5-2020-q4",
+      "through": "Q4",
+      "statements": 4,
+      "target": {
+        "value": 1508000000,
+        "votes": 10,
+        "of": 10,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 477301286.05,
+          "votes": 10,
+          "of": 10,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 116841050.13,
+          "votes": 4,
+          "of": 6,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 41297638.97,
+          "votes": 5,
+          "of": 5,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 179775139.07,
+          "votes": 5,
+          "of": 5,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 815215114.22,
+        "votes": 4,
+        "of": 4,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 815215114.22,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1500000000,
+            "votes": 1,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 475537470.35,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 116705436.1,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 41211738.67,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 177096464.68,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 810551109.8,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 810551109.8
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 5000000,
+            "votes": 2,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 1712415.7,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 2000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 85700.3,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 1342360.36,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 3142476.36,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 3142476.36
+        },
+        {
+          "key": "sales",
+          "label": "Sale of unserviceable property",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": null,
+            "q2": null,
+            "q3": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 1001000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": null,
+          "totalFromQuarters": null
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 3000000,
+            "votes": 2,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 51400,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 133614.03,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 200,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 335314.03,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 520528.06,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 520528.06
+        }
+      ],
+      "unclassified": [],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2020",
+        "sourceUrl": "https://psc.gov.ph/Transparency%20Seal/2020/FAR5_4q.pdf",
+        "pages": 7,
+        "sha256": "9b31d6c563504e156a7a8172d7645d961012f43ef952c719cecadf6770243f92",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2021,
+      "docId": "far5-2021-q4",
+      "through": "Q4",
+      "statements": 4,
+      "target": {
+        "value": 1508000000,
+        "votes": 6,
+        "of": 6,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 212436053.66,
+          "votes": 4,
+          "of": 8,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 151724215.32,
+          "votes": 10,
+          "of": 10,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 181803754.04,
+          "votes": 4,
+          "of": 7,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 264996672,
+          "votes": 5,
+          "of": 5,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 810960695.02,
+        "votes": 5,
+        "of": 5,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 810960695.02,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1500000000,
+            "votes": 2,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 211176092.27,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 150923179.5,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 181751147.55,
+              "votes": 3,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 263995842.74,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 807846262.06,
+            "votes": 2,
+            "of": 2,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 807846262.06
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 5000000,
+            "votes": 1,
+            "of": 2,
+            "contested": true
+          },
+          "quarters": {
+            "q1": {
+              "value": 625290.61,
+              "votes": 1,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 411558.72,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 42130.29,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 603070.92,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1682050.54,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1682050.54
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 3000000,
+            "votes": 2,
+            "of": 2,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 634670.78,
+              "votes": 1,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 389477.1,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 10476.2,
+              "votes": 1,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 397758.34,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1432382.42,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1432382.42
+        }
+      ],
+      "unclassified": [
+        "Internelly Genoratad Funds",
+        "Ravenun Cobections",
+        "Cash Recalpts",
+        "Nan-Tax",
+        "Other Galme"
+      ],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2021",
+        "sourceUrl": "https://psc.gov.ph/Transparency%20Seal/2021/FAR5-2021-4Q.pdf",
+        "pages": 5,
+        "sha256": "0072fa0e9da1825b756211778370ed0a708673f188793aca0618296d7e2edb9a",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2022,
+      "docId": "far5-2022-q4",
+      "through": "Q4",
+      "statements": 4,
+      "target": {
+        "value": 960880000,
+        "votes": 11,
+        "of": 12,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 261222089.07,
+          "votes": 9,
+          "of": 9,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 337385097.87,
+          "votes": 7,
+          "of": 11,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 345630597.6,
+          "votes": 7,
+          "of": 8,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 248493808.24,
+          "votes": 5,
+          "of": 5,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 1192731592.78,
+        "votes": 5,
+        "of": 5,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 1192731592.78,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 960000000,
+            "votes": 2,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 259955442.56,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 336340399.88,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 345175843.01,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 245041005.07,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1186512690.52,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1186512690.52
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 480000,
+            "votes": 2,
+            "of": 2,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 471484.3,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 566497.05,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 982503.58,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 3550527.99,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 5571012.92,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 5571012.92
+        },
+        {
+          "key": "sales",
+          "label": "Sale of unserviceable property",
+          "target": {
+            "value": 0,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 267231,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 0,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 267231,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 267231
+        },
+        {
+          "key": "forex",
+          "label": "Gain on foreign exchange",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 23689.61,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 7780.81,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 31470.42,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 31470.42
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 400000,
+            "votes": 2,
+            "of": 2,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 795162.21,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 210969.94,
+              "votes": 1,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": -551438.6,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": -105505.63,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 349187.92,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 349187.92
+        }
+      ],
+      "unclassified": [
+        ":Non-Ravenuo Collections/Other Recelpts",
+        "fOther Gaine",
+        "mtemaiv cenerated runds",
+        "omer cains"
+      ],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2022",
+        "sourceUrl": "https://psc.gov.ph/Transparency%20Seal/2022/FAR5_4thQ.pdf",
+        "pages": 4,
+        "sha256": "f789333da16358de5c1db16f57a1847a1040d5bee116d69675cb80423ab8f4eb",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2023,
+      "docId": "far5-2023-q4",
+      "through": "Q4",
+      "statements": 1,
+      "target": {
+        "value": 1325500000,
+        "votes": 4,
+        "of": 4,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 535988096.17,
+          "votes": 3,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 426502722.3,
+          "votes": 3,
+          "of": 3,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 347306815.72,
+          "votes": 3,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 460672882.97,
+          "votes": 4,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 1770470517.16,
+        "votes": 4,
+        "of": 4,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 1770470517.16,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1320000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 529999610.17,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 414306901.36,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 340857141.73,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 450296568.89,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 1735460222.15,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 1735460222.15
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 5000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 5300586,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 11409445.74,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 5840060.8,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 6308589.83,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 28858682.37,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 28858682.37
+        },
+        {
+          "key": "grants-donations",
+          "label": "Grants and donations",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 50000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 270000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 320000,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 320000
+        },
+        {
+          "key": "sales",
+          "label": "Sale of unserviceable property",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 72200,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 72200,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 72200
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 500000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 637900,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 786375.2,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 609613.19,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 3725524.25,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 5759412.64,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 5759412.64
+        }
+      ],
+      "unclassified": [],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2023",
+        "sourceUrl": "https://psc.gov.ph/psc_site/wp-content/uploads/2024/02/FAR5_4thQuarterFY2023.pdf",
+        "pages": 1,
+        "sha256": "87574601eb54b98c9ea8f3487f300c83ab6aec093e92ab46ae64f84ef15ac731",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2024,
+      "docId": "far5-2024-q4",
+      "through": "Q4",
+      "statements": 4,
+      "target": {
+        "value": 1530000000,
+        "votes": 10,
+        "of": 10,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 746540773.04,
+          "votes": 8,
+          "of": 8,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 567822150.66,
+          "votes": 8,
+          "of": 8,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 624187068.41,
+          "votes": 8,
+          "of": 8,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 428029776.46,
+          "votes": 4,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 2366579768.57,
+        "votes": 0,
+        "of": 0,
+        "basis": "quarters"
+      },
+      "totalFromQuarters": 2366579768.57,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1500000000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 737474663.49,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 555566347.98,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 613343347.86,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 414757062.22,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 2321141421.55,
+            "votes": 0,
+            "of": 0,
+            "basis": "quarters"
+          },
+          "totalFromQuarters": 2321141421.55
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 25000000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 8311316.2,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 9452627.26,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 8460289.97,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 11530645.8,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 37754879.23,
+            "votes": 0,
+            "of": 0,
+            "basis": "quarters"
+          },
+          "totalFromQuarters": 37754879.23
+        },
+        {
+          "key": "grants-donations",
+          "label": "Grants and donations",
+          "target": {
+            "value": 0,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 2,
+              "of": 3,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 1190000,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 887550,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 750000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 2827550,
+            "votes": 0,
+            "of": 0,
+            "basis": "quarters"
+          },
+          "totalFromQuarters": 2827550
+        },
+        {
+          "key": "forex",
+          "label": "Gain on foreign exchange",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 15221.8,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 15221.8,
+            "votes": 0,
+            "of": 0,
+            "basis": "quarters"
+          },
+          "totalFromQuarters": 15221.8
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 5000000,
+            "votes": 3,
+            "of": 3,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 754793.35,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 1613175.42,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 1495880.58,
+              "votes": 2,
+              "of": 2,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 976846.64,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 4840695.99,
+            "votes": 0,
+            "of": 0,
+            "basis": "quarters"
+          },
+          "totalFromQuarters": 4840695.99
+        }
+      ],
+      "unclassified": ["GRAND TOTAI"],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2024",
+        "sourceUrl": "https://psc.gov.ph/psc_site/wp-content/uploads/2025/02/FAR5_1ST4THQUARTER.pdf",
+        "pages": 4,
+        "sha256": "c595fb59f8e03726e8aae327502a56c6ba7092d6963ae6cd78307dd294e71a0a",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2025,
+      "docId": "far5-2025-q4",
+      "through": "Q4",
+      "statements": 1,
+      "target": {
+        "value": 2004500000,
+        "votes": 4,
+        "of": 4,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 869116886.16,
+          "votes": 4,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 438468143.23,
+          "votes": 4,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q3": {
+          "value": 866810431.72,
+          "votes": 3,
+          "of": 3,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q4": {
+          "value": 564060300.39,
+          "votes": 4,
+          "of": 4,
+          "contested": false,
+          "basis": "reported"
+        }
+      },
+      "total": {
+        "value": 2738455761.5,
+        "votes": 4,
+        "of": 4,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 2738455761.5,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 1962500000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 855896360.55,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 429443195.51,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 852667053.29,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 450653628.47,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 2588660237.82,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 2588660237.82
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 37000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 12020575.2,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 7253384.7,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 6927045.8,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 2581672.18,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 28782677.88,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 28782677.88
+        },
+        {
+          "key": "grants-donations",
+          "label": "Grants and donations",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 5000000,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 19627600,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 24627600,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 24627600
+        },
+        {
+          "key": "sales",
+          "label": "Sale of unserviceable property",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 148900,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 35888,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 720890,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 905678,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 905678
+        },
+        {
+          "key": "forex",
+          "label": "Gain on foreign exchange",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 0,
+              "of": 0,
+              "basis": "derived"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 110,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 110,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 110
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 5000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 1199950.41,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 1622663.02,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q3": {
+              "value": 2180334.63,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q4": {
+              "value": 90476509.74,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            }
+          },
+          "total": {
+            "value": 95479457.8,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 95479457.8
+        }
+      ],
+      "unclassified": [],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY 2025",
+        "sourceUrl": "https://psc.gov.ph/psc_site/wp-content/uploads/2026/02/FAR-5_4thQ-2025.pdf",
+        "pages": 2,
+        "sha256": "20f7b5c6b903c26283907597ba274f84c6a09346aafb7ec07d90086aa12b9b79",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    },
+    {
+      "fiscalYear": 2026,
+      "docId": "far5-2026-q2",
+      "through": "Q2",
+      "statements": 1,
+      "target": {
+        "value": 4035000000,
+        "votes": 5,
+        "of": 5,
+        "contested": false
+      },
+      "quarters": {
+        "q1": {
+          "value": 900322777.57,
+          "votes": 1,
+          "of": 1,
+          "contested": false,
+          "basis": "reported"
+        },
+        "q2": {
+          "value": 1063617708.59,
+          "votes": 0,
+          "of": 0,
+          "basis": "derived"
+        },
+        "q3": null,
+        "q4": null
+      },
+      "total": {
+        "value": 1963940486.16,
+        "votes": 3,
+        "of": 3,
+        "contested": false,
+        "basis": "reported"
+      },
+      "totalFromQuarters": 1963940486.16,
+      "sources": [
+        {
+          "key": "pagcor-pcso",
+          "label": "Share from PAGCOR and PCSO",
+          "target": {
+            "value": 4000000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": null,
+            "q2": null,
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 1845566538.22,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": null
+        },
+        {
+          "key": "rent",
+          "label": "Rent and lease income",
+          "target": {
+            "value": 30000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": null,
+            "q2": null,
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 7425862.11,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": null
+        },
+        {
+          "key": "grants-donations",
+          "label": "Grants and donations",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": null,
+            "q2": null,
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 5846400,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": null
+        },
+        {
+          "key": "sales",
+          "label": "Sale of unserviceable property",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 176000009090,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": -175999824000,
+              "votes": 0,
+              "of": 0,
+              "basis": "derived"
+            },
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 185090,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 185090
+        },
+        {
+          "key": "forex",
+          "label": "Gain on foreign exchange",
+          "target": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": {
+              "value": 0,
+              "votes": 1,
+              "of": 1,
+              "contested": false,
+              "basis": "reported"
+            },
+            "q2": {
+              "value": 0,
+              "votes": 0,
+              "of": 0,
+              "basis": "derived"
+            },
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 0,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": 0
+        },
+        {
+          "key": "other",
+          "label": "Miscellaneous and other gains",
+          "target": {
+            "value": 5000000,
+            "votes": 1,
+            "of": 1,
+            "contested": false
+          },
+          "quarters": {
+            "q1": null,
+            "q2": null,
+            "q3": null,
+            "q4": null
+          },
+          "total": {
+            "value": 104916595.83,
+            "votes": 1,
+            "of": 1,
+            "contested": false,
+            "basis": "reported"
+          },
+          "totalFromQuarters": null
+        }
+      ],
+      "unclassified": [],
+      "checks": [
+        {
+          "rule": "total = sum of quarters",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "total = sum of sources",
+          "pass": true,
+          "delta": 0
+        },
+        {
+          "rule": "target = sum of source targets",
+          "pass": true,
+          "delta": 0
+        }
+      ],
+      "document": {
+        "title": "FY2026",
+        "sourceUrl": "https://psc.gov.ph/psc_site/wp-content/uploads/2026/07/FY2026_2ndQ-FAR-No.-5.pdf",
+        "pages": 2,
+        "sha256": "081e1edb2f42473c01e2a541d8d2fd47f3f94cbd0ca9923da2fb97389f993039",
+        "retrievedAt": "2026-09-18T00:28:29.283Z"
+      }
+    }
+  ]
+}

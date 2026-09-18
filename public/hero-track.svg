@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400"
+     preserveAspectRatio="xMidYMid slice" role="presentation">
+  <!-- The bend of an athletics track: eight lane lines sweeping across the
+       hero, with lane five picked out in the gold of the flag's sun.
+       Decorative background for the betterPSC hero. The mask quiets the
+       linework beneath the headline so the type keeps its contrast. -->
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a4a4a" />
+      <stop offset="0.38" stop-color="#a6a6a6" />
+      <stop offset="0.66" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#ffffff" />
+    </linearGradient>
+    <mask id="quiet-left">
+      <rect width="1440" height="400" fill="url(#fade)" />
+    </mask>
+  </defs>
+
+  <g mask="url(#quiet-left)">
+    <circle cx="720" cy="1700" r="1300" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.16" />
+    <circle cx="720" cy="1700" r="1346" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.148" />
+    <circle cx="720" cy="1700" r="1392" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.136" />
+    <circle cx="720" cy="1700" r="1438" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.124" />
+    <circle cx="720" cy="1700" r="1484" fill="none" stroke="#fcd116" stroke-width="2.5" stroke-opacity="0.42" />
+    <circle cx="720" cy="1700" r="1530" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.1" />
+    <circle cx="720" cy="1700" r="1576" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.088" />
+    <circle cx="720" cy="1700" r="1622" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.076" />
+  </g>
+</svg>

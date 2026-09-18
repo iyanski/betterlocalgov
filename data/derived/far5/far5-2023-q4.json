@@ -1,0 +1,356 @@
+{
+  "docId": "far5-2023-q4",
+  "generatedAt": "2026-09-18T00:47:15.365Z",
+  "layout": "far5",
+  "pages": [
+    {
+      "page": 1,
+      "period": "Q4",
+      "extraction": "complete",
+      "anchored": 10,
+      "interpolated": ["remittanceBTr"],
+      "rows": 10
+    }
+  ],
+  "summary": {
+    "rows": 10,
+    "pass": 8,
+    "passRounding": 0,
+    "fail": 2,
+    "notApplicable": 0
+  },
+  "rows": [
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "",
+      "rowKind": "line",
+      "source": null,
+      "uacsCode": null,
+      "target": null,
+      "q1": 535988096.17,
+      "q2": null,
+      "q3": null,
+      "q4": null,
+      "total": null,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": null,
+      "variancePct": 34,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "target": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "total": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "collisions": [10],
+        "bbox": [795, 835]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Non-Revenue Collections/Other Receipts",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 1325500000,
+      "q1": 535988096.17,
+      "q2": null,
+      "q3": 347306815.72,
+      "q4": 460672882.97,
+      "total": 1770470517.16,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 444970517.16,
+      "variancePct": 34,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "426,502.722,30"
+          }
+        },
+        "collisions": [10],
+        "bbox": [823, 874]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Cash Receipts",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 1325500000,
+      "q1": 535988096.17,
+      "q2": 426502722.3,
+      "q3": 347306815.72,
+      "q4": 460672882.97,
+      "total": 1770470517.16,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 144970517.16,
+      "variancePct": 34,
+      "provenance": {
+        "method": "ocr",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "varianceAmount = total - target",
+            "delta": -300000000
+          }
+        ],
+        "bbox": [855, 908]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Non-Tax",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 1325500000,
+      "q1": 535988096.17,
+      "q2": 426502722.3,
+      "q3": 347306815.72,
+      "q4": 460672882.97,
+      "total": 1770470517.16,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 444970517.16,
+      "variancePct": 34,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "varianceAmount": {
+            "value": 444970517.16,
+            "method": "ocr-repaired",
+            "raw": "444.970,517.16",
+            "repairs": [".->,"]
+          }
+        },
+        "collisions": [10],
+        "bbox": [891, 943]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Rent/Lease Income",
+      "rowKind": "line",
+      "source": "rent",
+      "uacsCode": "4020205000",
+      "target": 5000000,
+      "q1": 5300586,
+      "q2": 11409445.74,
+      "q3": 5840060.8,
+      "q4": 6308589.83,
+      "total": 28858682.37,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 23858682.37,
+      "variancePct": 477,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [929, 976]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Share from PAGCOR/PCSO",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4040102000",
+      "target": 1320000000,
+      "q1": 529999610.17,
+      "q2": 414306901.36,
+      "q3": 340857141.73,
+      "q4": 450296568.89,
+      "total": 1735460222.15,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 415460222.15,
+      "variancePct": 31,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "collisions": [10],
+        "bbox": [965, 1017]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Income from Grants and Donations in Cash",
+      "rowKind": "line",
+      "source": "grants-donations",
+      "uacsCode": "4040201000",
+      "target": 0,
+      "q1": 50000,
+      "q2": 0,
+      "q3": 0,
+      "q4": 270000,
+      "total": 320000,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 320000,
+      "variancePct": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "collisions": [10],
+        "bbox": [1004, 1051]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Other Gains",
+      "rowKind": "line",
+      "source": "other",
+      "uacsCode": "4050199000",
+      "target": 500000,
+      "q1": 637900,
+      "q2": 786375.2,
+      "q3": 609613.19,
+      "q4": 3725524.25,
+      "total": 5759412.64,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 5259412.64,
+      "variancePct": 1052,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1039, 1090]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "Sale of Unserviceable Property",
+      "rowKind": "line",
+      "source": "sales",
+      "uacsCode": "4060102000",
+      "target": 0,
+      "q1": 0,
+      "q2": 0,
+      "q3": 0,
+      "q4": 72200,
+      "total": 72200,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": null,
+      "variancePct": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "72,200.00%"
+          }
+        },
+        "bbox": [1079, 1124]
+      }
+    },
+    {
+      "docId": "far5-2023-q4",
+      "period": "Q4",
+      "fiscalYear": 2023,
+      "page": 1,
+      "particulars": "GRAND TOTAL",
+      "rowKind": "total",
+      "source": null,
+      "uacsCode": null,
+      "target": 1325500000,
+      "q1": 536988096.17,
+      "q2": 426502722.3,
+      "q3": 7306815.72,
+      "q4": 460672882.97,
+      "total": 1770470517.16,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 444970517.16,
+      "variancePct": 34,
+      "provenance": {
+        "method": "ocr",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "total = q1+q2+q3+q4",
+            "delta": 339000000
+          }
+        ],
+        "collisions": [10],
+        "bbox": [1113, 1159]
+      }
+    }
+  ]
+}

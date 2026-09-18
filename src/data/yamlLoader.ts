@@ -32,33 +32,38 @@ import servicesYamlContent from './services.yaml?raw';
 import governmentActivitiesYamlContent from './government.yaml?raw';
 
 // Import all category index files statically
-import healthServicesIndex from '../../content/services/health-services/index.yaml?raw';
-import educationIndex from '../../content/services/education/index.yaml?raw';
-import businessIndex from '../../content/services/business/index.yaml?raw';
-import socialWelfareIndex from '../../content/services/social-welfare/index.yaml?raw';
-import agricultureFisheriesIndex from '../../content/services/agriculture-fisheries/index.yaml?raw';
-import infrastructurePublicWorksIndex from '../../content/services/infrastructure-public-works/index.yaml?raw';
-import garbageWasteDisposalIndex from '../../content/services/garbage-waste-disposal/index.yaml?raw';
-import environmentIndex from '../../content/services/environment/index.yaml?raw';
-import disasterPreparednessIndex from '../../content/services/disaster-preparedness/index.yaml?raw';
-import housingLandUseIndex from '../../content/services/housing-land-use/index.yaml?raw';
-import governmentDepartmentsIndex from '../../content/government/departments/index.yaml?raw';
-import governmentDepartmentsLegislativeIndex from '../../content/government/departments/legislative/index.yaml?raw';
+// NOTE: every category needs BOTH an import here and an entry in
+// categoryIndexMap below. A missing entry renders an empty category page
+// silently — it is not a build error.
+import grassrootsSportsIndex from '../../content/services/grassroots-sports/index.yaml?raw';
+import nationalAthletesIndex from '../../content/services/national-athletes/index.yaml?raw';
+import sportsFacilitiesIndex from '../../content/services/sports-facilities/index.yaml?raw';
+import sportsDevelopmentIndex from '../../content/services/sports-development/index.yaml?raw';
+import awardsAndRecognitionIndex from '../../content/services/awards-and-recognition/index.yaml?raw';
+import inclusiveSportsIndex from '../../content/services/inclusive-sports/index.yaml?raw';
+import partnershipsAndAssistanceIndex from '../../content/services/partnerships-and-assistance/index.yaml?raw';
+import aboutPscIndex from '../../content/government/about-psc/index.yaml?raw';
+import leadershipIndex from '../../content/government/leadership/index.yaml?raw';
+import transparencyIndex from '../../content/government/transparency/index.yaml?raw';
+import procurementIndex from '../../content/government/procurement/index.yaml?raw';
+import careersIndex from '../../content/government/careers/index.yaml?raw';
 
-// Create a mapping of category slugs to their YAML content
+// Create a mapping of category slugs to their YAML content.
+// This is a single flat namespace shared by services and government, and
+// every key here also becomes a reserved document slug (see isNestedCategory).
 const categoryIndexMap: { [key: string]: string } = {
-  'health-services': healthServicesIndex,
-  education: educationIndex,
-  business: businessIndex,
-  'social-welfare': socialWelfareIndex,
-  'agriculture-fisheries': agricultureFisheriesIndex,
-  'infrastructure-public-works': infrastructurePublicWorksIndex,
-  'garbage-waste-disposal': garbageWasteDisposalIndex,
-  environment: environmentIndex,
-  'disaster-preparedness': disasterPreparednessIndex,
-  'housing-land-use': housingLandUseIndex,
-  departments: governmentDepartmentsIndex,
-  legislative: governmentDepartmentsLegislativeIndex,
+  'grassroots-sports': grassrootsSportsIndex,
+  'national-athletes': nationalAthletesIndex,
+  'sports-facilities': sportsFacilitiesIndex,
+  'sports-development': sportsDevelopmentIndex,
+  'awards-and-recognition': awardsAndRecognitionIndex,
+  'inclusive-sports': inclusiveSportsIndex,
+  'partnerships-and-assistance': partnershipsAndAssistanceIndex,
+  'about-psc': aboutPscIndex,
+  leadership: leadershipIndex,
+  transparency: transparencyIndex,
+  procurement: procurementIndex,
+  careers: careersIndex,
 };
 
 // Parse the YAML content

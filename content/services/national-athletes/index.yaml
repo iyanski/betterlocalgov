@@ -1,0 +1,24 @@
+# National Athletes Category Pages
+# This file contains all the pages available under the National Athletes category
+
+layout: grid
+pages:
+  - name: 'Join the national team pool'
+    slug: 'join-the-national-team-pool'
+    description: 'Why national sports associations, not the PSC, select national athletes — and who to approach.'
+
+  - name: 'Allowances and incentives'
+    slug: 'athlete-allowances-and-incentives'
+    description: 'The legal basis for athlete allowances and medal incentives, which office handles payment, and why the rates are not published online.'
+
+  - name: 'Welfare, insurance, and benefits'
+    slug: 'athlete-welfare-and-insurance'
+    description: 'The one benefit the PSC publishes for national athletes, and the welfare questions it leaves unanswered.'
+
+  - name: 'Support for national coaches'
+    slug: 'support-for-national-coaches'
+    description: 'Who appoints national coaches, what the PSC mandate covers for them, and what it does not publish.'
+
+  - name: 'Education and scholarship support'
+    slug: 'education-and-scholarship-support'
+    description: 'The proposed civil service eligibility grant for medallists, and why there is no published PSC scholarship.'
