@@ -1,0 +1,6711 @@
+{
+  "docId": "far1-2024-q4",
+  "generatedAt": "2026-09-18T00:48:22.042Z",
+  "layout": "far1",
+  "statements": [
+    {
+      "statement": 0,
+      "pages": [1, 4],
+      "extraction": "complete",
+      "pagesSkipped": 0,
+      "columnVotes": 1583,
+      "rows": 89
+    },
+    {
+      "statement": 1,
+      "pages": [5, 7],
+      "extraction": "failed",
+      "reason": "could not recover 22 money columns"
+    },
+    {
+      "statement": 2,
+      "pages": [8, 8],
+      "extraction": "complete",
+      "pagesSkipped": 0,
+      "columnVotes": 249,
+      "rows": 12
+    },
+    {
+      "statement": 3,
+      "pages": [9, 10],
+      "extraction": "failed",
+      "reason": "could not recover 22 money columns"
+    }
+  ],
+  "summary": {
+    "rows": 101,
+    "pass": 53,
+    "passRounding": 4,
+    "fail": 36,
+    "notApplicable": 8
+  },
+  "rows": [
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "1. Ageruy specific Budget",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 1156452000,
+      "adjustments": 0,
+      "adjustedAppropriations": 1156452000,
+      "allotmentsReceived": 1156452000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 1156452000,
+      "obligationsQ1": 158484127.82,
+      "obligationsQ2": 156642284.74,
+      "obligationsQ3": 178584647.76,
+      "obligationsQ4": 194060668.88,
+      "obligationsTotal": 885771729.2,
+      "disbursementsQ1": 36977291.96,
+      "disbursementsQ2": 264903710.85,
+      "disbursementsQ3": 160280483.64,
+      "disbursementsQ4": 140458617.55,
+      "disbursementsTotal": 602620104,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 83151625.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": 198000000
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -200000000
+          }
+        ],
+        "cells": {
+          "appropriations": {
+            "value": 1156452000,
+            "method": "ocr-repaired",
+            "raw": "1.156.452.000.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": 160280483.64,
+            "method": "ocr-repaired",
+            "raw": "160.280,483.64",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": 140458617.55,
+            "method": "ocr-repaired",
+            "raw": "140,458.617.55",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "470.880 270.80"
+          }
+        },
+        "bbox": [868, 914]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "General Administration and Support 100000000000000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "100000000000000",
+      "appropriations": 102968000,
+      "adjustments": 0,
+      "adjustedAppropriations": 102968000,
+      "allotmentsReceived": 102968000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 102968000,
+      "obligationsQ1": 22086103.7,
+      "obligationsQ2": 32970079.86,
+      "obligationsQ3": 17366019.75,
+      "obligationsQ4": 10478578.94,
+      "obligationsTotal": 82900782.25,
+      "disbursementsQ1": 11669172.01,
+      "disbursementsQ2": 42765129.02,
+      "disbursementsQ3": 17358117.69,
+      "disbursementsQ4": 10488860.33,
+      "disbursementsTotal": 82279288.05,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20067217.75,
+      "unpaidObligationsDue": 621494.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "disbursementsTotal = Q1+Q2+Q3+Q4",
+            "delta": -1991
+          }
+        ],
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 102968000,
+            "method": "ocr-repaired",
+            "raw": "102.968.000.00",
+            "repairs": [".->,"]
+          },
+          "allotmentsReceived": {
+            "value": 102968000,
+            "method": "ocr-repaired",
+            "raw": "102.968.000.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAllotments": {
+            "value": 102968000,
+            "method": "ocr-repaired",
+            "raw": "102.968.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 32970079.86,
+            "method": "ocr-repaired",
+            "raw": "32.970.079.86",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [913, 953]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "General Management and Supervision 100000100001000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "100000100001000",
+      "appropriations": 102711000,
+      "adjustments": 0,
+      "adjustedAppropriations": 102711000,
+      "allotmentsReceived": 102711000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 102711000,
+      "obligationsQ1": 22086103.7,
+      "obligationsQ2": 32070070.86,
+      "obligationsQ3": null,
+      "obligationsQ4": 10221578.94,
+      "obligationsTotal": 82843782.25,
+      "disbursementsQ1": 11669172.01,
+      "disbursementsQ2": 42765129.02,
+      "disbursementsQ3": 17358117.69,
+      "disbursementsQ4": 10229869.33,
+      "disbursementsTotal": 82022288.05,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20067217.75,
+      "unpaidObligationsDue": 621494.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 200000
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -200000
+          }
+        ],
+        "cells": {
+          "obligationsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "17.366.019.75:"
+          },
+          "obligationsQ4": {
+            "value": 10221578.94,
+            "method": "ocr-repaired",
+            "raw": "10.221.578.94",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsDue": {
+            "value": 621494.2,
+            "method": "ocr-repaired",
+            "raw": "621.494.20",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [959, 999]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 38442000,
+      "adjustments": 0,
+      "adjustedAppropriations": 38442000,
+      "allotmentsReceived": 38442000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 38442000,
+      "obligationsQ1": 8750108.53,
+      "obligationsQ2": 11928893.3,
+      "obligationsQ3": 9248013.71,
+      "obligationsQ4": 8514084.46,
+      "obligationsTotal": 38442000,
+      "disbursementsQ1": 8676765.33,
+      "disbursementsQ2": 11991827.53,
+      "disbursementsQ3": 9243077.73,
+      "disbursementsQ4": 8530329.41,
+      "disbursementsTotal": 38442000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": 900
+          }
+        ],
+        "cells": {
+          "obligationsQ3": {
+            "value": 9248013.71,
+            "method": "ocr-repaired",
+            "raw": "9.248.013.71",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": 9243077.73,
+            "method": "ocr-repaired",
+            "raw": "9.243.077.73",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": 8530329.41,
+            "method": "ocr-repaired",
+            "raw": "8.530.329.41",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1004, 1050]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 44269000,
+      "adjustments": 0,
+      "adjustedAppropriations": 44269000,
+      "allotmentsReceived": 44269000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 44269000,
+      "obligationsQ1": 13335995.17,
+      "obligationsQ2": 21041186.56,
+      "obligationsQ3": 8118006.04,
+      "obligationsQ4": 1706594.48,
+      "obligationsTotal": 44201782.25,
+      "disbursementsQ1": 2992406.68,
+      "disbursementsQ2": 30773301.49,
+      "disbursementsQ3": 8115039.96,
+      "disbursementsQ4": 1699539.92,
+      "disbursementsTotal": 43580288.05,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 67217.75,
+      "unpaidObligationsDue": 621494.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "appropriations": {
+            "value": 44269000,
+            "method": "ocr-repaired",
+            "raw": "44.269.000.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": 1699539.92,
+            "method": "ocr-repaired",
+            "raw": "1.699.539.92",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1044, 1085]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "co",
+      "expenseClass": "CO",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 20000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 20000000,
+      "allotmentsReceived": 20000000,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": 0,
+      "adjustedAllotments": 20000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": null,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1089, 1130]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Administration of Personnel Benefits 100000100002000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "100000100002000",
+      "appropriations": 257000,
+      "adjustments": 0,
+      "adjustedAppropriations": 257000,
+      "allotmentsReceived": 257000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 257000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0.01,
+      "obligationsQ3": 0,
+      "obligationsQ4": 257000,
+      "obligationsTotal": 257000,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 257000,
+      "disbursementsTotal": 257000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass-rounding",
+        "bbox": [1135, 1175]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 257000,
+      "adjustments": 0,
+      "adjustedAppropriations": 257000,
+      "allotmentsReceived": 257000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 257000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 257000,
+      "obligationsTotal": 257000,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 257000,
+      "disbursementsTotal": 257000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ4": {
+            "value": 257000,
+            "method": "ocr-repaired",
+            "raw": "257.000.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1180, 1220]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Sub-Total, General Administration and Support",
+      "expenseClass": null,
+      "rowKind": "subtotal",
+      "uacsCode": null,
+      "appropriations": 102968000,
+      "adjustments": 0,
+      "adjustedAppropriations": 102968000,
+      "allotmentsReceived": 102968000,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": 0,
+      "adjustedAllotments": 102968000,
+      "obligationsQ1": 22086103.7,
+      "obligationsQ2": 32970079.86,
+      "obligationsQ3": 17366019.75,
+      "obligationsQ4": 40478578.04,
+      "obligationsTotal": 82900782.25,
+      "disbursementsQ1": 11669172.01,
+      "disbursementsQ2": 42765129.02,
+      "disbursementsQ3": 17358117.69,
+      "disbursementsQ4": 10486869.33,
+      "disbursementsTotal": 82279288.05,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20067217.75,
+      "unpaidObligationsDue": 621494.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": -29999999.1
+          }
+        ],
+        "cells": {
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": 20067217.75,
+            "method": "ocr-repaired",
+            "raw": "20,067.217.75",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1220, 1265]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 38699000,
+      "adjustments": 0,
+      "adjustedAppropriations": 38699000,
+      "allotmentsReceived": 38699000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 38699000,
+      "obligationsQ1": 8750108.53,
+      "obligationsQ2": 11928893.3,
+      "obligationsQ3": 9248013.71,
+      "obligationsQ4": 8771984.46,
+      "obligationsTotal": 38699000,
+      "disbursementsQ1": 8676765.33,
+      "disbursementsQ2": 11991827.53,
+      "disbursementsQ3": 9243077.73,
+      "disbursementsQ4": 8787329.41,
+      "disbursementsTotal": 38699000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1260, 1305]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "/MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 44269000,
+      "adjustments": 0,
+      "adjustedAppropriations": 44269000,
+      "allotmentsReceived": 44269000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 44269000,
+      "obligationsQ1": 13335995.17,
+      "obligationsQ2": 21041186.56,
+      "obligationsQ3": 8118006.04,
+      "obligationsQ4": 1706594.48,
+      "obligationsTotal": 44201782.25,
+      "disbursementsQ1": 2992406.68,
+      "disbursementsQ2": 30773301.49,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 169053.99,
+      "disbursementsTotal": 43580288.05,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 87217.75,
+      "unpaidObligationsDue": 621494.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 20000
+          }
+        ],
+        "cells": {
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "811503996"
+          }
+        },
+        "bbox": [1299, 1345]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "FinEx (if Applicable)",
+      "expenseClass": "FinEx",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 0,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0_00"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nn"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1345, 1384]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 20000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 20000000,
+      "allotmentsReceived": 20000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 20000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1379, 1424]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Operations 300000000000000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "300000000000000",
+      "appropriations": 1053484000,
+      "adjustments": 0,
+      "adjustedAppropriations": 1.05,
+      "allotmentsReceived": 3484000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 1053484000,
+      "obligationsQ1": 136398024.12,
+      "obligationsQ2": 123672204.88,
+      "obligationsQ3": 159218628.01,
+      "obligationsQ4": 183582089.94,
+      "obligationsTotal": 602870946.95,
+      "disbursementsQ1": 25308119.95,
+      "disbursementsQ2": 222138581.83,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 129971748.22,
+      "disbursementsTotal": 520240815.05,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 450613053.05,
+      "unpaidObligationsDue": 82530131,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": -1053483998.95
+          },
+          {
+            "rule": "unreleasedAppropriations = adjustedAppropriations - adjustedAllotments",
+            "delta": 1053483998.95
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -100000.9
+          }
+        ],
+        "cells": {
+          "adjustedAllotments": {
+            "value": 1053484000,
+            "method": "ocr-repaired",
+            "raw": "1,053.484,000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ1": {
+            "value": 136398024.12,
+            "method": "ocr-repaired",
+            "raw": "136.398,024.12",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 123672204.88,
+            "method": "ocr-repaired",
+            "raw": "123.672.204.88",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "142.922 365.95"
+          }
+        },
+        "bbox": [1424, 1464]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "OO : Source of athletic talents widened",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 1053484000,
+      "adjustments": null,
+      "adjustedAppropriations": 1053484000,
+      "allotmentsReceived": 1053484000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 1053484000,
+      "obligationsQ1": 136398024.12,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": 1183582089.94,
+      "obligationsTotal": null,
+      "disbursementsQ1": 25308119.95,
+      "disbursementsQ2": 222138581.83,
+      "disbursementsQ3": 142922365.95,
+      "disbursementsQ4": 129971748.22,
+      "disbursementsTotal": 520240815.95,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 613053.05,
+      "unpaidObligationsDue": 82530131,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "disbursementsTotal = Q1+Q2+Q3+Q4",
+            "delta": -100000
+          }
+        ],
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": 1053484000,
+            "method": "ocr-repaired",
+            "raw": "1,053,484.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "123.672.204.88 159"
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "218628"
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "8,028,700.48 05|"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 450"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1464, 1504]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "AMATEUR SPORTS DEVELOPMENT PROGRAM",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 1053484000,
+      "adjustments": null,
+      "adjustedAppropriations": 1053484000,
+      "allotmentsReceived": 1053484000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 1053484000,
+      "obligationsQ1": 136398024.12,
+      "obligationsQ2": 123672204.88,
+      "obligationsQ3": 150218828.01,
+      "obligationsQ4": 183582089.94,
+      "obligationsTotal": 602870946.95,
+      "disbursementsQ1": 25308119.95,
+      "disbursementsQ2": 2013858.18,
+      "disbursementsQ3": 142922365.95,
+      "disbursementsQ4": 129971748.22,
+      "disbursementsTotal": 520340815.95,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 813053.05,
+      "unpaidObligationsDue": 82530131,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": 8999800
+          },
+          {
+            "rule": "disbursementsTotal = Q1+Q2+Q3+Q4",
+            "delta": 220124723.65
+          },
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": -449800000
+          }
+        ],
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "adjustedAppropriations": {
+            "value": 1053484000,
+            "method": "ocr-repaired",
+            "raw": "1.053.484.000.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": 142922365.95,
+            "method": "ocr-repaired",
+            "raw": "142.922.365.95",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": 129971748.22,
+            "method": "ocr-repaired",
+            "raw": "129.971.748.22",
+            "repairs": [".->,"]
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 A50"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1508, 1543]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Policy and Program Formulation and Amateur Sport 210100100001006",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "210100100001006",
+      "appropriations": 1123.8,
+      "adjustments": 0,
+      "adjustedAppropriations": 112360000,
+      "allotmentsReceived": 112360000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 112360000,
+      "obligationsQ1": 12637828.05,
+      "obligationsQ2": null,
+      "obligationsQ3": 11727148.47,
+      "obligationsQ4": 11551072.73,
+      "obligationsTotal": 73275821.12,
+      "disbursementsQ1": 8163445.16,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 11720155.88,
+      "disbursementsTotal": 73099801.35,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 39084178.88,
+      "unpaidObligationsDue": 176019.77,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": 112358876.2
+          }
+        ],
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": 112360000,
+            "method": "ocr-repaired",
+            "raw": "112.360.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "37.359 771.87"
+          },
+          "disbursementsQ1": {
+            "value": 8163445.16,
+            "method": "ocr-repaired",
+            "raw": "8,163.445.16",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "41.197.626.34 12"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "00& 274.17"
+          }
+        },
+        "bbox": [1549, 1589]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 30525000,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 30525000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 30525000,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": 7260859.34,
+      "obligationsQ4": 6900042.56,
+      "obligationsTotal": 20525000,
+      "disbursementsQ1": 6746088.66,
+      "disbursementsQ2": 9607809.44,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 6900042.56,
+      "disbursementsTotal": 30535000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": -10000000
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": 10010000
+          }
+        ],
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": 6900042.56,
+            "method": "ocr-repaired",
+            "raw": "6.900.042.56",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "7,271,059.34|"
+          },
+          "disbursementsQ4": {
+            "value": 6900042.56,
+            "method": "ocr-repaired",
+            "raw": "6.900.042.56",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1600, 1641]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "MO",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 81835000,
+      "adjustments": 0,
+      "adjustedAppropriations": 81835000,
+      "allotmentsReceived": 81835000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 81835000,
+      "obligationsQ1": 5823323.53,
+      "obligationsQ2": 27809978.29,
+      "obligationsQ3": 4466489.13,
+      "obligationsQ4": 4851030.17,
+      "obligationsTotal": 42750821.12,
+      "disbursementsQ1": 1417356.5,
+      "disbursementsQ2": 31589816.9,
+      "disbursementsQ3": 4737214.83,
+      "disbursementsQ4": 4830413.12,
+      "disbursementsTotal": 42574801.35,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 39084178.88,
+      "unpaidObligationsDue": 476010.77,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": -200000
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": 299991
+          }
+        ],
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 81835000,
+            "method": "ocr-repaired",
+            "raw": "81.835.000.00",
+            "repairs": [".->,"]
+          },
+          "allotmentsReceived": {
+            "value": 81835000,
+            "method": "ocr-repaired",
+            "raw": "81,835.000.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": 4737214.83,
+            "method": "ocr-repaired",
+            "raw": "4.737.214.83",
+            "repairs": [".->,"]
+          },
+          "disbursementsTotal": {
+            "value": 42574801.35,
+            "method": "ocr-repaired",
+            "raw": "42.574.801.35",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1640, 1680]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Natio, t for All-Grassraot Centerpiece Program 210100100002006",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "210100100002006",
+      "appropriations": 188092000,
+      "adjustments": 0,
+      "adjustedAppropriations": 188982000,
+      "allotmentsReceived": 188982000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 188982000,
+      "obligationsQ1": 7274569.25,
+      "obligationsQ2": 20355820,
+      "obligationsQ3": 9647769.25,
+      "obligationsQ4": 97008459.57,
+      "obligationsTotal": 134286618.07,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 27048830.25,
+      "disbursementsQ3": 13863344.25,
+      "disbursementsQ4": 7601371.78,
+      "disbursementsTotal": 112625701.12,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 54695381.93,
+      "unpaidObligationsDue": 21660916.95,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": 890000
+          },
+          {
+            "rule": "disbursementsTotal = Q1+Q2+Q3+Q4",
+            "delta": 64112154.84
+          }
+        ],
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": 188982000,
+            "method": "ocr-repaired",
+            "raw": "188.982.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ1": {
+            "value": 7274569.25,
+            "method": "ocr-repaired",
+            "raw": "7.274.569.25",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": 97008459.57,
+            "method": "ocr-repaired",
+            "raw": "97.008.459.57",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1685, 1726]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 188982000,
+      "adjustments": null,
+      "adjustedAppropriations": 188982000,
+      "allotmentsReceived": 188982000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": 7274589.28,
+      "obligationsQ2": 20255820,
+      "obligationsQ3": 9647769.25,
+      "obligationsQ4": 97008459.57,
+      "obligationsTotal": 134286618.07,
+      "disbursementsQ1": null,
+      "disbursementsQ2": 22948639.25,
+      "disbursementsQ3": 13663344.25,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 11262570.11,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 54695381.93,
+      "unpaidObligationsDue": 21660916.95,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": 99979.97
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -101363131.01
+          }
+        ],
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n od"
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "188"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "Q82 0"
+          },
+          "obligationsQ3": {
+            "value": 9647769.25,
+            "method": "ocr-repaired",
+            "raw": "9.647.769.25",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": 13663344.25,
+            "method": "ocr-repaired",
+            "raw": "13.663,344.25",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "76,013,717.62 ["
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0n"
+          }
+        },
+        "bbox": [1736, 1776]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Project(s)",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 752142000,
+      "adjustments": null,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 752142000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 752142000,
+      "obligationsQ1": 116485626.82,
+      "obligationsQ2": 65956613.01,
+      "obligationsQ3": 137843710.29,
+      "obligationsQ4": 75022557.64,
+      "obligationsTotal": 395308507.76,
+      "disbursementsQ1": 17144674.79,
+      "disbursementsQ2": 157992316.24,
+      "disbursementsQ3": 117250747.53,
+      "disbursementsQ4": 42227574.92,
+      "disbursementsTotal": 334615313.48,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 356833492.24,
+      "unpaidObligationsDue": 60693194.28,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": 116485626.82,
+            "method": "ocr-repaired",
+            "raw": "116.485.626.82",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 65956613.01,
+            "method": "ocr-repaired",
+            "raw": "65.956,613.01",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1776, 1816]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Locally-Funded Project(s)",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 752142000,
+      "adjustments": 0,
+      "adjustedAppropriations": 752142000,
+      "allotmentsReceived": 752142000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 752142000,
+      "obligationsQ1": 116485626.82,
+      "obligationsQ2": 65956613.01,
+      "obligationsQ3": 137843710.2,
+      "obligationsQ4": 75022557.64,
+      "obligationsTotal": 395308507.76,
+      "disbursementsQ1": 17144674.79,
+      "disbursementsQ2": 157992316.24,
+      "disbursementsQ3": 117250747.53,
+      "disbursementsQ4": 42227574.92,
+      "disbursementsTotal": 334615313.48,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 368823402.24,
+      "unpaidObligationsDue": 60693194.28,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 11989910
+          }
+        ],
+        "cells": {
+          "unpaidObligationsDue": {
+            "value": 60693194.28,
+            "method": "ocr-repaired",
+            "raw": "60,693. 194.28",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1816, 1855]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Games",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": null,
+      "adjustments": null,
+      "adjustedAppropriations": 52000000,
+      "allotmentsReceived": 52000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 52000000,
+      "obligationsQ1": 30171752.1,
+      "obligationsQ2": 20929034.75,
+      "obligationsQ3": 893530.24,
+      "obligationsQ4": 0,
+      "obligationsTotal": 51994317.09,
+      "disbursementsQ1": 13270212.4,
+      "disbursementsQ2": 33848342.65,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 50457212.93,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 5682.91,
+      "unpaidObligationsDue": 1537104.16,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "appropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ1": {
+            "value": 13270212.4,
+            "method": "ocr-repaired",
+            "raw": "13.270,212.40",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "22.28 А52 88"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1866, 1918]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 52000000,
+      "adjustments": null,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 52000000,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 30171752.1,
+      "obligationsQ2": 20020034.75,
+      "obligationsQ3": 893530.24,
+      "obligationsQ4": null,
+      "obligationsTotal": 994317.09,
+      "disbursementsQ1": 13270212.4,
+      "disbursementsQ2": 33848342.65,
+      "disbursementsQ3": 3338652.88,
+      "disbursementsQ4": 5,
+      "disbursementsTotal": 50457212.93,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 5682.91,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 nd"
+          },
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0C"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 51"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,537,104.16|"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1912, 1952]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "Phillippine National Para Games 310100200065000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200065000",
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 9283814.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 7922990.69,
+      "disbursementsTotal": 7922990.69,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 1360824,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "828.14 Ą¢"
+          },
+          "obligationsTotal": {
+            "value": 9283814.69,
+            "method": "ocr-repaired",
+            "raw": "9.283,814.69",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "71A 185.31"
+          }
+        },
+        "bbox": [1958, 2003]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 1,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 10000800,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 9283814.69,
+      "obligationsTotal": 9283814.69,
+      "disbursementsQ1": null,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 7922990.69,
+      "disbursementsTotal": 7922990.69,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 716185.31,
+      "unpaidObligationsDue": 1360824,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": -800
+          }
+        ],
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 00i"
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [2003, 2048]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "inaiaenous reoples Games 310100200066000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200066000",
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": 1208350,
+      "obligationsQ2": null,
+      "obligationsQ3": 2485207.04,
+      "obligationsQ4": 2129178.91,
+      "obligationsTotal": 7962845.95,
+      "disbursementsQ1": 65000,
+      "disbursementsQ2": 3283460,
+      "disbursementsQ3": 1955325,
+      "disbursementsQ4": 1646677.25,
+      "disbursementsTotal": 6950462.25,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 2037154.05,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 10000000,
+            "method": "ocr-repaired",
+            "raw": "10.000,000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2140.110.00"
+          },
+          "obligationsTotal": {
+            "value": 7962845.95,
+            "method": "ocr-repaired",
+            "raw": "7.962.845.95",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1.012.383.7("
+          }
+        },
+        "bbox": [732, 772]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "IMOOE",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": 1208350,
+      "obligationsQ2": 2140110,
+      "obligationsQ3": 2485207.04,
+      "obligationsQ4": 2129178.91,
+      "obligationsTotal": 7962845.95,
+      "disbursementsQ1": null,
+      "disbursementsQ2": 283460,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 1646677.25,
+      "disbursementsTotal": 6950462.25,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 2037154.05,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "10.000 000.00"
+          },
+          "obligationsQ3": {
+            "value": 2485207.04,
+            "method": "ocr-repaired",
+            "raw": "2.485.207.04",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": 2129178.91,
+            "method": "ocr-repaired",
+            "raw": "2.129.178.91",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "65,000.00 3"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1055.325.00"
+          },
+          "disbursementsQ4": {
+            "value": 1646677.25,
+            "method": "ocr-repaired",
+            "raw": "1.646.677.25",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,012,383.70|"
+          }
+        },
+        "bbox": [777, 819]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "of Rizal Memorial Sports Complex 310100200067000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200067000",
+      "appropriations": 200000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 200000000,
+      "allotmentsReceived": 200000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 200000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 200000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "appropriations": {
+            "value": 200000000,
+            "method": "ocr-repaired",
+            "raw": "200.000.000.00",
+            "repairs": [".->,"]
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": 200000000,
+            "method": "ocr-repaired",
+            "raw": "200.000.000.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [829, 863]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 200000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 200000000,
+      "allotmentsReceived": 200000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 200000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 200000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 200000000,
+            "method": "ocr-repaired",
+            "raw": "200.000.000.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [874, 914]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Rehabilitation and Upgrading of Philsports Comples 310100200068000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200068000",
+      "appropriations": 75000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 75000000,
+      "allotmentsReceived": 75000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 75000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 75000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "unobligatedAllotments": {
+            "value": 75000000,
+            "method": "ocr-repaired",
+            "raw": "75.000.000.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [925, 961]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "co",
+      "expenseClass": "CO",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 75000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 75000000,
+      "allotmentsReceived": 75000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 75000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "appropriations": {
+            "value": 75000000,
+            "method": "ocr-repaired",
+            "raw": "75.000.000.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "75.000 000.00"
+          }
+        },
+        "bbox": [971, 1006]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Preparation, Olympics Training and Participation in the Winter Youth 310100200069000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200069000",
+      "appropriations": 15000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 15000000,
+      "allotmentsReceived": 15000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 15000000,
+      "obligationsQ1": 2973397.11,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 2973397.11,
+      "disbursementsQ1": 2438372.78,
+      "disbursementsQ2": 535024.33,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 2973397.11,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 12026602.89,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 15000000,
+            "method": "ocr-repaired",
+            "raw": "15.000.000.00",
+            "repairs": [".->,"]
+          },
+          "allotmentsReceived": {
+            "value": 15000000,
+            "method": "ocr-repaired",
+            "raw": "15.000.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": 2973397.11,
+            "method": "ocr-repaired",
+            "raw": "2.973.397.11",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ2": {
+            "value": 535024.33,
+            "method": "ocr-repaired",
+            "raw": "535.024.33",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1010, 1067]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 15000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 15000000,
+      "allotmentsReceived": 15000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 15000000,
+      "obligationsQ1": 2973397.11,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 2973397.11,
+      "disbursementsQ1": 2438372.78,
+      "disbursementsQ2": 535024.33,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 12026602.89,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2,973,397.11|"
+          }
+        },
+        "bbox": [1061, 1103]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Preparation, Paris 2024 Training and Participation in the Paralympic 310100200070000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200070000",
+      "appropriations": 15000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 15000000,
+      "allotmentsReceived": 15000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 15000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 1869132.13,
+      "obligationsQ3": 13102146.4,
+      "obligationsQ4": 0,
+      "obligationsTotal": 14971278.53,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 1869132.13,
+      "disbursementsQ3": 13102146.4,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 28721.47,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ2": {
+            "value": 1869132.13,
+            "method": "ocr-repaired",
+            "raw": "1.869.132.13",
+            "repairs": [".->,"]
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "14.971 278.53"
+          }
+        },
+        "bbox": [1107, 1158]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 15000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 15000000,
+      "allotmentsReceived": 15000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 15000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 1869132.13,
+      "obligationsQ3": 13102146.4,
+      "obligationsQ4": 0,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 1869132.13,
+      "disbursementsQ3": 13102146.4,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 14971278.53,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ3": {
+            "value": 13102146.4,
+            "method": "ocr-repaired",
+            "raw": "13.102.146.40",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "14.971.278.5"
+          },
+          "disbursementsQ3": {
+            "value": 13102146.4,
+            "method": "ocr-repaired",
+            "raw": "13.102.146.40",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "28.721.4"
+          }
+        },
+        "bbox": [1158, 1199]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "|Financial Sports Development, Assistance to and Athletes Sports including Activities Community 310100200071000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200071000",
+      "appropriations": 174235000,
+      "adjustments": 0,
+      "adjustedAppropriations": 174235000,
+      "allotmentsReceived": 174235000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 174235000,
+      "obligationsQ1": 300000,
+      "obligationsQ2": null,
+      "obligationsQ3": 120481.02,
+      "obligationsQ4": 21732015.09,
+      "obligationsTotal": 130622476.11,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 15580000,
+      "disbursementsQ3": 70703461.09,
+      "disbursementsQ4": 8666000,
+      "disbursementsTotal": 94949461.02,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 812523.89,
+      "unpaidObligationsDue": 35673015.09,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": -42800000
+          }
+        ],
+        "cells": {
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "18,470,000.00 90"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 43"
+          }
+        },
+        "bbox": [1214, 1261]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 174235000,
+      "adjustments": 0,
+      "adjustedAppropriations": 174235000,
+      "allotmentsReceived": 174235000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 174235000,
+      "obligationsQ1": 300000,
+      "obligationsQ2": 18470000,
+      "obligationsQ3": 90120461.02,
+      "obligationsQ4": 21732015.09,
+      "obligationsTotal": 130622476.11,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 15580000,
+      "disbursementsQ3": 70703461.02,
+      "disbursementsQ4": 8666000,
+      "disbursementsTotal": 94949461.02,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 43612523.89,
+      "unpaidObligationsDue": 35673015.09,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAllotments": {
+            "value": 174235000,
+            "method": "ocr-repaired",
+            "raw": "174.235.000.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1265, 1300]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Philippine National Anti-Doping Organization 310100200072000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200072000",
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": 1457512.49,
+      "obligationsQ2": 3558186.13,
+      "obligationsQ3": 3176278.25,
+      "obligationsQ4": -30000,
+      "obligationsTotal": 8161976.87,
+      "disbursementsQ1": 996474.49,
+      "disbursementsQ2": 3886207.13,
+      "disbursementsQ3": 2294068.89,
+      "disbursementsQ4": 985226.36,
+      "disbursementsTotal": 8161976.87,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 1838023.13,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1310, 1351]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "IMOOE",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": null,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": 1457512.49,
+      "obligationsQ2": 3558186.13,
+      "obligationsQ3": 3176278.25,
+      "obligationsQ4": 30000,
+      "obligationsTotal": null,
+      "disbursementsQ1": 996474.49,
+      "disbursementsQ2": 3888207.15,
+      "disbursementsQ3": 2294088.8,
+      "disbursementsQ4": 985226.36,
+      "disbursementsTotal": 8161976.87,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 1838023.13,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "disbursementsTotal = Q1+Q2+Q3+Q4",
+            "delta": -2019.93
+          }
+        ],
+        "cells": {
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": 30000,
+            "method": "ocr-repaired",
+            "raw": "(30.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "81,810.78 A\""
+          },
+          "disbursementsQ3": {
+            "value": 2294088.8,
+            "method": "ocr-repaired",
+            "raw": "2.294.088.80",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": 985226.36,
+            "method": "ocr-repaired",
+            "raw": "985.226.36",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1357, 1396]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "IASCAN Brunei Darussalam-Indonesia-Maiaysia-Philippines Growth Area (BIMP-EAGA) Games East 310100200073000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200073000",
+      "appropriations": 30000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 30000000,
+      "allotmentsReceived": 30000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 30000000,
+      "obligationsQ1": 374615.12,
+      "obligationsQ2": 1048250,
+      "obligationsQ3": 2331546.9,
+      "obligationsQ4": 25025018.98,
+      "obligationsTotal": 28779431,
+      "disbursementsQ1": 374815.12,
+      "disbursementsQ2": 1048250,
+      "disbursementsQ3": 1160064.9,
+      "disbursementsQ4": 19879123.65,
+      "disbursementsTotal": 22462053.67,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 1220569,
+      "unpaidObligationsDue": 6317377.33,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "disbursementsTotal = Q1+Q2+Q3+Q4",
+            "delta": -200
+          }
+        ],
+        "cells": {
+          "disbursementsQ4": {
+            "value": 19879123.65,
+            "method": "ocr-repaired",
+            "raw": "19.879,123.65",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1407, 1453]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 30000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 30000000,
+      "allotmentsReceived": 30000000,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": 374815.12,
+      "obligationsQ2": 1048250,
+      "obligationsQ3": 2331546.9,
+      "obligationsQ4": 25025018.98,
+      "obligationsTotal": 28779431,
+      "disbursementsQ1": 374615.12,
+      "disbursementsQ2": 1048250,
+      "disbursementsQ3": 1160064.9,
+      "disbursementsQ4": 19879123.65,
+      "disbursementsTotal": 22462053.67,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 1220569,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": -200
+          }
+        ],
+        "cells": {
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 20"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n0d n0d dd"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "6.317.377.3"
+          }
+        },
+        "bbox": [1464, 1504]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Support to Volleyball Nations League 2024 310100200074000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200074000",
+      "appropriations": 80000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 80000000,
+      "allotmentsReceived": 80000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 80000000,
+      "obligationsQ1": 80000000,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 80000000.6,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 80000000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass-rounding",
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0C"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1514, 1550]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 80000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 80000000,
+      "allotmentsReceived": 80000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 80000000,
+      "obligationsQ1": 80000000,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 80000000,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 80000000,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 80000000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ1": {
+            "value": 80000000,
+            "method": "ocr-repaired",
+            "raw": "80.000.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n no"
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0C"
+          }
+        },
+        "bbox": [1561, 1595]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Support to Voileybail World Beach Pro Tour Challenge 21010020007500",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "21010020007500",
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": 0,
+      "obligationsQ4": 10000000,
+      "obligationsTotal": 10000000,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 10000000,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 10000000,
+            "method": "ocr-repaired",
+            "raw": "10.000.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 nr"
+          },
+          "obligationsTotal": {
+            "value": 10000000,
+            "method": "ocr-repaired",
+            "raw": "10.000.000.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1606, 1646]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 10000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 10000000,
+      "allotmentsReceived": 10000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 10000000.01,
+      "obligationsTotal": 10000000,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 10000000,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass-rounding",
+        "cells": {
+          "disbursementsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 Or"
+          }
+        },
+        "bbox": [1652, 1692]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "ROTC 310100200076000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200076000",
+      "appropriations": 65907000,
+      "adjustments": 0,
+      "adjustedAppropriations": 65907000,
+      "allotmentsReceived": 65907000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 65907000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 17941900,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 45660220.41,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 17941900,
+      "disbursementsQ3": 19798278.44,
+      "disbursementsQ4": 3127551.97,
+      "disbursementsTotal": 40867730.41,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20246779.59,
+      "unpaidObligationsDue": 4792490,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ2": {
+            "value": 17941900,
+            "method": "ocr-repaired",
+            "raw": "17.941.900.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "20,835,790.44 •A"
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "RR QÉ"
+          },
+          "disbursementsQ4": {
+            "value": 3127551.97,
+            "method": "ocr-repaired",
+            "raw": "3.127.551.97",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1702, 1737]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 65907000,
+      "adjustments": 0,
+      "adjustedAppropriations": 65907000,
+      "allotmentsReceived": 65907000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 65907000,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": 20935790.44,
+      "obligationsQ4": 6882529.97,
+      "obligationsTotal": 456802.04,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 17941900,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 3127551.97,
+      "disbursementsTotal": 40867730.41,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 20246779.59,
+      "unpaidObligationsDue": 4702490,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": -45203418.37
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": 45113418.37
+          }
+        ],
+        "cells": {
+          "obligationsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nc"
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "170.41 0n0 M0"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "19.798 278.44"
+          },
+          "disbursementsTotal": {
+            "value": 40867730.41,
+            "method": "ocr-repaired",
+            "raw": "40,867.730.41",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": 20246779.59,
+            "method": "ocr-repaired",
+            "raw": "20.246.779.59",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1748, 1788]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Support to Samahang Kickboxing ng Pilipinas 310100200077000",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": "310100200077000",
+      "appropriations": 5000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 5000000,
+      "allotmentsReceived": 5000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 5000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": 0,
+      "obligationsTotal": 4898750,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 4898750,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 1012.5,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": -100237.5
+          }
+        ],
+        "cells": {
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 •„"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0R 75.00"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "o nr"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1799, 1833]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 5000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 5000000,
+      "allotmentsReceived": 5000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 4898750,
+      "obligationsQ4": null,
+      "obligationsTotal": 4898750,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 4898750,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 4898750,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 101250,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 5"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "non non nr"
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n na"
+          }
+        },
+        "bbox": [1845, 1885]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "Sub-Total Onerations",
+      "expenseClass": null,
+      "rowKind": "subtotal",
+      "uacsCode": null,
+      "appropriations": 1053484000,
+      "adjustments": 0,
+      "adjustedAppropriations": 1053484000,
+      "allotmentsReceived": 1053484000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 122672284.88,
+      "obligationsQ3": 159218628.01,
+      "obligationsQ4": 183582089.94,
+      "obligationsTotal": 602870946.95,
+      "disbursementsQ1": 25308119.95,
+      "disbursementsQ2": 222138581.83,
+      "disbursementsQ3": 142922365.95,
+      "disbursementsQ4": 129971748.22,
+      "disbursementsTotal": 520340815.95,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": 159218628.01,
+            "method": "ocr-repaired",
+            "raw": "159,218.628.01",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "450,613,053.05 82"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "[20 12.10"
+          }
+        },
+        "bbox": [1886, 1924]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 30525000,
+      "adjustments": null,
+      "adjustedAppropriations": 30525000,
+      "allotmentsReceived": 30525000,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 30525000,
+      "obligationsQ1": 6814504.52,
+      "obligationsQ2": 9549793.58,
+      "obligationsQ3": 7260659.34,
+      "obligationsQ4": 6900042.56,
+      "obligationsTotal": 30525000,
+      "disbursementsQ1": null,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 7271059.34,
+      "disbursementsQ4": 6900042.56,
+      "disbursementsTotal": 30525000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": 6814504.52,
+            "method": "ocr-repaired",
+            "raw": "6.814.504.52",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 9549793.58,
+            "method": "ocr-repaired",
+            "raw": "9.549.793.58",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "6,746,088.66 Q"
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "R07 A0Q &."
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "o nd"
+          }
+        },
+        "bbox": [1924, 1966]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 747959000,
+      "adjustments": 0,
+      "adjustedAppropriations": 747959000,
+      "allotmentsReceived": 747959000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 747959000,
+      "obligationsQ1": 129583519.6,
+      "obligationsQ2": 114122411.3,
+      "obligationsQ3": 151957968.67,
+      "obligationsQ4": null,
+      "obligationsTotal": null,
+      "disbursementsQ1": 18562031.29,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 851308.81,
+      "disbursementsQ4": 123071705.66,
+      "disbursementsTotal": 489815815.95,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 175812053.04,
+      "unpaidObligationsDue": 82530131,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ3": {
+            "value": 151957968.67,
+            "method": "ocr-repaired",
+            "raw": "151.957,968.67",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "176,682,047.38 ВЕ Е ЕЕ7"
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "["
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "212.530.772.39 ¿126"
+          }
+        },
+        "bbox": [1964, 2004]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "FinEx (if Applicabie)",
+      "expenseClass": "FinEx",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": null,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": null,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 OC"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nc"
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [2004, 2043]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 2,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 275000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 275000000,
+      "allotmentsReceived": 275000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 275000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": null,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 275000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [2049, 2085]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Sub-Total, I. Agency Specific Budget",
+      "expenseClass": null,
+      "rowKind": "subtotal",
+      "uacsCode": null,
+      "appropriations": 1156452000,
+      "adjustments": 0,
+      "adjustedAppropriations": 1156452000,
+      "allotmentsReceived": 1156452000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 1156452000,
+      "obligationsQ1": 158484127.82,
+      "obligationsQ2": 156642284.74,
+      "obligationsQ3": 176584647.76,
+      "obligationsQ4": 194060668.88,
+      "obligationsTotal": 685771729.2,
+      "disbursementsQ1": 36977291.96,
+      "disbursementsQ2": 264903710.85,
+      "disbursementsQ3": 160280483.64,
+      "disbursementsQ4": 140458617.55,
+      "disbursementsTotal": 602620104,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 470880270.8,
+      "unpaidObligationsDue": 83151625.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 200000
+          }
+        ],
+        "cells": {
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": 158484127.82,
+            "method": "ocr-repaired",
+            "raw": "158.484.127.82",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": 685771729.2,
+            "method": "ocr-repaired",
+            "raw": "685.771.729.20",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [739, 767]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 69224000,
+      "adjustments": 0,
+      "adjustedAppropriations": 69224000,
+      "allotmentsReceived": 69224000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 564613.05,
+      "obligationsQ2": 71478688.88,
+      "obligationsQ3": 16508673.05,
+      "obligationsQ4": 15672027.02,
+      "obligationsTotal": 69224000,
+      "disbursementsQ1": 15422853.99,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 514137.07,
+      "disbursementsQ4": 15687371.97,
+      "disbursementsTotal": 69224000,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": -35000002
+          }
+        ],
+        "cells": {
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "69,224,000.00 15"
+          },
+          "obligationsQ3": {
+            "value": 16508673.05,
+            "method": "ocr-repaired",
+            "raw": "16.508.673.05",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "21,599,636.97 16"
+          }
+        },
+        "bbox": [778, 807]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 792228000,
+      "adjustments": 0,
+      "adjustedAppropriations": 792228000,
+      "allotmentsReceived": 792228000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 702228000,
+      "obligationsQ1": 142919514.77,
+      "obligationsQ2": 135163597.85,
+      "obligationsQ3": 160075974.71,
+      "obligationsQ4": 178388641.86,
+      "obligationsTotal": null,
+      "disbursementsQ1": null,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 88143766346.57,
+      "disbursementsQ4": 124771245.58,
+      "disbursementsTotal": 533396104,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 175680270.8,
+      "unpaidObligationsDue": 83151625.2,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unreleasedAppropriations = adjustedAppropriations - adjustedAllotments",
+            "delta": -90000000
+          }
+        ],
+        "cells": {
+          "obligationsQ3": {
+            "value": 160075974.71,
+            "method": "ocr-repaired",
+            "raw": "160.075.974.71",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": 178388641.86,
+            "method": "ocr-repaired",
+            "raw": "178.388.641.86",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "616,547,729.20 21"
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "554 437 97 243"
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "304 073"
+          },
+          "disbursementsQ4": {
+            "value": 124771245.58,
+            "method": "ocr-repaired",
+            "raw": "124.771.245.58",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [818, 847]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "cable)",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0o"
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [858, 886]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 295000000,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 205000000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 295000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": 0,
+      "obligationsTotal": null,
+      "disbursementsQ1": 6,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 295000000,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "295.000 000.00"
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0c"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 0d"
+          }
+        },
+        "bbox": [898, 932]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "B.Automatic Appropriations",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 6308000,
+      "adjustments": 293000,
+      "adjustedAppropriations": 6601000,
+      "allotmentsReceived": 6601000,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 6601000,
+      "obligationsQ1": 1519077.57,
+      "obligationsQ2": null,
+      "obligationsQ3": 1672242.07,
+      "obligationsQ4": 1810205.2,
+      "obligationsTotal": 6463049.59,
+      "disbursementsQ1": 1004903.68,
+      "disbursementsQ2": 2066697.65,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 6459863.02,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 137950.41,
+      "unpaidObligationsDue": 3186.57,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": 6601000,
+            "method": "ocr-repaired",
+            "raw": "6,601.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "§59 [92 ZE"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "45.70 ARQ [E 1"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "R17 202.48"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [937, 972]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Specific Budgets of National Government Agencies",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 6308000,
+      "adjustments": 293000,
+      "adjustedAppropriations": 6601000,
+      "allotmentsReceived": 6601000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 6601000,
+      "obligationsQ1": 1519077.57,
+      "obligationsQ2": 1552523.76,
+      "obligationsQ3": 1572242.97,
+      "obligationsQ4": 1819205.29,
+      "obligationsTotal": 6463049.59,
+      "disbursementsQ1": 1004903.68,
+      "disbursementsQ2": 2066697.65,
+      "disbursementsQ3": 1570669.53,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 45088.3,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 137950.41,
+      "unpaidObligationsDue": 3186.57,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -6414774.72
+          }
+        ],
+        "cells": {
+          "obligationsQ3": {
+            "value": 1572242.97,
+            "method": "ocr-repaired",
+            "raw": "1.572,242.97",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ1": {
+            "value": 1004903.68,
+            "method": "ocr-repaired",
+            "raw": "1,004.903.68",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": 1570669.53,
+            "method": "ocr-repaired",
+            "raw": "1.570.669.53",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,817,592.16 A"
+          }
+        },
+        "bbox": [977, 1012]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "/Retirement and Life Insurance Premiums",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 6308000,
+      "adjustments": 293000,
+      "adjustedAppropriations": 6601000,
+      "allotmentsReceived": 6601000,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 6601000,
+      "obligationsQ1": 1519077.57,
+      "obligationsQ2": 1552523.76,
+      "obligationsQ3": 1572242.97,
+      "obligationsQ4": 1819205.29,
+      "obligationsTotal": 6463049.59,
+      "disbursementsQ1": 1004903.68,
+      "disbursementsQ2": 2066697.65,
+      "disbursementsQ3": 1570669.53,
+      "disbursementsQ4": null,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 137950.41,
+      "unpaidObligationsDue": 3186.57,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": 1572242.97,
+            "method": "ocr-repaired",
+            "raw": "1,572.242.97",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,817,592.16 6"
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "45Q RA3 0"
+          }
+        },
+        "bbox": [1017, 1051]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "PS",
+      "expenseClass": "PS",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 6308000,
+      "adjustments": 293000,
+      "adjustedAppropriations": 6601000,
+      "allotmentsReceived": 6601000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 6601000,
+      "obligationsQ1": 1519077.57,
+      "obligationsQ2": 1552523.76,
+      "obligationsQ3": 1572242.97,
+      "obligationsQ4": 1819205.29,
+      "obligationsTotal": null,
+      "disbursementsQ1": 1004903.68,
+      "disbursementsQ2": 2066697.65,
+      "disbursementsQ3": 1570669.53,
+      "disbursementsQ4": null,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 137950.41,
+      "unpaidObligationsDue": 2186.57,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "6,463,049.59|"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,817,592.16 6"
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "45Q 863 O"
+          }
+        },
+        "bbox": [1057, 1092]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Sub-total Il. Automatic Appropriations",
+      "expenseClass": null,
+      "rowKind": "subtotal",
+      "uacsCode": null,
+      "appropriations": 6308000,
+      "adjustments": 293000,
+      "adjustedAppropriations": 6601000,
+      "allotmentsReceived": 6601000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 6601000,
+      "obligationsQ1": 1519077.57,
+      "obligationsQ2": 1552523.76,
+      "obligationsQ3": 1572242.97,
+      "obligationsQ4": 1819205.29,
+      "obligationsTotal": 6483049.69,
+      "disbursementsQ1": 1004903.68,
+      "disbursementsQ2": 2066697.65,
+      "disbursementsQ3": 1570669.53,
+      "disbursementsQ4": 1817592.16,
+      "disbursementsTotal": 6459863.02,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 127060.41,
+      "unpaidObligationsDue": 3186.57,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": 20000.1
+          },
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 9110.1
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -20000.1
+          }
+        ],
+        "cells": {
+          "adjustedAllotments": {
+            "value": 6601000,
+            "method": "ocr-repaired",
+            "raw": "6.601.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 1552523.76,
+            "method": "ocr-repaired",
+            "raw": "1.552.523.76",
+            "repairs": [".->,"]
+          },
+          "obligationsQ3": {
+            "value": 1572242.97,
+            "method": "ocr-repaired",
+            "raw": "1.572.242.97",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": 6483049.69,
+            "method": "ocr-repaired",
+            "raw": "6.483.049.69",
+            "repairs": [".->,"]
+          },
+          "disbursementsTotal": {
+            "value": 6459863.02,
+            "method": "ocr-repaired",
+            "raw": "6.459.863.02",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1097, 1132]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "PS",
+      "expenseClass": "PS",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 6308000,
+      "adjustments": 293000,
+      "adjustedAppropriations": 8601000,
+      "allotmentsReceived": 6601000,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 6601000,
+      "obligationsQ1": 1510077.57,
+      "obligationsQ2": 1552523.78,
+      "obligationsQ3": 1572242.97,
+      "obligationsQ4": 1819205.29,
+      "obligationsTotal": 8483040.59,
+      "disbursementsQ1": 1004903.68,
+      "disbursementsQ2": 2066697.65,
+      "disbursementsQ3": 1570669.53,
+      "disbursementsQ4": 1817592.16,
+      "disbursementsTotal": 6459863.02,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 137950.41,
+      "unpaidObligationsDue": 3186.57,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": 2000000
+          },
+          {
+            "rule": "obligationsTotal = Q1+Q2+Q3+Q4",
+            "delta": 2028990.98
+          },
+          {
+            "rule": "unreleasedAppropriations = adjustedAppropriations - adjustedAllotments",
+            "delta": -2000000
+          },
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 2019991
+          }
+        ],
+        "cells": {
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0 O0"
+          }
+        },
+        "bbox": [1141, 1176]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "o ag"
+          }
+        },
+        "bbox": [1176, 1210]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "FinEx",
+      "expenseClass": "FinEx",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1222, 1256]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "co",
+      "expenseClass": "CO",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": null,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1256, 1296]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "II.Special Purpose Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": null,
+      "adjustments": 35044,
+      "adjustedAppropriations": 45935044,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 45935044,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 45935044,
+      "obligationsQ1": 0,
+      "obligationsQ2": 206193.54,
+      "obligationsQ3": null,
+      "obligationsQ4": 20544108.98,
+      "obligationsTotal": 24664792.46,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 206193.54,
+      "disbursementsQ3": 3914489.94,
+      "disbursementsQ4": 16085516.44,
+      "disbursementsTotal": 20206199.92,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 21270251.54,
+      "unpaidObligationsDue": 4458592.54,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "appropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 AE"
+          },
+          "adjustments": {
+            "value": 35044,
+            "method": "ocr-repaired",
+            "raw": "035.044.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAppropriations": {
+            "value": 45935044,
+            "method": "ocr-repaired",
+            "raw": "45.935.044.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 206193.54,
+            "method": "ocr-repaired",
+            "raw": "206.193.54",
+            "repairs": [".->,"]
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2_914 489.94"
+          },
+          "obligationsTotal": {
+            "value": 24664792.46,
+            "method": "ocr-repaired",
+            "raw": "24,664.792.46",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1300, 1335]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Contingent Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 20000000,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 30000000,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 30000000,
+      "obligationsQ1": null,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": 272477.42,
+      "obligationsTotal": 8740394.32,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 4381956.32,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 358438,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -4000000
+          }
+        ],
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentAdjustments": {
+            "value": 30000000,
+            "method": "ocr-repaired",
+            "raw": "30,000.000.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAllotments": {
+            "value": 30000000,
+            "method": "ocr-repaired",
+            "raw": "30.000.000.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "21259,605.68 4,"
+          }
+        },
+        "bbox": [1341, 1375]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 30000000,
+      "adjustedAppropriations": 30000000,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 30000000,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 30000000,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 8740394.32,
+      "disbursementsQ1": null,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 1492600,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 4381956.32,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 21259605.68,
+      "unpaidObligationsDue": 4358438,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsDue": {
+            "value": 4358438,
+            "method": "ocr-repaired",
+            "raw": "4.358,438.00",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1381, 1415]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Miscellaneous Personnel Benefits Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 5618890,
+      "adjustedAppropriations": 5818890,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 5618890,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 5618889.94,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 2421889.94,
+      "disbursementsQ4": null,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0.06,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": 200000
+          },
+          {
+            "rule": "unreleasedAppropriations = adjustedAppropriations - adjustedAllotments",
+            "delta": -200000
+          }
+        ],
+        "cells": {
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "Ecta gon nr"
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "3,197,000.00 5"
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "A10 9A0"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1421, 1455]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "PS",
+      "expenseClass": "PS",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 5618890,
+      "adjustedAppropriations": 5618890,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 5618890,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 5618890,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": 3197000,
+      "obligationsTotal": 5618889.94,
+      "disbursementsQ1": null,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 2421889.94,
+      "disbursementsQ4": 3197000,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0.06,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "ECO QR0 C"
+          }
+        },
+        "bbox": [1460, 1495]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Pension and Gratuity Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 206194,
+      "adjustedAppropriations": 206194,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 206194,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 206194,
+      "obligationsQ1": 0,
+      "obligationsQ2": 206193.54,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 206193.54,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 206193.54,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0.46,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsTotal": {
+            "value": 206193.54,
+            "method": "ocr-repaired",
+            "raw": "206.193.54",
+            "repairs": [".->,"]
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "206.193,54"
+          }
+        },
+        "bbox": [1500, 1534]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 206194,
+      "adjustedAppropriations": 206194,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 206194,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 206194,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": 206.19,
+      "obligationsTotal": 3.54,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 206193.54,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 206193.54,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": 206190
+          }
+        ],
+        "cells": {
+          "obligationsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nr"
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "20A t02 f"
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1540, 1574]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "For payment of Personnel Benefits",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 10109960,
+      "adjustedAppropriations": 10109960,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 10109960,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 10109960,
+      "obligationsQ1": 0,
+      "obligationsQ2": null,
+      "obligationsQ3": 0,
+      "obligationsQ4": 10099314.66,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 9999160.12,
+      "disbursementsTotal": 9999160.12,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 10645.34,
+      "unpaidObligationsDue": 100154.54,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "A nn"
+          },
+          "obligationsQ4": {
+            "value": 10099314.66,
+            "method": "ocr-repaired",
+            "raw": "10,099.314.66",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1585, 1619]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": null,
+      "adjustments": 109960,
+      "adjustedAppropriations": 10109960,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 10109960,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": 10000214.81,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": null,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 9999160.12,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 10645.34,
+      "unpaidObligationsDue": 100154.54,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "appropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 10,"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1.80 1ª"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          }
+        },
+        "bbox": [1619, 1654]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Sul Special Purpose Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": null,
+      "adjustments": null,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": null,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": 45935044,
+      "obligationsQ1": null,
+      "obligationsQ2": 206193.54,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 24664792.46,
+      "disbursementsQ1": 206.19,
+      "disbursementsQ2": 3.54,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 20206199.92,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "appropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 AE"
+          },
+          "adjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "ORE AAAAO"
+          },
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "AEORE AA"
+          },
+          "allotmentsReceived": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00 AE"
+          },
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "ORE AAA"
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "oaA soo dA 4e"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "noe gaest"
+          },
+          "disbursementsTotal": {
+            "value": 20206199.92,
+            "method": "ocr-repaired",
+            "raw": "20,206.199.92",
+            "repairs": [".->,"]
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "719,702.51 K"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1669, 1705]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 15935044,
+      "adjustedAppropriations": 15935044,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 15935044,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": 13296314.66,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 20610.35,
+      "disbursementsQ3": 2421889.94,
+      "disbursementsQ4": 13196160.12,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 100154.54,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "150.25 C6A M"
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "AR SAS D"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1721, 1751]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "MOCE",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": null,
+      "adjustments": 30000000,
+      "adjustedAppropriations": 30000000,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 30000000,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 0,
+      "obligationsQ3": 1492600,
+      "obligationsQ4": 7247794.32,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 2889356.32,
+      "disbursementsTotal": 4381956.32,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 21259605.68,
+      "unpaidObligationsDue": 4358438,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "appropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nr"
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nr"
+          },
+          "obligationsQ4": {
+            "value": 7247794.32,
+            "method": "ocr-repaired",
+            "raw": "7,247.794.32",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00 4"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "A02 ANO nI"
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1761, 1791]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "FinEx",
+      "expenseClass": "FinEx",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": 0,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1801, 1830]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "co",
+      "expenseClass": "CO",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": null,
+      "allotmentAdjustments": null,
+      "transferTo": null,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentsReceived": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1841, 1875]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "/. aainst Reversion R A. Nos of the 11465 Unobligated and 1149 Allotments charge",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": 0,
+      "obligationsTotal": null,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1875, 1921]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "GRAND TOTAL",
+      "expenseClass": null,
+      "rowKind": "grand-total",
+      "uacsCode": null,
+      "appropriations": 1162760000,
+      "adjustments": 46228044,
+      "adjustedAppropriations": 1208988046,
+      "allotmentsReceived": 1163053000,
+      "allotmentAdjustments": 45935044,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 158401002.04,
+      "obligationsQ3": 182071380.67,
+      "obligationsQ4": null,
+      "obligationsTotal": 57.45,
+      "disbursementsQ1": 37982195.64,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 158361726.15,
+      "disbursementsTotal": 629286166.94,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": 2
+          }
+        ],
+        "cells": {
+          "appropriations": {
+            "value": 1162760000,
+            "method": "ocr-repaired",
+            "raw": "1.162,760,000.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1.208.988.044.00 460"
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n2 02"
+          },
+          "obligationsQ2": {
+            "value": 158401002.04,
+            "method": "ocr-repaired",
+            "raw": "158,401.002.04",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "216,423,983.15 74A"
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "287.176.602.04 4A5"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "7A5 6A2 44"
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "49208847275"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1921, 1956]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 75532000,
+      "adjustments": 16228044,
+      "adjustedAppropriations": 91760044,
+      "allotmentsReceived": 75825000,
+      "allotmentAdjustments": 15935044,
+      "transferTo": null,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": 20502805.96,
+      "obligationsQ4": 30787546.97,
+      "obligationsTotal": null,
+      "disbursementsQ1": 16427757.67,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 30701124.25,
+      "disbursementsTotal": 91508106.62,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": 402244.11,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "adjustments": {
+            "value": 16228044,
+            "method": "ocr-repaired",
+            "raw": "16.228,044.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAppropriations": {
+            "value": 91760044,
+            "method": "ocr-repaired",
+            "raw": "91.760.044.00",
+            "repairs": [".->,"]
+          },
+          "allotmentsReceived": {
+            "value": 75825000,
+            "method": "ocr-repaired",
+            "raw": "75.825,000.00",
+            "repairs": [".->,"]
+          },
+          "transferTo": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": 20502805.96,
+            "method": "ocr-repaired",
+            "raw": "20.502. 805.96",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "40.11 1a770"
+          },
+          "disbursementsQ1": {
+            "value": 16427757.67,
+            "method": "ocr-repaired",
+            "raw": "16.427.757.67",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsTotal": {
+            "value": 91508106.62,
+            "method": "ocr-repaired",
+            "raw": "91.508.106.62",
+            "repairs": [".->,"]
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          }
+        },
+        "bbox": [1964, 2000]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 792228000,
+      "adjustments": 30000000,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": null,
+      "allotmentAdjustments": 30000000,
+      "transferTo": 0,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": 135163597.86,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": null,
+      "disbursementsQ1": 2155437.97,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 537778060.32,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": 196939876.48,
+      "unpaidObligationsDue": 87510063.2,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "822,228,000.00 Ton"
+          },
+          "allotmentsReceived": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "sr sn te"
+          },
+          "allotmentAdjustments": {
+            "value": 30000000,
+            "method": "ocr-repaired",
+            "raw": "30.000.000.00",
+            "repairs": [".->,"]
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "11565747118563643618"
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "4AE"
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "DEO OARE"
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "tncon tn r"
+          },
+          "disbursementsTotal": {
+            "value": 537778060.32,
+            "method": "ocr-repaired",
+            "raw": "537.778,060.32",
+            "repairs": [".->,"]
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unobligatedAllotments": {
+            "value": 196939876.48,
+            "method": "ocr-repaired",
+            "raw": "196.939.876.48",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [2004, 2041]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 0,
+      "page": 3,
+      "particulars": "Co",
+      "expenseClass": "CO",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 295000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 295000000,
+      "allotmentsReceived": 295000000,
+      "allotmentAdjustments": null,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": 0,
+      "disbursementsQ1": null,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 295,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "000"
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [2046, 2081]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "11. Automatic Appropriations",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 29826000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000,
+      "allotmentsReceived": 17629823,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": 350655.13,
+      "obligationsTotal": 17522403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153.56,
+      "disbursementsQ4": 385250.13,
+      "disbursementsTotal": 17522403.69,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [903, 948]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "Special Accounts in the General Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 29828000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000,
+      "allotmentsReceived": 17629823,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": 350655.13,
+      "obligationsTotal": 17522403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153.56,
+      "disbursementsQ4": 385250.13,
+      "disbursementsTotal": 17522403.69,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": -2000
+          }
+        ],
+        "cells": {
+          "disbursementsQ3": {
+            "value": 17137153.56,
+            "method": "ocr-repaired",
+            "raw": "17.137, 153.56",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": 107419.31,
+            "method": "ocr-repaired",
+            "raw": "107.419.31",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [937, 993]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "National Sports Development Fund",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 29826000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000,
+      "allotmentsReceived": 17629823,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": null,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": 350655.13,
+      "obligationsTotal": 17522403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153.56,
+      "disbursementsQ4": 385250.13,
+      "disbursementsTotal": 17522403.6,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass-rounding",
+        "cells": {
+          "transferTo": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "n nn"
+          }
+        },
+        "bbox": [982, 1033]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 29826000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000,
+      "allotmentsReceived": 17629823,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": 350655.13,
+      "obligationsTotal": 17522403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": null,
+      "disbursementsQ4": 385250.13,
+      "disbursementsTotal": 17522403.69,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "obligationsTotal": {
+            "value": 17522403.69,
+            "method": "ocr-repaired",
+            "raw": "17.522,403.69",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "17,127.15 [6"
+          },
+          "unobligatedAllotments": {
+            "value": 107419.31,
+            "method": "ocr-repaired",
+            "raw": "107.419.31",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1028, 1079]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "Sub-total II. Automatic Appropriations",
+      "expenseClass": null,
+      "rowKind": "subtotal",
+      "uacsCode": null,
+      "appropriations": 29826000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000,
+      "allotmentsReceived": 17629823,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": 350655.13,
+      "obligationsTotal": 17522403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153.56,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 522403.89,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -16999999.8
+          }
+        ],
+        "cells": {
+          "adjustedAppropriations": {
+            "value": 29826000,
+            "method": "ocr-repaired",
+            "raw": "29.826.000.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "385,250.13 17"
+          }
+        },
+        "bbox": [1073, 1118]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "PS",
+      "expenseClass": "PS",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 0,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": null,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "disbursementsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1113, 1158]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 29826000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29326000,
+      "allotmentsReceived": null,
+      "allotmentAdjustments": 0,
+      "transferTo": null,
+      "transferFrom": null,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": 350655.13,
+      "obligationsTotal": 17522403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153.56,
+      "disbursementsQ4": 385250.13,
+      "disbursementsTotal": 17522403.6,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": -500000
+          },
+          {
+            "rule": "unreleasedAppropriations = adjustedAppropriations - adjustedAllotments",
+            "delta": 500000
+          }
+        ],
+        "cells": {
+          "allotmentsReceived": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "17,629,823.00|"
+          },
+          "transferTo": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "'0.00"
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1158, 1204]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "FinEx",
+      "expenseClass": "FinEx",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 0,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1198, 1243]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "co",
+      "expenseClass": "CO",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 0,
+      "adjustments": 0,
+      "adjustedAppropriations": 0,
+      "allotmentsReceived": 0,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 0,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 0,
+      "obligationsQ4": 0,
+      "obligationsTotal": 0,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 0,
+      "disbursementsQ4": 0,
+      "disbursementsTotal": 0,
+      "unreleasedAppropriations": 0,
+      "unobligatedAllotments": 0,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1238, 1283]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "GRAND IV. against Reversion R.A. TOTAL Nos. of the 11465 Unobligated and 11494 Alfotments charged",
+      "expenseClass": null,
+      "rowKind": "total",
+      "uacsCode": null,
+      "appropriations": 29826000000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000000,
+      "allotmentsReceived": 17629823000,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": null,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748560,
+      "obligationsQ4": 350655130,
+      "obligationsTotal": 17522403690,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153560,
+      "disbursementsQ4": 385250130,
+      "disbursementsTotal": 17522403690,
+      "unreleasedAppropriations": 12196177000,
+      "unobligatedAllotments": 107419310,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "appropriations": {
+            "value": 29826000000,
+            "method": "ocr-repaired",
+            "raw": "29,826,000.00 0.00",
+            "repairs": [".->,"]
+          },
+          "adjustments": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAppropriations": {
+            "value": 29826000000,
+            "method": "ocr-repaired",
+            "raw": "29,826,000.00 0.00",
+            "repairs": [".->,"]
+          },
+          "allotmentsReceived": {
+            "value": 17629823000,
+            "method": "ocr-repaired",
+            "raw": "17,629,823.00 0.00",
+            "repairs": [".->,"]
+          },
+          "allotmentAdjustments": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "transferTo": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "transferFrom": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "17,629,823.00| 0.00"
+          },
+          "obligationsQ1": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ2": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ3": {
+            "value": 17171748560,
+            "method": "ocr-repaired",
+            "raw": "17,171,748.56 0.00",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": 350655130,
+            "method": "ocr-repaired",
+            "raw": "350,655.13 0.00",
+            "repairs": [".->,"]
+          },
+          "obligationsTotal": {
+            "value": 17522403690,
+            "method": "ocr-repaired",
+            "raw": "17,522,403.69 0.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ1": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ2": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ3": {
+            "value": 17137153560,
+            "method": "ocr-repaired",
+            "raw": "17,137,153.56 0.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsQ4": {
+            "value": 385250130,
+            "method": "ocr-repaired",
+            "raw": "385,250.13 0.00",
+            "repairs": [".->,"]
+          },
+          "disbursementsTotal": {
+            "value": 17522403690,
+            "method": "ocr-repaired",
+            "raw": "17,522,403.69 0.00",
+            "repairs": [".->,"]
+          },
+          "unreleasedAppropriations": {
+            "value": 12196177000,
+            "method": "ocr-repaired",
+            "raw": "12,196,177.00 0.00",
+            "repairs": [".->,"]
+          },
+          "unobligatedAllotments": {
+            "value": 107419310,
+            "method": "ocr-repaired",
+            "raw": "107,419.31 0.00",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsDue": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "unpaidObligationsNotDue": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1283, 1374]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "MOOE",
+      "expenseClass": "MOOE",
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": 29828000,
+      "adjustments": 0,
+      "adjustedAppropriations": 29826000,
+      "allotmentsReceived": null,
+      "allotmentAdjustments": 0,
+      "transferTo": 0,
+      "transferFrom": 0,
+      "adjustedAllotments": 17629823,
+      "obligationsQ1": 0,
+      "obligationsQ2": 0,
+      "obligationsQ3": 17171748.56,
+      "obligationsQ4": null,
+      "obligationsTotal": 17592403.69,
+      "disbursementsQ1": 0,
+      "disbursementsQ2": 0,
+      "disbursementsQ3": 17137153.56,
+      "disbursementsQ4": 385250.13,
+      "disbursementsTotal": 17522403.69,
+      "unreleasedAppropriations": 12196177,
+      "unobligatedAllotments": 107419.31,
+      "unpaidObligationsDue": 0,
+      "unpaidObligationsNotDue": 0,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "adjustedAppropriations = appropriations + adjustments",
+            "delta": -2000
+          },
+          {
+            "rule": "unobligatedAllotments = adjustedAllotments - obligationsTotal",
+            "delta": 70000
+          },
+          {
+            "rule": "unpaidObligations = obligationsTotal - disbursementsTotal",
+            "delta": -70000
+          }
+        ],
+        "cells": {
+          "allotmentsReceived": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "17,629,823.00|"
+          },
+          "obligationsQ3": {
+            "value": 17171748.56,
+            "method": "ocr-repaired",
+            "raw": "17.171.748.56",
+            "repairs": [".->,"]
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "350.655.13|"
+          },
+          "disbursementsQ4": {
+            "value": 385250.13,
+            "method": "ocr-repaired",
+            "raw": "385.250.13",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1368, 1419]
+      }
+    },
+    {
+      "docId": "far1-2024-q4",
+      "statement": 2,
+      "page": 8,
+      "particulars": "",
+      "expenseClass": null,
+      "rowKind": "line",
+      "uacsCode": null,
+      "appropriations": null,
+      "adjustments": null,
+      "adjustedAppropriations": null,
+      "allotmentsReceived": null,
+      "allotmentAdjustments": null,
+      "transferTo": null,
+      "transferFrom": null,
+      "adjustedAllotments": null,
+      "obligationsQ1": null,
+      "obligationsQ2": null,
+      "obligationsQ3": null,
+      "obligationsQ4": null,
+      "obligationsTotal": null,
+      "disbursementsQ1": null,
+      "disbursementsQ2": null,
+      "disbursementsQ3": null,
+      "disbursementsQ4": null,
+      "disbursementsTotal": null,
+      "unreleasedAppropriations": null,
+      "unobligatedAllotments": null,
+      "unpaidObligationsDue": null,
+      "unpaidObligationsNotDue": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "appropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAppropriations": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "allotmentsReceived": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "ERIK JEAN A."
+          },
+          "allotmentAdjustments": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "MAYORES"
+          },
+          "transferTo": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "transferFrom": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "adjustedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "obligationsQ3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "PAULO"
+          },
+          "obligationsQ4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "PRANCISÇO"
+          },
+          "obligationsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "C. TATAD"
+          },
+          "disbursementsQ1": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsQ4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "disbursementsTotal": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "KICHARD E."
+          },
+          "unreleasedAppropriations": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "BACHMAN"
+          },
+          "unobligatedAllotments": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "unpaidObligationsNotDue": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1544, 1595]
+      }
+    }
+  ]
+}

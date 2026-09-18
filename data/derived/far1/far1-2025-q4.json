@@ -1,0 +1,27 @@
+{
+  "docId": "far1-2025-q4",
+  "generatedAt": "2026-09-18T00:48:22.072Z",
+  "layout": "far1",
+  "statements": [
+    {
+      "statement": 0,
+      "pages": [4, 6],
+      "extraction": "failed",
+      "reason": "could not recover 22 money columns"
+    },
+    {
+      "statement": 1,
+      "pages": [7, 7],
+      "extraction": "failed",
+      "reason": "could not recover 22 money columns"
+    }
+  ],
+  "summary": {
+    "rows": 0,
+    "pass": 0,
+    "passRounding": 0,
+    "fail": 0,
+    "notApplicable": 0
+  },
+  "rows": []
+}

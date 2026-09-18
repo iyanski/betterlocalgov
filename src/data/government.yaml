@@ -22,7 +22,7 @@ categories:
   # Transparency
   - category: 'Transparency'
     slug: 'transparency'
-    description: 'Budget and audit documents, freedom of information requests, the Citizen''s Charter, and quality management compliance.'
+    description: "Budget and audit documents, freedom of information requests, the Citizen's Charter, and quality management compliance."
     icon: 'FileText'
 
   # Procurement

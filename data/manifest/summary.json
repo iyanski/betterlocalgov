@@ -1,0 +1,224 @@
+{
+  "generatedAt": "2026-09-18T00:28:29.294Z",
+  "documents": 190,
+  "live": 142,
+  "broken": 28,
+  "notFetched": 40,
+  "inScope": 170,
+  "pages": 929,
+  "bytes": 382868995,
+  "firstYear": 2013,
+  "lastYear": 2026,
+  "findings": {
+    "firstOnlineYear": 2017,
+    "retiredHost": {
+      "hosts": ["www.web.psc.gov.ph"],
+      "documents": 20,
+      "series": [
+        "far1",
+        "far4",
+        "bar1",
+        "far5",
+        "financial-plan",
+        "status-of-implementation"
+      ],
+      "firstYear": 2013,
+      "lastYear": 2016
+    },
+    "dead": {
+      "documents": 8,
+      "series": ["app-cse", "app", "pmr", "app-non-cse"],
+      "allProcurement": true,
+      "revisions": 3,
+      "years": [2021, 2022, 2023],
+      "firstYear": 2021,
+      "lastYear": 2023
+    },
+    "byYear": [
+      {
+        "year": 2013,
+        "live": 0,
+        "missing": 4
+      },
+      {
+        "year": 2014,
+        "live": 0,
+        "missing": 4
+      },
+      {
+        "year": 2015,
+        "live": 0,
+        "missing": 6
+      },
+      {
+        "year": 2016,
+        "live": 0,
+        "missing": 6
+      },
+      {
+        "year": 2017,
+        "live": 6,
+        "missing": 0
+      },
+      {
+        "year": 2018,
+        "live": 8,
+        "missing": 0
+      },
+      {
+        "year": 2019,
+        "live": 12,
+        "missing": 0
+      },
+      {
+        "year": 2020,
+        "live": 19,
+        "missing": 0
+      },
+      {
+        "year": 2021,
+        "live": 18,
+        "missing": 1
+      },
+      {
+        "year": 2022,
+        "live": 16,
+        "missing": 3
+      },
+      {
+        "year": 2023,
+        "live": 17,
+        "missing": 4
+      },
+      {
+        "year": 2024,
+        "live": 14,
+        "missing": 0
+      },
+      {
+        "year": 2025,
+        "live": 18,
+        "missing": 0
+      },
+      {
+        "year": 2026,
+        "live": 14,
+        "missing": 0
+      }
+    ],
+    "production": {
+      "producers": 34,
+      "noProducer": 45,
+      "pageSizes": [
+        {
+          "series": "far1",
+          "label": "FAR No. 1",
+          "documents": 10,
+          "distinct": 10
+        },
+        {
+          "series": "far5",
+          "label": "FAR No. 5",
+          "documents": 10,
+          "distinct": 10
+        },
+        {
+          "series": "bar1",
+          "label": "BAR No. 1",
+          "documents": 10,
+          "distinct": 10
+        }
+      ]
+    }
+  },
+  "bySeries": {
+    "far1": {
+      "total": 13,
+      "live": 10
+    },
+    "far4": {
+      "total": 14,
+      "live": 10
+    },
+    "bar1": {
+      "total": 14,
+      "live": 10
+    },
+    "far5": {
+      "total": 14,
+      "live": 10
+    },
+    "financial-plan": {
+      "total": 13,
+      "live": 10
+    },
+    "psc-budget": {
+      "total": 8,
+      "live": 8
+    },
+    "targets-mfo": {
+      "total": 8,
+      "live": 8
+    },
+    "programs": {
+      "total": 8,
+      "live": 8
+    },
+    "status-of-implementation": {
+      "total": 11,
+      "live": 9
+    },
+    "app": {
+      "total": 21,
+      "live": 17
+    },
+    "pmr": {
+      "total": 8,
+      "live": 7
+    },
+    "app-certification": {
+      "total": 11,
+      "live": 11
+    },
+    "app-cse": {
+      "total": 6,
+      "live": 5
+    },
+    "app-non-cse": {
+      "total": 7,
+      "live": 5
+    },
+    "apcpi": {
+      "total": 1,
+      "live": 1
+    },
+    "iso": {
+      "total": 8,
+      "live": 0
+    },
+    "ranking-delivery-units": {
+      "total": 1,
+      "live": 0
+    },
+    "saln-review": {
+      "total": 1,
+      "live": 0
+    },
+    "foi": {
+      "total": 6,
+      "live": 6
+    },
+    "citizens-charter": {
+      "total": 9,
+      "live": 0
+    },
+    "pbb": {
+      "total": 7,
+      "live": 7
+    },
+    "arta": {
+      "total": 1,
+      "live": 0
+    }
+  }
+}

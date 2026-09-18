@@ -1,0 +1,1365 @@
+{
+  "docId": "far5-2019-q4",
+  "generatedAt": "2026-09-18T00:47:15.237Z",
+  "layout": "far5",
+  "pages": [
+    {
+      "page": 1,
+      "period": "Q4",
+      "extraction": "complete",
+      "anchored": 11,
+      "rows": 9
+    },
+    {
+      "page": 2,
+      "period": "Q3",
+      "extraction": "complete",
+      "anchored": 11,
+      "rows": 2
+    },
+    {
+      "page": 3,
+      "period": "Q2",
+      "extraction": "complete",
+      "anchored": 10,
+      "interpolated": ["total"],
+      "rows": 13
+    },
+    {
+      "page": 4,
+      "period": "Q1",
+      "extraction": "complete",
+      "anchored": 11,
+      "rows": 4
+    }
+  ],
+  "summary": {
+    "rows": 28,
+    "pass": 18,
+    "passRounding": 1,
+    "fail": 4,
+    "notApplicable": 5
+  },
+  "rows": [
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Internally Generated Funds",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": 1127769018.55,
+      "q3": 743703194.03,
+      "q4": 734915217.91,
+      "total": 3129475268.6,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": null,
+      "variancePct": 32,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "754,975,268.60|"
+          }
+        },
+        "bbox": [949, 990]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Revenue Collections",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": null,
+      "q3": 743703194.03,
+      "q4": 734915217.91,
+      "total": 3129475268.6,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 754975268.6,
+      "variancePct": 32,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1.127,769,018.55|"
+          }
+        },
+        "bbox": [988, 1041]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Cash Receiots",
+      "rowKind": "line",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": null,
+      "q3": 743703194.03,
+      "q4": 734915217.91,
+      "total": 3129475268.6,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 754975268.6,
+      "variancePct": 32,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,127,769,01855"
+          }
+        },
+        "collisions": [10],
+        "bbox": [1039, 1086]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Non-Tax",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": 1127769018.55,
+      "q3": 743703194.03,
+      "q4": 734915217.91,
+      "total": 3129475268.6,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 754975268.6,
+      "variancePct": 32,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1079, 1132]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Rent/Lease Income",
+      "rowKind": "line",
+      "source": "rent",
+      "uacsCode": "4020205000",
+      "target": 20000000,
+      "q1": 3255685.8,
+      "q2": 2723084.71,
+      "q3": 1373610.14,
+      "q4": 889241.99,
+      "total": 8241622.64,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -11758377.36,
+      "variancePct": -59,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1126, 1178]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Share from PAGCOR/PCSO",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4040102000",
+      "target": 2352500000,
+      "q1": 519330825.45,
+      "q2": 1122957233.84,
+      "q3": 739705983.89,
+      "q4": 730945149.92,
+      "total": 3112939193.1,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 760439193.1,
+      "variancePct": 32,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q2": {
+            "value": 1122957233.84,
+            "method": "ocr-repaired",
+            "raw": "1.122,957,233.84",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1172, 1224]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Other Gains",
+      "rowKind": "line",
+      "source": "other",
+      "uacsCode": "4050199000",
+      "target": 2000000,
+      "q1": 501326.86,
+      "q2": 2088700,
+      "q3": 2623600,
+      "q4": 54550,
+      "total": 5268176.86,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 3268176.36,
+      "variancePct": 163,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass-rounding",
+        "cells": {
+          "varianceAmount": {
+            "value": 3268176.36,
+            "method": "ocr-repaired",
+            "raw": "3.268,176.36",
+            "repairs": [".->,"]
+          }
+        },
+        "collisions": [10],
+        "bbox": [1200, 1269]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "Sale of Unserviceable Property",
+      "rowKind": "line",
+      "source": "sales",
+      "uacsCode": "4060102000",
+      "target": 0,
+      "q1": 0,
+      "q2": 0,
+      "q3": 0,
+      "q4": 3026276,
+      "total": 3026276,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 3026276,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "variancePct": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1252, 1310]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q4",
+      "fiscalYear": 2019,
+      "page": 1,
+      "particulars": "TOTAL",
+      "rowKind": "total",
+      "source": null,
+      "uacsCode": null,
+      "target": null,
+      "q1": null,
+      "q2": 1127769018.55,
+      "q3": 743703194.03,
+      "q4": null,
+      "total": null,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": 75497268.6,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "target": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2,374,500,000.00|"
+          },
+          "q1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "523,087,838.11|"
+          },
+          "q4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "734.915.217.91|"
+          },
+          "total": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "3.129.475.268.60|"
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "32 %l"
+          }
+        },
+        "collisions": [10],
+        "bbox": [1298, 1361]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q3",
+      "fiscalYear": 2019,
+      "page": 2,
+      "particulars": "Revenue Rent/Lease Internallv Share Non-Tax Cash Receints from Collections Generated PAGCOR/PCSO Income Funds",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4020205000",
+      "target": null,
+      "q1": null,
+      "q2": null,
+      "q3": null,
+      "q4": 0,
+      "total": null,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 10000000,
+      "varianceAmount": null,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "totalDeposits = remittanceBTr + depositedAGDB",
+            "delta": 10000000
+          }
+        ],
+        "cells": {
+          "target": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2,374,500,000.00 2,374,500,000.00 2,374,500,000.00 2,374,500,000.00 2,352,500,000.00 20,000,000.00"
+          },
+          "q1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "523,087,838.11 523,087,838.11 519,330,825.45 523,087,838.11 523,087,838.11 33255,685.80"
+          },
+          "q2": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,122,957,233.84) 1,127,769,018.55 1,127,769,018.55 1,127,769,018.55 2.723,084.71"
+          },
+          "q3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "743,703,194.03 739,705,983.89 743,703,194.03 743,703,194.03 743,703,194.03 1,373,610.14"
+          },
+          "q4": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00 0.00 0.00 0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "total": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2,394,560,050.69 2,394,560,050.69 2,384,560,050.69 2,384,560,050.69 2,381,994,043.18 7,352,380.65"
+          },
+          "remittanceBTr": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "depositedAGDB": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00 0.00 0.00 0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "totalDeposits": {
+            "value": 10000000,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00 0.01 0.00 0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "(12,647,619.35) 20,060,050.69 29,494,043.18 20,060,050,69 20,060,050,69 20,060,050.69"
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "63% 1% 1% 1% 1% 1%"
+          }
+        },
+        "collisions": [
+          0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+          4, 5, 5, 5, 5, 5, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 10,
+          10, 10, 10, 10
+        ],
+        "bbox": [829, 1061]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q3",
+      "fiscalYear": 2019,
+      "page": 2,
+      "particulars": "TOTAL",
+      "rowKind": "total",
+      "source": null,
+      "uacsCode": "4060999000",
+      "target": null,
+      "q1": null,
+      "q2": 1127769018.55,
+      "q3": null,
+      "q4": 0,
+      "total": null,
+      "remittanceBTr": null,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": null,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "target": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2,374,500,000.00 2,000,000.00"
+          },
+          "q1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "523,087,838.11 501,326.86"
+          },
+          "q3": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "743,703,194.03 2,623,600.00"
+          },
+          "q4": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "total": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2,394,560,050.69 5,213,626.86"
+          },
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "depositedAGDB": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "totalDeposits": {
+            "value": 0,
+            "method": "ocr-repaired",
+            "raw": "0.00 0.00",
+            "repairs": [".->,"]
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "20,060,050.69 3,213,626,86"
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "161 1% %"
+          }
+        },
+        "collisions": [0, 1, 3, 4, 5, 7, 8, 9, 10, 10],
+        "bbox": [1049, 1135]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Internally Generated Funds",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 4749000000,
+      "q1": 1046175678.22,
+      "q2": 2255538037.1,
+      "q3": 0,
+      "q4": null,
+      "total": null,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": null,
+      "varianceAmount": null,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "q1": {
+            "value": 1046175678.22,
+            "method": "ocr-repaired",
+            "raw": "1,046,175.678.22",
+            "repairs": [".->,"]
+          },
+          "q2": {
+            "value": 2255538037.1,
+            "method": "ocr-repaired",
+            "raw": "2.255,538.037.10",
+            "repairs": [".->,"]
+          },
+          "q4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "total": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "3.301.71,713.32"
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00(-1,447,286,286.6"
+          }
+        },
+        "collisions": [10],
+        "bbox": [896, 953]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Revenue Collections",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 4749000000,
+      "q1": 1046175676.22,
+      "q2": 2255538037.1,
+      "q3": 0,
+      "q4": 0,
+      "total": 3301713713.32,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": null,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "total": {
+            "value": 3301713713.32,
+            "method": "ocr-repaired",
+            "raw": "3,301.713,713.32",
+            "repairs": [".->,"]
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "(-1,447,286,286.6"
+          }
+        },
+        "collisions": [10],
+        "bbox": [939, 989]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Cash Revenue",
+      "rowKind": "line",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": null,
+      "q2": 1127769018.55,
+      "q3": 0,
+      "q4": 0,
+      "total": 1650856856.66,
+      "remittanceBTr": null,
+      "depositedAGDB": 0,
+      "totalDeposits": null,
+      "varianceAmount": null,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "target": {
+            "value": 2374500000,
+            "method": "ocr-repaired",
+            "raw": "2,374,500.000.00",
+            "repairs": [".->,"]
+          },
+          "q1": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "523,087, 838.11|"
+          },
+          "total": {
+            "value": 1650856856.66,
+            "method": "ocr-repaired",
+            "raw": "1.650,856,856.66",
+            "repairs": [".->,"]
+          },
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00(-723,643,143.34)"
+          }
+        },
+        "collisions": [1],
+        "bbox": [976, 1025]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Non-Tax",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": 1127769018.55,
+      "q3": 0,
+      "q4": 0,
+      "total": 1650856856.66,
+      "remittanceBTr": null,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -723643143.34,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "collisions": [10],
+        "bbox": [1010, 1064]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Rent/Lease Income",
+      "rowKind": "line",
+      "source": "rent",
+      "uacsCode": "4020205000",
+      "target": 20000000,
+      "q1": 3255685.8,
+      "q2": 2723084.71,
+      "q3": 0,
+      "q4": 0,
+      "total": 5978770.51,
+      "remittanceBTr": null,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": null,
+      "variancePct": -70,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "bbox": [1054, 1100]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Share from PAGCOR/PCSO",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4040102000",
+      "target": 2352500000,
+      "q1": 519330825.45,
+      "q2": 1122957233.84,
+      "q3": 0,
+      "q4": 0,
+      "total": 1642288059.29,
+      "remittanceBTr": null,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -710211940.71,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          }
+        },
+        "collisions": [10],
+        "bbox": [1090, 1136]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Other Gains",
+      "rowKind": "line",
+      "source": "other",
+      "uacsCode": "4050199000",
+      "target": 2000000,
+      "q1": 501326.86,
+      "q2": 2088700,
+      "q3": 0,
+      "q4": 0,
+      "total": 2590026.86,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -710211940.71,
+      "variancePct": 30,
+      "provenance": {
+        "method": "ocr",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "varianceAmount = total - target",
+            "delta": -710801967.57
+          }
+        ],
+        "bbox": [1128, 1177]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Cash Receipts",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": 1127769018.55,
+      "q3": 0,
+      "q4": null,
+      "total": 1650856856.66,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -723643143.34,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "target": {
+            "value": 2374500000,
+            "method": "ocr-repaired",
+            "raw": "2.374,500,000.00",
+            "repairs": [".->,"]
+          },
+          "q4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          }
+        },
+        "bbox": [1164, 1215]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Non-Tax",
+      "rowKind": "structural",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": 1127769018.55,
+      "q3": 0,
+      "q4": 0,
+      "total": 1650856856.66,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -723643143.34,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "target": {
+            "value": 2374500000,
+            "method": "ocr-repaired",
+            "raw": "2.374,500,000.00",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1201, 1252]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Rent/Lease Income",
+      "rowKind": "line",
+      "source": "rent",
+      "uacsCode": "4020205000",
+      "target": 20000000,
+      "q1": 3255685.8,
+      "q2": 2723084.71,
+      "q3": 0,
+      "q4": 0,
+      "total": 5978770.51,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -710211940.71,
+      "variancePct": -70,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "varianceAmount = total - target",
+            "delta": -696190711.22
+          }
+        ],
+        "cells": {
+          "target": {
+            "value": 20000000,
+            "method": "ocr-repaired",
+            "raw": "20.000,000.00",
+            "repairs": [".->,"]
+          },
+          "q1": {
+            "value": 3255685.8,
+            "method": "ocr-repaired",
+            "raw": "3.255,685.80",
+            "repairs": [".->,"]
+          },
+          "total": {
+            "value": 5978770.51,
+            "method": "ocr-repaired",
+            "raw": "5.978,770.51",
+            "repairs": [".->,"]
+          },
+          "varianceAmount": {
+            "value": -710211940.71,
+            "method": "ocr-repaired",
+            "raw": "(-710.211,940.71)",
+            "repairs": [".->,"]
+          }
+        },
+        "bbox": [1244, 1294]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Share from PAGCOR/PCSO",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4040102000",
+      "target": 2352500000,
+      "q1": 519330825.45,
+      "q2": 1122957233.84,
+      "q3": 0,
+      "q4": 0,
+      "total": 1642288059.29,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": 0,
+      "varianceAmount": -710211940.71,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr",
+        "checks": "pass",
+        "bbox": [1275, 1330]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "Miscellaneous Income",
+      "rowKind": "line",
+      "source": "other",
+      "uacsCode": "4060999000",
+      "target": 2000000,
+      "q1": 501326.86,
+      "q2": 2088700,
+      "q3": 0,
+      "q4": 0,
+      "total": 2590026.86,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": null,
+      "varianceAmount": null,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00(-710,211,940.71)|"
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "30 %|"
+          }
+        },
+        "collisions": [10],
+        "bbox": [1318, 1367]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q2",
+      "fiscalYear": 2019,
+      "page": 3,
+      "particulars": "TOTAL",
+      "rowKind": "total",
+      "source": null,
+      "uacsCode": null,
+      "target": null,
+      "q1": 523087838.11,
+      "q2": 1127769018.55,
+      "q3": 0,
+      "q4": null,
+      "total": null,
+      "remittanceBTr": 0,
+      "depositedAGDB": 0,
+      "totalDeposits": null,
+      "varianceAmount": null,
+      "variancePct": -30,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "target": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "2.374,500,000"
+          },
+          "q4": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0,00"
+          },
+          "total": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "1,650,856,856,66"
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "0.00(-1.447,286,286.6"
+          }
+        },
+        "collisions": [10],
+        "bbox": [1353, 1404]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q1",
+      "fiscalYear": 2019,
+      "page": 4,
+      "particulars": "Rent/Lease Income",
+      "rowKind": "line",
+      "source": "rent",
+      "uacsCode": "4020205000",
+      "target": 20000000,
+      "q1": 3255685.8,
+      "q2": null,
+      "q3": null,
+      "q4": null,
+      "total": 3255685.8,
+      "remittanceBTr": null,
+      "depositedAGDB": null,
+      "totalDeposits": null,
+      "varianceAmount": -16744314.2,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "target": {
+            "value": 20000000,
+            "method": "ocr-repaired",
+            "raw": "20,000.000.00",
+            "repairs": [".->,"]
+          },
+          "q2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "depositedAGDB": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "-0.84"
+          }
+        },
+        "bbox": [552, 586]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q1",
+      "fiscalYear": 2019,
+      "page": 4,
+      "particulars": "Share from PAGCOR/PCSO",
+      "rowKind": "line",
+      "source": "pagcor-pcso",
+      "uacsCode": "4040102000",
+      "target": 2352500000,
+      "q1": 519330825.45,
+      "q2": null,
+      "q3": null,
+      "q4": 519.33,
+      "total": 825.45,
+      "remittanceBTr": null,
+      "depositedAGDB": null,
+      "totalDeposits": null,
+      "varianceAmount": -1833169174.55,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "fail",
+        "checkFailures": [
+          {
+            "rule": "varianceAmount = total - target",
+            "delta": 519330000
+          }
+        ],
+        "cells": {
+          "q1": {
+            "value": 519330825.45,
+            "method": "ocr-repaired",
+            "raw": "519.330,825.45",
+            "repairs": [".->,"]
+          },
+          "q2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "depositedAGDB": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "-0.78"
+          }
+        },
+        "collisions": [9],
+        "bbox": [585, 619]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q1",
+      "fiscalYear": 2019,
+      "page": 4,
+      "particulars": "Other Gains",
+      "rowKind": "line",
+      "source": "other",
+      "uacsCode": "4050199000",
+      "target": 2000000,
+      "q1": 501326.86,
+      "q2": null,
+      "q3": null,
+      "q4": null,
+      "total": 501326.86,
+      "remittanceBTr": null,
+      "depositedAGDB": null,
+      "totalDeposits": null,
+      "varianceAmount": -1498673.14,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "pass",
+        "cells": {
+          "q1": {
+            "value": 501326.86,
+            "method": "ocr-repaired",
+            "raw": "501.326.86",
+            "repairs": [".->,"]
+          },
+          "q2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "depositedAGDB": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "-0.75"
+          }
+        },
+        "bbox": [607, 646]
+      }
+    },
+    {
+      "docId": "far5-2019-q4",
+      "period": "Q1",
+      "fiscalYear": 2019,
+      "page": 4,
+      "particulars": "TOTAL",
+      "rowKind": "total",
+      "source": null,
+      "uacsCode": null,
+      "target": 2374500000,
+      "q1": 523087838.11,
+      "q2": null,
+      "q3": null,
+      "q4": null,
+      "total": 523087838.11,
+      "remittanceBTr": null,
+      "depositedAGDB": null,
+      "totalDeposits": null,
+      "varianceAmount": null,
+      "variancePct": null,
+      "provenance": {
+        "method": "ocr-repaired",
+        "checks": "not-applicable",
+        "cells": {
+          "q2": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q3": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "q4": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "remittanceBTr": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "depositedAGDB": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "totalDeposits": {
+            "value": null,
+            "method": "missing",
+            "raw": null
+          },
+          "varianceAmount": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "(1,851.412,161.89)."
+          },
+          "variancePct": {
+            "value": null,
+            "method": "unreadable",
+            "raw": "-0.78/"
+          }
+        },
+        "bbox": [662, 701]
+      }
+    }
+  ]
+}

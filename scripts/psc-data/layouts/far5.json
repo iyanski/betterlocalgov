@@ -1,0 +1,95 @@
+{
+  "_comment": "Column model for FAR No. 5 (Quarterly Report of Revenue and Other Receipts). The printed form has 14 columns; column 1 is the revenue classification and column 2 the UACS code, neither of them money, leaving 11 figure columns. Unlike FAR No. 1, these cannot be recovered by pooling money edges alone: most years leave columns 9-13 blank, so the number of populated columns varies from 5 to 10 between documents and a cluster count means nothing. Columns are instead anchored to the printed header -- which survives OCR on every scan in the series, including the ones whose body is badly degraded -- and each row is then checked against the form's own arithmetic.",
+  "series": "far5",
+  "moneyColumns": 11,
+  "fields": [
+    {
+      "col": 3,
+      "key": "target",
+      "label": "Revenue Target (Annual) per BESF",
+      "anchors": ["TARGET", "(Annual)", "BESF"]
+    },
+    {
+      "col": 4,
+      "key": "q1",
+      "label": "1st Quarter Ending March 31",
+      "anchors": ["1st Quarter", "March 31"]
+    },
+    {
+      "col": 5,
+      "key": "q2",
+      "label": "2nd Quarter Ending June 30",
+      "anchors": ["2nd Quarter", "June 30"]
+    },
+    {
+      "col": 6,
+      "key": "q3",
+      "label": "3rd Quarter Ending September 30",
+      "anchors": ["3rd Quarter", "September 30"]
+    },
+    {
+      "col": 7,
+      "key": "q4",
+      "label": "4th Quarter Ending December 31",
+      "anchors": ["4th Quarter", "December 31"]
+    },
+    {
+      "col": 8,
+      "key": "total",
+      "label": "Total Actual Revenue and Other Receipts Collections",
+      "anchors": ["8=(4+5+6+7)"],
+      "derived": "q1 + q2 + q3 + q4"
+    },
+    {
+      "col": 9,
+      "key": "remittanceBTr",
+      "label": "Cumulative Remittance to the Bureau of the Treasury",
+      "anchors": ["Remittance to BTr"]
+    },
+    {
+      "col": 10,
+      "key": "depositedAGDB",
+      "label": "Cumulative Deposits with Authorised Government Depository Bank",
+      "anchors": ["Deposited with AGDB"]
+    },
+    {
+      "col": 11,
+      "key": "totalDeposits",
+      "label": "Total Remittance/Deposits to Date",
+      "anchors": ["11=(9+10)"],
+      "derived": "remittanceBTr + depositedAGDB"
+    },
+    {
+      "col": 12,
+      "key": "varianceAmount",
+      "label": "Variance against target, in pesos",
+      "anchors": ["12=(8-3)"],
+      "derived": "total - target"
+    },
+    {
+      "col": 13,
+      "key": "variancePct",
+      "label": "Variance against target, per cent",
+      "anchors": ["13=(12/3)"],
+      "derived": "varianceAmount / target",
+      "percent": true
+    }
+  ],
+  "checks": [
+    {
+      "rule": "total = q1+q2+q3+q4",
+      "lhs": "total",
+      "sum": ["q1", "q2", "q3", "q4"]
+    },
+    {
+      "rule": "totalDeposits = remittanceBTr + depositedAGDB",
+      "lhs": "totalDeposits",
+      "sum": ["remittanceBTr", "depositedAGDB"]
+    },
+    {
+      "rule": "varianceAmount = total - target",
+      "lhs": "varianceAmount",
+      "diff": ["total", "target"]
+    }
+  ]
+}

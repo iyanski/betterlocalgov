@@ -1,6 +1,17 @@
 import { Link } from 'react-router';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
+import SectionHeading from '../components/story/SectionHeading';
+import Note from '../components/story/Note';
+import SourceNote from '../components/story/SourceNote';
+import StoryHero from '../components/story/StoryHero';
+import BarList from '../components/charts/BarList';
+import ColumnChart from '../components/charts/ColumnChart';
+import StackedBar from '../components/charts/StackedBar';
+import ChartLegend from '../components/charts/ChartLegend';
+import DataTable from '../components/charts/DataTable';
+import GroupedBars from '../components/charts/GroupedBars';
+import { SERIES, fmt, pct } from '../components/charts/chartKit';
 import {
   batangPinoy,
   nationalGames,
@@ -8,336 +19,14 @@ import {
   totals,
   source,
   type GameData,
+  type Delegation,
 } from '../data/grassrootsParticipation';
 
 /* Series colours come from the site's own theme tokens and were checked for
    colour-vision separation (primary-600 vs accent-600, deltaE 29 protan). */
-const MALE = 'var(--color-primary-600)';
-const FEMALE = 'var(--color-accent-600)';
-const PARA = 'var(--color-secondary-600)';
-
-const fmt = (n: number) => n.toLocaleString('en-US');
-const pct = (n: number, of: number) => ((n / of) * 100).toFixed(1);
-
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600">
-      {children}
-    </p>
-  );
-}
-
-function SectionHeading({
-  index,
-  label,
-  title,
-  children,
-}: {
-  index: string;
-  label: string;
-  title: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <div className="max-w-3xl">
-      <div className="flex items-baseline gap-4">
-        <span className="font-mono text-xs tracking-[0.18em] text-gray-400">
-          {index}
-        </span>
-        <Eyebrow>{label}</Eyebrow>
-      </div>
-      <h2 className="mt-3 text-3xl md:text-5xl font-bold leading-[1.08] tracking-tight text-gray-900">
-        {title}
-      </h2>
-      {children ? (
-        <div className="mt-5 text-lg md:text-xl leading-relaxed text-gray-600">
-          {children}
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-function BarList({
-  rows,
-  color,
-  total,
-}: {
-  rows: [string, number][];
-  color: string;
-  total: number;
-}) {
-  const max = Math.max(...rows.map(r => r[1]));
-  return (
-    <ul className="mt-5 space-y-1.5">
-      {rows.map(([name, value]) => (
-        <li
-          key={name}
-          className="grid grid-cols-[minmax(84px,132px)_1fr_auto] items-center gap-3"
-          title={`${name} — ${fmt(value)} athletes (${pct(value, total)}%)`}
-        >
-          <span className="text-right text-[13px] leading-tight text-gray-600">
-            {name}
-          </span>
-          <span className="h-4 overflow-hidden rounded-sm bg-gray-100">
-            <span
-              className="block h-full rounded-r-sm"
-              style={{ width: `${(value / max) * 100}%`, background: color }}
-            />
-          </span>
-          <span className="min-w-[46px] text-right font-mono text-xs tabular-nums text-gray-500">
-            {fmt(value)}
-          </span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function AgeChart({
-  ages,
-  color,
-  label,
-}: {
-  ages: GameData['ages'];
-  color: string;
-  label: string;
-}) {
-  const entries = Object.entries(ages)
-    .map(([age, [m, f]]) => [Number(age), m + f] as [number, number])
-    .sort((a, b) => a[0] - b[0]);
-  const W = 460;
-  const H = 210;
-  const L = 38;
-  const R = 8;
-  const T = 14;
-  const B = 32;
-  const iw = W - L - R;
-  const ih = H - T - B;
-  const max = Math.max(...entries.map(e => e[1]));
-  const bw = iw / entries.length;
-  const ticks = [0, Math.round(max / 2), max];
-  const labelStep = entries.length > 20 ? Math.ceil(entries.length / 7) : 2;
-
-  return (
-    <svg
-      viewBox={`0 0 ${W} ${H}`}
-      role="img"
-      aria-label={label}
-      className="w-full h-auto"
-    >
-      {ticks.map(t => {
-        const y = T + ih - (t / max) * ih;
-        return (
-          <g key={t}>
-            <line
-              x1={L}
-              x2={W - R}
-              y1={y}
-              y2={y}
-              stroke="#e5e7eb"
-              strokeWidth={1}
-            />
-            <text
-              x={L - 7}
-              y={y + 3.5}
-              textAnchor="end"
-              fill="#9ca3af"
-              fontSize={9.5}
-              fontFamily="ui-monospace, monospace"
-            >
-              {fmt(t)}
-            </text>
-          </g>
-        );
-      })}
-      {entries.map(([age, v], i) => {
-        const h = (v / max) * ih;
-        return (
-          <rect
-            key={age}
-            x={L + i * bw + 0.8}
-            y={T + ih - h}
-            width={Math.max(1.4, bw - 1.6)}
-            height={Math.max(h, 0.8)}
-            rx={1.5}
-            fill={color}
-          >
-            <title>{`Age ${age} — ${fmt(v)} athletes`}</title>
-          </rect>
-        );
-      })}
-      {entries.map(([age], i) =>
-        i % labelStep === 0 || i === entries.length - 1 ? (
-          <text
-            key={`l${age}`}
-            x={L + i * bw + bw / 2}
-            y={H - B + 15}
-            textAnchor="middle"
-            fill="#9ca3af"
-            fontSize={9.5}
-            fontFamily="ui-monospace, monospace"
-          >
-            {age}
-          </text>
-        ) : null
-      )}
-      <text
-        x={L}
-        y={H - 3}
-        fill="#9ca3af"
-        fontSize={9.5}
-        fontFamily="ui-monospace, monospace"
-        letterSpacing="0.08em"
-      >
-        AGE
-      </text>
-    </svg>
-  );
-}
-
-function GenderBar({
-  name,
-  male,
-  female,
-}: {
-  name: string;
-  male: number;
-  female: number;
-}) {
-  const t = male + female;
-  return (
-    <div className="border-b border-gray-200 py-4">
-      <div className="mb-2 font-semibold text-gray-900">{name}</div>
-      <div className="flex h-8 gap-0.5 overflow-hidden rounded-sm">
-        <span
-          style={{ width: `${(male / t) * 100}%`, background: MALE }}
-          title={`Male — ${fmt(male)} (${pct(male, t)}%)`}
-        />
-        <span
-          style={{ width: `${(female / t) * 100}%`, background: FEMALE }}
-          title={`Female — ${fmt(female)} (${pct(female, t)}%)`}
-        />
-      </div>
-      <div className="mt-2 flex justify-between font-mono text-xs tabular-nums text-gray-500">
-        <span>
-          {fmt(male)} male · {pct(male, t)}%
-        </span>
-        <span>
-          {fmt(female)} female · {pct(female, t)}%
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function Legend() {
-  return (
-    <div className="mb-4 flex flex-wrap gap-5 font-mono text-xs uppercase tracking-wider text-gray-600">
-      <span className="flex items-center gap-2">
-        <i
-          className="inline-block h-3 w-3 rounded-sm"
-          style={{ background: MALE }}
-        />
-        Male
-      </span>
-      <span className="flex items-center gap-2">
-        <i
-          className="inline-block h-3 w-3 rounded-sm"
-          style={{ background: FEMALE }}
-        />
-        Female
-      </span>
-    </div>
-  );
-}
-
-function DelegationTable({
-  rows,
-  total,
-}: {
-  rows: GameData['topLgus'];
-  total: number;
-}) {
-  return (
-    <div className="overflow-x-auto">
-      <table className="mt-2 w-full text-sm">
-        <thead>
-          <tr>
-            <th className="border-b border-gray-200 py-2 pr-3 text-left font-mono text-[10px] font-normal uppercase tracking-[0.1em] text-gray-400">
-              Delegation
-            </th>
-            <th className="border-b border-gray-200 py-2 pr-3 text-right font-mono text-[10px] font-normal uppercase tracking-[0.1em] text-gray-400">
-              Athletes
-            </th>
-            <th className="border-b border-gray-200 py-2 text-right font-mono text-[10px] font-normal uppercase tracking-[0.1em] text-gray-400">
-              Share
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map(r => (
-            <tr key={r.lgu}>
-              <td className="border-b border-gray-100 py-2 pr-3 text-gray-700">
-                {r.lgu}
-              </td>
-              <td className="border-b border-gray-100 py-2 pr-3 text-right font-mono tabular-nums text-gray-700">
-                {fmt(r.total)}
-              </td>
-              <td className="border-b border-gray-100 py-2 text-right font-mono tabular-nums text-gray-400">
-                {pct(r.total, total)}%
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function Note({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-7 border-l-2 border-secondary-600 pl-5 text-lg leading-relaxed text-gray-600">
-      {children}
-    </div>
-  );
-}
-
-function DataDisclaimer() {
-  return (
-    <div className="rounded-sm border border-warning-300 bg-warning-50 p-5 md:p-6">
-      <p className="text-sm font-semibold uppercase tracking-[0.12em] text-warning-800">
-        About these figures
-      </p>
-      <p className="mt-3 text-base leading-relaxed text-gray-700">
-        These numbers were{' '}
-        <strong className="font-semibold">
-          extracted from the released files by an AI assistant
-        </strong>
-        , not by the Philippine Sports Commission and not by a human
-        statistician. Figures in the spreadsheets were read programmatically;
-        the para games breakdown was transcribed from a scanned PDF table by
-        reading it on screen, which is the most error-prone step here.
-      </p>
-      <p className="mt-3 text-base leading-relaxed text-gray-700">
-        Treat everything on this page as{' '}
-        <strong className="font-semibold">indicative, not authoritative</strong>
-        . Transcription and aggregation errors are possible. Before citing any
-        figure — in research, journalism or policy — check it against the
-        original files on{' '}
-        <a
-          href="https://www.foi.gov.ph/agencies/psc/sports-data/"
-          target="_blank"
-          rel="noreferrer"
-          className="text-primary-700 underline underline-offset-2"
-        >
-          foi.gov.ph
-        </a>{' '}
-        or request them from the PSC directly.
-      </p>
-    </div>
-  );
-}
+const MALE = SERIES.primary;
+const FEMALE = SERIES.accent;
+const PARA = SERIES.secondary;
 
 const CLUSTERS: [string, string][] = [
   ['NORTH LUZON', 'North Luzon'],
@@ -345,6 +34,31 @@ const CLUSTERS: [string, string][] = [
   ['SOUTH LUZON', 'South Luzon'],
   ['VISAYAS', 'Visayas'],
   ['MINDANAO', 'Mindanao'],
+];
+
+/** age -> total entrants, for the histograms. */
+const byAge = (ages: GameData['ages']) =>
+  Object.entries(ages)
+    .map(([age, [m, f]]) => ({ key: age, label: age, value: m + f }))
+    .sort((a, b) => Number(a.key) - Number(b.key));
+
+/** Shared column set for the two delegation tables. */
+const delegationColumns = (total: number) => [
+  { key: 'lgu', label: 'Delegation', align: 'left' as const },
+  {
+    key: 'total',
+    label: 'Athletes',
+    align: 'right' as const,
+    render: (r: Delegation) => fmt(r.total),
+  },
+  {
+    key: 'share',
+    label: 'Share',
+    align: 'right' as const,
+    muted: true,
+    sortValue: (r: Delegation) => r.total,
+    render: (r: Delegation) => `${pct(r.total, total)}%`,
+  },
 ];
 
 export default function Participation() {
@@ -363,46 +77,30 @@ export default function Participation() {
       />
 
       <main className="flex-grow">
-        {/* Hero */}
-        <div className="border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-          <div className="container mx-auto px-4 py-14 md:py-24">
-            <Eyebrow>
-              <span className="text-primary-100">
-                Obtained under Executive Order No. 2 (s. 2016)
-              </span>
-            </Eyebrow>
-            <h1 className="mt-4 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
-              Who actually plays
-            </h1>
-            <p className="mt-7 max-w-2xl text-xl md:text-2xl leading-relaxed text-primary-50">
-              The PSC runs national competitions for children, for adults, and
-              for athletes with disabilities. It publishes almost nothing about
-              who turns up. A freedom of information request prised loose the
-              registration files — and they describe{' '}
-              <strong className="font-semibold text-white">
-                {fmt(totals.allAthletes)} athletes
-              </strong>
-              .
-            </p>
-            <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-white/25 pt-7 md:grid-cols-4">
-              {[
-                [fmt(totals.allAthletes), 'athletes on record'],
-                ['3', 'national games'],
-                ['26', 'sports contested'],
-                [String(batangPinoy.lguCount), 'LGUs & delegations'],
-              ].map(([n, l]) => (
-                <div key={l}>
-                  <dt className="text-4xl md:text-5xl font-bold tabular-nums leading-none">
-                    {n}
-                  </dt>
-                  <dd className="mt-2.5 font-mono text-[11px] uppercase tracking-[0.12em] text-primary-100">
-                    {l}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
+        <StoryHero
+          eyebrow="Obtained under Executive Order No. 2 (s. 2016)"
+          title="Who actually plays"
+          stats={[
+            { value: fmt(totals.allAthletes), label: 'athletes on record' },
+            { value: '3', label: 'national games' },
+            { value: '26', label: 'sports contested' },
+            {
+              value: String(batangPinoy.lguCount),
+              label: 'LGUs & delegations',
+            },
+          ]}
+        >
+          <p>
+            The PSC runs national competitions for children, for adults, and for
+            athletes with disabilities. It publishes almost nothing about who
+            turns up. A freedom of information request prised loose the
+            registration files — and they describe{' '}
+            <strong className="font-semibold text-white">
+              {fmt(totals.allAthletes)} athletes
+            </strong>
+            .
+          </p>
+        </StoryHero>
 
         <div className="container mx-auto px-4">
           <Breadcrumbs
@@ -488,16 +186,41 @@ export default function Participation() {
             </SectionHeading>
 
             <div className="mt-10 max-w-4xl">
-              <Legend />
-              <GenderBar
-                name="Batang Pinoy 2023"
-                male={totals.batangPinoyMale}
-                female={totals.batangPinoyFemale}
+              <ChartLegend
+                items={[
+                  { label: 'Male', color: MALE },
+                  { label: 'Female', color: FEMALE },
+                ]}
               />
-              <GenderBar
+              <StackedBar
+                name="Batang Pinoy 2023"
+                segments={[
+                  {
+                    label: 'Male',
+                    value: totals.batangPinoyMale,
+                    color: MALE,
+                  },
+                  {
+                    label: 'Female',
+                    value: totals.batangPinoyFemale,
+                    color: FEMALE,
+                  },
+                ]}
+              />
+              <StackedBar
                 name="Philippine National Games"
-                male={totals.nationalGamesMale}
-                female={totals.nationalGamesFemale}
+                segments={[
+                  {
+                    label: 'Male',
+                    value: totals.nationalGamesMale,
+                    color: MALE,
+                  },
+                  {
+                    label: 'Female',
+                    value: totals.nationalGamesFemale,
+                    color: FEMALE,
+                  },
+                ]}
               />
               <p className="mt-4 text-sm text-gray-500">
                 Only two sports in each competition drew more women than men:
@@ -514,10 +237,13 @@ export default function Participation() {
                 <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.1em] text-gray-400">
                   Athletes by age
                 </p>
-                <AgeChart
-                  ages={batangPinoy.ages}
+                <ColumnChart
+                  data={byAge(batangPinoy.ages)}
                   color={MALE}
-                  label="Batang Pinoy athletes by age, 4 to 17"
+                  tickMode="data"
+                  axisLabel="AGE"
+                  ariaLabel="Batang Pinoy athletes by age, 4 to 17"
+                  tooltip={d => `Age ${d.key} — ${fmt(d.value)} athletes`}
                 />
                 <p className="mt-3 text-sm text-gray-500">
                   Peaks at 16. Half of all entrants are 14 or older.
@@ -530,10 +256,13 @@ export default function Participation() {
                 <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.1em] text-gray-400">
                   Athletes by age
                 </p>
-                <AgeChart
-                  ages={nationalGames.ages}
+                <ColumnChart
+                  data={byAge(nationalGames.ages)}
                   color={FEMALE}
-                  label="Philippine National Games athletes by age, 16 to 70"
+                  tickMode="data"
+                  axisLabel="AGE"
+                  ariaLabel="Philippine National Games athletes by age, 16 to 70"
+                  tooltip={d => `Age ${d.key} — ${fmt(d.value)} athletes`}
                 />
                 <p className="mt-3 text-sm text-gray-500">
                   Peaks at 18 and collapses after 22. The oldest registered
@@ -570,9 +299,10 @@ export default function Participation() {
                 <BarList
                   rows={batangPinoy.sports
                     .slice(0, 12)
-                    .map(s => [s.sport, s.total])}
+                    .map(s => ({ label: s.sport, value: s.total }))}
                   color={MALE}
                   total={totals.batangPinoy}
+                  valueLabel="athletes"
                 />
               </div>
               <div>
@@ -585,9 +315,10 @@ export default function Participation() {
                 <BarList
                   rows={nationalGames.sports
                     .slice(0, 12)
-                    .map(s => [s.sport, s.total])}
+                    .map(s => ({ label: s.sport, value: s.total }))}
                   color={FEMALE}
                   total={totals.nationalGames}
+                  valueLabel="athletes"
                 />
               </div>
             </div>
@@ -620,65 +351,46 @@ export default function Participation() {
             </SectionHeading>
 
             <div className="mt-10 max-w-4xl">
-              <div className="mb-4 flex flex-wrap gap-5 font-mono text-xs uppercase tracking-wider text-gray-600">
-                <span className="flex items-center gap-2">
-                  <i
-                    className="inline-block h-3 w-3 rounded-sm"
-                    style={{ background: MALE }}
-                  />
-                  Batang Pinoy
-                </span>
-                <span className="flex items-center gap-2">
-                  <i
-                    className="inline-block h-3 w-3 rounded-sm"
-                    style={{ background: FEMALE }}
-                  />
-                  National Games
-                </span>
-              </div>
-              {CLUSTERS.map(([key, label]) => {
-                const bp = batangPinoy.clusters[key].total;
-                const ng = nationalGames.clusters[key].total;
-                const bpp = (bp / totals.batangPinoy) * 100;
-                const ngp = (ng / totals.nationalGames) * 100;
-                const scale = 30;
-                return (
-                  <div key={key} className="border-b border-gray-200 py-3.5">
-                    <div className="mb-2 flex justify-between text-sm">
-                      <span className="font-semibold text-gray-900">
-                        {label}
-                      </span>
-                      <span className="font-mono tabular-nums text-gray-500">
-                        {bpp.toFixed(1)}% · {ngp.toFixed(1)}%
-                      </span>
-                    </div>
-                    <span
-                      className="mb-1 block h-3 overflow-hidden rounded-sm bg-gray-100"
-                      title={`Batang Pinoy · ${label} — ${fmt(bp)} (${bpp.toFixed(1)}%)`}
-                    >
-                      <span
-                        className="block h-full rounded-r-sm"
-                        style={{
-                          width: `${(bpp / scale) * 100}%`,
-                          background: MALE,
-                        }}
-                      />
-                    </span>
-                    <span
-                      className="block h-3 overflow-hidden rounded-sm bg-gray-100"
-                      title={`National Games · ${label} — ${fmt(ng)} (${ngp.toFixed(1)}%)`}
-                    >
-                      <span
-                        className="block h-full rounded-r-sm"
-                        style={{
-                          width: `${(ngp / scale) * 100}%`,
-                          background: FEMALE,
-                        }}
-                      />
-                    </span>
-                  </div>
-                );
-              })}
+              <ChartLegend
+                items={[
+                  { label: 'Batang Pinoy', color: MALE },
+                  { label: 'National Games', color: FEMALE },
+                ]}
+              />
+              <GroupedBars
+                rows={CLUSTERS.map(([key, label]) => ({
+                  label,
+                  values: {
+                    bp:
+                      (batangPinoy.clusters[key].total / totals.batangPinoy) *
+                      100,
+                    ng:
+                      (nationalGames.clusters[key].total /
+                        totals.nationalGames) *
+                      100,
+                  },
+                }))}
+                series={[
+                  { key: 'bp', label: 'Batang Pinoy', color: MALE },
+                  { key: 'ng', label: 'National Games', color: FEMALE },
+                ]}
+                /* Pinned, not per-series: the whole point is that Batang Pinoy
+                   spreads evenly while the adult games concentrate, and
+                   self-normalised bars would hide exactly that. */
+                scaleMax={30}
+                format={v => `${v.toFixed(1)}%`}
+                tooltip={(row, s, v) => {
+                  const counts: Record<string, number> = {
+                    bp: batangPinoy.clusters[
+                      CLUSTERS.find(c => c[1] === row.label)![0]
+                    ].total,
+                    ng: nationalGames.clusters[
+                      CLUSTERS.find(c => c[1] === row.label)![0]
+                    ].total,
+                  };
+                  return `${s.label} · ${row.label} — ${fmt(counts[s.key])} (${v.toFixed(1)}%)`;
+                }}
+              />
               <p className="mt-4 text-sm text-gray-500">
                 Batang Pinoy spreads evenly — no cluster holds more than a
                 quarter. The adult games concentrate: North Luzon and NCR
@@ -691,18 +403,22 @@ export default function Participation() {
                 <h3 className="font-semibold text-gray-900">
                   Largest delegations — Batang Pinoy
                 </h3>
-                <DelegationTable
+                <DataTable
+                  columns={delegationColumns(totals.batangPinoy)}
                   rows={batangPinoy.topLgus.slice(0, 10)}
-                  total={totals.batangPinoy}
+                  rowKey={r => r.lgu}
+                  caption="Ten largest Batang Pinoy delegations by registered athletes"
                 />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">
                   Largest delegations — National Games
                 </h3>
-                <DelegationTable
+                <DataTable
+                  columns={delegationColumns(totals.nationalGames)}
                   rows={nationalGames.topLgus.slice(0, 10)}
-                  total={totals.nationalGames}
+                  rowKey={r => r.lgu}
+                  caption="Ten largest Philippine National Games delegations by registered athletes"
                 />
               </div>
             </div>
@@ -754,6 +470,7 @@ export default function Participation() {
                   rows={paraGames.sports}
                   color={PARA}
                   total={paraGames.total}
+                  valueLabel="athletes"
                 />
               </div>
               <div>
@@ -767,6 +484,7 @@ export default function Participation() {
                   rows={paraGames.topDelegations}
                   color={PARA}
                   total={paraGames.total}
+                  valueLabel="athletes"
                 />
               </div>
             </div>
@@ -832,7 +550,37 @@ export default function Participation() {
             </ul>
 
             <div className="mt-10 max-w-3xl">
-              <DataDisclaimer />
+              <SourceNote>
+                <p>
+                  These numbers were{' '}
+                  <strong className="font-semibold">
+                    extracted from the released files by an AI assistant
+                  </strong>
+                  , not by the Philippine Sports Commission and not by a human
+                  statistician. Figures in the spreadsheets were read
+                  programmatically; the para games breakdown was transcribed
+                  from a scanned PDF table by reading it on screen, which is the
+                  most error-prone step here.
+                </p>
+                <p>
+                  Treat everything on this page as{' '}
+                  <strong className="font-semibold">
+                    indicative, not authoritative
+                  </strong>
+                  . Transcription and aggregation errors are possible. Before
+                  citing any figure — in research, journalism or policy — check
+                  it against the original files on{' '}
+                  <a
+                    href="https://www.foi.gov.ph/agencies/psc/sports-data/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary-700 underline underline-offset-2"
+                  >
+                    foi.gov.ph
+                  </a>{' '}
+                  or request them from the PSC directly.
+                </p>
+              </SourceNote>
             </div>
 
             <div className="mt-10 max-w-3xl rounded-sm border border-gray-200 bg-gray-50 p-6">
