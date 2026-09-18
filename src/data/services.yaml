@@ -1,50 +1,66 @@
-# Philippine Sports Commission — Programs and Services
-# This file contains all the service categories for the PSC portal
+# Government Services Data
+# This file contains all the service categories for the government portal
 # Each category's index.yaml file is automatically located at content/services/{slug}/index.yaml
 # Non-technical users can easily edit this file to add, remove, or modify service categories
-#
-# NOTE: `icon` must be a valid lucide-react export name, and `slug` becomes a
-# globally reserved document slug — it must not match any page slug.
 
 categories:
-  # Grassroots Sports
-  - category: 'Grassroots Sports'
-    slug: 'grassroots-sports'
-    description: 'National competitions and community programs open to young and first-time athletes — Batang Pinoy, the Philippine National Games, the Indigenous People Games, and more.'
-    icon: 'Users'
+  # Health Services
+  - category: 'Health Services'
+    slug: 'health-services'
+    description: 'Where to go for free check-ups, vaccines, and medicines, which hospitals are available, and details on health programs in your area.'
+    icon: 'Heart'
 
-  # National Athletes
-  - category: 'National Athletes'
-    slug: 'national-athletes'
-    description: 'How athletes join the national pool, and the allowances, incentives, insurance, and education support available to national athletes and their coaches.'
-    icon: 'Medal'
+  # Education Services
+  - category: 'Education'
+    slug: 'education'
+    description: 'Where to enroll kids in daycare or preschool, how to apply for scholarships, and what education support your LGU offers.'
+    icon: 'GraduationCap'
 
-  # Sports Facilities
-  - category: 'Sports Facilities'
-    slug: 'sports-facilities'
-    description: 'The training centers and venues the PSC runs — Rizal Memorial, PhilSports, Baguio, and Bataan — and how to use or book them.'
+  # Business & Livelihood Services
+  - category: 'Business and Livelihood'
+    slug: 'business'
+    description: 'What permits and clearances you need, where to pay taxes or renew permits, and what livelihood or trade opportunities are offered.'
     icon: 'Building2'
 
-  # Sports Development
-  - category: 'Sports Development'
-    slug: 'sports-development'
-    description: 'Support for national sports associations, sports science and training services, safe sports policy, and capability-building programs for coaches and officials.'
-    icon: 'Dumbbell'
-
-  # Awards and Recognition
-  - category: 'Awards and Recognition'
-    slug: 'awards-and-recognition'
-    description: 'How the country honors its athletes, from the Philippine Sports Hall of Fame to the Gintong Gawad and Women in Sports awards.'
-    icon: 'Trophy'
-
-  # Inclusive Sports
-  - category: 'Inclusive Sports'
-    slug: 'inclusive-sports'
-    description: 'Programs that widen access to sport — the Pilipinas ParaGames, women in sports initiatives, and sports for inclusivity, heritage, and peace.'
-    icon: 'Accessibility'
-
-  # Partnerships and Assistance
-  - category: 'Partnerships and Assistance'
-    slug: 'partnerships-and-assistance'
-    description: 'For local governments, schools, and sports organizations: how to partner with the PSC, request assistance, or host a PSC-backed event.'
-    icon: 'Handshake'
+  # Social Welfare Services
+  - category: 'Social Welfare'
+    slug: 'social-welfare'
+    description: 'What assistance is available for seniors, PWDs, solo parents, and indigent families, plus details on relief goods, and livelihood aid.'
+    icon: 'Users'
+  
+  # Agriculture & Fisheries Services
+  - category: 'Agriculture & Fisheries'
+    slug: 'agriculture-fisheries'
+    description: 'What farm or fishing support is available, including seeds, fertilizers, veterinary care, and where to join training or borrow equipment.'
+    icon: 'Wheat'
+  
+  # Infrastructure & Public Works Services
+  - category: 'Infrastructure & Public Works'
+    slug: 'infrastructure-public-works'
+    description: 'How to report damaged roads or drainage, where to request water supply, and how to access public facilities and markets.'
+    icon: 'Wrench'
+  
+  # Garbage and Waste Disposal Services
+  - category: 'Garbage and Waste Disposal'
+    slug: 'garbage-waste-disposal'
+    description: 'Garbage collection schedules, waste disposal guidelines, and how to properly dispose of different types of waste.'
+    icon: 'Trash2'
+  
+  # Environment Services
+  - category: 'Environment'
+    slug: 'environment'
+    description: 'Clean-up or tree planting activities, environmental protection rules, and conservation programs.'
+    icon: 'TreePine'
+  
+  # Disaster Preparedness Services
+  - category: 'Disaster Preparedness'
+    slug: 'disaster-preparedness'
+    description: 'Disaster preparedness plans, emergency response information, and evacuation procedures.'
+    icon: 'Shield'
+  
+  # Housing & Land Use Services
+  - category: 'Housing & Land Use'
+    slug: 'housing-land-use'
+    description: 'How to apply for housing projects, what zoning and building permits are needed, and where relocation sites are available.'
+    icon: 'Home'
+  

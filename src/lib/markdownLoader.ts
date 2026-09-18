@@ -58,7 +58,7 @@ export async function loadMarkdownContent(
     const titleMatch = content.match(/^#\s+(.+)$/m);
     const title = titleMatch ? titleMatch[1] : undefined;
 
-    const descriptionMatch = content.match(/^#\s+.+$\n\n(.+?)(?:\n\n|$)/m);
+    const descriptionMatch = content.match(/^#\s+.+$\n\n(.+?)(?:\n\n|$)/s);
     const description = descriptionMatch
       ? descriptionMatch[1].replace(/^>\s*/, '').trim()
       : undefined;

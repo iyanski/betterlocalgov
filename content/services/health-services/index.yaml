@@ -1,0 +1,19 @@
+# Health Services Category Pages
+# This file contains all the pages/services available under the Health Services category
+
+pages:
+  - name: 'Get free check-ups, basic medicines, and vaccines'
+    slug: 'get-free-check-ups-basic-medicines-and-vaccines'
+    description: 'Access free medical check-ups, basic medicines, and vaccination services provided by your local government.'
+    
+  - name: 'Access maternal care and child immunization'
+    slug: 'access-maternal-care-and-child-immunization'
+    description: 'Information about maternal health services and child immunization programs available in your area.'
+    
+  - name: 'Go to the local hospital for treatment or confinement'
+    slug: 'go-to-the-local-hospital-for-treatment-or-confinement'
+    description: 'Details about local hospital services, treatment options, and confinement procedures.'
+    
+  - name: 'Join health programs (nutrition, dengue control, TB treatment)'
+    slug: 'join-health-programs-nutrition-dengue-control-tb-treatment'
+    description: 'Participate in various health programs including nutrition support, dengue control, and TB treatment initiatives.'

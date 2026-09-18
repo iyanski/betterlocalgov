@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router';
 
 interface SEOProps {
   title?: string;
@@ -18,11 +17,8 @@ export default function SEO({
   image,
   url,
   type = 'website',
-  siteName = import.meta.env.VITE_SITE_NAME ||
-    import.meta.env.VITE_GOVERNMENT_NAME ||
-    'Local Government Website',
+  siteName = import.meta.env.VITE_GOVERNMENT_NAME || 'Local Government Website',
 }: SEOProps) {
-  const { pathname } = useLocation();
   const defaultTitle = `${siteName} - Official Government Website`;
   const defaultDescription =
     import.meta.env.VITE_SITE_DESCRIPTION ||
@@ -34,23 +30,9 @@ export default function SEO({
   const fullTitle = title ? `${title} | ${siteName}` : defaultTitle;
   const fullDescription = description || defaultDescription;
   const fullKeywords = keywords || defaultKeywords;
-  // No page passed `url`, so every canonical pointed at the site root and told
-  // search engines that /data/budget, /services/... and the home page were all
-  // the same document. Derive it from the current route instead; an explicit
-  // `url` still wins.
-  //
-  // VITE_CANONICAL_ORIGIN, not VITE_WEBSITE_URL: the latter is this project's
-  // pointer to the agency it mirrors, and canonicalising to someone else's
-  // domain asks search engines to drop this site in favour of theirs. Unset,
-  // the canonical is a relative URL, which resolves against whatever origin is
-  // actually serving the page -- correct by construction.
-  const origin = (import.meta.env.VITE_CANONICAL_ORIGIN || '').replace(
-    /\/+$/,
-    ''
-  );
-  const fullUrl = url || (origin ? `${origin}${pathname}` : pathname);
+  const fullUrl = url || import.meta.env.VITE_WEBSITE_URL || '';
   const fullImage =
-    image || import.meta.env.VITE_OG_IMAGE_URL || `${origin}/og-image.jpg`;
+    image || import.meta.env.VITE_OG_IMAGE_URL || `${fullUrl}/og-image.jpg`;
   const twitterHandle = import.meta.env.VITE_TWITTER_HANDLE || '';
 
   return (

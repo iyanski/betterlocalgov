@@ -1,0 +1,19 @@
+# Agriculture & Fisheries Category Pages
+# This file contains all the pages/services available under the Agriculture & Fisheries category
+
+pages:
+  - name: 'Ask for free seeds, seedlings, fertilizers, or fingerlings'
+    slug: 'ask-for-free-seeds-seedlings-fertilizers-or-fingerlings'
+    description: 'How to request free agricultural inputs like seeds, seedlings, fertilizers, and fingerlings from your local government.'
+    
+  - name: 'Get veterinary services for livestock'
+    slug: 'get-veterinary-services-for-livestock'
+    description: 'Access veterinary services for your livestock and farm animals from local government veterinarians.'
+    
+  - name: 'Attend farming or fishing training'
+    slug: 'attend-farming-or-fishing-training'
+    description: 'Join training programs for farming and fishing techniques offered by your local government.'
+    
+  - name: 'Borrow farm tools or equipment from the LGU'
+    slug: 'borrow-farm-tools-or-equipment-from-the-lgu'
+    description: 'How to borrow farm tools and equipment from your local government unit.'
