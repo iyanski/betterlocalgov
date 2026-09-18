@@ -15,16 +15,7 @@
     "convert-yaml": "node scripts/yaml-to-json.js",
     "dev:yaml": "npm run convert-yaml && npm run dev",
     "setup": "node scripts/setup-starter-kit.js",
-    "index-content": "node scripts/index-content.mjs",
-    "psc:catalog": "node scripts/psc-data/00-catalog.mjs",
-    "psc:ingest": "node scripts/psc-data/01-ingest.mjs",
-    "psc:test": "node scripts/psc-data/lib/numbers.test.mjs && node scripts/psc-data/budget.test.mjs && node scripts/psc-data/revenue.test.mjs",
-    "psc:render": "node scripts/psc-data/03-render-ocr.mjs",
-    "psc:far1": "node scripts/psc-data/06-far1.mjs",
-    "psc:far5": "node scripts/psc-data/07-far5.mjs",
-    "psc:revenue": "node scripts/psc-data/08-revenue.mjs",
-    "psc:verify": "node scripts/psc-data/09-verify-crops.mjs",
-    "psc:wayback": "node scripts/psc-data/01b-wayback.mjs"
+    "index-content": "node scripts/index-content.mjs"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

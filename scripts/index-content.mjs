@@ -33,7 +33,7 @@ function extractTitle(markdown) {
 }
 
 function extractDescription(markdown) {
-  const match = markdown.match(/^#\s+.+$\n\n(.+?)(?:\n\n|$)/m);
+  const match = markdown.match(/^#\s+.+$\n\n(.+?)(?:\n\n|$)/ms);
   if (!match) return '';
   return match[1].replace(/^>\s*/, '').trim();
 }

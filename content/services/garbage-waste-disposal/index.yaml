@@ -1,0 +1,19 @@
+# Garbage and Waste Disposal Category Pages
+# This file contains all the pages/services available under the Garbage and Waste Disposal category
+
+pages:
+  - name: 'Check garbage collection schedules and request pickup'
+    slug: 'check-garbage-collection-schedules-and-request-pickup'
+    description: 'Information about garbage collection schedules and how to request special garbage pickup services.'
+    
+  - name: 'Learn proper waste segregation and disposal methods'
+    slug: 'learn-proper-waste-segregation-and-disposal-methods'
+    description: 'Guidelines for proper waste segregation and disposal methods in your area.'
+    
+  - name: 'Request special waste collection (hazardous materials, electronics)'
+    slug: 'request-special-waste-collection-hazardous-materials-electronics'
+    description: 'How to request special collection services for hazardous materials and electronic waste.'
+    
+  - name: 'Report illegal dumping or waste management violations'
+    slug: 'report-illegal-dumping-or-waste-management-violations'
+    description: 'How to report illegal dumping activities and waste management violations in your area.'

@@ -1,23 +1,23 @@
 {
-  "site_name": "Better Philippine Sports",
-  "site_description": "A community-built portal for the Philippine Sports Commission",
+  "site_name": "Lapu Lapu City Portal",
+  "site_description": "A community-run portal for the Lapu Lapu City",
   "hero": {
-    "title": "Better Philippine Sports",
-    "subtitle": "Programs, facilities, and support for Filipino athletes — and a clear look at how the agency works.",
+    "title": "Welcome to BetterGov.ph",
+    "subtitle": "A community-run portal to find information of the Lapu Lapu City Government",
     "nationalId": "National ID",
     "birthCertificate": "Birth Certificate",
     "businessRegistration": "Business Registration"
   },
   "services": {
-    "title": "Programs and Services",
-    "governmentServices": "Programs and Services",
-    "description": "Competitions you can join, support available to athletes and coaches, facilities you can use, and how your organization can work with the PSC.",
-    "viewAll": "View All Programs",
+    "title": "Services & Information",
+    "governmentServices": "Government Services",
+    "description": "Access official government services quickly and easily. Find what you need for citizenship, business, education, and more.",
+    "viewAll": "View All Services",
     "viewAllCategory": "View All"
   },
   "governmentActivity": {
-    "title": "About the Commission",
-    "description": "Who runs the Philippine Sports Commission, the law that created it, how it spends public money, and how to do business with it."
+    "title": "Government Activity",
+    "description": "Stay updated with the latest government activities and announcements."
   },
   "weather": {
     "title": "Weather Updates"
@@ -29,16 +29,13 @@
     "title": "Latest News & Updates"
   },
   "footer": {
-    "tagline": "BetterGov.ph Portal",
-    "blurb": "A community-built portal for the Philippine Sports Commission, reorganizing public information about Philippine sports so athletes, coaches, local governments, and citizens can actually find it.",
-    "copyright": "© 2026 BetterGov. Philippine government works are in the public domain unless otherwise specified."
+    "copyright": "© 2025 BetterGov. All content is public domain unless otherwise specified."
   },
   "navbar": {
-    "government": "About the PSC",
-    "services": "Programs",
+    "government": "Government",
+    "services": "Services",
     "hotlines": "Hotlines",
-    "holidays": "Holidays",
-    "data": "Data"
+    "holidays": "Holidays"
   },
   "joinUs": {
     "stripTitle": "🚀 Join the #CivicTech Revolution",

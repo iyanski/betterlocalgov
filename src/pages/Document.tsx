@@ -216,8 +216,9 @@ export default function Document({
         <Breadcrumbs className="mb-8" items={breadcrumbs} />
         <Card className="mb-8 markdown-content">
           <CardHeader>
-            {/* description is the body's first paragraph, used for SEO above;
-                rendering it here too would duplicate it on the page */}
+            {markdownContent.description && (
+              <CardContent>{markdownContent.description}</CardContent>
+            )}
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={markdownComponents}

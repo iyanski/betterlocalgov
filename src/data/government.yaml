@@ -1,38 +1,61 @@
-# Philippine Sports Commission — About the Agency
-# This file contains all the government/institutional categories for the PSC portal
-# Each category's index.yaml file is automatically located at content/government/{slug}/index.yaml
-# Non-technical users can easily edit this file to add, remove, or modify categories
-#
-# NOTE: `icon` must be a valid lucide-react export name, and `slug` becomes a
-# globally reserved document slug — it must not match any page slug.
+# Local Government Activity Data
+# This file contains all the local government activity data for the local government portal
+# Non-technical users can easily edit this file to add, remove, or modify local government activity
 
 categories:
-  # About the PSC
-  - category: 'About the PSC'
-    slug: 'about-psc'
-    description: 'What the Philippine Sports Commission is, where it came from, the law that created it, and how to reach it.'
-    icon: 'Landmark'
-
-  # Leadership
-  - category: 'Leadership'
-    slug: 'leadership'
-    description: 'The Chairman and Commissioners who make up the Commission Proper, how the agency is organized, and which office to contact.'
-    icon: 'UsersRound'
-
-  # Transparency
-  - category: 'Transparency'
-    slug: 'transparency'
-    description: "Budget and audit documents, freedom of information requests, the Citizen's Charter, and quality management compliance."
+  - category: 'Departments'
+    slug: 'departments'
+    description: 'Explore local government departments, agencies, and offices with their mandates, services, and contact details.'
+    icon: 'Building2'
+    subcategories:
+      - name: 'Executive Department'
+        slug: 'executive'
+      - name: 'Legislative Department'
+        slug: 'legislative'
+      - name: 'Department of Education'
+        slug: 'department-of-education'
+      - name: 'Department of Health'
+        slug: 'department-of-health'
+      - name: 'Department of Transportation'
+        slug: 'department-of-transportation'
+  - category: 'News'
+    slug: 'news'
+    description: 'Stay informed with the latest local government news, announcements, and policy updates.'
+    icon: 'Newspaper'
+    subcategories:
+      - name: 'News'
+        slug: 'news'
+      - name: 'Announcements'
+        slug: 'announcements'
+  - category: 'Guides and Regulations'
+    slug: 'guides-and-regulations'
+    description: 'Access guidelines, rules, regulations, and step-by-step instructions for local government processes.'
+    icon: 'Book'
+    subcategories:
+      - name: 'Guides'
+        slug: 'guides'
+      - name: 'Regulations'
+        slug: 'regulations'
+  - category: 'Reports and Statistics'
+    slug: 'reports-and-statistics'
+    description: 'Access local government reports, statistical data, and performance metrics.'
+    icon: 'ChartBar'
+    subcategories:
+      - name: 'Reports'
+        slug: 'reports'
+      - name: 'Statistics'
+        slug: 'statistics'
+  - category: 'Public Consultations'
+    slug: 'public-consultations'
+    description: 'Participate in public consultations and provide feedback on local government decisions.'
+    icon: 'MessagesSquare'
+    subcategories:
+      - name: 'Public Consultations'
+        slug: 'public-consultations'
+  - category: 'Transparency Documents'
+    slug: 'transparency-documents'
+    description: 'Access Freedom of Information releases and transparency documents for local government accountability.'
     icon: 'FileText'
-
-  # Procurement
-  - category: 'Procurement'
-    slug: 'procurement'
-    description: 'How to do business with the PSC — open bid opportunities, awards and notices, and the bid documents published by the Bids and Awards Committee.'
-    icon: 'Gavel'
-
-  # Careers
-  - category: 'Careers'
-    slug: 'careers'
-    description: 'Job vacancies at the Philippine Sports Commission and how to apply.'
-    icon: 'Briefcase'
+    subcategories:
+      - name: 'Transparency Documents'
+        slug: 'transparency-documents'
