@@ -48,13 +48,13 @@ const Government: React.FC = () => {
     return (
       <>
         <SEO
-          title="Services"
-          description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
-          keywords="government services, public services, local government, civic services"
+          title="Municipal Information"
+          description={`Community-organized information about ${import.meta.env.VITE_GOVERNMENT_NAME}. Details are added after verification.`}
+          keywords="Gattaran municipal information, local government, civic information"
         />
         <GovernmentActivitySection
-          title={`All local government services`}
-          description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
+          title="Municipal information"
+          description={`Browse the portal's information structure for ${import.meta.env.VITE_GOVERNMENT_NAME}. Office, official, contact, and activity details will be added only after verification.`}
         />
       </>
     );

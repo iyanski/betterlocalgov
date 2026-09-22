@@ -1,32 +1,14 @@
 import React from 'react';
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  CheckCircle2,
-} from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation('common');
-
-  const getSocialIcon = (label: string) => {
-    switch (label) {
-      case 'Facebook':
-        return <Facebook className="h-5 w-5" />;
-      case 'Twitter':
-        return <Twitter className="h-5 w-5" />;
-      case 'Instagram':
-        return <Instagram className="h-5 w-5" />;
-      case 'YouTube':
-        return <Youtube className="h-5 w-5" />;
-      default:
-        return null;
-    }
-  };
+  const siteName = import.meta.env.VITE_SITE_NAME || 'Better Gattaran';
+  const governmentName =
+    import.meta.env.VITE_GOVERNMENT_NAME || 'Municipality of Gattaran';
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -42,27 +24,13 @@ const Footer: React.FC = () => {
               /> */}
 
               <div>
-                <div className="font-bold">{t('site_name')}</div>
-                <div className="text-xs text-gray-400">BetterGov.ph Portal</div>
+                <div className="font-bold">{siteName}</div>
+                <div className="text-xs text-gray-400">
+                  Civic information for {governmentName}
+                </div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
-              A community portal providing Philippine citizens, businesses, and
-              visitors with information and services.
-            </p>
-            <div className="flex space-x-4">
-              {footerNavigation.socialLinks.map(link => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="text-gray-400 hover:text-white transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {getSocialIcon(link.label)}
-                </Link>
-              ))}
-            </div>
+            <p className="text-gray-400 text-sm mb-4">{t('footer.status')}</p>
           </div>
 
           {footerNavigation.mainSections.map(section => (
@@ -87,7 +55,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              {t('footer.copyright')}
+              {t('footer.attribution')}
             </p>
             <div className="flex space-x-6">
               {/* <a
@@ -102,23 +70,13 @@ const Footer: React.FC = () => {
               >
                 Terms of Use
               </a> */}
-              <Link
-                to="https://github.com/bettergovph/bettergov"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Contribute at GitHub
-              </Link>
-              <Link
-                to="/sitemap"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Sitemap
-              </Link>
               <a
-                href="/accessibility"
+                href="https://github.com/bettergovph/betterlocalgov"
                 className="text-gray-400 hover:text-white text-sm transition-colors"
+                target="_blank"
+                rel="noreferrer"
               >
-                Accessibility
+                BetterLocalGov on GitHub
               </a>
             </div>
           </div>

@@ -1,23 +1,20 @@
 {
-  "site_name": "Lapu Lapu City Portal",
-  "site_description": "A community-run portal for the Lapu Lapu City",
+  "site_name": "Better Gattaran",
+  "site_description": "Community-driven civic information for Gattaran, Cagayan",
   "hero": {
-    "title": "Welcome to BetterGov.ph",
-    "subtitle": "A community-run portal to find information of the Lapu Lapu City Government",
-    "nationalId": "National ID",
-    "birthCertificate": "Birth Certificate",
-    "businessRegistration": "Business Registration"
+    "title": "Better Gattaran",
+    "subtitle": "A community-driven portal for civic information about the Municipality of Gattaran in Cagayan. Content is independently maintained and should be verified with the appropriate government office before use."
   },
   "services": {
     "title": "Services & Information",
     "governmentServices": "Government Services",
-    "description": "Access official government services quickly and easily. Find what you need for citizenship, business, education, and more.",
+    "description": "Browse general municipal service categories. Requirements, fees, schedules, contacts, and procedures will be published only after verification.",
     "viewAll": "View All Services",
     "viewAllCategory": "View All"
   },
   "governmentActivity": {
     "title": "Government Activity",
-    "description": "Stay updated with the latest government activities and announcements."
+    "description": "Browse the portal's municipal information structure. Verified activities, announcements, and public records can be added as sources become available."
   },
   "weather": {
     "title": "Weather Updates"
@@ -29,7 +26,8 @@
     "title": "Latest News & Updates"
   },
   "footer": {
-    "copyright": "© 2025 BetterGov. All content is public domain unless otherwise specified."
+    "status": "Better Gattaran is a community-driven civic information portal and is not presented as the official Municipality of Gattaran website.",
+    "attribution": "Built from the open-source BetterLocalGov project by BetterGov."
   },
   "navbar": {
     "government": "Government",

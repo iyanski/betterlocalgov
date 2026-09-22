@@ -18,6 +18,9 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const { t, i18n } = useTranslation('common');
+  const siteName = import.meta.env.VITE_SITE_NAME || 'Better Gattaran';
+  const governmentName =
+    import.meta.env.VITE_GOVERNMENT_NAME || 'Municipality of Gattaran';
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -49,6 +52,7 @@ const Navbar: React.FC = () => {
               href="https://bettergov.ph/join-us"
               className="text-xs text-primary-600 hover:text-primary-700 font-semibold transition-colors"
               target="_blank"
+              rel="noreferrer"
             >
               🚀 Join Us
             </a>
@@ -56,6 +60,7 @@ const Navbar: React.FC = () => {
               href="https://bettergov.ph/about"
               className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
               target="_blank"
+              rel="noreferrer"
             >
               About BetterGov
             </a>
@@ -63,6 +68,7 @@ const Navbar: React.FC = () => {
               href="https://www.gov.ph"
               className="text-xs text-gray-800 hover:text-primary-600 transition-colors"
               target="_blank"
+              rel="noreferrer"
             >
               Official Gov.ph
             </a>
@@ -104,11 +110,9 @@ const Navbar: React.FC = () => {
                 className="h-12 w-12 mr-3"
               /> */}
               <div>
-                <div className="text-black font-bold">
-                  {import.meta.env.VITE_GOVERNMENT_NAME}
-                </div>
+                <div className="text-black font-bold">{siteName}</div>
                 <div className="text-xs text-gray-800">
-                  {t('site_description')}
+                  Civic information for {governmentName}
                 </div>
               </div>
             </Link>
@@ -152,10 +156,12 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden lg:flex items-center space-x-6">
             <Link
-              to="/about"
+              to="https://bettergov.ph/about"
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
             >
-              About
+              About BetterGov
             </Link>
             {isMeilisearchEnabled && (
               <Link
@@ -225,20 +231,24 @@ const Navbar: React.FC = () => {
               )}
             </div>
           ))}
-          <Link
-            to="/join-us"
+          <a
+            href="https://bettergov.ph/join-us"
             onClick={closeMenu}
             className="block px-4 py-2 text-base font-semibold text-primary-600 hover:bg-primary-50 hover:text-primary-700"
+            target="_blank"
+            rel="noreferrer"
           >
             🚀 Join Us
-          </Link>
-          <Link
-            to="/about"
+          </a>
+          <a
+            href="https://bettergov.ph/about"
             onClick={closeMenu}
             className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
+            target="_blank"
+            rel="noreferrer"
           >
-            About
-          </Link>
+            About BetterGov
+          </a>
           {isMeilisearchEnabled && (
             <Link
               to="/search"
@@ -248,13 +258,6 @@ const Navbar: React.FC = () => {
               Search
             </Link>
           )}
-          <Link
-            to="/sitemap"
-            onClick={closeMenu}
-            className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
-          >
-            Sitemap
-          </Link>
           <div className="px-4 py-3 border-t border-gray-200">
             <div className="flex items-center">
               <Globe className="h-5 w-5 text-gray-800 mr-2" />

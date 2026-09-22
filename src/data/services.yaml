@@ -7,60 +7,59 @@ categories:
   # Health Services
   - category: 'Health Services'
     slug: 'health-services'
-    description: 'Where to go for free check-ups, vaccines, and medicines, which hospitals are available, and details on health programs in your area.'
+    description: 'General health-service information. Gattaran-specific facilities, programs, schedules, and requirements are pending verification.'
     icon: 'Heart'
 
   # Education Services
   - category: 'Education'
     slug: 'education'
-    description: 'Where to enroll kids in daycare or preschool, how to apply for scholarships, and what education support your LGU offers.'
+    description: 'General education-service information. Local enrollment, scholarship, and support-program details are pending verification.'
     icon: 'GraduationCap'
 
   # Business & Livelihood Services
   - category: 'Business and Livelihood'
     slug: 'business'
-    description: 'What permits and clearances you need, where to pay taxes or renew permits, and what livelihood or trade opportunities are offered.'
+    description: 'General business and livelihood information. Local permits, fees, renewal steps, and program details are pending verification.'
     icon: 'Building2'
 
   # Social Welfare Services
   - category: 'Social Welfare'
     slug: 'social-welfare'
-    description: 'What assistance is available for seniors, PWDs, solo parents, and indigent families, plus details on relief goods, and livelihood aid.'
+    description: 'General social-welfare information. Local eligibility, assistance, contacts, and application procedures are pending verification.'
     icon: 'Users'
-  
+
   # Agriculture & Fisheries Services
   - category: 'Agriculture & Fisheries'
     slug: 'agriculture-fisheries'
-    description: 'What farm or fishing support is available, including seeds, fertilizers, veterinary care, and where to join training or borrow equipment.'
+    description: 'General agriculture and fisheries information. Local assistance, veterinary, training, and equipment details are pending verification.'
     icon: 'Wheat'
   
   # Infrastructure & Public Works Services
   - category: 'Infrastructure & Public Works'
     slug: 'infrastructure-public-works'
-    description: 'How to report damaged roads or drainage, where to request water supply, and how to access public facilities and markets.'
+    description: 'General infrastructure and public-works information. Local reporting channels, projects, and facility details are pending verification.'
     icon: 'Wrench'
   
   # Garbage and Waste Disposal Services
   - category: 'Garbage and Waste Disposal'
     slug: 'garbage-waste-disposal'
-    description: 'Garbage collection schedules, waste disposal guidelines, and how to properly dispose of different types of waste.'
+    description: 'General waste-management information. Local collection schedules, disposal rules, and reporting channels are pending verification.'
     icon: 'Trash2'
   
   # Environment Services
   - category: 'Environment'
     slug: 'environment'
-    description: 'Clean-up or tree planting activities, environmental protection rules, and conservation programs.'
+    description: 'General environment information. Local rules, activities, programs, and contact details are pending verification.'
     icon: 'TreePine'
   
   # Disaster Preparedness Services
   - category: 'Disaster Preparedness'
     slug: 'disaster-preparedness'
-    description: 'Disaster preparedness plans, emergency response information, and evacuation procedures.'
+    description: 'General disaster-preparedness information. Local hazards, hotlines, evacuation sites, and procedures are pending verification.'
     icon: 'Shield'
-  
+
   # Housing & Land Use Services
   - category: 'Housing & Land Use'
     slug: 'housing-land-use'
-    description: 'How to apply for housing projects, what zoning and building permits are needed, and where relocation sites are available.'
+    description: 'General housing and land-use information. Local zoning, permits, housing programs, and procedures are pending verification.'
     icon: 'Home'
-  

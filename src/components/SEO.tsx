@@ -17,12 +17,12 @@ export default function SEO({
   image,
   url,
   type = 'website',
-  siteName = import.meta.env.VITE_GOVERNMENT_NAME || 'Local Government Website',
+  siteName = import.meta.env.VITE_SITE_NAME || 'Better Gattaran',
 }: SEOProps) {
-  const defaultTitle = `${siteName} - Official Government Website`;
+  const defaultTitle = `${siteName} - Community Civic Information Portal`;
   const defaultDescription =
     import.meta.env.VITE_SITE_DESCRIPTION ||
-    `Official website of ${siteName}. Access government services, information, and resources.`;
+    'A community-driven civic information portal for Gattaran, Cagayan.';
   const defaultKeywords =
     import.meta.env.VITE_SITE_KEYWORDS ||
     'government, local government, services, public services, civic services';
@@ -74,24 +74,7 @@ export default function SEO({
       <link rel="canonical" href={fullUrl} />
 
       {/* Favicon */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
       {/* Preconnect to external domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

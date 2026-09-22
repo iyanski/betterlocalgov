@@ -30,14 +30,11 @@ export const mainNavigation: NavigationItem[] = [
 export const footerNavigation = {
   mainSections: [
     {
-      title: 'About',
+      title: 'Portal',
       links: [
-        { label: 'About the Portal', href: '/about' },
-        // { label: 'Privacy Policy', href: '/privacy' },
-        // { label: 'Terms of Use', href: '/terms' },
-        { label: 'Accessibility', href: '/accessibility' },
-        { label: 'Contact Us', href: '/about' },
-        { label: 'Community Discord', href: '/discord' },
+        { label: 'Home', href: '/' },
+        { label: 'Municipal Information', href: '/government' },
+        { label: 'Service Categories', href: '/services' },
       ],
     },
     {
@@ -50,8 +47,6 @@ export const footerNavigation = {
             label: category.category,
             href: `/services/${category.slug}`,
           })),
-        { label: 'Hotlines', href: '/philippines/hotlines' },
-        { label: 'Holidays', href: '/philippines/holidays' },
       ],
     },
     {
@@ -70,10 +65,5 @@ export const footerNavigation = {
       ],
     },
   ],
-  socialLinks: [
-    { label: 'Facebook', href: 'https://facebook.com/govph' },
-    { label: 'Twitter', href: 'https://twitter.com/govph' },
-    { label: 'Instagram', href: 'https://instagram.com/govph' },
-    { label: 'YouTube', href: 'https://youtube.com/govph' },
-  ],
+  socialLinks: [] as NavigationItem[],
 };

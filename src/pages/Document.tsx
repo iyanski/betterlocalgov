@@ -87,11 +87,24 @@ export default function Document({
           return;
         }
 
-        const content = await loadMarkdownContent(
+        const loadedContent = await loadMarkdownContent(
           documentSlug,
           category,
           categoryType
         );
+        const hasLegacyLocalContent =
+          categoryType === 'service' &&
+          /Lapu[\s-]?Lapu/i.test(loadedContent.content);
+        const content = hasLegacyLocalContent
+          ? {
+              ...loadedContent,
+              title: 'Service guide pending verification',
+              description:
+                'Gattaran-specific service information has not yet been verified.',
+              content:
+                '# Service guide pending verification\n\nThe inherited guide for this topic refers to another locality, so Better Gattaran does not display it as local information. Requirements, fees, schedules, contacts, and procedures will be published after verification with an authoritative source.',
+            }
+          : loadedContent;
         setMarkdownContent(content);
 
         setBreadcrumbs([
@@ -214,6 +227,14 @@ export default function Document({
       />
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" items={breadcrumbs} />
+        {categoryType === 'service' && (
+          <Banner
+            type="info"
+            title="Verification notice"
+            description="This inherited service guide is template content and may not describe current Municipality of Gattaran requirements, fees, contacts, or procedures. Verify details with the appropriate government office before relying on it."
+            icon
+          />
+        )}
         <Card className="mb-8 markdown-content">
           <CardHeader>
             {markdownContent.description && (
