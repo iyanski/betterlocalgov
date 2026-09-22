@@ -84,32 +84,22 @@ export const TableWithToggle = ({
   children: ReactNode;
   theme: TypographyTheme;
 } & HTMLAttributes<HTMLTableElement>) => {
-  const [viewMode, setViewMode] = useState<'table' | 'list'>('table');
-  const [isMobile, setIsMobile] = useState(false);
+  const mobileQuery = '(max-width: 639px)';
+  const getDefaultView = () =>
+    window.matchMedia(mobileQuery).matches ? 'list' : 'table';
+  const [viewMode, setViewMode] = useState<'table' | 'list'>(getDefaultView);
 
-  // Set responsive default view
+  // Keep the default view aligned with the responsive breakpoint.
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint
+    const mediaQuery = window.matchMedia(mobileQuery);
+    const handleBreakpointChange = (event: MediaQueryListEvent) => {
+      setViewMode(event.matches ? 'list' : 'table');
     };
 
-    // Check on mount
-    checkScreenSize();
-
-    // Listen for resize events
-    window.addEventListener('resize', checkScreenSize);
-
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
-  // Set default view based on screen size
-  useEffect(() => {
-    if (isMobile) {
-      setViewMode('list');
-    } else {
-      setViewMode('table');
-    }
-  }, [isMobile]);
+    mediaQuery.addEventListener('change', handleBreakpointChange);
+    return () =>
+      mediaQuery.removeEventListener('change', handleBreakpointChange);
+  }, [mobileQuery]);
 
   // Extract table data for list view
   const tableData = useMemo(() => {

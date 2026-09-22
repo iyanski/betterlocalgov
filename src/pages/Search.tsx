@@ -5,39 +5,58 @@ import { Search as SearchIcon } from 'lucide-react';
 import { searchClient, SEARCH_INDEX } from '../lib/meilisearch';
 import type { SearchHit } from '../lib/meilisearch';
 
+interface SearchState {
+  query: string;
+  results: SearchHit[];
+  status: 'idle' | 'loading' | 'complete' | 'error';
+}
+
 export default function Search() {
   const [query, setQuery] = useQueryState('q', { defaultValue: '' });
-  const [results, setResults] = useState<SearchHit[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const normalizedQuery = query.trim();
+  const [searchState, setSearchState] = useState<SearchState>({
+    query: '',
+    results: [],
+    status: 'idle',
+  });
+  const currentState =
+    searchState.query === normalizedQuery
+      ? searchState
+      : { query: normalizedQuery, results: [], status: 'idle' as const };
+  const isLoading = currentState.status === 'loading';
+  const hasSearched = currentState.status === 'complete';
+  const error = currentState.status === 'error';
 
   useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      setHasSearched(false);
-      setError(null);
-      return;
-    }
+    if (!normalizedQuery) return;
 
     const timer = setTimeout(async () => {
-      setIsLoading(true);
-      setError(null);
+      setSearchState({
+        query: normalizedQuery,
+        results: [],
+        status: 'loading',
+      });
       try {
         const index = searchClient!.index(SEARCH_INDEX);
-        const res = await index.search<SearchHit>(query, { limit: 20 });
-        setResults(res.hits);
-        setHasSearched(true);
+        const res = await index.search<SearchHit>(normalizedQuery, {
+          limit: 20,
+        });
+        setSearchState({
+          query: normalizedQuery,
+          results: res.hits,
+          status: 'complete',
+        });
       } catch {
-        setError('Search is unavailable. Please try again later.');
-        setResults([]);
-      } finally {
-        setIsLoading(false);
+        setSearchState({
+          query: normalizedQuery,
+          results: [],
+          status: 'error',
+        });
       }
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [query]);
+  }, [normalizedQuery]);
 
   return (
     <main className="container mx-auto px-4 py-8 max-w-3xl">
@@ -56,7 +75,9 @@ export default function Search() {
       </div>
 
       {error && (
-        <div className="text-center py-12 text-red-500 text-sm">{error}</div>
+        <div className="text-center py-12 text-red-500 text-sm">
+          Search is unavailable. Please try again later.
+        </div>
       )}
 
       {!error && isLoading && (
@@ -65,20 +86,24 @@ export default function Search() {
         </div>
       )}
 
-      {!error && !isLoading && hasSearched && results.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
-          No results for{' '}
-          <span className="font-medium">&ldquo;{query}&rdquo;</span>
-        </div>
-      )}
+      {!error &&
+        !isLoading &&
+        hasSearched &&
+        currentState.results.length === 0 && (
+          <div className="text-center py-12 text-gray-500">
+            No results for{' '}
+            <span className="font-medium">&ldquo;{query}&rdquo;</span>
+          </div>
+        )}
 
-      {!error && !isLoading && results.length > 0 && (
+      {!error && !isLoading && currentState.results.length > 0 && (
         <div className="space-y-3">
           <p className="text-sm text-gray-500 mb-4">
-            {results.length} result{results.length !== 1 ? 's' : ''} for &ldquo;
-            {query}&rdquo;
+            {currentState.results.length} result
+            {currentState.results.length !== 1 ? 's' : ''} for &ldquo;
+            {normalizedQuery}&rdquo;
           </p>
-          {results.map(hit => (
+          {currentState.results.map(hit => (
             <Link key={hit.id} to={hit.url} className="block group">
               <div className="border border-gray-200 rounded-lg p-4 hover:border-primary-300 hover:bg-primary-50 transition-colors">
                 <div className="flex items-center gap-2 mb-2">
@@ -106,7 +131,7 @@ export default function Search() {
         </div>
       )}
 
-      {!hasSearched && !isLoading && !error && (
+      {!normalizedQuery && !isLoading && !error && (
         <div className="text-center py-12 text-gray-400 text-sm">
           Start typing to search across services and government information
         </div>
