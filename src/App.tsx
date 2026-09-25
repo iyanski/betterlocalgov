@@ -2,6 +2,7 @@ import { NuqsAdapter } from 'nuqs/adapters/react';
 import { Analytics } from '@vercel/analytics/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
+import TyphoonAdvisoryBanner from './components/layout/TyphoonAdvisoryBanner';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './components/ui/ScrollToTop';
@@ -19,6 +20,7 @@ function App() {
       <Router>
         <NuqsAdapter>
           <div className="min-h-screen flex flex-col">
+            <TyphoonAdvisoryBanner />
             <Navbar />
             <ScrollToTop />
             <CardFadeInObserver />
