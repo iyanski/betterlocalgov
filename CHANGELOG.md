@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] - 2026-09-25
+
+### Changed
+
+- Hero quick-start card: reordered items (Demographics before Leadership),
+  shortened the Leadership description, retitled to "Where to next?", and
+  lightened its hover/divider colors.
+- Emergency hotlines: simplified card labels ("Police Station", "Fire
+  Station", "Coast Guard"), left-aligned card text, and phone numbers now
+  shown in monospace.
+- Contact section values now shown in monospace for readability.
+- Shortened the services section intro copy.
+- Footer: moved the "Cost to the People of Aparri: ₱0.00" note from a
+  full-width banner above the footer into a highlighted pill within the
+  footer content.
+
+### Removed
+
+- Footer "Contribute on GitHub" link.
+
 ## [1.4.0] - 2026-09-26
 
 ### Added
@@ -30,7 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Navbar: replaced the red top-bar hotlines block with a slim utility strip
   ("Community Project" label, Join Us, Hotlines), and scaled the sticky
   logo down on small screens so it no longer dominates the mobile viewport.
-- Footer: "built by egiebk" relabeled to "Contribute at GitHub", linking to
+- Footer: "built by egiebk" relabeled to "Contribute on GitHub", linking to
   the repository.
 - Breadcrumbs now wrap onto a second line instead of overflowing
   horizontally on narrow screens.

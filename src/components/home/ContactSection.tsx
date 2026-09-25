@@ -56,7 +56,7 @@ function ContactCardItem({ card }: { card: ContactCard }) {
         <p className="text-xs font-semibold uppercase tracking-[1.5px] text-slate-500">
           {card.label}
         </p>
-        <p className="mt-1 text-sm font-bold leading-snug text-primary-800">
+        <p className="mt-1 text-sm font-bold font-mono leading-snug text-primary-800">
           {card.value}
         </p>
         <p className="mt-1 text-sm text-slate-500">{card.helper}</p>

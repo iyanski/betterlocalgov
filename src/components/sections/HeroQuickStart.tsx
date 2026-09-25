@@ -15,16 +15,16 @@ const quickStartItems: QuickStartItem[] = [
     icon: 'ri-file-list-3-line',
   },
   {
-    label: 'Leadership',
-    description: 'Meet the mayor, council & officials',
-    href: '/government/leadership',
-    icon: 'ri-user-star-line',
-  },
-  {
     label: 'Demographics',
     description: "Aparri's population & community data",
     href: '/statistics/demographics',
     icon: 'ri-group-line',
+  },
+  {
+    label: 'Leadership',
+    description: 'Meet the elected officials',
+    href: '/government/leadership',
+    icon: 'ri-user-star-line',
   },
   {
     label: 'DPWH Projects in Aparri',
@@ -44,19 +44,19 @@ export default function HeroQuickStart() {
     <div className="w-full max-w-md overflow-hidden rounded-2xl bg-white text-gray-900 shadow-2xl lg:max-w-none">
       <div className="px-6 pt-6 pb-2 sm:px-8 sm:pt-8">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary-600">
-          Let&apos;s get you started
+          Let's get you started
         </p>
         <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-          What brings you here?
+          Where to next?
         </h2>
       </div>
 
-      <ul className="mt-2 divide-y divide-gray-100 px-2 sm:px-4">
+      <ul className="mt-2 divide-y divide-blue-100 px-2 sm:px-4">
         {quickStartItems.map(item => (
           <li key={item.label}>
             <Link
               to={item.href}
-              className="group flex items-center gap-4 px-4 py-4 transition-colors hover:bg-gray-50 sm:px-4"
+              className="group flex items-center gap-4 px-4 py-4 transition-colors hover:bg-gray-100 sm:px-4"
             >
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700">
                 <i className={`${item.icon} text-xl`} aria-hidden="true" />

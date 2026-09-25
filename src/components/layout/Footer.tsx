@@ -25,11 +25,6 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w bg-green-700 mx-auto px-4 py-6">
-        <p className="text-center text-sm text-green-200 font-semibold">
-          Cost to the People of Aparri: ₱0.00
-        </p>
-      </div>
       <div className="container mx-auto px-4 pt-12 pb-8">
         <div className="gap-8 md:grid md:grid-cols-4">
           <div className="col-span-2">
@@ -63,6 +58,11 @@ const Footer: React.FC = () => {
                 </Link>
               ))}
             </div>
+            <p className="text-left text-md text-center font-mono text-emerald-300 pt-8 font-semibold">
+              <span className="px-4 py-1 md:p-2 md:px-4 bg-emerald-900 rounded-full ">
+                Cost to the People of Aparri: ₱0.00
+              </span>
+            </p>
           </div>
 
           {footerNavigation.mainSections.map(section => (
@@ -97,14 +97,6 @@ const Footer: React.FC = () => {
                 className="text-gray-600 hover:text-white text-xs transition-colors font-mono"
               >
                 v{packageJson.version}
-              </Link>
-              <Link
-                to="https://github.com/egiebk/betteraparri"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-400 text-xs transition-colors font-mono"
-              >
-                Contribute at GitHub
               </Link>
             </div>
           </div>

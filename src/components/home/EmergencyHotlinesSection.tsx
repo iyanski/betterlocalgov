@@ -30,7 +30,7 @@ const EmergencyHotlinesSection: React.FC = () => {
             <a
               key={item.label}
               href={`tel:${item.number}`}
-              className="flex flex-col items-center gap-1.5 rounded-lg border border-red-300/20 bg-white px-3 py-3 text-center transition-colors hover:bg-white/80"
+              className="flex flex-col text-left gap-1.5 rounded-lg border border-red-300/20 bg-white px-3 py-3 text-center transition-colors hover:bg-white/80"
             >
               <i
                 className={`${item.icon} text-2xl text-red-900`}
@@ -39,7 +39,9 @@ const EmergencyHotlinesSection: React.FC = () => {
               <span className="text-sm font-semibold leading-tight text-red-900">
                 {item.label}
               </span>
-              <span className="text-xs text-red-900">{item.number}</span>
+              <span className="font-mono text-xs text-red-900">
+                {item.number}
+              </span>
             </a>
           ))}
         </div>

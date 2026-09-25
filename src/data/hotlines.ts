@@ -20,19 +20,19 @@ export const emergencyHotlines: Hotline[] = [
     description: 'Disaster & risk reduction',
   },
   {
-    label: 'Aparri Police Station',
+    label: 'Police Station',
     number: '09172302003',
     icon: 'ri-police-badge-line',
     description: 'Police',
   },
   {
-    label: 'Aparri BFP',
+    label: 'Fire Station',
     number: '09164910946',
     icon: 'ri-fire-line',
     description: 'Fire protection',
   },
   {
-    label: 'PCG',
+    label: 'Coast Guard',
     number: '09568301802',
     icon: 'ri-ship-2-line',
     description: 'Coast guard',
