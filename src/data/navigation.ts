@@ -64,6 +64,10 @@ export const mainNavigation: NavigationItem[] = [
         href: '/transparency/procurement',
       },
       {
+        label: 'Special Education Fund',
+        href: '/transparency/special-education-fund',
+      },
+      {
         label: 'DPWH Projects',
         href: '/transparency/dpwh-projects',
       },

@@ -2,21 +2,21 @@
   "highlightStats": [
     {
       "label": "Total LDRRMF Appropriation",
-      "value": "PHP 67.47M",
-      "detail": "FY 2024 total disaster risk reduction and management fund appropriation",
+      "value": "PHP 24.78M",
+      "detail": "FY 2025 (preliminary) total disaster risk reduction and management fund appropriation",
       "icon": "ri-shield-check-line",
       "tone": "primary"
     },
     {
       "label": "Total LDRRMF Expenditures",
-      "value": "PHP 11.34M",
-      "detail": "FY 2024 expenditures charged to LDRRMF",
+      "value": "PHP 6.8M",
+      "detail": "FY 2025 (preliminary) expenditures charged to LDRRMF",
       "icon": "ri-funds-box-line",
       "tone": "success"
     },
     {
       "label": "Total Utilization",
-      "value": "16.8%",
+      "value": "27.4%",
       "detail": "Expenditures as share of total LDRRMF appropriation",
       "icon": "ri-pie-chart-2-line",
       "tone": "accent"
@@ -25,17 +25,59 @@
   "ldrrmfSources": [
     {
       "label": "70% LDRRMF",
-      "appropriation": 62700950,
-      "expenditure": 11336144,
-      "utilization": 18.1,
+      "appropriation": 19145730,
+      "expenditure": 6798305,
+      "utilization": 35.5,
       "tone": "bg-primary-500"
     },
     {
       "label": "30% Quick Response Fund",
-      "appropriation": 4772400,
+      "appropriation": 5633890,
       "expenditure": 0,
-      "utilization": 0,
+      "utilization": 0.0,
       "tone": "bg-violet-600"
+    }
+  ],
+  "yearlyTrend": [
+    {
+      "year": 2018,
+      "appropriation": 23.38,
+      "expenditure": 9.73
+    },
+    {
+      "year": 2019,
+      "appropriation": 26.66,
+      "expenditure": 2.06
+    },
+    {
+      "year": 2020,
+      "appropriation": 51.7,
+      "expenditure": 33.07
+    },
+    {
+      "year": 2021,
+      "appropriation": 60.15,
+      "expenditure": 14.3
+    },
+    {
+      "year": 2022,
+      "appropriation": 31.92,
+      "expenditure": 8.61
+    },
+    {
+      "year": 2023,
+      "appropriation": 21.87,
+      "expenditure": 10.21
+    },
+    {
+      "year": 2024,
+      "appropriation": 67.47,
+      "expenditure": 11.34
+    },
+    {
+      "year": 2025,
+      "appropriation": 24.78,
+      "expenditure": 6.8
     }
   ],
   "sourceLinks": [
@@ -46,46 +88,51 @@
   ],
   "content": {
     "hero": {
-      "eyebrow": "Transparency",
-      "title": "Disaster Risk Reduction and Management",
-      "description": "This page shows Aparri's FY 2024 Local Disaster Risk Reduction and Management Fund appropriation, expenditures, and utilization."
+      "eyebrow": "Financial Stewardship",
+      "title": "Local Disaster Risk Reduction and Management Fund",
+      "description": "This page shows Aparri's FY 2025 (preliminary) Local Disaster Risk Reduction and Management Fund appropriation, expenditures, and utilization, with an 8-year trend."
     },
     "guidance": {
       "title": "What You Need to Know",
-      "description": "A quick reading table for the FY 2024 LDRRMF figures."
+      "description": "A quick reading table for the FY 2025 LDRRMF figures."
     },
     "sections": {
       "receiptsAndExpenditures": {
-        "eyebrow": "Receipts and Expenditures",
-        "title": "Financial Position (FY 2024)",
-        "description": "These charts show the year's income sources, spending categories, and operating result."
+        "eyebrow": "Disaster Risk Reduction",
+        "title": "LDRRMF Utilization (FY 2025)",
+        "description": "The Local Disaster Risk Reduction and Management Fund data shows how much was appropriated and spent for disaster preparedness and quick response."
       },
       "disasterRiskReduction": {
         "eyebrow": "Disaster Risk Reduction",
-        "title": "LDRRMF Utilization (FY 2024)",
+        "title": "LDRRMF Utilization (FY 2025)",
         "description": "The Local Disaster Risk Reduction and Management Fund data shows how much was appropriated and spent for disaster preparedness and quick response."
+      },
+      "yearlyTrend": {
+        "eyebrow": "Multi-Year Trend",
+        "title": "Appropriation and Expenditure, FY 2018-2025",
+        "description": "Total LDRRMF appropriation compared with total expenditures over eight fiscal years."
       }
     },
     "cards": {
       "operatingPosition": {
-        "title": "Operating Position",
-        "description": "Income, expenditures, and net operating income"
+        "title": "Total Utilization",
+        "description": "Expenditure against total appropriation"
       },
       "incomeSources": {
-        "title": "Income Sources",
-        "description": "Share of FY 2024 current operating income",
-        "chartLabel": "FY 2024 Income"
+        "title": "Fund Components",
+        "description": "Utilization by LDRRMF component",
+        "chartLabel": "LDRRMF"
       },
       "operatingExpenditures": {
-        "title": "Operating Expenditures",
-        "description": "Share of FY 2024 current operating expenditures"
+        "title": "Fund Components",
+        "description": "Utilization by LDRRMF component"
       },
       "q1IncomeDetails": {
-        "title": "Income Details"
+        "title": "Fund Components"
       },
       "socialServicesDetails": {
-        "title": "Social Services Details",
-        "description": "Breakdown of the social services expenditure line"
+        "title": "Fund Components",
+        "description": "Utilization by LDRRMF component"
       },
       "totalUtilization": {
         "title": "Total Utilization",
@@ -96,6 +143,10 @@
       "fundComponents": {
         "title": "Fund Components",
         "description": "Utilization by LDRRMF component"
+      },
+      "yearlyTrend": {
+        "title": "Appropriation vs. Expenditure, FY 2018-2025",
+        "description": "Total LDRRMF appropriation and expenditure, in PHP million"
       }
     },
     "terms": [
@@ -116,6 +167,6 @@
         "description": "The share of appropriation that has been spent."
       }
     ],
-    "sourceNote": "Figures are based on the uploaded Aparri LDRRMF 2024 CSV and should be checked against the latest BLGF posting before formal use."
+    "sourceNote": "Figures are based on the BLGF LGU Fiscal Data \"LDRRMF by Year\" export (FY2025 preliminary, extracted March 3, 2026) and should be checked against the latest BLGF posting before formal use."
   }
 }

@@ -109,6 +109,20 @@ const Government: React.FC<GovernmentProps> = ({
     : subcategories;
   const pageLayout = isGovernmentRoot ? 'grid' : categoryIndex.layout;
 
+  const UNGROUPED = '__ungrouped__';
+  const hasGroups = displayedPages.some(page => page.group);
+  const groupedPages: [string, SectionCard[]][] = hasGroups
+    ? Array.from(
+        displayedPages.reduce((groups, page) => {
+          const key = page.group ?? UNGROUPED;
+          const existing = groups.get(key) ?? [];
+          existing.push(page);
+          groups.set(key, existing);
+          return groups;
+        }, new Map<string, SectionCard[]>())
+      )
+    : [];
+
   useEffect(() => {
     if (activeCategory && categoryData) {
       setLoading(true);
@@ -193,33 +207,74 @@ const Government: React.FC<GovernmentProps> = ({
         ) : (
           <>
             {pageLayout === 'grid' ? (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {displayedPages.map(subcategory => (
-                  <Link
-                    key={subcategory.slug}
-                    to={`${baseHref}/${subcategory.slug}`}
-                  >
-                    <Card
-                      hoverable
-                      className="card-fade-in h-full border-t-4 border-primary-500"
+              hasGroups ? (
+                <div className="space-y-10">
+                  {groupedPages.map(([groupName, pages]) => (
+                    <div key={groupName}>
+                      {groupName !== UNGROUPED && (
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                          {groupName}
+                        </h3>
+                      )}
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {pages.map(subcategory => (
+                          <Link
+                            key={subcategory.slug}
+                            to={`${baseHref}/${subcategory.slug}`}
+                          >
+                            <Card
+                              hoverable
+                              className="card-fade-in h-full border-t-4 border-primary-500"
+                            >
+                              <CardContent>
+                                <h4 className="text-lg font-medium text-gray-900">
+                                  {subcategory.name}
+                                </h4>
+                                {subcategory.description && (
+                                  <p className="mt-2 text-sm text-gray-600">
+                                    {subcategory.description}
+                                  </p>
+                                )}
+                                <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
+                                  {categoryData.category || category}
+                                </span>
+                              </CardContent>
+                            </Card>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {displayedPages.map(subcategory => (
+                    <Link
+                      key={subcategory.slug}
+                      to={`${baseHref}/${subcategory.slug}`}
                     >
-                      <CardContent>
-                        <h4 className="text-lg font-medium text-gray-900">
-                          {subcategory.name}
-                        </h4>
-                        {subcategory.description && (
-                          <p className="mt-2 text-sm text-gray-600">
-                            {subcategory.description}
-                          </p>
-                        )}
-                        <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
-                          {categoryData.category || category}
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
+                      <Card
+                        hoverable
+                        className="card-fade-in h-full border-t-4 border-primary-500"
+                      >
+                        <CardContent>
+                          <h4 className="text-lg font-medium text-gray-900">
+                            {subcategory.name}
+                          </h4>
+                          {subcategory.description && (
+                            <p className="mt-2 text-sm text-gray-600">
+                              {subcategory.description}
+                            </p>
+                          )}
+                          <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
+                            {categoryData.category || category}
+                          </span>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              )
             ) : (
               <div className="space-y-4">
                 {displayedPages.map(subcategory => (

@@ -5,6 +5,7 @@ export interface Subcategory {
   name: string;
   slug: string;
   description?: string;
+  group?: string;
 }
 
 export interface Category {
@@ -43,11 +44,7 @@ import disasterEmergencyIndex from '../../content/services/disaster-emergency/in
 import educationLivelihoodIndex from '../../content/services/education-livelihood/index.yaml?raw';
 import complaintsRequestsIndex from '../../content/services/complaints-requests/index.yaml?raw';
 import educationIndex from '../../content/services/education/index.yaml?raw';
-import infrastructurePublicWorksIndex from '../../content/services/infrastructure-public-works/index.yaml?raw';
 import garbageWasteDisposalIndex from '../../content/services/garbage-waste-disposal/index.yaml?raw';
-import environmentIndex from '../../content/services/environment/index.yaml?raw';
-import disasterPreparednessIndex from '../../content/services/disaster-preparedness/index.yaml?raw';
-import housingLandUseIndex from '../../content/services/housing-land-use/index.yaml?raw';
 import governmentBarangaysIndex from '../../content/government/barangays/index.yaml?raw';
 import governmentLeadershipLegislativeIndex from '../../content/government/leadership/legislative/index.yaml?raw';
 import transparencyIndex from '../../content/transparency/index.yaml?raw';
@@ -56,6 +53,7 @@ import transparencyStatementsReceiptsExpenditureIndex from '../../content/transp
 import transparencyDisasterRiskReductionIndex from '../../content/transparency/disaster-risk-reduction-and-management/index.yaml?raw';
 import transparencyProcurementIndex from '../../content/transparency/procurement/index.yaml?raw';
 import transparencyDpwhProjectsIndex from '../../content/transparency/dpwh-projects/index.yaml?raw';
+import transparencySpecialEducationFundIndex from '../../content/transparency/special-education-fund/index.yaml?raw';
 import statisticsIndex from '../../content/statistics/index.yaml?raw';
 import statisticsDemographicsIndex from '../../content/statistics/demographics/index.yaml?raw';
 import statisticsCompetitivenessIndex from '../../content/statistics/competitiveness/index.yaml?raw';
@@ -73,11 +71,7 @@ const categoryIndexMap: { [key: string]: string } = {
   'education-livelihood': educationLivelihoodIndex,
   'complaints-requests': complaintsRequestsIndex,
   education: educationIndex,
-  'infrastructure-public-works': infrastructurePublicWorksIndex,
   'garbage-waste-disposal': garbageWasteDisposalIndex,
-  environment: environmentIndex,
-  'disaster-preparedness': disasterPreparednessIndex,
-  'housing-land-use': housingLandUseIndex,
   barangays: governmentBarangaysIndex,
   legislative: governmentLeadershipLegislativeIndex,
   transparency: transparencyIndex,
@@ -89,6 +83,7 @@ const categoryIndexMap: { [key: string]: string } = {
     transparencyDisasterRiskReductionIndex,
   procurement: transparencyProcurementIndex,
   'dpwh-projects': transparencyDpwhProjectsIndex,
+  'special-education-fund': transparencySpecialEducationFundIndex,
   statistics: statisticsIndex,
   demographics: statisticsDemographicsIndex,
   competitiveness: statisticsCompetitivenessIndex,

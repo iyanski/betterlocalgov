@@ -1,0 +1,112 @@
+{
+  "highlightStats": [
+    {
+      "label": "SEF Collections (RPT)",
+      "value": "PHP 5.76M",
+      "detail": "FY 2025 (preliminary) Special Education Fund real property tax collections",
+      "icon": "ri-book-open-line",
+      "tone": "primary"
+    },
+    {
+      "label": "SEF Expenditures",
+      "value": "PHP 0.0M",
+      "detail": "FY 2025 (preliminary) expenditures charged to the SEF",
+      "icon": "ri-graduation-cap-line",
+      "tone": "success"
+    },
+    {
+      "label": "Utilization",
+      "value": "0.0%",
+      "detail": "SEF expenditures as share of SEF collections",
+      "icon": "ri-pie-chart-2-line",
+      "tone": "accent"
+    }
+  ],
+  "yearlyTrend": [
+    {
+      "year": 2018,
+      "income": 4.49,
+      "expenditure": 1.82
+    },
+    {
+      "year": 2019,
+      "income": 4.75,
+      "expenditure": 2.39
+    },
+    {
+      "year": 2020,
+      "income": 3.64,
+      "expenditure": 7.05
+    },
+    {
+      "year": 2021,
+      "income": 4.36,
+      "expenditure": 4.37
+    },
+    {
+      "year": 2022,
+      "income": 4.54,
+      "expenditure": 7.29
+    },
+    {
+      "year": 2023,
+      "income": 5.4,
+      "expenditure": 3.89
+    },
+    {
+      "year": 2024,
+      "income": 6.21,
+      "expenditure": 0.55
+    },
+    {
+      "year": 2025,
+      "income": 5.76,
+      "expenditure": 0.0
+    }
+  ],
+  "sourceLinks": [
+    {
+      "label": "BLGF LGU Fiscal Data",
+      "href": "https://blgf.gov.ph/lgu-fiscal-data/"
+    }
+  ],
+  "content": {
+    "hero": {
+      "eyebrow": "Financial Stewardship",
+      "title": "Special Education Fund (SEF)",
+      "description": "This page shows Aparri's FY 2025 (preliminary) Special Education Fund real property tax collections and education-related expenditures, with an 8-year trend."
+    },
+    "guidance": {
+      "title": "What You Need to Know",
+      "description": "A quick reading table for the FY 2025 SEF figures."
+    },
+    "sections": {
+      "yearlyTrend": {
+        "eyebrow": "Multi-Year Trend",
+        "title": "Collections and Expenditures, FY 2018-2025",
+        "description": "SEF real property tax collections compared with SEF expenditures over eight fiscal years."
+      }
+    },
+    "cards": {
+      "yearlyTrend": {
+        "title": "Collections vs. Expenditures, FY 2018-2025",
+        "description": "SEF collections and expenditures, in PHP million"
+      }
+    },
+    "terms": [
+      {
+        "term": "Special Education Fund (SEF)",
+        "description": "A fund consisting of the additional 1% real property tax earmarked specifically for education, culture, and sports purposes."
+      },
+      {
+        "term": "RPT Collections (SEF)",
+        "description": "The additional real property tax collected for the Special Education Fund."
+      },
+      {
+        "term": "Utilization",
+        "description": "The share of SEF collections that has been spent on education-related expenditures in the same year."
+      }
+    ],
+    "sourceNote": "Figures are based on the BLGF LGU Fiscal Data \"Income and Expenditures under the Special Education Fund (SEF)\" export (FY2025 preliminary, extracted March 3, 2026) and should be checked against the latest BLGF posting before formal use."
+  }
+}

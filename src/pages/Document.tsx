@@ -32,6 +32,7 @@ import {
   DpwhProjectsDashboard,
   IncomeDependencyDashboard,
   ProcurementDashboard,
+  SpecialEducationFundDashboard,
   StatementsReceiptsExpenditureDashboard,
 } from '../components/statistics/FiscalTransparencyPages';
 
@@ -46,6 +47,7 @@ type DashboardDocument =
   | 'annual-regular-income-and-dependencies'
   | 'statements-of-receipts-and-expenditure'
   | 'disaster-risk-reduction-and-management'
+  | 'special-education-fund'
   | 'dpwh-projects'
   | 'procurement';
 
@@ -58,6 +60,7 @@ const dashboardTitles: Record<DashboardDocument, string> = {
     'Statements of Receipts and Expenditure',
   'disaster-risk-reduction-and-management':
     'Disaster Risk Reduction and Management',
+  'special-education-fund': 'Special Education Fund',
   'dpwh-projects': 'DPWH Projects in Aparri',
   procurement: 'Procurement',
 };
@@ -115,6 +118,7 @@ function getDashboardDocument(
     (documentSlug === 'annual-regular-income-and-dependencies' ||
       documentSlug === 'statements-of-receipts-and-expenditure' ||
       documentSlug === 'disaster-risk-reduction-and-management' ||
+      documentSlug === 'special-education-fund' ||
       documentSlug === 'dpwh-projects' ||
       documentSlug === 'procurement')
   ) {
@@ -136,6 +140,8 @@ function DashboardContent({ dashboard }: { dashboard: DashboardDocument }) {
       return <StatementsReceiptsExpenditureDashboard />;
     case 'disaster-risk-reduction-and-management':
       return <DisasterRiskReductionDashboard />;
+    case 'special-education-fund':
+      return <SpecialEducationFundDashboard />;
     case 'dpwh-projects':
       return <DpwhProjectsDashboard />;
     case 'procurement':

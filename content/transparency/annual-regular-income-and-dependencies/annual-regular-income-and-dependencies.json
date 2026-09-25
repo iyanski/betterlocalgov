@@ -2,21 +2,21 @@
   "highlightStats": [
     {
       "label": "Annual Regular Income",
-      "value": "PHP 326.24M",
-      "detail": "FY 2024 annual regular income",
+      "value": "PHP 378.75M",
+      "detail": "FY 2025 (preliminary) annual regular income",
       "icon": "ri-funds-line",
       "tone": "primary"
     },
     {
       "label": "NTA Dependency",
-      "value": "85.5%",
+      "value": "87.5%",
       "detail": "National Tax Allotment as share of regular income",
       "icon": "ri-government-line",
       "tone": "success"
     },
     {
       "label": "LSR Dependency",
-      "value": "14.4%",
+      "value": "12.5%",
       "detail": "Locally sourced revenue as share of regular income",
       "icon": "ri-store-2-line",
       "tone": "accent"
@@ -25,22 +25,22 @@
   "revenueSources": [
     {
       "label": "Locally Sourced Revenue",
-      "value": 46.96,
-      "percent": 14.4,
+      "value": 47.38,
+      "percent": 12.5,
       "tone": "bg-primary-500",
       "color": "#0066eb"
     },
     {
       "label": "National Tax Allotment",
-      "value": 279.08,
-      "percent": 85.5,
+      "value": 331.31,
+      "percent": 87.5,
       "tone": "bg-primary-500",
       "color": "#0066eb"
     },
     {
       "label": "Other National Tax Shares",
-      "value": 0.2,
-      "percent": 0.06,
+      "value": 0.06,
+      "percent": 0.0,
       "tone": "bg-violet-600",
       "color": "#facc15"
     }
@@ -48,33 +48,33 @@
   "localRevenueBreakdown": [
     {
       "label": "Tax revenue",
-      "value": 30.67,
+      "value": 28.09,
       "detail": "Real property, business, and other local taxes",
       "tone": "bg-primary-500"
     },
     {
       "label": "Non-tax revenue",
-      "value": 16.28,
+      "value": 19.29,
       "detail": "Fees, charges, and economic enterprises",
       "tone": "bg-primary-500"
     },
     {
       "label": "Interest income",
-      "value": 0,
-      "detail": "No interest income reported in the FY 2024 data",
+      "value": 0.0,
+      "detail": "No interest income reported in the FY 2025 data",
       "tone": "bg-gray-500"
     }
   ],
   "taxRevenueLines": [
     {
       "label": "Business taxes",
-      "value": 24.15,
+      "value": 21.87,
       "detail": "Largest local tax revenue item",
       "tone": "bg-primary-500"
     },
     {
       "label": "Real property tax",
-      "value": 4.97,
+      "value": 4.67,
       "detail": "General fund real property tax collections",
       "tone": "bg-primary-500"
     },
@@ -88,21 +88,71 @@
   "nonTaxRevenueLines": [
     {
       "label": "Economic enterprises",
-      "value": 8.36,
+      "value": 9.37,
       "detail": "Receipts from economic enterprises",
       "tone": "bg-primary-500"
     },
     {
       "label": "Regulatory fees",
-      "value": 6.69,
+      "value": 8.27,
       "detail": "Permits, licenses, and similar fees",
       "tone": "bg-primary-500"
     },
     {
       "label": "Service/user charges",
-      "value": 1.24,
+      "value": 1.64,
       "detail": "Service and user charge collections",
       "tone": "bg-violet-600"
+    }
+  ],
+  "yearlyTrend": [
+    {
+      "year": 2018,
+      "lsr": 35.87,
+      "nta": 170.84,
+      "ari": 207.73
+    },
+    {
+      "year": 2019,
+      "lsr": 41.63,
+      "nta": 187.45,
+      "ari": 229.32
+    },
+    {
+      "year": 2020,
+      "lsr": 41.47,
+      "nta": 210.91,
+      "ari": 252.43
+    },
+    {
+      "year": 2021,
+      "lsr": 40.23,
+      "nta": 226.05,
+      "ari": 266.28
+    },
+    {
+      "year": 2022,
+      "lsr": 41.28,
+      "nta": 307.14,
+      "ari": 348.8
+    },
+    {
+      "year": 2023,
+      "lsr": 44.64,
+      "nta": 262.63,
+      "ari": 307.6
+    },
+    {
+      "year": 2024,
+      "lsr": 46.96,
+      "nta": 279.08,
+      "ari": 326.24
+    },
+    {
+      "year": 2025,
+      "lsr": 47.38,
+      "nta": 331.31,
+      "ari": 378.75
     }
   ],
   "sourceLinks": [
@@ -113,30 +163,35 @@
   ],
   "content": {
     "hero": {
-      "eyebrow": "Transparency",
+      "eyebrow": "Financial Stewardship",
       "title": "Annual Regular Income (ARI) and Dependencies",
-      "description": "This page explains where Aparri's FY 2024 annual regular income came from and how much of it depended on national tax transfers."
+      "description": "This page explains where Aparri's FY 2025 (preliminary) annual regular income came from and how much of it depended on national tax transfers, with an 8-year trend."
     },
     "guidance": {
       "title": "What You Need to Know",
-      "description": "A quick reading table for the main FY 2024 income and dependency figures."
+      "description": "A quick reading table for the main FY 2025 income and dependency figures."
     },
     "sections": {
       "revenueComposition": {
         "eyebrow": "Revenue Composition",
-        "title": "Where the FY 2024 Income Came From",
+        "title": "Where the FY 2025 Income Came From",
         "description": "The charts show the share of national transfers and local collections in Aparri's annual regular income."
       },
       "localCollections": {
         "eyebrow": "Local Collections",
         "title": "Tax and Non-Tax Revenue Details",
         "description": "These details show which local collections contributed most to Aparri's own-source revenue."
+      },
+      "yearlyTrend": {
+        "eyebrow": "Multi-Year Trend",
+        "title": "Income and Dependency, FY 2018-2025",
+        "description": "Locally sourced revenue and National Tax Allotment side by side over eight fiscal years."
       }
     },
     "cards": {
       "annualRegularIncome": {
         "title": "Annual Regular Income",
-        "description": "Share of FY 2024 annual regular income by source",
+        "description": "Share of FY 2025 annual regular income by source",
         "chartLabel": "ARI"
       },
       "localRevenueMix": {
@@ -148,6 +203,10 @@
       },
       "nonTaxRevenue": {
         "title": "Non-Tax Revenue"
+      },
+      "yearlyTrend": {
+        "title": "LSR vs. NTA, FY 2018-2025",
+        "description": "Locally sourced revenue compared with National Tax Allotment, in PHP million"
       }
     },
     "terms": [
@@ -168,6 +227,6 @@
         "description": "The share of income that comes from a source such as the National Tax Allotment or locally sourced revenue."
       }
     ],
-    "sourceNote": "Figures are based on the uploaded Aparri ARI and Dependencies 2024 CSV and should be checked against the latest BLGF posting before formal use."
+    "sourceNote": "Figures are based on the BLGF LGU Fiscal Data \"ARI and Dependencies by Year\" export (FY2025 preliminary, extracted November 27, 2025) and should be checked against the latest BLGF posting before formal use."
   }
 }

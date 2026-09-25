@@ -27,6 +27,18 @@ export interface TransparencyData {
   q1LocalSourceBreakdown?: RevenueLine[];
   q1SocialServicesBreakdown?: RevenueLine[];
   ldrrmfSources?: DisasterFund[];
+  yearlyTrend?: FiscalTrendPoint[];
+  sourceLinks?: SourceLink[];
+}
+
+export interface FiscalTrendPoint {
+  year: number;
+  [metric: string]: number;
+}
+
+export interface SefData {
+  highlightStats: HighlightStat[];
+  yearlyTrend?: FiscalTrendPoint[];
   sourceLinks?: SourceLink[];
 }
 
@@ -240,5 +252,19 @@ export async function loadDpwhProjectsData(): Promise<ProcurementData | null> {
   } catch (error) {
     console.error('Failed to load DPWH projects data:', error);
     return null;
+  }
+}
+
+/**
+ * Load Special Education Fund (SEF) data from JSON file
+ */
+export async function loadSpecialEducationFundData(): Promise<SefData> {
+  try {
+    const module =
+      await import('../../content/transparency/special-education-fund/special-education-fund.json');
+    return module.default;
+  } catch (error) {
+    console.error('Failed to load special education fund data:', error);
+    return { highlightStats: [] };
   }
 }

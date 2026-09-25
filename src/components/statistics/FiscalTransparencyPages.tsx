@@ -2,17 +2,20 @@ import { useEffect, useMemo, useState } from 'react';
 import { Card, CardContent, CardHeader } from '@bettergov/kapwa/card';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
+import TrendChart from '../ui/TrendChart';
 import { cn } from '../../lib/utils';
 import {
   loadDisasterRiskReductionData,
   loadDpwhProjectsData,
   loadIncomeDependencyData,
   loadProcurementData,
+  loadSpecialEducationFundData,
   loadStatementReceiptsExpenditureData,
   type ProcurementData,
   type ProcurementRecord,
   type RevenueLine,
   type RevenueSource,
+  type SefData,
   type SourceLink,
   type TransparencyData,
 } from '../../lib/dataLoader';
@@ -59,12 +62,14 @@ type IncomeDependencyContent = {
   sections: {
     revenueComposition: SectionContent;
     localCollections: SectionContent;
+    yearlyTrend?: SectionContent;
   };
   cards: {
     annualRegularIncome: CardContentText;
     localRevenueMix: CardContentText;
     taxRevenue: CardContentText;
     nonTaxRevenue: CardContentText;
+    yearlyTrend?: CardContentText;
   };
   terms: Term[];
   sourceNote: string;
@@ -76,6 +81,7 @@ type LocalFinancialContent = {
   sections: {
     receiptsAndExpenditures: SectionContent;
     disasterRiskReduction: SectionContent;
+    yearlyTrend?: SectionContent;
   };
   cards: {
     operatingPosition: CardContentText;
@@ -85,6 +91,7 @@ type LocalFinancialContent = {
     socialServicesDetails: CardContentText;
     totalUtilization: CardContentText;
     fundComponents: CardContentText;
+    yearlyTrend?: CardContentText;
   };
   terms: Term[];
   sourceNote: string;
@@ -949,6 +956,49 @@ export function IncomeDependencyDashboard() {
         </div>
       </section>
 
+      {content.sections.yearlyTrend &&
+        data.yearlyTrend &&
+        data.yearlyTrend.length > 0 && (
+          <section>
+            <SectionHeading
+              eyebrow={content.sections.yearlyTrend.eyebrow}
+              title={content.sections.yearlyTrend.title}
+              description={content.sections.yearlyTrend.description}
+            />
+            <Card className="border-primary-100">
+              <CardHeader className="bg-stone-100">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {content.cards.yearlyTrend?.title}
+                </h3>
+                {content.cards.yearlyTrend?.description && (
+                  <p className="mt-1 text-sm text-gray-600">
+                    {content.cards.yearlyTrend.description}
+                  </p>
+                )}
+              </CardHeader>
+              <CardContent className="p-6">
+                <TrendChart
+                  years={data.yearlyTrend.map(t => t.year)}
+                  series={[
+                    {
+                      label: 'Locally Sourced Revenue',
+                      color: '#0066eb',
+                      values: data.yearlyTrend?.map(t => t.lsr) ?? [],
+                    },
+                    {
+                      label: 'National Tax Allotment',
+                      color: '#ff4d00',
+                      values: data.yearlyTrend?.map(t => t.nta) ?? [],
+                    },
+                  ]}
+                  unit="PHP M"
+                  formatValue={v => v.toFixed(1)}
+                />
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
       <TermsCard terms={content.terms} />
 
       <SourcesCard note={content.sourceNote} sourceLinks={data.sourceLinks} />
@@ -1105,6 +1155,49 @@ export function StatementsReceiptsExpenditureDashboard() {
           </CardContent>
         </Card>
       </section>
+
+      {content.sections.yearlyTrend &&
+        data.yearlyTrend &&
+        data.yearlyTrend.length > 0 && (
+          <section>
+            <SectionHeading
+              eyebrow={content.sections.yearlyTrend.eyebrow}
+              title={content.sections.yearlyTrend.title}
+              description={content.sections.yearlyTrend.description}
+            />
+            <Card className="border-primary-100">
+              <CardHeader className="bg-stone-100">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {content.cards.yearlyTrend?.title}
+                </h3>
+                {content.cards.yearlyTrend?.description && (
+                  <p className="mt-1 text-sm text-gray-600">
+                    {content.cards.yearlyTrend.description}
+                  </p>
+                )}
+              </CardHeader>
+              <CardContent className="p-6">
+                <TrendChart
+                  years={data.yearlyTrend.map(t => t.year)}
+                  series={[
+                    {
+                      label: 'Operating Income',
+                      color: '#0066eb',
+                      values: data.yearlyTrend?.map(t => t.income) ?? [],
+                    },
+                    {
+                      label: 'Operating Expenditures',
+                      color: '#ff4d00',
+                      values: data.yearlyTrend?.map(t => t.expenditure) ?? [],
+                    },
+                  ]}
+                  unit="PHP M"
+                  formatValue={v => v.toFixed(1)}
+                />
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
       <TermsCard terms={content.terms} />
 
@@ -1273,6 +1366,203 @@ export function DisasterRiskReductionDashboard() {
           </Card>
         </div>
       </section>
+
+      {content.sections.yearlyTrend &&
+        data.yearlyTrend &&
+        data.yearlyTrend.length > 0 && (
+          <section>
+            <SectionHeading
+              eyebrow={content.sections.yearlyTrend.eyebrow}
+              title={content.sections.yearlyTrend.title}
+              description={content.sections.yearlyTrend.description}
+            />
+            <Card className="border-primary-100">
+              <CardHeader className="bg-stone-100">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {content.cards.yearlyTrend?.title}
+                </h3>
+                {content.cards.yearlyTrend?.description && (
+                  <p className="mt-1 text-sm text-gray-600">
+                    {content.cards.yearlyTrend.description}
+                  </p>
+                )}
+              </CardHeader>
+              <CardContent className="p-6">
+                <TrendChart
+                  years={data.yearlyTrend.map(t => t.year)}
+                  series={[
+                    {
+                      label: 'Total Appropriation',
+                      color: '#0066eb',
+                      values: data.yearlyTrend?.map(t => t.appropriation) ?? [],
+                    },
+                    {
+                      label: 'Total Expenditure',
+                      color: '#ff4d00',
+                      values: data.yearlyTrend?.map(t => t.expenditure) ?? [],
+                    },
+                  ]}
+                  unit="PHP M"
+                  formatValue={v => v.toFixed(1)}
+                />
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
+      <TermsCard terms={content.terms} />
+
+      <SourcesCard note={content.sourceNote} sourceLinks={data.sourceLinks} />
+    </div>
+  );
+}
+
+type SefContent = {
+  hero: PageHeroContent;
+  guidance: PageGuidanceContent;
+  sections: {
+    yearlyTrend: SectionContent;
+  };
+  cards: {
+    yearlyTrend: CardContentText;
+  };
+  terms: Term[];
+  sourceNote: string;
+};
+
+const sefFallbackContent: SefContent = {
+  hero: {
+    eyebrow: 'Financial Stewardship',
+    title: 'Special Education Fund (SEF)',
+    description:
+      "This page shows Aparri's Special Education Fund collections and expenditures.",
+  },
+  guidance: {
+    title: 'What You Need to Know',
+    description: 'A quick reading table for the main SEF figures.',
+  },
+  sections: {
+    yearlyTrend: {
+      eyebrow: 'Multi-Year Trend',
+      title: 'Collections and Expenditures',
+      description:
+        'SEF real property tax collections compared with SEF expenditures.',
+    },
+  },
+  cards: {
+    yearlyTrend: {
+      title: 'Collections vs. Expenditures',
+      description: 'SEF collections and expenditures, in PHP million',
+    },
+  },
+  terms: [
+    {
+      term: 'Special Education Fund (SEF)',
+      description:
+        'A fund consisting of the additional 1% real property tax earmarked specifically for education, culture, and sports purposes.',
+    },
+  ],
+  sourceNote:
+    'Figures are based on BLGF fiscal data files. Values should be reviewed against the latest BLGF release before formal citation.',
+};
+
+export function SpecialEducationFundDashboard() {
+  const [data, setData] = useState<(SefData & { content?: SefContent }) | null>(
+    null
+  );
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadSpecialEducationFundData()
+      .then(setData)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <LoadingState label="Special Education Fund data" />;
+  }
+
+  if (!data) {
+    return <EmptyState />;
+  }
+
+  const content = data.content ?? sefFallbackContent;
+
+  return (
+    <div className="space-y-12">
+      <section>
+        <SectionHeading
+          eyebrow={content.hero.eyebrow}
+          title={content.hero.title}
+          description={content.hero.description}
+        />
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {data.highlightStats.map(stat => (
+            <SummaryCard
+              key={stat.label}
+              label={stat.label}
+              value={stat.value}
+              detail={stat.detail}
+              icon={stat.icon}
+            />
+          ))}
+        </div>
+
+        <div className="mt-6">
+          <GuidanceCard
+            title={content.guidance.title}
+            description={content.guidance.description}
+            rows={data.highlightStats.map(stat => ({
+              label: stat.label,
+              value: stat.value,
+              detail: stat.detail,
+            }))}
+          />
+        </div>
+      </section>
+
+      {data.yearlyTrend && data.yearlyTrend.length > 0 && (
+        <section>
+          <SectionHeading
+            eyebrow={content.sections.yearlyTrend.eyebrow}
+            title={content.sections.yearlyTrend.title}
+            description={content.sections.yearlyTrend.description}
+          />
+          <Card className="border-primary-100">
+            <CardHeader className="bg-stone-100">
+              <h3 className="text-lg font-semibold text-gray-900">
+                {content.cards.yearlyTrend.title}
+              </h3>
+              {content.cards.yearlyTrend.description && (
+                <p className="mt-1 text-sm text-gray-600">
+                  {content.cards.yearlyTrend.description}
+                </p>
+              )}
+            </CardHeader>
+            <CardContent className="p-6">
+              <TrendChart
+                years={data.yearlyTrend.map(t => t.year)}
+                series={[
+                  {
+                    label: 'Collections',
+                    color: '#0066eb',
+                    values: data.yearlyTrend.map(t => t.income),
+                  },
+                  {
+                    label: 'Expenditures',
+                    color: '#ff4d00',
+                    values: data.yearlyTrend.map(t => t.expenditure),
+                  },
+                ]}
+                unit="PHP M"
+                formatValue={v => v.toFixed(1)}
+              />
+            </CardContent>
+          </Card>
+        </section>
+      )}
 
       <TermsCard terms={content.terms} />
 
