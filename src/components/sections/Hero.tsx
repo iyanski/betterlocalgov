@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@bettergov/kapwa/button';
+import HeroQuickStart from './HeroQuickStart';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -9,9 +10,9 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#0f47b8] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.14),_transparent_34%),linear-gradient(135deg,_#1849b2_0%,_#0d3794_100%)]" />
-      <div className="relative container mx-auto px-4 py-18 md:py-16 lg:py-24">
-        <div className="flex items-center max-w-7xl mx-auto lg:flex-row">
-          <div className="">
+      <div className="relative container mx-auto py-18 md:py-16 lg:py-24">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div className="max-w-2xl">
             <p className="text-sm font-light tracking-wider text-white lg:text-lg">
               Maddulô Kamu ta
             </p>
@@ -32,6 +33,9 @@ export default function Hero() {
                 {t('hero.browseServices')}
               </Button>
             </div>
+          </div>
+          <div className="w-full shrink-0 lg:w-auto">
+            <HeroQuickStart />
           </div>
         </div>
       </div>
