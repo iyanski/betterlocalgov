@@ -6,40 +6,11 @@ import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../i18n/languages';
 import betterAparriLogo from '../../assets/betteraparri.webp';
 
-const emergencyHotlines = [
-  { label: 'MDRRMO:', number: '09566542894', icon: 'ri-alarm-warning-line' },
-  { label: 'PNP:', number: '09172302003', icon: 'ri-police-badge-line' },
-  { label: 'BFP:', number: '09164910946', icon: 'ri-fire-line' },
-  { label: 'PCG:', number: '09568301802', icon: 'ri-ship-2-line' },
-  {
-    label: 'Hospital:',
-    number: '09363748430',
-    icon: 'ri-hospital-line',
-  },
-  {
-    label: 'RHU-East:',
-    number: '09531908364',
-    icon: 'ri-first-aid-kit-line',
-  },
-  {
-    label: 'RHU-West:',
-    number: '09359519786',
-    icon: 'ri-first-aid-kit-line',
-  },
-];
-
-const primaryEmergencyHotlines = emergencyHotlines.filter(item =>
-  ['MDRRMO:', 'PNP:', 'BFP:'].includes(item.label)
-);
-
-const secondaryEmergencyHotlines = emergencyHotlines.filter(
-  item => !primaryEmergencyHotlines.includes(item)
-);
+const GITHUB_REPO_URL = 'https://github.com/egiebk/betteraparri';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isHotlinesOpen, setIsHotlinesOpen] = useState(false);
   const { t, i18n } = useTranslation('common');
 
   const toggleMenu = () => {
@@ -52,7 +23,6 @@ const Navbar: React.FC = () => {
   const closeMenu = () => {
     setIsOpen(false);
     setActiveMenu(null);
-    setIsHotlinesOpen(false);
   };
 
   const toggleSubmenu = (label: string) => {
@@ -65,66 +35,50 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Top bar with emergency contacts and language switcher */}
-      <div className="border-b border-red-900 bg-red-950 text-white">
-        <div className="container mx-auto px-4 py-1.5">
-          <div className="flex flex-col gap-1.5 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-2.5">
-              <div className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-red-100">
-                <i className="ri-phone-line text-sm" />
-                <span>Emergency Hotlines</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                {primaryEmergencyHotlines.map(item => (
-                  <a
-                    key={item.label}
-                    href={`tel:${item.number}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-red-300/20 bg-red-800/50 px-2.5 py-1 text-[11px] leading-5 text-red-50 transition-colors hover:bg-red-700/70"
-                  >
-                    <i className={`${item.icon} text-xs`} />
-                    <span className="font-medium text-white">{item.label}</span>
-                    <span className="ml-0.5 text-red-100/80">
-                      {item.number}
-                    </span>
-                  </a>
-                ))}
-                <div className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setIsHotlinesOpen(!isHotlinesOpen)}
-                    className="inline-flex items-center gap-1 rounded-full border border-red-300/20 bg-red-900/70 px-2.5 py-1 text-[11px] font-medium leading-5 text-red-50 transition-colors hover:bg-red-800"
-                    aria-expanded={isHotlinesOpen}
-                    aria-haspopup="menu"
-                  >
-                    More hotlines
-                    <i
-                      className={`ri-arrow-down-s-line text-sm transition-transform ${isHotlinesOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  {isHotlinesOpen && (
-                    <div
-                      className="absolute left-0 top-full z-50 mt-2 w-64 rounded-md bg-white p-2 text-gray-900 shadow-lg ring-1 ring-red-950/10"
-                      role="menu"
-                    >
-                      {secondaryEmergencyHotlines.map(item => (
-                        <a
-                          key={item.label}
-                          href={`tel:${item.number}`}
-                          className="flex items-center gap-2 rounded px-3 py-2 text-sm transition-colors hover:bg-red-50 hover:text-red-900"
-                          role="menuitem"
-                        >
-                          <i
-                            className={`${item.icon} text-base text-red-700`}
-                          />
-                          <span className="font-semibold">{item.label}</span>
-                          <span className="ml-auto text-gray-600">
-                            {item.number}
-                          </span>
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
+      {/* Slim utility strip: Join Us, Community Project, Hotlines, Language */}
+      <div className="border-b border-gray-200 bg-gray-50 text-gray-700">
+        <div className="container mx-auto px-4">
+          <div className="flex h-9 items-center justify-between text-xs">
+            <div className="flex items-center gap-4">
+              <a
+                href={GITHUB_REPO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 font-medium text-primary-700 hover:text-primary-800"
+              >
+                <i className="ri-github-fill text-sm" aria-hidden="true" />
+                Join Us
+              </a>
+              <span className="hidden items-center gap-1 text-gray-500 sm:flex">
+                <i className="ri-shield-star-line text-sm" aria-hidden="true" />
+                Community Project
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <a
+                href="#emergency-hotlines"
+                className="flex items-center gap-1 font-medium text-red-700 hover:text-red-800"
+              >
+                <i className="ri-phone-line text-sm" aria-hidden="true" />
+                Hotlines
+              </a>
+              <div className="hidden items-center gap-1 sm:flex">
+                <i
+                  className="ri-global-line text-sm text-gray-500"
+                  aria-hidden="true"
+                />
+                <select
+                  value={i18n.language}
+                  onChange={e => changeLanguage(e.target.value as LanguageType)}
+                  aria-label="Language"
+                  className="border-0 bg-transparent py-0 pl-0 pr-5 text-xs text-gray-700 focus:outline-none focus:ring-0"
+                >
+                  {Object.entries(LANGUAGES).map(([code, lang]) => (
+                    <option key={code} value={code}>
+                      {lang.nativeName}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>

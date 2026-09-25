@@ -97,6 +97,7 @@ export const footerNavigation = {
         { label: 'Citizen Services', href: '/services' },
         { label: 'Leadership', href: '/government/leadership' },
         { label: 'Demographics', href: '/statistics/demographics' },
+        { label: 'Sitemap', href: '/sitemap.xml' },
         // { label: 'Community Discord', href: '/discord' },
       ],
     },

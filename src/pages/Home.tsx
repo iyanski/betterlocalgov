@@ -1,4 +1,5 @@
 import Hero from '../components/sections/Hero';
+import EmergencyHotlinesSection from '../components/home/EmergencyHotlinesSection';
 import ServicesSection from '../components/home/ServicesSection';
 import WeatherLocationSection from '../components/home/WeatherLocationSection';
 import ContactSection from '../components/home/ContactSection';
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       />
       <main className="flex-grow">
         <Hero />
+        <EmergencyHotlinesSection />
         <UpdatesSection />
         <ServicesSection />
         <WeatherLocationSection />

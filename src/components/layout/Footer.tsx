@@ -99,10 +99,12 @@ const Footer: React.FC = () => {
                 v{packageJson.version}
               </Link>
               <Link
-                to="https://github.com/egiebk"
+                to="https://github.com/egiebk/betteraparri"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-400 text-xs transition-colors font-mono"
               >
-                built by egiebk
+                Contribute at GitHub
               </Link>
             </div>
           </div>
