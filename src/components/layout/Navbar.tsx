@@ -35,13 +35,12 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Slim utility strip: Community Project, Join Us, Hotlines */}
       <div className="border-b border-gray-200 bg-gray-50 text-gray-700">
         <div className="container mx-auto px-4">
           <div className="flex h-9 items-center justify-between text-xs">
             <span className="flex items-center gap-1 font-medium text-gray-600">
               <i className="ri-shield-star-line text-sm" aria-hidden="true" />
-              Community Project
+              Volunteer-led initiative, not an official website.
             </span>
             <div className="flex items-center gap-4">
               <a

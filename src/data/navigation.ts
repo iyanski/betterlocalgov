@@ -52,20 +52,20 @@ export const mainNavigation: NavigationItem[] = [
         href: '/transparency/annual-regular-income-and-dependencies',
       },
       {
-        label: 'Receipts and Expenditure',
+        label: 'Receipts and Expenditures',
         href: '/transparency/statements-of-receipts-and-expenditure',
       },
       {
-        label: 'DRRM',
+        label: 'DRRM Funds',
         href: '/transparency/disaster-risk-reduction-and-management',
+      },
+      {
+        label: 'Special Education Funds',
+        href: '/transparency/special-education-fund',
       },
       {
         label: 'Procurement',
         href: '/transparency/procurement',
-      },
-      {
-        label: 'Special Education Fund',
-        href: '/transparency/special-education-fund',
       },
       {
         label: 'DPWH Projects',

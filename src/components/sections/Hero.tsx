@@ -11,7 +11,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-[#0f47b8] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.14),_transparent_34%),linear-gradient(135deg,_#1849b2_0%,_#0d3794_100%)]" />
       <div className="relative container mx-auto py-18 md:py-16 lg:py-24">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3 lg:gap-10">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-4 lg:gap-10">
           <div className="lg:col-span-2">
             <p className="text-sm font-light tracking-wider text-white lg:text-lg">
               Maddulô Kamu ta
@@ -34,7 +34,7 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="w-full lg:col-span-1">
+          <div className="w-full lg:col-span-2">
             <HeroQuickStart />
           </div>
         </div>

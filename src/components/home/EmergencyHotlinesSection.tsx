@@ -33,13 +33,13 @@ const EmergencyHotlinesSection: React.FC = () => {
               className="flex flex-col items-center gap-1.5 rounded-lg border border-red-300/20 bg-white px-3 py-3 text-center transition-colors hover:bg-white/80"
             >
               <i
-                className={`${item.icon} text-xl text-red-900`}
+                className={`${item.icon} text-2xl text-red-900`}
                 aria-hidden="true"
               />
-              <span className="text-xs font-semibold leading-tight text-red-900">
+              <span className="text-sm font-semibold leading-tight text-red-900">
                 {item.label}
               </span>
-              <span className="text-[11px] text-red-900">{item.number}</span>
+              <span className="text-xs text-red-900">{item.number}</span>
             </a>
           ))}
         </div>
