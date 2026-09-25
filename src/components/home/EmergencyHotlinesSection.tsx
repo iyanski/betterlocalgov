@@ -10,7 +10,7 @@ const EmergencyHotlinesSection: React.FC = () => {
     <section
       id="emergency-hotlines"
       aria-labelledby="emergency-hotlines-heading"
-      className="border-y border-red-900 bg-red-950 text-white"
+      className="border-y border-y-2 border-yellow-500 bg-red-600 text-white"
     >
       <div className="container mx-auto px-4 py-6">
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
@@ -19,7 +19,7 @@ const EmergencyHotlinesSection: React.FC = () => {
             className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-red-100"
           >
             <i className="ri-phone-line text-base" aria-hidden="true" />
-            Emergency &amp; Quick Hotlines
+            Emergency Hotlines
           </h2>
           <p className="text-xs text-red-200/80">
             Tap a number to call directly from your phone.
@@ -30,16 +30,16 @@ const EmergencyHotlinesSection: React.FC = () => {
             <a
               key={item.label}
               href={`tel:${item.number}`}
-              className="flex flex-col items-center gap-1.5 rounded-lg border border-red-300/20 bg-red-900/50 px-3 py-3 text-center transition-colors hover:bg-red-800/70"
+              className="flex flex-col items-center gap-1.5 rounded-lg border border-red-300/20 bg-white px-3 py-3 text-center transition-colors hover:bg-white/80"
             >
               <i
-                className={`${item.icon} text-xl text-red-100`}
+                className={`${item.icon} text-xl text-red-900`}
                 aria-hidden="true"
               />
-              <span className="text-xs font-semibold text-white">
+              <span className="text-xs font-semibold leading-tight text-red-900">
                 {item.label}
               </span>
-              <span className="text-[11px] text-red-100/80">{item.number}</span>
+              <span className="text-[11px] text-red-900">{item.number}</span>
             </a>
           ))}
         </div>

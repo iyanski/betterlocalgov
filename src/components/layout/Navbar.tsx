@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
       {/* Slim utility strip: Join Us, Community Project, Hotlines, Language */}
       <div className="border-b border-gray-200 bg-gray-50 text-gray-700">
         <div className="container mx-auto px-4">
-          <div className="flex h-9 items-center justify-between text-xs">
+          <div className="flex h-9 items-center justify-end text-xs">
             <div className="flex items-center gap-4">
               <a
                 href={GITHUB_REPO_URL}
@@ -53,33 +53,14 @@ const Navbar: React.FC = () => {
                 <i className="ri-shield-star-line text-sm" aria-hidden="true" />
                 Community Project
               </span>
-            </div>
-            <div className="flex items-center gap-4">
               <a
-                href="#emergency-hotlines"
+                href="https://hotlines.bettergov.ph/?city=aparri&province=cagayan"
+                target="_blank"
                 className="flex items-center gap-1 font-medium text-red-700 hover:text-red-800"
               >
                 <i className="ri-phone-line text-sm" aria-hidden="true" />
                 Hotlines
               </a>
-              <div className="hidden items-center gap-1 sm:flex">
-                <i
-                  className="ri-global-line text-sm text-gray-500"
-                  aria-hidden="true"
-                />
-                <select
-                  value={i18n.language}
-                  onChange={e => changeLanguage(e.target.value as LanguageType)}
-                  aria-label="Language"
-                  className="border-0 bg-transparent py-0 pl-0 pr-5 text-xs text-gray-700 focus:outline-none focus:ring-0"
-                >
-                  {Object.entries(LANGUAGES).map(([code, lang]) => (
-                    <option key={code} value={code}>
-                      {lang.nativeName}
-                    </option>
-                  ))}
-                </select>
-              </div>
             </div>
           </div>
         </div>
@@ -87,19 +68,19 @@ const Navbar: React.FC = () => {
 
       {/* Main navigation */}
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+        <div className="flex justify-between items-center py-3 sm:py-4">
+          <div className="flex items-center min-w-0">
+            <Link to="/" className="flex min-w-0 items-center">
               <img
                 src={betterAparriLogo}
                 alt="BetterAparri.org logo"
-                className="mr-3 h-20 w-20 object-cover"
+                className="mr-2 h-12 w-12 shrink-0 object-cover sm:mr-3 sm:h-16 sm:w-16 lg:h-20 lg:w-20"
               />
-              <div>
-                <div className="text-gray-700 font-extrabold text-xl">
+              <div className="min-w-0">
+                <div className="truncate text-base font-extrabold text-gray-700 sm:text-lg lg:text-xl">
                   {t('site_name')}
                 </div>
-                <div className="text-xs text-gray-600">
+                <div className="hidden text-xs text-gray-600 sm:block">
                   {t('site_description')}
                 </div>
               </div>
