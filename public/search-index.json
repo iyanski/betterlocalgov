@@ -1,0 +1,562 @@
+[
+  {
+    "id": 0,
+    "title": "Civil Registry",
+    "description": "Register births, marriages, and deaths, and request certified copies from the Local Civil Registrar.",
+    "url": "/services/civil-registry",
+    "section": "services"
+  },
+  {
+    "id": 1,
+    "title": "Civil Registry Services",
+    "description": "",
+    "url": "/services/civil-registry/civil-registry-services",
+    "section": "services"
+  },
+  {
+    "id": 2,
+    "title": "Business and Permits",
+    "description": "Apply for business permits, renew registrations, secure mayor permits, and request market or franchise-related assistance.",
+    "url": "/services/business",
+    "section": "services"
+  },
+  {
+    "id": 3,
+    "title": "Business, Permit, and Franchising Services",
+    "description": "",
+    "url": "/services/business/business-permit-franchising-services",
+    "section": "services"
+  },
+  {
+    "id": 4,
+    "title": "Taxes and Payments",
+    "description": "Pay real property taxes, business taxes, community tax certificates, and other local fees.",
+    "url": "/services/taxes-payments",
+    "section": "services"
+  },
+  {
+    "id": 5,
+    "title": "Treasury and Property Assessment Services",
+    "description": "",
+    "url": "/services/taxes-payments/treasury-property-assessment-services",
+    "section": "services"
+  },
+  {
+    "id": 6,
+    "title": "Social Services",
+    "description": "Request medical, burial, financial, senior citizen, PWD, solo parent, and other social assistance.",
+    "url": "/services/social-welfare",
+    "section": "services"
+  },
+  {
+    "id": 7,
+    "title": "Social Welfare Services",
+    "description": "The Office of the Municipal Social Welfare and Development Officer lists the following external services.",
+    "url": "/services/social-welfare/social-welfare-services",
+    "section": "services"
+  },
+  {
+    "id": 8,
+    "title": "Health Services",
+    "description": "Find RHU consultations, immunization, maternal and child health, certificates, and sanitary permit services.",
+    "url": "/services/health-services",
+    "section": "services"
+  },
+  {
+    "id": 9,
+    "title": "Health Services",
+    "description": "",
+    "url": "/services/health-services/health-services",
+    "section": "services"
+  },
+  {
+    "id": 10,
+    "title": "Agriculture and Fisheries",
+    "description": "Register as a farmer or fisherfolk and access agricultural, fishery, livelihood, equipment, or disaster assistance.",
+    "url": "/services/agriculture-fisheries",
+    "section": "services"
+  },
+  {
+    "id": 11,
+    "title": "Agriculture and Fisheries Services",
+    "description": "- Registry System for Basic Sectors in Agriculture (RSBSA) enrollment",
+    "url": "/services/agriculture-fisheries/agriculture-fisheries-services",
+    "section": "services"
+  },
+  {
+    "id": 12,
+    "title": "Engineering and Zoning",
+    "description": "Apply for building, occupancy, excavation, fencing, and zoning services or report public works concerns.",
+    "url": "/services/engineering-zoning",
+    "section": "services"
+  },
+  {
+    "id": 13,
+    "title": "Planning, Engineering, and Zoning Services",
+    "description": "",
+    "url": "/services/engineering-zoning/planning-engineering-zoning-services",
+    "section": "services"
+  },
+  {
+    "id": 14,
+    "title": "Disaster and Emergency",
+    "description": "Find emergency hotlines, evacuation information, disaster assistance, hazard reporting, and preparedness guides.",
+    "url": "/services/disaster-emergency",
+    "section": "services"
+  },
+  {
+    "id": 15,
+    "title": "Disaster, Emergency, and Environment Services",
+    "description": "",
+    "url": "/services/disaster-emergency/disaster-emergency-environment-services",
+    "section": "services"
+  },
+  {
+    "id": 16,
+    "title": "Education and Livelihood",
+    "description": "Apply for scholarships, job referrals, skills training, youth programs, and livelihood opportunities.",
+    "url": "/services/education-livelihood",
+    "section": "services"
+  },
+  {
+    "id": 17,
+    "title": "Employment and Tourism Services",
+    "description": "",
+    "url": "/services/education-livelihood/employment-tourism-services",
+    "section": "services"
+  },
+  {
+    "id": 18,
+    "title": "Complaints and Requests",
+    "description": "File complaints, request public information, report infrastructure issues, submit feedback, or route barangay concerns.",
+    "url": "/services/complaints-requests",
+    "section": "services"
+  },
+  {
+    "id": 19,
+    "title": "Mayor, Sangguniang Bayan, and Public Administration Services",
+    "description": "",
+    "url": "/services/complaints-requests/public-administration-services",
+    "section": "services"
+  },
+  {
+    "id": 20,
+    "title": "Leadership",
+    "description": "Meet the elected and key local government officials.",
+    "url": "/government/leadership",
+    "section": "government"
+  },
+  {
+    "id": 21,
+    "title": "Barangays",
+    "description": "Browse barangay profiles, elected officials, and available contact information for each barangay.",
+    "url": "/government/barangays",
+    "section": "government"
+  },
+  {
+    "id": 22,
+    "title": "Barangay Backiling",
+    "description": "",
+    "url": "/government/barangays/backiling",
+    "section": "government"
+  },
+  {
+    "id": 23,
+    "title": "Barangay Bangag",
+    "description": "",
+    "url": "/government/barangays/bangag",
+    "section": "government"
+  },
+  {
+    "id": 24,
+    "title": "Barangay Binalan",
+    "description": "",
+    "url": "/government/barangays/binalan",
+    "section": "government"
+  },
+  {
+    "id": 25,
+    "title": "Barangay Bisagu",
+    "description": "",
+    "url": "/government/barangays/bisagu",
+    "section": "government"
+  },
+  {
+    "id": 26,
+    "title": "Barangay Bukig",
+    "description": "",
+    "url": "/government/barangays/bukig",
+    "section": "government"
+  },
+  {
+    "id": 27,
+    "title": "Barangay Bulala Norte",
+    "description": "",
+    "url": "/government/barangays/bulala-norte",
+    "section": "government"
+  },
+  {
+    "id": 28,
+    "title": "Barangay Bulala Sur",
+    "description": "",
+    "url": "/government/barangays/bulala-sur",
+    "section": "government"
+  },
+  {
+    "id": 29,
+    "title": "Barangay Caagaman",
+    "description": "",
+    "url": "/government/barangays/caagaman",
+    "section": "government"
+  },
+  {
+    "id": 30,
+    "title": "Barangay Centro 1",
+    "description": "",
+    "url": "/government/barangays/centro-1",
+    "section": "government"
+  },
+  {
+    "id": 31,
+    "title": "Barangay Centro 10",
+    "description": "",
+    "url": "/government/barangays/centro-10",
+    "section": "government"
+  },
+  {
+    "id": 32,
+    "title": "Barangay Centro 11",
+    "description": "",
+    "url": "/government/barangays/centro-11",
+    "section": "government"
+  },
+  {
+    "id": 33,
+    "title": "Barangay Centro 12",
+    "description": "",
+    "url": "/government/barangays/centro-12",
+    "section": "government"
+  },
+  {
+    "id": 34,
+    "title": "Barangay Centro 13",
+    "description": "",
+    "url": "/government/barangays/centro-13",
+    "section": "government"
+  },
+  {
+    "id": 35,
+    "title": "Barangay Centro 14",
+    "description": "",
+    "url": "/government/barangays/centro-14",
+    "section": "government"
+  },
+  {
+    "id": 36,
+    "title": "Barangay Centro 15",
+    "description": "",
+    "url": "/government/barangays/centro-15",
+    "section": "government"
+  },
+  {
+    "id": 37,
+    "title": "Barangay Centro 2",
+    "description": "",
+    "url": "/government/barangays/centro-2",
+    "section": "government"
+  },
+  {
+    "id": 38,
+    "title": "Barangay Centro 3",
+    "description": "",
+    "url": "/government/barangays/centro-3",
+    "section": "government"
+  },
+  {
+    "id": 39,
+    "title": "Barangay Centro 4",
+    "description": "",
+    "url": "/government/barangays/centro-4",
+    "section": "government"
+  },
+  {
+    "id": 40,
+    "title": "Barangay Centro 5",
+    "description": "",
+    "url": "/government/barangays/centro-5",
+    "section": "government"
+  },
+  {
+    "id": 41,
+    "title": "Barangay Centro 6",
+    "description": "",
+    "url": "/government/barangays/centro-6",
+    "section": "government"
+  },
+  {
+    "id": 42,
+    "title": "Barangay Centro 7",
+    "description": "",
+    "url": "/government/barangays/centro-7",
+    "section": "government"
+  },
+  {
+    "id": 43,
+    "title": "Barangay Centro 8",
+    "description": "",
+    "url": "/government/barangays/centro-8",
+    "section": "government"
+  },
+  {
+    "id": 44,
+    "title": "Barangay Centro 9",
+    "description": "",
+    "url": "/government/barangays/centro-9",
+    "section": "government"
+  },
+  {
+    "id": 45,
+    "title": "Barangay Dodan",
+    "description": "",
+    "url": "/government/barangays/dodan",
+    "section": "government"
+  },
+  {
+    "id": 46,
+    "title": "Barangay Fuga Island",
+    "description": "",
+    "url": "/government/barangays/fuga-island",
+    "section": "government"
+  },
+  {
+    "id": 47,
+    "title": "Barangay Gaddang",
+    "description": "",
+    "url": "/government/barangays/gaddang",
+    "section": "government"
+  },
+  {
+    "id": 48,
+    "title": "Barangay Linao",
+    "description": "",
+    "url": "/government/barangays/linao",
+    "section": "government"
+  },
+  {
+    "id": 49,
+    "title": "Barangay Mabanguc",
+    "description": "",
+    "url": "/government/barangays/mabanguc",
+    "section": "government"
+  },
+  {
+    "id": 50,
+    "title": "Barangay Macanaya",
+    "description": "",
+    "url": "/government/barangays/macanaya",
+    "section": "government"
+  },
+  {
+    "id": 51,
+    "title": "Barangay Maura",
+    "description": "",
+    "url": "/government/barangays/maura",
+    "section": "government"
+  },
+  {
+    "id": 52,
+    "title": "Barangay Minanga",
+    "description": "",
+    "url": "/government/barangays/minanga",
+    "section": "government"
+  },
+  {
+    "id": 53,
+    "title": "Barangay Navagan",
+    "description": "",
+    "url": "/government/barangays/navagan",
+    "section": "government"
+  },
+  {
+    "id": 54,
+    "title": "Barangay Paddaya",
+    "description": "",
+    "url": "/government/barangays/paddaya",
+    "section": "government"
+  },
+  {
+    "id": 55,
+    "title": "Barangay Paruddun Norte",
+    "description": "",
+    "url": "/government/barangays/paruddun-norte",
+    "section": "government"
+  },
+  {
+    "id": 56,
+    "title": "Barangay Paruddun Sur",
+    "description": "",
+    "url": "/government/barangays/paruddun-sur",
+    "section": "government"
+  },
+  {
+    "id": 57,
+    "title": "Barangay Plaza",
+    "description": "",
+    "url": "/government/barangays/plaza",
+    "section": "government"
+  },
+  {
+    "id": 58,
+    "title": "Barangay Punta",
+    "description": "",
+    "url": "/government/barangays/punta",
+    "section": "government"
+  },
+  {
+    "id": 59,
+    "title": "Barangay San Antonio",
+    "description": "",
+    "url": "/government/barangays/san-antonio",
+    "section": "government"
+  },
+  {
+    "id": 60,
+    "title": "Barangay Sanja",
+    "description": "",
+    "url": "/government/barangays/sanja",
+    "section": "government"
+  },
+  {
+    "id": 61,
+    "title": "Barangay Tallungan",
+    "description": "",
+    "url": "/government/barangays/tallungan",
+    "section": "government"
+  },
+  {
+    "id": 62,
+    "title": "Barangay Toran",
+    "description": "",
+    "url": "/government/barangays/toran",
+    "section": "government"
+  },
+  {
+    "id": 63,
+    "title": "Barangay Zinarag",
+    "description": "",
+    "url": "/government/barangays/zinarag",
+    "section": "government"
+  },
+  {
+    "id": 64,
+    "title": "Annual Regular Income (ARI) and Dependencies",
+    "description": "Review annual regular income, locally sourced revenue, and national transfer dependency based on BLGF fiscal data.",
+    "url": "/transparency/annual-regular-income-and-dependencies",
+    "section": "transparency"
+  },
+  {
+    "id": 65,
+    "title": "Statements of Receipts and Expenditure",
+    "description": "Review current operating income, expenditures, operating result, and fund balance based on BLGF SRE data.",
+    "url": "/transparency/statements-of-receipts-and-expenditure",
+    "section": "transparency"
+  },
+  {
+    "id": 66,
+    "title": "Disaster Risk Reduction and Management",
+    "description": "Review LDRRMF appropriation, expenditures, and utilization based on BLGF fiscal data.",
+    "url": "/transparency/disaster-risk-reduction-and-management",
+    "section": "transparency"
+  },
+  {
+    "id": 67,
+    "title": "Special Education Fund",
+    "description": "Review Special Education Fund (SEF) collections and expenditures based on BLGF fiscal data.",
+    "url": "/transparency/special-education-fund",
+    "section": "transparency"
+  },
+  {
+    "id": 68,
+    "title": "Procurement",
+    "description": "Search procurement records by title or procuring entity, filter by classification, and sort by budget or date.",
+    "url": "/transparency/procurement",
+    "section": "transparency"
+  },
+  {
+    "id": 69,
+    "title": "DPWH Projects in Aparri",
+    "description": "Browse DPWH infrastructure projects located in Aparri by category, budget, status, and implementation date.",
+    "url": "/transparency/dpwh-projects",
+    "section": "transparency"
+  },
+  {
+    "id": 70,
+    "title": "Demographics",
+    "description": "Population, age distribution, and other demographic data.",
+    "url": "/statistics/demographics",
+    "section": "statistics"
+  },
+  {
+    "id": 71,
+    "title": "Competitiveness",
+    "description": "Local competitiveness indicators and rankings.",
+    "url": "/statistics/competitiveness",
+    "section": "statistics"
+  },
+  {
+    "id": 72,
+    "title": "Special Recruitment Activity",
+    "description": "The Public Employment Service Office (PESO) of LGU Aparri is inviting interested applicants to attend a Special Recruitment Activity (SRA) in partnership with Pacific Star International Employment Age",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 73,
+    "title": "No Face-to-Face Classes",
+    "description": "Pre-School to College (Public and Private) due to NGCP Scheduled Power Interruption",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 74,
+    "title": "Distribution of Social Pension Stipend to Indigent Senior Citizens",
+    "description": "June 8-11: Eastern Barangays; June 10-11: Western Barangays; June 15: All Brangays (Unpaid)",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 75,
+    "title": "Application for National ID",
+    "description": "",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 76,
+    "title": "Application for National ID",
+    "description": "",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 77,
+    "title": "2026 Gas Subsidy Distribution",
+    "description": "Drivers are encouraged to bring MTOP and Official Receipt",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 78,
+    "title": "2026 Gas Subsidy Distribution",
+    "description": "Drivers are encouraged to bring MTOP and Official Receipt",
+    "url": "/updates",
+    "section": "updates"
+  },
+  {
+    "id": 79,
+    "title": "Scheduled Power Interruption",
+    "description": "To conduct maintenance works along the power line.",
+    "url": "/updates",
+    "section": "updates"
+  }
+]

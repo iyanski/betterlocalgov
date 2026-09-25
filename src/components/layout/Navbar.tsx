@@ -188,27 +188,15 @@ const Navbar: React.FC = () => {
               </div>
             ))}
           </div>
-          {/* <div className="hidden lg:flex items-center space-x-6">
-            <Link
-              to="/about"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              About
-            </Link> 
+          <div className="hidden lg:flex items-center">
             <Link
               to="/search"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
+              aria-label="Search"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-gray-700 hover:bg-gray-100 hover:text-primary-600 transition-colors"
             >
-              <i className="ri-search-line h-4 w-4 mr-1" />
-              Search
+              <i className="ri-search-line h-5 w-5" aria-hidden="true" />
             </Link>
-            <Link
-              to="/sitemap"
-              className="flex items-center text-gray-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Sitemap
-            </Link>
-          </div> */}
+          </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center">
@@ -271,6 +259,14 @@ const Navbar: React.FC = () => {
               )}
             </div>
           ))}
+          <Link
+            to="/search"
+            onClick={closeMenu}
+            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-500"
+          >
+            <i className="ri-search-line h-5 w-5" aria-hidden="true" />
+            Search
+          </Link>
           <div className="px-4 py-3 border-t border-gray-200">
             <div className="flex items-center">
               <i className="ri-global-line h-5 w-5 text-gray-800 mr-2" />

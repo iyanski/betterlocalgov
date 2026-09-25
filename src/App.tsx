@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Document from './pages/Document';
 import Government from './pages/Government';
 import Updates from './pages/Updates';
+import Search from './pages/Search';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
               <Route path="/:lang/:documentSlug" element={<Document />} />
               <Route path="/:documentSlug" element={<Document />} />
               <Route path="/updates" element={<Updates />} />
+              <Route path="/search" element={<Search />} />
             </Routes>
             <Footer />
             <Analytics />
