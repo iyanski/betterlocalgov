@@ -14,6 +14,7 @@ import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Banner } from '@bettergov/kapwa/banner';
 import { useState, useEffect } from 'react';
 import BarangayCards from '../components/officials/BarangayCards';
+import BarangayMap from '../components/officials/BarangayMap';
 import LeadershipOfficialsCards from '../components/officials/LeadershipOfficialsCards';
 import {
   loadMarkdownContent,
@@ -199,11 +200,16 @@ const Government: React.FC<GovernmentProps> = ({
             data={leadershipContent.data}
           />
         ) : category === 'barangays' ? (
-          <BarangayCards
-            title={categoryIndex.title}
-            description={categoryIndex.description}
-            pages={subcategories}
-          />
+          <>
+            <div className="mb-8">
+              <BarangayMap />
+            </div>
+            <BarangayCards
+              title={categoryIndex.title}
+              description={categoryIndex.description}
+              pages={subcategories}
+            />
+          </>
         ) : (
           <>
             {pageLayout === 'grid' ? (
