@@ -41,7 +41,7 @@ const quickStartItems: QuickStartItem[] = [
  */
 export default function HeroQuickStart() {
   return (
-    <div className="w-full max-w-md overflow-hidden rounded-2xl bg-white text-gray-900 shadow-2xl lg:max-w-sm xl:max-w-md">
+    <div className="w-full max-w-md overflow-hidden rounded-2xl bg-white text-gray-900 shadow-2xl lg:max-w-none">
       <div className="px-6 pt-6 pb-2 sm:px-8 sm:pt-8">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary-600">
           Let&apos;s get you started
