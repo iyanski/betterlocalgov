@@ -43,18 +43,6 @@ export const emergencyHotlines: Hotline[] = [
     icon: 'ri-hospital-line',
     description: 'Medical emergencies',
   },
-  {
-    label: 'RHU-East',
-    number: '09531908364',
-    icon: 'ri-first-aid-kit-line',
-    description: 'Rural Health Unit (East)',
-  },
-  {
-    label: 'RHU-West',
-    number: '09359519786',
-    icon: 'ri-first-aid-kit-line',
-    description: 'Rural Health Unit (West)',
-  },
 ];
 
 export const primaryEmergencyHotlines = emergencyHotlines.filter(item =>

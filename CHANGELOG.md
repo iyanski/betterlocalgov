@@ -5,6 +5,47 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.2] - 2026-09-26
+
+### Added
+
+- New `/weather` page: full 7-day forecast (up from 3 days on the
+  homepage), a "Sea & Fishing Conditions" card surfacing wave height,
+  wave period, and sea surface temperature, and a Rain Radar map
+  (Leaflet + RainViewer's free radar tile API) with play/pause
+  animation over the past ~2 hours plus short-term nowcast frames.
+  Laid out as a two-column view (conditions + humidity/rain/UV on the
+  left, radar map on the right, matched to the same height), with
+  full-width Guidance and 7-Day Outlook sections below.
+- Homepage weather widget: "Sea & Fishing Conditions" mini-card and a
+  "View full 7-day forecast" link to the new `/weather` page.
+- Stale-data fallback for the weather widget and `/weather` page: if a
+  live fetch fails within 3 hours of a successful one, the last good
+  reading is shown (with a notice) instead of a generic error state.
+- Printable barangay directory on the Barangays listing page (browser
+  print view via a "Print directory" button) and a redesign of that
+  page: search by name or Punong Barangay, a live result count, working
+  `tel:` links, and a responsive card grid.
+- Sitewide print styling (`print:hidden` on the nav, footer, and
+  breadcrumbs; sensible page margins) so printing any page doesn't
+  include site chrome.
+
+### Changed
+
+- Weather/marine data fetching, formatting, and risk-assessment logic
+  extracted from the homepage widget into a shared `src/lib/climate.ts`
+  module, reused by both the homepage and the new `/weather` page.
+- Emergency hotlines: removed the RHU-East and RHU-West entries and
+  adjusted the homepage grid from 7 to 5 columns.
+
+### Fixed
+
+- Marine risk guidance no longer repeats itself ("Marine weather risk
+  is low — Marine weather risk looks low...") when sea conditions are
+  calm.
+- Rain radar map no longer leaves blank space in its card when
+  stretched to match the height of the column beside it.
+
 ## [1.4.1] - 2026-09-25
 
 ### Changed

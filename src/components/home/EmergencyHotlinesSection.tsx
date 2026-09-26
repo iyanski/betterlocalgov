@@ -25,7 +25,7 @@ const EmergencyHotlinesSection: React.FC = () => {
             Tap a number to call directly from your phone.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {emergencyHotlines.map(item => (
             <a
               key={item.label}
