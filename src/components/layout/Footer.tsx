@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white print:hidden">
       <div className="container mx-auto px-4 pt-12 pb-8">
         <div className="gap-8 md:grid md:grid-cols-4">
           <div className="col-span-2">

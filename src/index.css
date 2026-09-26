@@ -175,3 +175,11 @@
 .sticky-table tbody tr:hover td:first-child {
   background-color: #f3f4f6;
 }
+
+/* Print: give printed pages (e.g. the barangay directory) breathing
+   room instead of the browser's tight default margins. */
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+}

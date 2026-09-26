@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="sticky top-0 z-50 bg-white shadow-sm print:hidden">
       <div className="border-b border-gray-200 bg-gray-50 text-gray-700">
         <div className="container mx-auto px-4">
           <div className="flex h-9 items-center justify-between text-xs">
