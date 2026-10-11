@@ -1,6 +1,9 @@
-# 🏛️ Local Government Website Starter Kit
+# BetterMandaluyong | 🔵 Planned 
 
-A modern, multilingual, and accessible website template designed specifically for local government units (LGUs) in the Philippines. Built with React, TypeScript, and Tailwind CSS.
+A community-run web portal for the **Mandaluyong City** — one bilingual (English / Filipino) place for residents to find local government services, departments and officials, statistics, tourism, and transparency information.
+
+> **Not an official government website.** BetterMandaluyong is a volunteer, community-built project. For official transactions and confirmation, always reach out to the Municipality of Indang or the relevant national agency.
+
 
 ## ✨ Features
 
