@@ -1,6 +1,7 @@
 import Hero from '../components/sections/Hero';
 import ServicesSection from '../components/home/ServicesSection';
 import GovernmentActivitySection from '../components/home/GovernmentActivitySection';
+import WhatsNewTeaser from '../components/home/WhatsNewTeaser';
 import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
@@ -8,11 +9,12 @@ const Home: React.FC = () => {
     <>
       <SEO
         title="Home"
-        description="Official website of your local government. Access government services, information, and resources."
-        keywords="government, local government, services, public services, civic services"
+        description="A community-driven civic information portal for Gattaran, Cagayan."
+        keywords="Gattaran, Cagayan, civic information, municipal services, community portal"
       />
       <main className="flex-grow">
         <Hero />
+        <WhatsNewTeaser />
         <ServicesSection />
         <GovernmentActivitySection />
       </main>

@@ -1,0 +1,109 @@
+{
+  "revisions": [
+    {
+      "contentId": "government/departments/municipality-overview",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "government/departments/barangays",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "government/departments/municipal-mayor",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "government/transparency-documents/authoritative-record-repositories",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "hotlines/national-emergency-911",
+      "action": "published",
+      "changedFields": ["phone", "publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T16:25:48+08:00"
+    },
+    {
+      "contentId": "hotlines/gattaran-emergency-hospital",
+      "action": "published",
+      "changedFields": ["phone", "publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T16:25:48+08:00"
+    },
+    {
+      "contentId": "hotlines/cagayan-pdrrmo",
+      "action": "published",
+      "changedFields": ["phone", "publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T16:25:48+08:00"
+    },
+    {
+      "contentId": "projects/dpwh-casicallan-flood-control",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "project"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T13:00:00+08:00"
+    },
+    {
+      "contentId": "projects/dpwh-tanglagan-falls-road",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "project"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T13:00:00+08:00"
+    },
+    {
+      "contentId": "projects/dpwh-tanglagan-falls-additional-road",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "project"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T13:00:00+08:00"
+    },
+    {
+      "contentId": "services/health-services/philhealth-membership-registration",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "content"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T14:00:00+08:00"
+    },
+    {
+      "contentId": "services/social-welfare/dswd-aics",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "content"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T14:00:00+08:00"
+    },
+    {
+      "contentId": "services/social-welfare/sss-membership",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "content"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T14:00:00+08:00"
+    },
+    {
+      "contentId": "services/disaster-preparedness/official-hazard-and-weather-tools",
+      "action": "created",
+      "changedFields": ["publicationStatus", "provenance", "content"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T14:00:00+08:00"
+    },
+    {
+      "contentId": "government/departments/elected-officials",
+      "action": "created",
+      "changedFields": ["content"],
+      "responsible": "Claude (agent), pending maintainer review",
+      "timestamp": "2026-10-12T14:00:00+08:00"
+    }
+  ]
+}

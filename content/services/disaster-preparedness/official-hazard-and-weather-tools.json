@@ -1,0 +1,25 @@
+{
+  "publicationStatus": "published",
+  "scope": "national_applicable",
+  "provenance": {
+    "verificationStatus": "sourced",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "HazardHunterPH",
+        "organization": "DOST-PHIVOLCS (GeoRisk Philippines)",
+        "url": "https://hazardhunter.georisk.gov.ph/",
+        "type": "national_government",
+        "locator": "Home page description of HazardHunterPH and its operator"
+      },
+      {
+        "title": "PAGASA home page",
+        "organization": "Philippine Atmospheric, Geophysical and Astronomical Services Administration",
+        "url": "https://www.pagasa.dost.gov.ph/",
+        "type": "national_government",
+        "locator": "Weather, tropical cyclone and flood advisory links on the home page"
+      }
+    ],
+    "lastVerifiedAt": "2026-10-12"
+  }
+}

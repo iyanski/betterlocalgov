@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "language": "Ilocano",
+    "reviewStatus": "needs_review",
+    "approvedBy": null,
+    "note": "Scaffold only. No translation has been drafted. Every value is empty so the English text is used. A fluent human speaker must write and approve the strings, and the language must be enabled in src/i18n/languages.ts, before it appears in the language switcher. Do not machine-translate civic content."
+  },
+  "site_name": "",
+  "site_description": "",
+  "hero": {
+    "title": "",
+    "subtitle": ""
+  },
+  "services": {
+    "title": "",
+    "governmentServices": "",
+    "description": "",
+    "viewAll": "",
+    "viewAllCategory": ""
+  },
+  "governmentActivity": {
+    "title": "",
+    "description": ""
+  },
+  "weather": {
+    "title": ""
+  },
+  "forex": {
+    "title": ""
+  },
+  "news": {
+    "title": ""
+  },
+  "footer": {
+    "status": "",
+    "attribution": ""
+  },
+  "navbar": {
+    "government": "",
+    "services": "",
+    "hotlines": "",
+    "holidays": ""
+  },
+  "joinUs": {
+    "stripTitle": "",
+    "stripSubtitle": "",
+    "joinNow": "",
+    "discord": "",
+    "bannerTitle": "",
+    "bannerSubtitle": "",
+    "bannerHighlight": "",
+    "joinMovement": "",
+    "or": "",
+    "joinDiscord": "",
+    "features": ""
+  }
+}

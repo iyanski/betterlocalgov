@@ -12,7 +12,7 @@
  */
 
 import { Meilisearch } from 'meilisearch';
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import * as yaml from 'js-yaml';
@@ -60,14 +60,41 @@ function loadMarkdownPages(dir, categorySlug, categoryName, type) {
   try {
     const indexYaml = readFileSync(indexPath, 'utf8');
     const indexData = yaml.load(indexYaml);
-    pages = indexData.pages ?? [];
+    pages = (indexData.pages ?? []).filter(page => {
+      const publicationStatus =
+        page.publicationStatus ?? (page.published ? 'published' : 'draft');
+      const verificationStatus =
+        page.verificationStatus ??
+        (page.published ? 'verified' : 'awaiting_verification');
+      const allowSourced = process.env.ALLOW_SOURCED_CONTENT !== 'false';
+      return (
+        publicationStatus === 'published' &&
+        (verificationStatus === 'verified' ||
+          verificationStatus === 'outdated' ||
+          (allowSourced && verificationStatus === 'sourced'))
+      );
+    });
   } catch {
     return documents;
   }
 
   for (const page of pages) {
     const mdPath = join(ROOT, `content/${dir}/${categorySlug}/${page.slug}.md`);
+    const jsonPath = join(
+      ROOT,
+      `content/${dir}/${categorySlug}/${page.slug}.json`
+    );
     try {
+      const companion = JSON.parse(readFileSync(jsonPath, 'utf8'));
+      const allowSourced = process.env.ALLOW_SOURCED_CONTENT !== 'false';
+      const companionStatus = companion.provenance?.verificationStatus;
+      const eligible =
+        companion.publicationStatus === 'published' &&
+        (companionStatus === 'verified' ||
+          companionStatus === 'outdated' ||
+          (allowSourced && companionStatus === 'sourced'));
+      if (!eligible || companionStatus !== page.verificationStatus) continue;
+
       const raw = readFileSync(mdPath, 'utf8');
       const title = extractTitle(raw) || page.name;
       const description = extractDescription(raw) || page.description || '';
@@ -80,6 +107,7 @@ function loadMarkdownPages(dir, categorySlug, categoryName, type) {
         category: categoryName,
         categorySlug,
         slug: page.slug,
+        verificationStatus: companionStatus,
         url: `/${dir === 'services' ? 'services' : 'government'}/${categorySlug}/${page.slug}`,
       });
     } catch {
@@ -90,30 +118,83 @@ function loadMarkdownPages(dir, categorySlug, categoryName, type) {
   return documents;
 }
 
+function loadHotlines() {
+  const directory = join(ROOT, 'content/hotlines');
+  const allowSourced = process.env.ALLOW_SOURCED_CONTENT !== 'false';
+
+  return readdirSync(directory)
+    .filter(file => file.endsWith('.json'))
+    .flatMap(file => {
+      try {
+        const record = JSON.parse(readFileSync(join(directory, file), 'utf8'));
+        const status = record.provenance?.verificationStatus;
+        const eligible =
+          record.publicationStatus === 'published' &&
+          record.provenance?.sources?.length > 0 &&
+          (status === 'verified' ||
+            status === 'outdated' ||
+            (allowSourced && status === 'sourced'));
+        if (!eligible || !/^\+?\d{3,15}$/.test(record.phone)) return [];
+
+        const slug = file.replace(/\.json$/, '');
+        return [
+          {
+            id: `hotline-${slug}`,
+            title: record.name,
+            description: `Verified emergency contact: ${record.displayPhone}`,
+            content: `${record.name} ${record.displayPhone}`,
+            type: 'hotline',
+            category: 'Emergency hotlines',
+            categorySlug: 'hotlines',
+            slug,
+            url: `/hotlines#${slug}`,
+            verificationStatus: status,
+          },
+        ];
+      } catch {
+        return [];
+      }
+    });
+}
+
 async function indexContent() {
   const documents = [];
 
   // Index services
-  const servicesYaml = readFileSync(join(ROOT, 'src/data/services.yaml'), 'utf8');
+  const servicesYaml = readFileSync(
+    join(ROOT, 'src/data/services.yaml'),
+    'utf8'
+  );
   const servicesData = yaml.load(servicesYaml);
   for (const cat of servicesData.categories) {
-    documents.push(...loadMarkdownPages('services', cat.slug, cat.category, 'service'));
+    documents.push(
+      ...loadMarkdownPages('services', cat.slug, cat.category, 'service')
+    );
   }
 
   // Index government
   const govYaml = readFileSync(join(ROOT, 'src/data/government.yaml'), 'utf8');
   const govData = yaml.load(govYaml);
   for (const cat of govData.categories) {
-    documents.push(...loadMarkdownPages('government', cat.slug, cat.category, 'government'));
+    documents.push(
+      ...loadMarkdownPages('government', cat.slug, cat.category, 'government')
+    );
     // Also check nested subcategory indexes registered in yamlLoader
     if (cat.subcategories) {
       for (const sub of cat.subcategories) {
         documents.push(
-          ...loadMarkdownPages('government', `${cat.slug}/${sub.slug}`, sub.name, 'government')
+          ...loadMarkdownPages(
+            'government',
+            `${cat.slug}/${sub.slug}`,
+            sub.name,
+            'government'
+          )
         );
       }
     }
   }
+
+  documents.push(...loadHotlines());
 
   if (documents.length === 0) {
     console.warn('No documents found to index. Check content/ directory.');
@@ -126,13 +207,32 @@ async function indexContent() {
   await index.updateSettings({
     searchableAttributes: ['title', 'description', 'content', 'category'],
     filterableAttributes: ['type', 'categorySlug'],
-    displayedAttributes: ['id', 'title', 'description', 'type', 'category', 'categorySlug', 'slug', 'url'],
-    rankingRules: ['words', 'typo', 'proximity', 'attribute', 'sort', 'exactness'],
+    displayedAttributes: [
+      'id',
+      'title',
+      'description',
+      'type',
+      'category',
+      'categorySlug',
+      'slug',
+      'url',
+      'verificationStatus',
+    ],
+    rankingRules: [
+      'words',
+      'typo',
+      'proximity',
+      'attribute',
+      'sort',
+      'exactness',
+    ],
   });
 
   console.log(`Indexing ${documents.length} documents...`);
   const task = await index.addDocuments(documents, { primaryKey: 'id' });
-  console.log(`Done! Task ID: ${task.taskUid}. ${documents.length} documents queued for indexing.`);
+  console.log(
+    `Done! Task ID: ${task.taskUid}. ${documents.length} documents queued for indexing.`
+  );
 }
 
 indexContent().catch(err => {

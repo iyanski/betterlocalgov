@@ -1,16 +1,8 @@
-export type LanguageType =
-  | 'en' // English
-  | 'fil' // Filipino (standardized Tagalog)
-  | 'ceb' // Cebuano/Bisaya
-  | 'ilo' // Ilocano
-  | 'hil' // Hiligaynon/Ilonggo
-  | 'war' // Waray
-  | 'pam' // Kapampangan
-  | 'bcl' // Bikol
-  | 'pag' // Pangasinan
-  | 'mag' // Maguindanao
-  | 'tsg' // Tausug
-  | 'mdh'; // Maranao
+/** Languages visitors can select. */
+export type LanguageType = 'en';
+
+/** Scaffolded languages that stay disabled until a human speaker approves them. */
+export type PlannedLanguageType = 'fil' | 'ilo' | 'ibg';
 
 export interface NavigationItem {
   label: string;

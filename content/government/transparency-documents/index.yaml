@@ -1,0 +1,9 @@
+title: 'Official public-record sources'
+description: 'Links to authoritative government repositories. Better Gattaran does not duplicate or reinterpret financial records in this baseline.'
+layout: grid
+pages:
+  - name: 'Authoritative record repositories'
+    slug: 'authoritative-record-repositories'
+    publicationStatus: published
+    verificationStatus: verified
+    description: 'Official starting points for geographic data and Commission on Audit reports.'

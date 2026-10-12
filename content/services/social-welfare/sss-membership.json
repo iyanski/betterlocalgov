@@ -1,0 +1,18 @@
+{
+  "publicationStatus": "published",
+  "scope": "national_applicable",
+  "provenance": {
+    "verificationStatus": "sourced",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "Become an SSS Member",
+        "organization": "Social Security System (SSS)",
+        "url": "https://www.sss.gov.ph/become-an-sss-member/",
+        "type": "national_government",
+        "locator": "\"Be an SSS Member\" page: first-time SS Number, coverage types and membership sections"
+      }
+    ],
+    "lastVerifiedAt": "2026-10-12"
+  }
+}

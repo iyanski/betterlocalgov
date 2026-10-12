@@ -1,0 +1,18 @@
+{
+  "publicationStatus": "published",
+  "scope": "national_applicable",
+  "provenance": {
+    "verificationStatus": "sourced",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "Registration Procedures for Informal Economy Members",
+        "organization": "Philippine Health Insurance Corporation (PhilHealth)",
+        "url": "https://www.philhealth.gov.ph/members/informal/registration.php",
+        "type": "national_government",
+        "locator": "Registration procedures list, steps 1-5 and payment schedule options"
+      }
+    ],
+    "lastVerifiedAt": "2026-10-12"
+  }
+}

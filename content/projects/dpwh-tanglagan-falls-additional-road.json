@@ -1,0 +1,31 @@
+{
+  "publicationStatus": "published",
+  "scope": "local",
+  "containsFigures": true,
+  "project": {
+    "name": "Additional road improvement project leading to Tanglagan Falls",
+    "implementingAgency": "DPWH Cagayan First District Engineering Office",
+    "amount": {
+      "text": "P7.1 million",
+      "value": 7100000,
+      "statement": "The contract project costing P7.1 million"
+    },
+    "status": "also completed last year (release dated 19 April 2022)",
+    "location": "Road leading to Tanglagan Falls"
+  },
+  "provenance": {
+    "verificationStatus": "sourced",
+    "lastVerifiedAt": "2026-10-12",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "DPWH Paves Road to Tanglagan Falls in Gattaran, Cagayan",
+        "organization": "Department of Public Works and Highways",
+        "url": "https://dpwh.gov.ph/DPWH/news/26309",
+        "type": "national_government",
+        "publishedAt": "2022-04-19",
+        "locator": "News release dated 19 April 2022, sentence beginning \"Another road improvement project leading to Tanglagan Falls was also completed last year\""
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+name: Content
+
+on:
+  pull_request:
+  schedule:
+    # Mondays 03:00 UTC: source link check
+    - cron: '0 3 * * 1'
+    # First of the month 03:00 UTC: reverification check
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Which scheduled check to run'
+        type: choice
+        options: [source-links, reverification]
+        default: source-links
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run content:audit
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build
+
+  source-links:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1') ||
+      (github.event_name == 'workflow_dispatch' && inputs.task == 'source-links')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/check-source-urls.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+  reverification:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '0 3 1 * *') ||
+      (github.event_name == 'workflow_dispatch' && inputs.task == 'reverification')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/check-reverification.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CONTENT_REVERIFY_MONTHS: ${{ vars.CONTENT_REVERIFY_MONTHS || '12' }}
