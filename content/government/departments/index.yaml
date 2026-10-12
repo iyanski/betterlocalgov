@@ -1,10 +1,20 @@
-# Department Pages
-# This file contains all the pages/governments available under the Department
-
+# Only pages backed by the source metadata in their companion JSON are listed.
+title: 'Municipality and Government'
+description: 'Verified public information about Gattaran and its municipal government. Unverified office, contact, and official details remain unpublished.'
+layout: grid
 pages:
-  - name: 'Executive'
-    slug: 'executive'
-    description: "Find out about your Mayor and Vice Mayor, including upcoming events, the Mayor's Community Assistance Program, mayoral history, and information about other historic roles in the local government unit."
-  - name: 'Legislative'
-    slug: 'legislative'
-    description: 'As of the 2025–2028 term, the Sangguniang Panlungsod (City Council) of Lapu-Lapu City has 12 elected councilors, with the Vice Mayor as the presiding officer of the council.'
+  - name: 'Municipality overview'
+    slug: 'municipality-overview'
+    publicationStatus: published
+    verificationStatus: verified
+    description: 'Administrative identity, PSGC codes, income classification, population context, and barangay count.'
+  - name: 'Barangays'
+    slug: 'barangays'
+    publicationStatus: published
+    verificationStatus: verified
+    description: 'The official Philippine Statistics Authority list of Gattaran barangays.'
+  - name: 'Municipal mayor'
+    slug: 'municipal-mayor'
+    publicationStatus: published
+    verificationStatus: verified
+    description: 'The current municipal mayor listed by the Provincial Government of Cagayan.'

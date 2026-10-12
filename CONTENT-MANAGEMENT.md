@@ -1,5 +1,7 @@
 # Content Management Guide for Non-Technical Users
 
+> **Better Gattaran governance rule:** Never add factual municipal information without a reliable source. New records start as `draft` + `awaiting_verification` and remain hidden until a reviewer updates both lifecycle fields, source metadata, the internal content register, and the revision log. See [`docs/content-verification.md`](docs/content-verification.md).
+
 This guide will help you edit and manage content for the Better Local Government website using GitHub's web interface, without needing to install any software or use command-line tools.
 
 ## Table of Contents
@@ -117,6 +119,8 @@ pages:
   - name: 'Your Service Name'
     slug: 'your-service-name'
     description: 'Brief description of the service.'
+    publicationStatus: draft
+    verificationStatus: awaiting_verification
 ```
 
 5. Save the changes
@@ -138,6 +142,8 @@ pages:
   - name: 'Your First Service'
     slug: 'your-first-service'
     description: 'Description of your first service.'
+    publicationStatus: draft
+    verificationStatus: awaiting_verification
 ```
 
 #### Step 2: Create Service Content Files
@@ -178,6 +184,8 @@ pages:
   - name: 'Your Department Name'
     slug: 'your-department-name'
     description: 'Brief description of the department.'
+    publicationStatus: draft
+    verificationStatus: awaiting_verification
 ```
 
 5. Save the changes
@@ -188,17 +196,23 @@ Department pages support `{PLACEHOLDER}` tokens that are automatically replaced 
 
 ```json
 {
-  "GOVERNMENT_NAME": "Lapu Lapu City",
-  "MAYOR": "Ma. Cynthia K. Chan",
-  "MAYOR_HE_SHE": "she",
-  "HONORIFIC_TITLE": "Honorable",
-  "VICE_MAYOR": "Celedonio B. Sitoy",
-  "VICE_MAYOR_HE_SHE": "he",
-  "YEAR_ELECTED": "2022"
+  "publicationStatus": "draft",
+  "provenance": {
+    "verificationStatus": "awaiting_verification",
+    "lastUpdatedAt": "YYYY-MM-DD",
+    "sources": [
+      {
+        "title": "Official source title",
+        "organization": "Issuing government organization",
+        "url": "https://government.example/source",
+        "type": "national_government"
+      }
+    ]
+  }
 }
 ```
 
-To update official names or titles, **edit only the JSON file** — the markdown content updates automatically. If no JSON file exists, placeholders fall back to environment variables (`VITE_MAYOR`, etc.) or are left as-is.
+Dynamic placeholder values may also live in this file. A reviewer may set `lastVerifiedAt`, an eligible verification status, and `publicationStatus: published` only after checking the source and following [`docs/content-verification.md`](docs/content-verification.md). If no JSON value exists, placeholders fall back to matching environment variables or are left as-is.
 
 > **Note:** Adding a brand-new government _category_ (e.g., a section alongside `departments`) requires a developer to register it in `src/data/government.yaml` and `src/data/yamlLoader.ts`.
 

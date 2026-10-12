@@ -23,6 +23,11 @@ import {
   type CategoryIndex,
 } from '../data/yamlLoader';
 import SEO from '../components/SEO';
+import { sanitizeLegacyServiceContent } from '../lib/legacyContent';
+import ContentProvenance from '../components/content/ContentProvenance';
+import ReportCorrectionLink from '../components/content/ReportCorrectionLink';
+import { isPubliclyVisible } from '../lib/contentGovernance';
+import { contentGovernanceConfig } from '../config/contentGovernance';
 
 interface DocumentProps {
   theme?: string;
@@ -47,13 +52,10 @@ export default function Document({
   const [breadcrumbs, setBreadcrumbs] = useState([
     { label: 'Home', href: '/' },
   ]);
+  const hasDocumentRequest = Boolean(documentSlug && category && categoryType);
 
   useEffect(() => {
-    if (!documentSlug || !category || !categoryType) {
-      setError('No document specified');
-      setLoading(false);
-      return;
-    }
+    if (!documentSlug || !category || !categoryType) return;
 
     const loadContent = async () => {
       try {
@@ -87,11 +89,15 @@ export default function Document({
           return;
         }
 
-        const content = await loadMarkdownContent(
+        const loadedContent = await loadMarkdownContent(
           documentSlug,
           category,
           categoryType
         );
+        const content =
+          categoryType === 'service'
+            ? sanitizeLegacyServiceContent(loadedContent)
+            : loadedContent;
         setMarkdownContent(content);
 
         setBreadcrumbs([
@@ -117,6 +123,20 @@ export default function Document({
 
     loadContent();
   }, [documentSlug, category, categoryType]);
+
+  if (!hasDocumentRequest) {
+    return (
+      <Section className="p-3 mb-12">
+        <Breadcrumbs className="mb-8" items={breadcrumbs} />
+        <Banner
+          type="error"
+          title="Document Not Found"
+          description="No document specified"
+          icon
+        />
+      </Section>
+    );
+  }
 
   if (loading) {
     return (
@@ -202,6 +222,35 @@ export default function Document({
     return null;
   }
 
+  const isVisible =
+    markdownContent.provenance &&
+    isPubliclyVisible(
+      markdownContent.publicationStatus,
+      markdownContent.provenance.verificationStatus,
+      contentGovernanceConfig.allowSourcedContent
+    );
+
+  if (!isVisible) {
+    return (
+      <>
+        <SEO
+          title="Information awaiting verification"
+          description="This record is not currently available as published public information."
+        />
+        <Section className="p-3 mb-12">
+          <Breadcrumbs className="mb-8" items={breadcrumbs} />
+          <Banner
+            type="info"
+            title="Information awaiting verification"
+            description="No verified information is currently available for this page. It will be published after reliable sources and its review status are recorded."
+            icon
+          />
+          <ReportCorrectionLink />
+        </Section>
+      </>
+    );
+  }
+
   return (
     <>
       <SEO
@@ -214,6 +263,15 @@ export default function Document({
       />
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" items={breadcrumbs} />
+        {categoryType === 'service' &&
+          markdownContent.provenance?.verificationStatus !== 'verified' && (
+            <Banner
+              type="info"
+              title="Verification notice"
+              description="This inherited service guide is template content and may not describe current Municipality of Gattaran requirements, fees, contacts, or procedures. Verify details with the appropriate government office before relying on it."
+              icon
+            />
+          )}
         <Card className="mb-8 markdown-content">
           <CardHeader>
             {markdownContent.description && (
@@ -225,6 +283,8 @@ export default function Document({
             >
               {markdownContent.content}
             </ReactMarkdown>
+            <ContentProvenance provenance={markdownContent.provenance} />
+            <ReportCorrectionLink />
           </CardHeader>
         </Card>
       </Section>

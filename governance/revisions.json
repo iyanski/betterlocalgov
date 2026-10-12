@@ -1,0 +1,53 @@
+{
+  "revisions": [
+    {
+      "contentId": "government/departments/municipality-overview",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "government/departments/barangays",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "government/departments/municipal-mayor",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "government/transparency-documents/authoritative-record-repositories",
+      "action": "updated",
+      "changedFields": ["publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T10:49:57+08:00"
+    },
+    {
+      "contentId": "hotlines/national-emergency-911",
+      "action": "published",
+      "changedFields": ["phone", "publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T16:25:48+08:00"
+    },
+    {
+      "contentId": "hotlines/gattaran-emergency-hospital",
+      "action": "published",
+      "changedFields": ["phone", "publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T16:25:48+08:00"
+    },
+    {
+      "contentId": "hotlines/cagayan-pdrrmo",
+      "action": "published",
+      "changedFields": ["phone", "publicationStatus", "provenance"],
+      "responsible": "Better Gattaran maintainers",
+      "timestamp": "2026-09-23T16:25:48+08:00"
+    }
+  ]
+}

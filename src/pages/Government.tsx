@@ -8,21 +8,27 @@ import {
   type Subcategory,
   type CategoryIndex,
 } from '../data/yamlLoader';
-import * as LucideIcons from 'lucide-react';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import GovernmentActivitySection from '../components/home/GovernmentActivitySection';
 import SEO from '../components/SEO';
 import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Banner } from '@bettergov/kapwa/banner';
 import { useState, useEffect } from 'react';
+import { CategoryIcon } from '../lib/categoryIcons';
+import VerificationBadge from '../components/content/VerificationBadge';
+
+const emptyCategoryIndex: CategoryIndex = { layout: 'list', pages: [] };
 
 const Government: React.FC = () => {
   const { category } = useParams();
-  const [categoryIndex, setCategoryIndex] = useState<CategoryIndex>({
-    layout: 'list',
-    pages: [],
-  });
-  const [loading, setLoading] = useState(false);
+  const [loadedCategory, setLoadedCategory] = useState<{
+    slug: string;
+    index: CategoryIndex;
+  } | null>(null);
+  const categoryIndex =
+    loadedCategory && loadedCategory.slug === category
+      ? loadedCategory.index
+      : emptyCategoryIndex;
   const subcategories: Subcategory[] = categoryIndex.pages;
 
   const getCategory = () => {
@@ -30,17 +36,27 @@ const Government: React.FC = () => {
   };
 
   const categoryData = getCategory();
-  const Icon = LucideIcons[
-    categoryData?.icon as keyof typeof LucideIcons
-  ] as React.ComponentType<{ className?: string }>;
+  const loading = Boolean(
+    category && categoryData && loadedCategory?.slug !== category
+  );
 
   useEffect(() => {
     if (category && categoryData) {
-      setLoading(true);
+      let active = true;
       getCategorySubcategories(category)
-        .then(setCategoryIndex)
-        .catch(console.error)
-        .finally(() => setLoading(false));
+        .then(index => {
+          if (active) setLoadedCategory({ slug: category, index });
+        })
+        .catch(error => {
+          console.error(error);
+          if (active) {
+            setLoadedCategory({ slug: category, index: emptyCategoryIndex });
+          }
+        });
+
+      return () => {
+        active = false;
+      };
     }
   }, [category, categoryData]);
 
@@ -48,13 +64,13 @@ const Government: React.FC = () => {
     return (
       <>
         <SEO
-          title="Services"
-          description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
-          keywords="government services, public services, local government, civic services"
+          title="Municipal Information"
+          description={`Community-organized information about ${import.meta.env.VITE_GOVERNMENT_NAME}. Details are added after verification.`}
+          keywords="Gattaran municipal information, local government, civic information"
         />
         <GovernmentActivitySection
-          title={`All local government services`}
-          description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
+          title="Municipal information"
+          description={`Browse the portal's information structure for ${import.meta.env.VITE_GOVERNMENT_NAME}. Office, official, contact, and activity details will be added only after verification.`}
         />
       </>
     );
@@ -82,7 +98,10 @@ const Government: React.FC = () => {
       />
       <Section className="p-3 mb-12">
         <Breadcrumbs className="mb-8" />
-        <Icon className="h-8 w-8 mb-4 text-primary-600 rounded-md" />
+        <CategoryIcon
+          name={categoryData.icon}
+          className="h-8 w-8 mb-4 text-primary-600 rounded-md"
+        />
         <Heading>{categoryData.category || category}</Heading>
         <Text className="text-gray-600 mb-6">{categoryData.description}</Text>
 
@@ -99,6 +118,14 @@ const Government: React.FC = () => {
               <Text className="text-gray-600 mb-4">
                 {categoryIndex.description}
               </Text>
+            )}
+            {subcategories.length === 0 && (
+              <Banner
+                type="info"
+                title="Information pending verification"
+                description="No records are published in this section yet. Better Gattaran will add information only after it is checked against an authoritative public source."
+                icon
+              />
             )}
             {categoryIndex.layout === 'grid' ? (
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -123,6 +150,13 @@ const Government: React.FC = () => {
                         <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
                           {categoryData.category || category}
                         </span>
+                        {subcategory.verificationStatus && (
+                          <div className="mt-3">
+                            <VerificationBadge
+                              status={subcategory.verificationStatus}
+                            />
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   </Link>
@@ -148,6 +182,13 @@ const Government: React.FC = () => {
                         <span className="inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800">
                           {categoryData.category || category}
                         </span>
+                        {subcategory.verificationStatus && (
+                          <div className="mt-3">
+                            <VerificationBadge
+                              status={subcategory.verificationStatus}
+                            />
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   </Link>

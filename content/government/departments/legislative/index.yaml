@@ -1,9 +1,4 @@
-# legislative Department Pages
-# This file contains all the pages/governments/departments/legislative available under the Department
-#
 layout: grid
-title: 'Legislative Department'
-description: 'Page Description'
-pages:
-  - name: 'Councilor A'
-    description: 'Description'
+title: 'Municipal Legislative Information'
+description: 'Verified council membership, committee structure, ordinances, resolutions, schedules, and contact details have not yet been added.'
+pages: []
