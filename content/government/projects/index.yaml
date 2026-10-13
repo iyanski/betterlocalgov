@@ -1,0 +1,6 @@
+title: 'National-agency projects in Gattaran'
+description: 'Projects located in Gattaran that are implemented by national government agencies, listed from the agencies’ own published sources. These are not municipal projects.'
+layout: list
+# Project rows live in content/projects/*.json and are rendered as a table by
+# the Projects page; no Markdown pages are listed here.
+pages: []

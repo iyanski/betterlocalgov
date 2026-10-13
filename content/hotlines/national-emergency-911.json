@@ -1,0 +1,20 @@
+{
+  "name": "National Emergency Hotline",
+  "phone": "911",
+  "displayPhone": "911",
+  "category": "national-emergency",
+  "publicationStatus": "published",
+  "provenance": {
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-09-23",
+    "lastUpdatedAt": "2026-09-23",
+    "sources": [
+      {
+        "title": "PH Emergency Hotlines",
+        "organization": "Philippine Government — eGov PH",
+        "url": "https://ehotlines.e.gov.ph/",
+        "type": "official_government_publication"
+      }
+    ]
+  }
+}

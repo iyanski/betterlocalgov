@@ -1,0 +1,33 @@
+{
+  "publicationStatus": "published",
+  "scope": "local",
+  "containsFigures": true,
+  "project": {
+    "name": "Casicallan Flood Control Project",
+    "implementingAgency": "DPWH Cagayan First District Engineering Office",
+    "fundSource": "General Appropriations Act (GAA)",
+    "fundYear": "2023",
+    "amount": {
+      "text": "P50 million",
+      "value": 50000000,
+      "statement": "completed in the amount of P50 million"
+    },
+    "status": "recently completed",
+    "location": "Barangay Casicallan"
+  },
+  "provenance": {
+    "verificationStatus": "sourced",
+    "lastVerifiedAt": "2026-10-12",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "DPWH Completes P50-M Flood Defense Project in Gattaran, Cagayan",
+        "organization": "Department of Public Works and Highways",
+        "url": "https://dpwh.gov.ph/DPWH/news/31832",
+        "type": "national_government",
+        "publishedAt": "2023-12-07",
+        "locator": "News release dated 7 December 2023, sentence beginning \"District Engineer Gumiran said that the completed flood-control structure\""
+      }
+    ]
+  }
+}

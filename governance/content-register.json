@@ -1,0 +1,109 @@
+{
+  "records": [
+    {
+      "contentId": "government/departments/municipality-overview",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "See docs/sources.md for the source acceptance rationale.",
+      "createdAt": "2026-09-22",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "government/departments/barangays",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "See docs/sources.md for the source acceptance rationale.",
+      "createdAt": "2026-09-22",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "government/departments/municipal-mayor",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "Current provincial directory accepted; superseded historical source is documented in docs/sources.md. Agent re-check 2026-10-12: the Provincial Government of Cagayan directory still lists Hon. Matthew C. Nolasco as Municipal Mayor of Gattaran; a COMELEC source could not be retrieved, so verification status and lastVerifiedAt are unchanged. Needs maintainer confirmation.",
+      "createdAt": "2026-09-22",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "government/transparency-documents/authoritative-record-repositories",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "Repository entry points only; no financial figures are summarized.",
+      "createdAt": "2026-09-22",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "hotlines/national-emergency-911",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "Confirmed on the official Philippine emergency-hotlines portal; see docs/sources.md.",
+      "createdAt": "2026-09-23",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "hotlines/gattaran-emergency-hospital",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "Confirmed in the Provincial Government of Cagayan Citizens' Charter 2024 office directory; see docs/sources.md.",
+      "createdAt": "2026-09-23",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "hotlines/cagayan-pdrrmo",
+      "verifiedBy": "Better Gattaran maintainers",
+      "internalVerificationNotes": "Confirmed in the Provincial Government of Cagayan Citizens' Charter 2024 office directory; see docs/sources.md.",
+      "createdAt": "2026-09-23",
+      "updatedAt": "2026-09-23"
+    },
+    {
+      "contentId": "projects/dpwh-casicallan-flood-control",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Agent-checked 2026-10-12 against the DPWH news release as fetched by the agent's web tool; needs maintainer confirmation before promotion to verified. No contractor is named in the release. See docs/sources.md.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "projects/dpwh-tanglagan-falls-road",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Agent-checked 2026-10-12 against the DPWH news release as fetched by the agent's web tool; needs maintainer confirmation before promotion to verified. No contractor is named in the release. See docs/sources.md.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "projects/dpwh-tanglagan-falls-additional-road",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Agent-checked 2026-10-12 against the DPWH news release as fetched by the agent's web tool; needs maintainer confirmation before promotion to verified. No contractor is named in the release. See docs/sources.md.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "services/health-services/philhealth-membership-registration",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Steps quoted from the PhilHealth informal-economy registration page as fetched by the agent's web tool; needs maintainer confirmation in a browser before verified. Page has no publication date (footer shows 2025).",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "services/social-welfare/dswd-aics",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Quotes from the DSWD AICS page as fetched by the agent's web tool; the page states no eligibility or requirements, so none are published. Needs maintainer confirmation before verified.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "services/social-welfare/sss-membership",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Quotes from the SSS 'Be an SSS Member' page as fetched by the agent's web tool; one paraphrased detail (contribution requirement) was deliberately not published. Needs maintainer confirmation before verified.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "services/disaster-preparedness/official-hazard-and-weather-tools",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "Links and one quote from HazardHunterPH and the PAGASA home page. MGB geohazard maps were not retrievable (HTTP 403) and GeoRiskPH's main site failed certificate verification, so neither is cited; see the Phase 4 handoff.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "contentId": "government/departments/elected-officials",
+      "verifiedBy": "Agent-checked 2026-10-12 (Claude); needs maintainer confirmation",
+      "internalVerificationNotes": "DRAFT. No COMELEC or provincial source could be retrieved; Rappler's partial, unofficial results page is a cross-check only. No names are published; see the Phase 4 handoff.",
+      "createdAt": "2026-10-12",
+      "updatedAt": "2026-10-12"
+    }
+  ]
+}

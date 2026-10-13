@@ -1,0 +1,18 @@
+{
+  "publicationStatus": "published",
+  "scope": "national_applicable",
+  "provenance": {
+    "verificationStatus": "sourced",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "Assistance to Individuals in Crisis Situation (AICS)",
+        "organization": "Department of Social Welfare and Development (DSWD)",
+        "url": "https://www.dswd.gov.ph/aics/",
+        "type": "national_government",
+        "locator": "Page heading \"ASSISTANCE TO INDIVIDUALS IN CRISIS SITUATION (AICS)\", program description and Contact Us section"
+      }
+    ],
+    "lastVerifiedAt": "2026-10-12"
+  }
+}

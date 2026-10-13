@@ -25,4 +25,10 @@ export default defineConfig([
       'react-hooks/set-state-in-effect': 'warn',
     },
   },
+  {
+    // Build-time renderer: never loaded in the browser, so Fast Refresh
+    // constraints do not apply.
+    files: ['src/prerender/**/*.tsx'],
+    rules: { 'react-refresh/only-export-components': 'off' },
+  },
 ]);

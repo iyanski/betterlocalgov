@@ -1,0 +1,16 @@
+{
+  "publicationStatus": "draft",
+  "scope": "local",
+  "provenance": {
+    "verificationStatus": "awaiting_verification",
+    "lastUpdatedAt": "2026-10-12",
+    "sources": [
+      {
+        "title": "Gattaran local race, 2025 (media results page, partial and unofficial)",
+        "organization": "Rappler",
+        "url": "https://ph.rappler.com/elections/2025/local-race/cagayan/gattaran",
+        "type": "other_public_source"
+      }
+    ]
+  }
+}

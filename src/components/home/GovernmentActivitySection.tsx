@@ -1,5 +1,4 @@
 import Section from '../ui/Section';
-import * as LucideIcons from 'lucide-react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
 import { useTranslation } from '../../hooks/useTranslation';
@@ -7,6 +6,7 @@ import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Link } from 'react-router';
 
 import { governmentCategories } from '../../data/yamlLoader';
+import { CategoryIcon } from '../../lib/categoryIcons';
 
 interface Subcategory {
   name: string;
@@ -32,18 +32,11 @@ export default function GovernmentActivitySection({
 }: GovernmentActivitySectionProps = {}) {
   const { t } = useTranslation();
 
-  const getIcon = (category: string) => {
-    const IconComponent = LucideIcons[
-      category as keyof typeof LucideIcons
-    ] as React.ComponentType<{ className?: string }>;
-    return IconComponent ? <IconComponent className="h-6 w-6" /> : null;
-  };
-
   const displayedCategories = governmentCategories.categories as Category[];
 
   return (
     <Section id="#government">
-      <Heading level={2}>{title || t('title')}</Heading>
+      <Heading level={2}>{title || t('governmentActivity.title')}</Heading>
       <Text className="text-gray-600 mb-6">
         {description || t('governmentActivity.description')}
       </Text>
@@ -62,7 +55,7 @@ export default function GovernmentActivitySection({
               <CardContent className="flex flex-col h-full p-6">
                 <div className="flex gap-2">
                   <div className="bg-primary-100 text-primary-600 p-3 rounded-md mb-4 self-start">
-                    {getIcon(category.icon)}
+                    <CategoryIcon name={category.icon} className="h-6 w-6" />
                   </div>
 
                   <h3 className="text-lg font-semibold mb-4 text-gray-900 self-center">

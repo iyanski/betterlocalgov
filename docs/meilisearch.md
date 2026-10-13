@@ -97,7 +97,7 @@ npm run index-content
 
 The script (`scripts/index-content.mjs`) does the following:
 
-1. Crawls all `content/services/**/*.md` and `content/government/**/*.md` files
+1. Crawls `content/services/**/*.md`, `content/government/**/*.md`, `content/hotlines/*.json` and `content/projects/*.json`, keeping only records that pass the shared visibility policy (`scripts/lib/visibility.mjs`), including the `national_applicable` source rule. `VITE_ALLOW_SOURCED_CONTENT` (or `ALLOW_SOURCED_CONTENT`, which takes precedence) controls sourced records, as in the app.
 2. Extracts the page title (first `# Heading`) and description (first paragraph)
 3. Strips all markdown syntax, leaving plain text for full-text search
 4. Pushes documents to a Meilisearch index named `content`
