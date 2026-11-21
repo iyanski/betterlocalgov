@@ -5,6 +5,7 @@
 import { type TypographyTheme } from './typographyThemes';
 import { type ReactNode, type HTMLAttributes } from 'react';
 import { TableWithToggle } from './TableWithToggle';
+import { nodeText, slugify } from './headings';
 
 // Extended theme type to include dynamic component keys
 type ExtendedTheme = TypographyTheme & {
@@ -31,7 +32,11 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       children,
       ...props
     }: { children?: ReactNode } & HTMLAttributes<HTMLHeadingElement>) => (
-      <h2 className={theme.components.h2} {...props}>
+      <h2
+        id={slugify(nodeText(children))}
+        className={theme.components.h2}
+        {...props}
+      >
         {children}
       </h2>
     ),

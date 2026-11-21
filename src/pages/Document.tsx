@@ -5,7 +5,7 @@ import { Text } from '../components/ui/Text';
 import Notice from '../components/ui/Notice';
 import PageList from '../components/sections/PageList';
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
@@ -22,6 +22,22 @@ import {
   type CategoryIndex,
 } from '../data/yamlLoader';
 import SEO from '../components/SEO';
+import Container from '../components/ui/Container';
+import OnThisPage from '../components/ui/OnThisPage';
+import { extractHeadings } from '../lib/headings';
+
+// A sidebar only earns its place once there is somewhere to jump to
+const MIN_SIDEBAR_HEADINGS = 2;
+
+const humanize = (slug: string) =>
+  slug.replace(/-/g, ' ').replace(/^\w/, c => c.toUpperCase());
+
+const plainText = (markdown: string) =>
+  markdown
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/(\*\*|__|`)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 interface DocumentProps {
   theme?: string;
@@ -117,6 +133,19 @@ export default function Document({
     loadContent();
   }, [documentSlug, category, categoryType]);
 
+  const headings = useMemo(
+    () => (markdownContent ? extractHeadings(markdownContent.body) : []),
+    [markdownContent]
+  );
+
+  // Content loads asynchronously, so the browser can't honour a #section in
+  // the URL on its own; jump to it once the article is rendered.
+  useEffect(() => {
+    if (!markdownContent || !window.location.hash) return;
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    document.getElementById(id)?.scrollIntoView();
+  }, [markdownContent]);
+
   if (loading) {
     return (
       <Section>
@@ -161,28 +190,64 @@ export default function Document({
     return null;
   }
 
+  const title = markdownContent.title ?? humanize(documentSlug ?? '');
+  const showSidebar = headings.length >= MIN_SIDEBAR_HEADINGS;
+
   return (
     <>
       <SEO
-        title={markdownContent.title || documentSlug}
+        title={title}
         description={
-          markdownContent.description ||
-          `Government service information for ${documentSlug}`
+          markdownContent.description
+            ? plainText(markdownContent.description)
+            : `Government service information for ${documentSlug}`
         }
         keywords={`${documentSlug}, government services, public services, local government`}
       />
-      <Section>
-        <Breadcrumbs className="mb-8" items={breadcrumbs} />
-        {/* The markdown carries its own H1 and lede paragraph */}
-        <article className="markdown-content max-w-[820px]">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={markdownComponents}
-          >
-            {markdownContent.content}
-          </ReactMarkdown>
-        </article>
-      </Section>
+
+      <section className="border-b border-ed-rule bg-ed-paper-2 py-10 md:py-14">
+        <Container>
+          <Breadcrumbs className="mb-8" items={breadcrumbs} />
+          <div className="max-w-[850px]">
+            <h1 className="font-display text-[clamp(32px,5vw,56px)] font-bold leading-[1.05] tracking-[-0.02em] text-ed-ink">
+              {title}
+            </h1>
+            {markdownContent.description && (
+              <div className="mt-5 max-w-[720px] text-lg leading-relaxed text-ed-ink-2 max-md:text-base">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    ...markdownComponents,
+                    p: ({ children }) => <p>{children}</p>,
+                  }}
+                >
+                  {markdownContent.description}
+                </ReactMarkdown>
+              </div>
+            )}
+          </div>
+        </Container>
+      </section>
+
+      <Container className="py-12 max-md:py-6">
+        <div
+          className={
+            showSidebar
+              ? 'lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:items-start lg:gap-14'
+              : undefined
+          }
+        >
+          {showSidebar && <OnThisPage headings={headings} />}
+          <article className="markdown-content min-w-0 max-w-[820px] [&>h2:first-child]:mt-0">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={markdownComponents}
+            >
+              {markdownContent.body}
+            </ReactMarkdown>
+          </article>
+        </div>
+      </Container>
     </>
   );
 }

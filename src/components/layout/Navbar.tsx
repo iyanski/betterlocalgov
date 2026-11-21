@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   X,
   Menu,
@@ -32,6 +32,23 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const { t, i18n } = useTranslation('common');
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Publish the sticky header's height so in-page anchors and sticky
+  // sidebars can clear it (see --header-height in index.css).
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const root = document.documentElement;
+    const observer = new ResizeObserver(() => {
+      root.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    });
+    observer.observe(header);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty('--header-height');
+    };
+  }, []);
 
   const navLabel = (label: string) =>
     t(`navbar.${label.replace(' ', '').toLowerCase()}`);
@@ -72,7 +89,10 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ed-rule bg-ed-paper">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 border-b border-ed-rule bg-ed-paper"
+    >
       {/* Utility strip */}
       <div className="bg-ed-navy-2 text-white">
         <Container className="flex h-9 items-center justify-between gap-4">

@@ -79,6 +79,8 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Set by Navbar; keeps #anchor targets clear of the sticky header */
+    scroll-padding-top: calc(var(--header-height, 0px) + 1.5rem);
   }
 
   body {
