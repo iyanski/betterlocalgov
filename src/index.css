@@ -5,85 +5,46 @@
 @source '../node_modules/@bettergov/kapwa/dist';
 @import '@bettergov/kapwa/styles';
 
+/*
+ * BetterGov.ph brand tokens — https://bettergov.ph/design
+ * Ink, paper, one blue — and a red held in reserve.
+ * Token names mirror the upstream BetterGov.ph design system (ed-*).
+ */
 @theme {
-  --font-serif: Georgia, 'Times New Roman', serif;
+  /* Ink — headings and primary text */
+  --color-ed-ink: #0c1b33;
+  --color-ed-ink-2: #2b3a55;
+  --color-ed-ink-3: #252629;
+  --color-ed-ink-4: #8a95aa;
 
-  --color-primary-50: #e6f0fd;
-  --color-primary-100: #cce0fb;
-  --color-primary-200: #99c2f7;
-  --color-primary-300: #66a3f3;
-  --color-primary-400: #3385ef;
-  --color-primary-500: #0066eb;
-  --color-primary-600: #0052bc;
-  --color-primary-700: #003d8d;
-  --color-primary-800: #00295e;
-  --color-primary-900: #00142f;
+  /* Rules — borders and dividers */
+  --color-ed-rule: #dbe3ef;
+  --color-ed-rule-strong: #9fb2cc;
 
-  --color-secondary-50: #ffede6;
-  --color-secondary-100: #ffdbcc;
-  --color-secondary-200: #ffb799;
-  --color-secondary-300: #ff9466;
-  --color-secondary-400: #ff7033;
-  --color-secondary-500: #ff4d00;
-  --color-secondary-600: #cc3e00;
-  --color-secondary-700: #992e00;
-  --color-secondary-800: #661f00;
-  --color-secondary-900: #330f00;
+  /* Paper — most of every page is paper */
+  --color-ed-paper: #ffffff;
+  --color-ed-paper-2: #f4f7fc;
+  --color-ed-paper-3: #e6ecf5;
 
-  --color-accent-50: #fef3e6;
-  --color-accent-100: #fde7cc;
-  --color-accent-200: #fbd099;
-  --color-accent-300: #f9b866;
-  --color-accent-400: #f7a133;
-  --color-accent-500: #f58900;
-  --color-accent-600: #c46e00;
-  --color-accent-700: #935200;
-  --color-accent-800: #623700;
-  --color-accent-900: #311b00;
+  /* Republic Blue — the only interactive colour */
+  --color-ed-navy: #0b4fd9;
+  /* Band Navy — hero and masthead bands, flat, never a gradient */
+  --color-ed-navy-2: #0a44bd;
+  --color-ed-navy-ink: #08286e;
+  --color-ed-navy-tint: #e8efff;
 
-  --color-success-50: #e6f7ef;
-  --color-success-100: #ccefdf;
-  --color-success-200: #99dfbf;
-  --color-success-300: #66cf9f;
-  --color-success-400: #33bf7f;
-  --color-success-500: #00af5f;
-  --color-success-600: #008c4c;
-  --color-success-700: #006939;
-  --color-success-800: #004626;
-  --color-success-900: #002313;
+  /* Alert Red — urgency only: advisories and emergencies */
+  --color-ed-red: #c8102e;
+  --color-ed-red-ink: #8c0a20;
 
-  --color-warning-50: #fff8e6;
-  --color-warning-100: #fff1cc;
-  --color-warning-200: #ffe399;
-  --color-warning-300: #ffd566;
-  --color-warning-400: #ffc733;
-  --color-warning-500: #ffb900;
-  --color-warning-600: #cc9400;
-  --color-warning-700: #996f00;
-  --color-warning-800: #664a00;
-  --color-warning-900: #332500;
+  /* Rare editorial accents — never interactive */
+  --color-ed-sage: #4a6b5a;
+  --color-ed-gold: #b8893a;
 
-  --color-error-50: #fceaea;
-  --color-error-100: #f9d5d5;
-  --color-error-200: #f3abab;
-  --color-error-300: #ed8282;
-  --color-error-400: #e75858;
-  --color-error-500: #e12e2e;
-  --color-error-600: #b42525;
-  --color-error-700: #871c1c;
-  --color-error-800: #5a1212;
-  --color-error-900: #2d0909;
+  /* Figtree speaks. Inter works. Mono labels. */
+  --font-display: 'Figtree', ui-sans-serif, sans-serif;
 
-  --color-gray-50: #f8f9fa;
-  --color-gray-100: #f1f3f5;
-  --color-gray-200: #e9ecef;
-  --color-gray-300: #dee2e6;
-  --color-gray-400: #ced4da;
-  --color-gray-500: #adb5bd;
-  --color-gray-600: #868e96;
-  --color-gray-700: #495057;
-  --color-gray-800: #343a40;
-  --color-gray-900: #212529;
+  --container-page: 94rem; /* matches bettergov.ph max-w-page */
 
   --animate-fade-in: fadeIn 0.5s ease-in-out;
   --animate-slide-in: slideIn 0.5s ease-out;
@@ -114,9 +75,43 @@
   --font-mono: var(--font-kapwa-mono);
 }
 
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ed-paper font-sans text-ed-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-ed-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ed-navy);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    @apply bg-ed-navy-tint text-ed-ink;
+  }
+}
+
+/* Mono label: metadata only, never sentences */
+@utility eyebrow {
+  @apply font-mono text-[11px] font-medium tracking-[0.14em] uppercase;
+}
+
 /* Checklist styling */
 .task-list-item {
-  @apply text-base text-gray-700 leading-relaxed relative flex items-start gap-3 font-sans rounded-md mb-5 transition-all duration-200 border border-transparent cursor-pointer items-center;
+  @apply text-base text-ed-ink-2 leading-relaxed relative flex items-start gap-3 font-sans mb-5 transition-all duration-200 border border-transparent cursor-pointer items-center;
 }
 
 /* Sticky table styling */
@@ -131,14 +126,14 @@
   z-index: 10;
   width: var(--first-col-width, 12rem);
   min-width: var(--first-col-width, 12rem);
-  background-color: white;
-  border-right: 2px solid #9ca3af;
+  background-color: var(--color-ed-paper);
+  border-right: 1px solid var(--color-ed-rule-strong);
 }
 
 .sticky-table thead th:first-child {
-  background-color: #f9fafb;
+  background-color: var(--color-ed-paper-2);
 }
 
 .sticky-table tbody tr:hover td:first-child {
-  background-color: #f3f4f6;
+  background-color: var(--color-ed-paper-2);
 }

@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@bettergov/kapwa": "^1.2.4",
-    "@tailwindcss/typography": "^0.5.18",
+    "@tailwindcss/typography": "^0.5.4",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.2",
     "i18next": "^26.3.6",
@@ -67,5 +67,8 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
     "vite": "^8.1.5"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }

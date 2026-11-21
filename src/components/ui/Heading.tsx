@@ -7,24 +7,27 @@ interface HeadingProps {
   className?: string;
 }
 
+// Figtree, upright, semibold or bold only. Never italic, never all caps.
+// Use level 1 once per page: it is the only display-size heading.
 const headingStyles = {
-  1: 'text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-relaxed',
-  2: 'text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-relaxed',
-  3: 'text-xl md:text-2xl lg:text-3xl font-bold mb-4 leading-relaxed',
-  4: 'text-lg md:text-xl lg:text-2xl font-bold mb-4 leading-relaxed',
-  5: 'text-base md:text-lg lg:text-xl font-bold mb-4 leading-relaxed',
-  6: 'text-sm md:text-base lg:text-lg font-bold mb-4 leading-relaxed',
+  1: 'text-[clamp(32px,5vw,56px)] font-bold leading-[1.05] tracking-[-0.02em] mb-4',
+  2: 'text-[clamp(26px,3.5vw,40px)] font-bold leading-[1.1] tracking-[-0.02em] mb-4',
+  3: 'text-2xl md:text-[28px] font-semibold leading-tight tracking-[-0.01em] mb-3',
+  4: 'text-xl font-semibold leading-snug mb-3',
+  5: 'text-lg font-semibold leading-snug mb-2',
+  6: 'text-base font-semibold leading-snug mb-2',
 };
 
 export function Heading({ level = 1, children, className }: HeadingProps) {
-  const baseClasses = headingStyles[level];
-  const combinedClasses = cn(baseClasses, className);
-
-  const HeadingTag = `h${level}`;
-
   return React.createElement(
-    HeadingTag,
-    { className: combinedClasses },
+    `h${level}`,
+    {
+      className: cn(
+        'font-display text-ed-ink',
+        headingStyles[level],
+        className
+      ),
+    },
     children
   );
 }

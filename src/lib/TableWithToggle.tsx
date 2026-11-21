@@ -208,10 +208,10 @@ export const TableWithToggle = ({
       <div className="flex justify-end mb-4 gap-2 px-4 sm:px-0">
         <button
           onClick={() => setViewMode('table')}
-          className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-2 ${
+          className={`flex items-center gap-2 border px-3 py-2 text-sm font-medium transition-colors ${
             viewMode === 'table'
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ? 'border-ed-navy bg-ed-navy text-white'
+              : 'border-ed-rule-strong bg-ed-paper text-ed-ink-2 hover:border-ed-navy hover:text-ed-navy'
           }`}
         >
           <Table size={16} />
@@ -219,10 +219,10 @@ export const TableWithToggle = ({
         </button>
         <button
           onClick={() => setViewMode('list')}
-          className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-2 ${
+          className={`flex items-center gap-2 border px-3 py-2 text-sm font-medium transition-colors ${
             viewMode === 'list'
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ? 'border-ed-navy bg-ed-navy text-white'
+              : 'border-ed-rule-strong bg-ed-paper text-ed-ink-2 hover:border-ed-navy hover:text-ed-navy'
           }`}
         >
           <List size={16} />
@@ -250,7 +250,7 @@ export const TableWithToggle = ({
             tableData.rows.map((row, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm mx-2 sm:mx-0"
+                className="border border-ed-rule bg-ed-paper p-4 mx-2 sm:mx-0"
               >
                 <div className="grid gap-3">
                   {tableData.headers.map((header, headerIndex) => (
@@ -258,10 +258,10 @@ export const TableWithToggle = ({
                       key={headerIndex}
                       className="flex flex-col sm:flex-row sm:items-center"
                     >
-                      <div className="font-semibold text-gray-800 text-sm mb-1 sm:mb-0 sm:w-1/3 sm:pr-4">
+                      <div className="eyebrow text-ed-ink-3 mb-1 sm:mb-0 sm:w-1/3 sm:pr-4">
                         {header}:
                       </div>
-                      <div className="text-gray-700 text-sm sm:w-2/3">
+                      <div className="text-[15px] text-ed-ink-2 sm:w-2/3">
                         {row[header] || ''}
                       </div>
                     </div>
@@ -270,8 +270,8 @@ export const TableWithToggle = ({
               </div>
             ))
           ) : (
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mx-2 sm:mx-0">
-              <div className="text-yellow-800 text-sm">
+            <div className="border border-ed-rule bg-ed-paper-2 p-4 mx-2 sm:mx-0">
+              <div className="font-mono text-xs text-ed-ink-2">
                 <strong>Debug Info:</strong>
                 <br />
                 Headers: {JSON.stringify(tableData?.headers || [])}

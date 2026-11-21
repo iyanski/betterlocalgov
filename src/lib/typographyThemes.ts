@@ -33,38 +33,38 @@ export interface TypographyTheme {
   };
 }
 
-// Default theme with Tailwind classes
+// Default theme — BetterGov.ph brand (https://bettergov.ph/design):
+// Figtree headings, Inter body, Republic Blue links, ruled tables.
 export const defaultTheme: TypographyTheme = {
   name: 'default',
   components: {
-    h1: 'text-3xl font-bold mb-6 mt-2',
-    h2: 'text-2xl font-semibold mb-4 mt-10',
-    h3: 'text-2xl font-medium text-gray-800 mb-4 mt-6 ',
-    h4: 'text-xl text-gray-800 mb-3 mt-5 ',
-    h5: 'text-lg text-gray-800 mb-3 mt-4 ',
-    h6: 'text-base text-gray-800 mb-3 mt-4 ',
-    p: 'text-base text-gray-700 mb-4 leading-relaxed ',
-    small: 'text-sm text-gray-600 mb-3 ',
-    ul: 'list-none mb-6 space-y-4 pl-0',
-    ol: 'list-none mb-6 space-y-4 pl-0',
-    li: 'text-base text-gray-700 leading-relaxed relative pl-6 mb-2 before:content-["•"] before:absolute before:left-0 before:text-gray-700 before:font-bold before:text-lg ',
+    h1: 'font-display text-[clamp(32px,5vw,48px)] font-bold leading-[1.08] tracking-[-0.02em] text-ed-ink mb-6 mt-2',
+    h2: 'font-display text-[28px] font-bold leading-tight tracking-[-0.01em] text-ed-ink mb-4 mt-10',
+    h3: 'font-display text-[22px] font-semibold leading-snug text-ed-ink mb-3 mt-8',
+    h4: 'font-display text-lg font-semibold text-ed-ink mb-3 mt-6',
+    h5: 'font-display text-base font-semibold text-ed-ink mb-2 mt-5',
+    h6: 'eyebrow text-ed-ink-3 mb-2 mt-5',
+    p: 'text-[17px] text-ed-ink-2 mb-4 leading-relaxed',
+    small: 'text-sm text-ed-ink-2 mb-3',
+    ul: 'list-none mb-6 space-y-3 pl-0',
+    ol: 'list-none mb-6 space-y-3 pl-0',
+    li: 'text-[17px] text-ed-ink-2 leading-relaxed relative pl-6 mb-2 before:content-[""] before:absolute before:left-1 before:top-[0.7em] before:h-1.5 before:w-1.5 before:bg-ed-navy',
     'li.ordered':
-      'text-base text-gray-700 leading-relaxed relative pl-8 mb-2 before:content-[counter(list-item)] before:absolute before:left-0 before:text-gray-700 before:font-bold before:text-base before:counter-increment-[list-item] ',
+      'text-[17px] text-ed-ink-2 leading-relaxed relative pl-8 mb-2 before:content-[counter(list-item)] before:absolute before:left-0 before:font-mono before:text-sm before:font-medium before:text-ed-navy before:counter-increment-[list-item]',
     blockquote:
-      'border-l-4 border-blue-600 pl-6 py-4 mb-6 bg-blue-50 text-gray-700 italic text-base leading-relaxed ',
-    code: 'bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border',
-    pre: 'bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6 border font-mono text-sm leading-relaxed',
-    a: 'text-blue-600 hover:text-blue-800 underline font-medium transition-colors duration-200 ',
-    strong: 'font-bold text-gray-900 ',
-    em: 'italic text-gray-700 ',
-    hr: 'border-t-2 border-gray-300 my-8',
-    table:
-      'w-full border-collapse border border-gray-300 rounded-lg overflow-hidden min-w-max',
-    thead: 'bg-gray-50',
+      'border-l-4 border-ed-navy bg-ed-paper-2 px-6 py-4 mb-6 text-ed-ink-2 text-[17px] leading-relaxed [&>p]:mb-0',
+    code: 'bg-ed-paper-2 text-ed-ink px-1.5 py-0.5 text-[0.9em] font-mono border border-ed-rule',
+    pre: 'bg-ed-ink text-ed-paper p-4 overflow-x-auto mb-6 font-mono text-sm leading-relaxed',
+    a: 'text-ed-navy underline underline-offset-4 decoration-1 hover:decoration-2 font-medium',
+    strong: 'font-semibold text-ed-ink',
+    em: 'italic',
+    hr: 'border-t border-ed-rule my-10',
+    table: 'w-full border-collapse border border-ed-rule min-w-max text-left',
+    thead: 'bg-ed-paper-2 border-b border-ed-ink',
     tbody: '',
-    tr: 'border-b border-gray-200 hover:bg-gray-50 transition-colors [&:hover_td:first-child]:bg-gray-100',
-    th: 'text-left py-4 px-6 font-semibold text-gray-800 border-r border-gray-300 text-base ',
-    td: 'py-4 px-6 text-gray-700 border-r border-gray-300 text-base ',
+    tr: 'border-b border-ed-rule hover:bg-ed-paper-2 transition-colors',
+    th: 'py-3 px-5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-ed-ink-3 border-r border-ed-rule',
+    td: 'py-3 px-5 text-[15px] text-ed-ink-2 border-r border-ed-rule',
   },
 };
 
