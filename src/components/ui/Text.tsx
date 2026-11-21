@@ -1,22 +1,36 @@
+import { cn } from '../../lib/utils';
+
+const sizes = {
+  sm: 'text-sm',
+  md: 'text-base',
+  lg: 'text-lg',
+};
+
+const transforms = {
+  none: '',
+  uppercase: 'uppercase',
+  lowercase: 'lowercase',
+};
+
 export function Text({
   size = 'md',
   transform = 'none',
   className = '',
   children,
 }: {
-  size?: 'sm' | 'md' | 'lg';
-  transform?: 'none' | 'uppercase' | 'lowercase';
+  size?: keyof typeof sizes;
+  transform?: keyof typeof transforms;
   className?: string;
   children: React.ReactNode;
 }) {
-  const transformClasses = {
-    none: '',
-    uppercase: 'uppercase',
-    lowercase: 'lowercase',
-  };
   return (
     <p
-      className={`text-${size} mb-2 max-w-lg ${transformClasses[transform]} ${className}`}
+      className={cn(
+        'mb-2 max-w-[720px] font-sans leading-relaxed text-ed-ink-2',
+        sizes[size],
+        transforms[transform],
+        className
+      )}
     >
       {children}
     </p>

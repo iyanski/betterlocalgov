@@ -9,6 +9,10 @@ import {
 import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import Container from '../ui/Container';
+
+const linkClass =
+  'text-white/80 no-underline transition-colors hover:text-white hover:underline';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation('common');
@@ -29,33 +33,32 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 pt-12 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="mt-auto bg-ed-navy-ink pt-14 pb-7 text-sm text-white/75 max-md:pt-10">
+      <Container>
+        <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[2fr_repeat(3,1fr)] max-md:gap-8 max-md:pb-8">
           <div>
-            <div className="flex items-center mb-4">
-              <CheckCircle2 className="h-12 w-12 mr-3" />
-              {/* <img
-                src="/ph-logo.webp"
-                alt="Philippines Coat of Arms"
-                className="h-12 w-12 mr-3"
-              /> */}
-
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="h-10 w-10 text-white" aria-hidden />
               <div>
-                <div className="font-bold">{t('site_name')}</div>
-                <div className="text-xs text-gray-400">BetterGov.ph Portal</div>
+                <div className="font-display text-lg font-bold text-white">
+                  {t('site_name')}
+                </div>
+                <div className="eyebrow text-[10px] text-white/60">
+                  BetterGov.ph Portal
+                </div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="mt-4 max-w-[340px] leading-relaxed text-white/60">
               A community portal providing Philippine citizens, businesses, and
               visitors with information and services.
             </p>
-            <div className="flex space-x-4">
+            <div className="mt-6 flex gap-4">
               {footerNavigation.socialLinks.map(link => (
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label={link.label}
+                  className="text-white/60 transition-colors hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -67,14 +70,13 @@ const Footer: React.FC = () => {
 
           {footerNavigation.mainSections.map(section => (
             <div key={section.title}>
-              <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-2">
+              <h3 className="eyebrow mb-[18px] font-mono text-white">
+                {section.title}
+              </h3>
+              <ul className="space-y-2.5">
                 {section.links.map(link => (
                   <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
-                    >
+                    <Link to={link.href} className={linkClass}>
                       {link.label}
                     </Link>
                   </li>
@@ -84,46 +86,24 @@ const Footer: React.FC = () => {
           ))}
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              {t('footer.copyright')}
-            </p>
-            <div className="flex space-x-6">
-              {/* <a
-                href="/privacy"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Terms of Use
-              </a> */}
-              <Link
-                to="https://github.com/bettergovph/bettergov"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Contribute at GitHub
-              </Link>
-              <Link
-                to="/sitemap"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Sitemap
-              </Link>
-              <a
-                href="/accessibility"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Accessibility
-              </a>
-            </div>
+        <div className="flex flex-col gap-4 pt-6 text-[13px] md:flex-row md:items-center md:justify-between">
+          <p className="text-white/60">{t('footer.copyright')}</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link
+              to="https://github.com/bettergovph/bettergov"
+              className={linkClass}
+            >
+              Contribute on GitHub
+            </Link>
+            <Link to="/sitemap" className={linkClass}>
+              Sitemap
+            </Link>
+            <a href="/accessibility" className={linkClass}>
+              Accessibility
+            </a>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

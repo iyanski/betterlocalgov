@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router';
-import { ChevronRight, Home } from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 interface BreadcrumbItem {
   label: string;
@@ -11,6 +11,9 @@ interface BreadcrumbsProps {
   items?: BreadcrumbItem[];
   className?: string;
 }
+
+const capitalize = (label: string) =>
+  label.charAt(0).toUpperCase() + label.slice(1);
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
   const location = useLocation();
@@ -41,30 +44,33 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
   };
 
   const breadcrumbItems = items || generateBreadcrumbs();
+  const lastIndex = breadcrumbItems.length - 1;
 
   return (
-    <nav
-      className={`flex items-center space-x-1 text-sm text-gray-600 ${className}`}
-      aria-label="Breadcrumb"
-    >
-      {breadcrumbItems.map((item, index) => (
-        <React.Fragment key={index}>
-          {index === 0 && <Home className="h-4 w-4" />}
-          {index > 0 && <ChevronRight className="h-4 w-4 text-gray-400" />}
-          {item.href ? (
-            <Link
-              to={item.href}
-              className="hover:text-primary-600 transition-colors duration-200"
-            >
-              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
-            </Link>
-          ) : (
-            <span className="text-gray-900 font-medium" aria-current="page">
-              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
-            </span>
-          )}
-        </React.Fragment>
-      ))}
+    <nav aria-label="Breadcrumb" className={cn('text-sm', className)}>
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-ed-ink-2">
+        {breadcrumbItems.map((item, index) => (
+          <li key={index} className="flex items-center gap-2">
+            {index > 0 && (
+              <span aria-hidden className="text-ed-rule-strong">
+                /
+              </span>
+            )}
+            {item.href && index !== lastIndex ? (
+              <Link
+                to={item.href}
+                className="text-ed-navy underline-offset-4 hover:underline"
+              >
+                {capitalize(item.label)}
+              </Link>
+            ) : (
+              <span className="font-medium text-ed-ink" aria-current="page">
+                {capitalize(item.label)}
+              </span>
+            )}
+          </li>
+        ))}
+      </ol>
     </nav>
   );
 };
